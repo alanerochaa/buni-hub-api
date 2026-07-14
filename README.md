@@ -392,7 +392,7 @@ curl -s -w "\n%{http_code}\n" http://localhost:3333/resources/id-que-nao-existe
 - ✔️ Services nunca importam `express` — se um método precisa de `req`/`res`, a assinatura está na camada errada.
 - ✔️ Rode `npm run typecheck && npm run lint && npm run build` antes de qualquer PR.
 - ❌ Não adicione banco de dados, autenticação, Docker ou Swagger sem alinhar antes — são exclusões deliberadas de escopo até aqui, não lacunas a preencher por conta própria.
-- ❌ Não edite `src/data/resources.json` manualmente — ele é sempre uma cópia do que a [`ingestion/`](../ingestion/README.md) gera.
+- ❌ Não edite `src/data/resources.json` manualmente — ele é sempre uma cópia do que a [`ingestion/`] gera.
 
 ---
 
