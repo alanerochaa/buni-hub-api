@@ -9,8 +9,6 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white)
 ![Database](https://img.shields.io/badge/database-none-lightgrey)
 
-[⬅ Voltar para o README principal](../README.md) · [📦 ingestion](../ingestion/README.md) · [💻 web](../web/README.md)
-
 </div>
 
 ---
