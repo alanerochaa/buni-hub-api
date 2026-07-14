@@ -398,6 +398,4 @@ curl -s -w "\n%{http_code}\n" http://localhost:3333/resources/id-que-nao-existe
 
 <div align="center">
 
-[⬅ ingestion/README.md](../ingestion/README.md) · [🏠 README principal](../README.md) · [Próximo: web/README.md ➡](../web/README.md)
-
 </div>
