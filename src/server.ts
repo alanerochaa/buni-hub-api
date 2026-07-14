@@ -4,9 +4,6 @@ import { healthCheckService } from './routes/resourceHealth.routes.js'
 
 const app = createApp()
 
-// Sweep inicial imediato (para /health/resources não ficar vazio logo
-// após o boot) + varredura periódica em memória — sem fila/agendador
-// externo, apenas um setInterval no próprio processo Node.
 healthCheckService.runSweep().catch((error: unknown) => {
   console.error('Falha no sweep inicial do health check:', error)
 })
@@ -17,5 +14,5 @@ setInterval(() => {
 }, env.healthCheck.intervalMs)
 
 app.listen(env.port, () => {
-  console.log(`Buni API Hub — API rodando em http://localhost:${env.port}`)
+  console.log(`Portal de Serviços — API rodando em http://localhost:${env.port}`)
 })
