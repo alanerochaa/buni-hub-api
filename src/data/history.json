@@ -34,5 +34,86 @@
     "maintenance": 0,
     "unknown": 4,
     "availabilityPercentage": 97.42
+  },
+  {
+    "timestamp": "2026-07-15T22:14:58.141Z",
+    "total": 155,
+    "online": 151,
+    "offline": 0,
+    "maintenance": 0,
+    "unknown": 4,
+    "availabilityPercentage": 97.42
+  },
+  {
+    "timestamp": "2026-07-15T22:15:59.674Z",
+    "total": 155,
+    "online": 151,
+    "offline": 0,
+    "maintenance": 0,
+    "unknown": 4,
+    "availabilityPercentage": 97.42
+  },
+  {
+    "timestamp": "2026-07-15T22:17:00.020Z",
+    "total": 155,
+    "online": 151,
+    "offline": 0,
+    "maintenance": 0,
+    "unknown": 4,
+    "availabilityPercentage": 97.42
+  },
+  {
+    "timestamp": "2026-07-15T22:17:57.841Z",
+    "total": 155,
+    "online": 151,
+    "offline": 0,
+    "maintenance": 0,
+    "unknown": 4,
+    "availabilityPercentage": 97.42
+  },
+  {
+    "timestamp": "2026-07-15T22:18:56.230Z",
+    "total": 155,
+    "online": 151,
+    "offline": 0,
+    "maintenance": 0,
+    "unknown": 4,
+    "availabilityPercentage": 97.42
+  },
+  {
+    "timestamp": "2026-07-15T22:19:56.667Z",
+    "total": 155,
+    "online": 151,
+    "offline": 0,
+    "maintenance": 0,
+    "unknown": 4,
+    "availabilityPercentage": 97.42
+  },
+  {
+    "timestamp": "2026-07-15T22:20:56.311Z",
+    "total": 155,
+    "online": 151,
+    "offline": 0,
+    "maintenance": 0,
+    "unknown": 4,
+    "availabilityPercentage": 97.42
+  },
+  {
+    "timestamp": "2026-07-15T22:21:56.480Z",
+    "total": 155,
+    "online": 151,
+    "offline": 0,
+    "maintenance": 0,
+    "unknown": 4,
+    "availabilityPercentage": 97.42
+  },
+  {
+    "timestamp": "2026-07-15T22:22:57.679Z",
+    "total": 155,
+    "online": 151,
+    "offline": 0,
+    "maintenance": 0,
+    "unknown": 4,
+    "availabilityPercentage": 97.42
   }
 ]
