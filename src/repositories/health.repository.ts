@@ -1,12 +1,9 @@
 import type { ResourceHealth } from '../models/resource.model.js'
 
 /**
- * Armazenamento em memória do último resultado de health check de cada
- * recurso — não há banco de dados nesta sprint. O Map é populado pelas
- * varreduras periódicas do HealthCheckService e lido pelas rotas
- * GET /health/resources[/:id] e GET /dashboard*. Perde-se ao reiniciar
- * o processo, o que é aceitável: o próximo sweep repovoa tudo em
- * poucos segundos.
+ * Último resultado de health check por recurso, só em memória — perde-se
+ * ao reiniciar o processo, aceitável porque o próximo sweep repovoa
+ * tudo em segundos. Populado pelo HealthCheckService.
  */
 export class HealthRepository {
   private readonly cache = new Map<string, ResourceHealth>()

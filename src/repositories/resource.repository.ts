@@ -3,12 +3,9 @@ import path from 'node:path'
 import type { Resource } from '../models/resource.model.js'
 
 /**
- * Única camada que conhece a origem dos dados (resources.json no
- * disco). Carrega o arquivo uma vez e mantém em cache em memória —
- * não há banco de dados nesta sprint, então recarregar o mesmo JSON a
- * cada requisição seria custo sem benefício. Os métodos de escrita
- * (create/update/remove) atualizam o cache e persistem no mesmo
- * arquivo, mantendo o cache sempre a fonte de verdade em memória.
+ * Única camada que conhece resources.json. Carrega uma vez e mantém
+ * em cache — sem banco de dados, recarregar a cada requisição seria
+ * custo sem benefício. Escritas atualizam cache e disco juntos.
  */
 export class ResourceRepository {
   private cache: Resource[] | null = null

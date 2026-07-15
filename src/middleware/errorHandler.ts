@@ -2,14 +2,10 @@ import type { NextFunction, Request, Response } from 'express'
 import { ApiError } from '../utils/ApiError.js'
 
 /**
- * Envelope de erro único para toda a API — { status, code, message } —
- * consumido pelo Frontend (lib/apiErrorMessage.ts) para nunca expor
- * texto técnico ao usuário final. `code` é uma string estável
- * (SCREAMING_SNAKE_CASE) que identifica o motivo, independente da
- * redação de `message` (que pode mudar sem quebrar quem lê `code`).
- *
- * Assinatura de 4 parâmetros é exigida pelo Express para reconhecer
- * este middleware como tratador de erros (req/next não usados aqui).
+ * Envelope de erro único { status, code, message } para toda a API —
+ * `code` é estável (SCREAMING_SNAKE_CASE), independente da redação de
+ * `message`. Assinatura de 4 parâmetros exigida pelo Express para
+ * reconhecer isto como tratador de erros (req/next não usados aqui).
  */
 export function errorHandler(
   err: unknown,
