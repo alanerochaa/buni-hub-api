@@ -1,21 +1,20 @@
 /**
- * Espelha exatamente ingestion/src/types.ts (modelo de domínio aprovado
- * na Sprint 6). resources.json é gerado por ingestion/ seguindo este
- * mesmo formato — qualquer mudança deve ser replicada nos três lugares
- * (ingestion/, web/, api/), já que são projetos Node independentes.
+ * Espelha exatamente ingestion/src/types.ts. resources.json é gerado
+ * por ingestion/ seguindo este mesmo formato — qualquer mudança deve
+ * ser replicada nos três lugares (ingestion/, web/, api/), já que são
+ * projetos Node independentes.
  */
 
 export type ResourceType = 'api' | 'web-service' | 'site'
-export type ResourceEnvironment = 'homologacao' | 'producao' | 'unknown'
+export type ResourceEnvironment = 'homologacao' | 'producao' | 'desenvolvimento' | 'unknown'
 
 export interface Resource {
   id: string
   type: ResourceType
 
-  // Preparado na Sprint 17 para os próximos catálogos (mais completos):
-  // quando presente, é o nome principal exibido ao usuário, tendo
-  // prioridade sobre `name`. `name`/`technicalName` continuam existindo
-  // (compatibilidade, uso interno) mesmo quando displayName é omitido.
+  // Quando presente, é o nome principal exibido ao usuário, com
+  // prioridade sobre `name`. `name`/`technicalName` continuam
+  // existindo (uso interno) mesmo quando displayName é omitido.
   displayName?: string
   name: string
   technicalName: string
@@ -32,10 +31,19 @@ export interface Resource {
   tags: string[]
 
   searchIndex: string[]
+
+  // Módulo administrativo (cadastro manual pela interface, sem
+  // Ingestion): metadados opcionais, ausentes nos registros importados
+  // em lote.
+  docUrl?: string
+  responsible?: string
+  area?: string
+  notes?: string
+  createdAt?: string
+  updatedAt?: string
 }
 
-// 'slow' adicionado na Sprint 15 (health check real): resposta válida,
-// porém acima do limite de tempo configurado.
+// 'slow': resposta válida, porém acima do limite de tempo configurado.
 export type ResourceStatus = 'online' | 'slow' | 'offline' | 'unknown'
 
 export interface ResourceHealth {

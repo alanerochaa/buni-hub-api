@@ -2,6 +2,7 @@ import { Router } from 'express'
 import { resourceRoutes } from './resource.routes.js'
 import { healthRoutes } from './health.routes.js'
 import { resourceHealthRoutes } from './resourceHealth.routes.js'
+import { dashboardRoutes } from './dashboard.routes.js'
 
 export const routes = Router()
 
@@ -16,4 +17,5 @@ routes.get('/', (_req, res) => {
 
 routes.use(healthRoutes)
 routes.use(resourceHealthRoutes)
+routes.use(dashboardRoutes)
 routes.use(resourceRoutes)

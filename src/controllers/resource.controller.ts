@@ -51,4 +51,31 @@ export class ResourceController {
       next(error)
     }
   }
+
+  create = (req: Request, res: Response, next: NextFunction): void => {
+    try {
+      const resource = this.service.createResource(req.body)
+      res.status(201).json(resource)
+    } catch (error) {
+      next(error)
+    }
+  }
+
+  update = (req: Request<{ id: string }>, res: Response, next: NextFunction): void => {
+    try {
+      const resource = this.service.updateResource(req.params.id, req.body)
+      res.json(resource)
+    } catch (error) {
+      next(error)
+    }
+  }
+
+  remove = (req: Request<{ id: string }>, res: Response, next: NextFunction): void => {
+    try {
+      this.service.deleteResource(req.params.id)
+      res.status(204).send()
+    } catch (error) {
+      next(error)
+    }
+  }
 }

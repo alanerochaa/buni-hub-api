@@ -25,6 +25,11 @@ export interface HealthCheckOptions {
  *   indica claramente que o recurso está fora do ar)
  */
 export class HealthCheckService {
+  // Instante em que a última varredura completa terminou — exposto ao
+  // Painel Operacional como "última sincronização" (não confundir com
+  // `lastCheckedAt` de cada recurso, que é por item).
+  private lastSweepAt: string | null = null
+
   constructor(
     private readonly resourceRepository: ResourceRepository,
     private readonly healthRepository: HealthRepository,
@@ -38,6 +43,8 @@ export class HealthCheckService {
       const health = await this.checkOne(resource)
       this.healthRepository.set(health)
     })
+
+    this.lastSweepAt = new Date().toISOString()
   }
 
   getAll(): ResourceHealth[] {
@@ -50,6 +57,14 @@ export class HealthCheckService {
       throw ApiError.notFound(`Recurso não encontrado: ${resourceId}`)
     }
     return this.getOrDefault(resourceId)
+  }
+
+  getOfflineSince(resourceId: string): string | undefined {
+    return this.healthRepository.getOfflineSince(resourceId)
+  }
+
+  getLastSweepAt(): string | null {
+    return this.lastSweepAt
   }
 
   private getOrDefault(resourceId: string): ResourceHealth {

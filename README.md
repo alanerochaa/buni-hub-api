@@ -1,401 +1,505 @@
-<div align="center">
+# Buni API Hub — API
 
-# 🚏 api
+API REST em Node.js/Express/TypeScript que centraliza o catálogo de APIs, Web Services e Sites da instituição, expõe um mecanismo de monitoramento de saúde em tempo real e serve os dados consumidos pelo Portal de Serviços (`web/`) e pelo Painel Operacional (`dashboard/`).
 
-**Backend REST do Buni API Hub — serve o catálogo de recursos e monitora a saúde de cada um deles, tudo em memória, sem banco de dados.**
-
-![Node](https://img.shields.io/badge/node-%3E%3D22-339933?logo=node.js&logoColor=white)
-![Express](https://img.shields.io/badge/Express-5-000000?logo=express&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white)
-![Database](https://img.shields.io/badge/database-none-lightgrey)
-
-</div>
+> Repositório: `buni-api-hub-api` · Parte do ecossistema **Buni API Hub** (`web/` — Portal de Serviços, `dashboard/` — Painel Operacional, `ingestion/` — importação em lote, ferramenta auxiliar).
 
 ---
 
-## 📑 Índice
+## Sumário
 
-- [Objetivo](#-objetivo)
-- [Arquitetura em camadas](#-arquitetura-em-camadas)
-- [Fluxo de uma requisição](#-fluxo-de-uma-requisição)
-- [Endpoints](#-endpoints)
-- [Health Check](#-health-check)
-- [Cache em memória](#-cache-em-memória)
-- [Tratamento de erros](#-tratamento-de-erros)
-- [Estrutura de pastas](#-estrutura-de-pastas)
-- [Variáveis de ambiente](#-variáveis-de-ambiente)
-- [Como executar](#-como-executar)
-- [Scripts disponíveis](#-scripts-disponíveis)
-- [➕ Como adicionar um endpoint novo](#-como-adicionar-um-endpoint-novo)
-- [➕ Como adicionar um Service novo](#-como-adicionar-um-service-novo)
-- [Como testar manualmente](#-como-testar-manualmente)
-- [Boas práticas](#-boas-práticas)
+- [Visão geral](#visão-geral)
+- [Objetivo](#objetivo)
+- [Arquitetura](#arquitetura)
+- [Stack tecnológica](#stack-tecnológica)
+- [Estrutura de diretórios](#estrutura-de-diretórios)
+- [Modelo de domínio](#modelo-de-domínio)
+- [Endpoints](#endpoints)
+- [Fluxo da aplicação](#fluxo-da-aplicação)
+- [Fluxo dos Dados](#fluxo-dos-dados)
+- [Persistência](#persistência)
+- [Fluxo de Persistência](#fluxo-de-persistência)
+- [Monitoramento de saúde e Painel Operacional](#monitoramento-de-saúde-e-painel-operacional)
+- [Tratamento de erros](#tratamento-de-erros)
+- [Validação](#validação)
+- [Variáveis de ambiente](#variáveis-de-ambiente)
+- [Como executar localmente](#como-executar-localmente)
+- [Build e deploy](#build-e-deploy)
+- [Padrões arquiteturais e boas práticas](#padrões-arquiteturais-e-boas-práticas)
+- [Fluxo de desenvolvimento](#fluxo-de-desenvolvimento)
+- [Roadmap / melhorias futuras](#roadmap--melhorias-futuras)
+- [Licença](#licença)
 
 ---
 
-## 🎯 Objetivo
+## Visão geral
 
-Expor, via REST, o catálogo de recursos (APIs, Web Services e Sites) gerado pela [`ingestion/`](../ingestion/README.md), e o status de saúde de cada um — sem banco de dados, tudo servido a partir de um arquivo JSON estático e de caches em memória.
+Esta API é a única porta de entrada para o catálogo de recursos da solução — é o backend que sustenta tanto o Portal de Serviços (`web/`) quanto o Painel Operacional (`dashboard/`), sem que nenhum dos dois se comunique entre si.
 
-| A `api/` faz | A `api/` **não** faz |
+**Responsabilidades exclusivas desta API, nenhuma delas compartilhada com outro módulo:**
+
+| Responsabilidade | Por quê é exclusiva desta API |
 | --- | --- |
-| ✅ Servir o catálogo (`/resources`) | ❌ Autenticação/autorização |
-| ✅ Agregações (`/summary`) | ❌ Persistência em banco de dados |
-| ✅ Health check HTTP real e periódico | ❌ Cadastro, edição ou exclusão de recursos |
-| ✅ Filtro/busca/ordenação no servidor | ❌ Upload de novos catálogos |
-| ✅ Liveness do próprio processo | ❌ Documentação Swagger/OpenAPI |
+| **Única fonte oficial dos dados** | `api/src/data/resources.json` só existe e só é lido/escrito dentro deste repositório. |
+| **Única responsável pela persistência** | `ResourceRepository` é a única classe do sistema com permissão de escrita sobre o catálogo. |
+| **Única responsável pelas regras de negócio** | Validação de duplicidade, geração de `id`/`technicalName`/`keywords`/`searchIndex`, timestamps — tudo em `ResourceService`, nunca no frontend. |
+| **Única responsável pelo Health Check** | `HealthCheckService` varre as URLs cadastradas de forma autônoma; nenhum frontend dispara ou depende de checagem própria. |
+| **Única responsável pelos indicadores do Dashboard** | `DashboardService` agrega catálogo + saúde num payload consolidado; `dashboard/` só exibe o que recebe, sem calcular nada. |
 
----
+Em todo erro, a API retorna um envelope padronizado (`status`, `code`, `message`) para que nenhum frontend precise interpretar mensagens técnicas.
 
-## 🏗️ Arquitetura em camadas
+**A API é totalmente independente da `ingestion/` em tempo de execução.** A fonte oficial de dados é o `ResourceRepository` (`src/repositories/resource.repository.ts`), que lê e escreve exclusivamente em `src/data/resources.json` — o catálogo efetivamente usado pela aplicação. Toda operação de escrita (criar, editar, excluir, alterar status), disparada pelo Portal ou por qualquer outro cliente HTTP, persiste diretamente nesse arquivo através do `ResourceRepository`, cujo conteúdo permanece em cache em memória durante a execução do processo. A `ingestion/` não participa do fluxo operacional da aplicação — é uma ferramenta de importação em lote, executada manualmente e de forma independente (detalhes em [Fluxo dos Dados](#fluxo-dos-dados), [Fluxo de Persistência](#fluxo-de-persistência) e no [README da `ingestion/`](../ingestion/README.md)).
 
-Camadas clássicas, com **injeção de dependência manual via construtor** — sem framework de DI, sem decorators:
+## Objetivo
+
+Eliminar o processo manual de "editar um arquivo, rodar a ingestão, fazer deploy" toda vez que um novo recurso precisa entrar no catálogo, ao mesmo tempo em que fornece uma fonte única e sempre atualizada de status operacional dos serviços — sem depender de o frontend fazer qualquer verificação própria.
+
+## Arquitetura
+
+Arquitetura em camadas (Route → Controller → Service → Repository), sem framework de DI — a composição é feita manualmente em cada arquivo de rota, que instancia e conecta repository → service → controller.
 
 ```mermaid
 flowchart LR
-    R["🚦 Route"] --> C["🎮 Controller"]
-    C --> S["🧠 Service"]
-    S --> Rep["💾 Repository"]
-    Rep --> J["🗂️ resources.json<br/>(cache em memória)"]
+    subgraph HTTP["Camada HTTP"]
+        R1["resource.routes.ts"]
+        R2["resourceHealth.routes.ts"]
+        R3["dashboard.routes.ts"]
+        R4["health.routes.ts"]
+    end
 
-    style R fill:#e8f1fa,stroke:#1a5486
-    style C fill:#fef3c7,stroke:#d97706
-    style S fill:#fee2e2,stroke:#dc2626
-    style Rep fill:#d1fae5,stroke:#059669
+    subgraph Controllers
+        C1["ResourceController"]
+        C2["ResourceHealthController"]
+        C3["DashboardController"]
+    end
+
+    subgraph Services["Regras de negócio"]
+        S1["ResourceService"]
+        S2["HealthCheckService"]
+        S3["DashboardService"]
+    end
+
+    subgraph Repositories["Acesso a dados"]
+        REPO1["ResourceRepository"]
+        REPO2["HealthRepository"]
+    end
+
+    DATA[("resources.json")]
+    MEM[("Map em memória<br/>(health + offlineSince)")]
+    NET(("URLs externas<br/>dos recursos"))
+
+    R1 --> C1 --> S1 --> REPO1 --> DATA
+    R2 --> C2 --> S2
+    R3 --> C3 --> S3
+    S3 --> REPO1
+    S3 --> S2
+    S2 --> REPO2 --> MEM
+    S2 -. "fetch HTTP" .-> NET
+    S2 --> REPO1
 ```
 
-| Camada | Responsabilidade | Conhece Express? |
-| --- | --- | --- |
-| **Route** | Define o path HTTP e faz o *wiring* das camadas abaixo (`new Repository()` → `new Service()` → `new Controller()`). | Sim |
-| **Controller** | Traduz HTTP ↔ domínio: lê `req.query`/`req.params`, chama o service, responde `res.json`. **Nenhuma regra de negócio.** | Sim |
-| **Service** | Regras de negócio: filtros, busca, ordenação, classificação de health, agregações. Recebe e devolve só tipos de domínio. | Não |
-| **Repository** | Acesso aos dados — leitura do `resources.json` (cache em memória) ou o Map em memória do health check. | Não |
+Pontos-chave:
 
-> [!TIP]
-> `ResourceService`/`HealthCheckService` não importam nada do Express — em tese, dariam para reaproveitar atrás de uma CLI ou fila no futuro, sem reescrever regra de negócio nenhuma.
+- **Uma única instância de `ResourceRepository`** é criada em `resource.routes.ts` e reexportada — `resourceHealth.routes.ts` e `dashboard.routes.ts` a reaproveitam, evitando caches divergentes do mesmo `resources.json`.
+- **`HealthCheckService`** é o único componente que sabe fazer requisições HTTP de verificação; `DashboardService` só lê o resultado já calculado, nunca dispara checagem própria.
+- Não há banco de dados. A persistência do catálogo é um arquivo JSON no próprio processo; o resultado do health check vive inteiramente em memória (é perdido a cada restart e repovoado em segundos pelo próximo sweep).
 
----
+## Stack tecnológica
 
-## 🔄 Fluxo de uma requisição
+| Categoria | Tecnologia |
+|---|---|
+| Runtime | Node.js (ESM puro, `"type": "module"`) |
+| Linguagem | TypeScript ~6.0 (`strict: true`) |
+| Framework HTTP | Express ^5.2 |
+| Validação | Zod ^4.4 |
+| CORS | `cors` ^2.8 |
+| Execução em dev | `tsx watch` |
+| Lint/format | ESLint 10 (flat config) + Prettier 3.9 |
+| Empacotamento | `tsc` (compilação direta, sem bundler) |
+
+Não há suíte de testes automatizados configurada (sem Jest/Vitest) — `typecheck` (`tsc --noEmit`) é a única verificação estática além do lint.
+
+## Estrutura de diretórios
+
+```
+api/
+├── src/
+│   ├── config/
+│   │   └── env.ts                  # validação Zod das env vars
+│   ├── controllers/
+│   │   ├── dashboard.controller.ts
+│   │   ├── health.controller.ts
+│   │   ├── resource.controller.ts
+│   │   └── resourceHealth.controller.ts
+│   ├── services/
+│   │   ├── dashboard.service.ts
+│   │   ├── healthCheck.service.ts
+│   │   └── resource.service.ts
+│   ├── repositories/
+│   │   ├── health.repository.ts
+│   │   └── resource.repository.ts
+│   ├── routes/
+│   │   ├── dashboard.routes.ts
+│   │   ├── health.routes.ts
+│   │   ├── index.ts                # agrega todas as rotas
+│   │   ├── resource.routes.ts
+│   │   └── resourceHealth.routes.ts
+│   ├── middleware/
+│   │   ├── errorHandler.ts
+│   │   ├── notFoundHandler.ts
+│   │   └── validateBody.ts
+│   ├── validators/
+│   │   └── resource.schema.ts      # schemas Zod de criação/edição
+│   ├── models/
+│   │   └── resource.model.ts       # Resource, ResourceHealth e tipos relacionados
+│   ├── types/
+│   │   ├── dashboard.type.ts
+│   │   └── resourceSummary.type.ts
+│   ├── utils/
+│   │   ├── ApiError.ts
+│   │   ├── generateKeywordsAndIndex.ts
+│   │   ├── normalizeSearchTerm.ts
+│   │   ├── promisePool.ts          # runWithConcurrency (pool de workers)
+│   │   └── slugify.ts
+│   ├── data/
+│   │   └── resources.json          # catálogo oficial — única fonte de dados da aplicação, gerenciada pelo ResourceRepository
+│   ├── app.ts                      # composição do Express (middlewares + rotas)
+│   └── server.ts                   # bootstrap: agenda o sweep e sobe o servidor
+├── scripts/
+│   └── copy-data.mjs               # copia resources.json para dist/ no build
+├── docs/
+│   └── dashboard-operacional.md    # monitoramento e Painel Operacional, documentação completa
+├── .env.example
+├── eslint.config.js
+├── tsconfig.json
+└── package.json
+```
+
+## Modelo de domínio
+
+`src/models/resource.model.ts` é a fonte de verdade — espelhada manualmente em `ingestion/src/types.ts`, `web/src/features/catalog/types.ts` e `dashboard/src/types/index.ts` (os quatro projetos são Node independentes, sem pacote compartilhado).
+
+```mermaid
+classDiagram
+    class Resource {
+        +string id
+        +ResourceType type
+        +string? displayName
+        +string name
+        +string technicalName
+        +string? code
+        +string? url
+        +ResourceEnvironment environment
+        +string? category
+        +boolean deprecated
+        +boolean active
+        +string? description
+        +string[] keywords
+        +string[] tags
+        +string[] searchIndex
+        +string? docUrl
+        +string? responsible
+        +string? area
+        +string? notes
+        +string? createdAt
+        +string? updatedAt
+    }
+    class ResourceHealth {
+        +string resourceId
+        +ResourceStatus status
+        +number? httpStatus
+        +number? responseTime
+        +string lastCheckedAt
+    }
+    class ResourceType {
+        <<enumeration>>
+        api
+        web-service
+        site
+    }
+    class ResourceEnvironment {
+        <<enumeration>>
+        homologacao
+        producao
+        desenvolvimento
+        unknown
+    }
+    class ResourceStatus {
+        <<enumeration>>
+        online
+        slow
+        offline
+        unknown
+    }
+    Resource --> ResourceType
+    Resource --> ResourceEnvironment
+    ResourceHealth --> ResourceStatus
+    Resource "1" --> "0..1" ResourceHealth : id = resourceId
+```
+
+Os campos `docUrl`, `responsible`, `area`, `notes`, `createdAt`, `updatedAt` são metadados do cadastro manual via API/Portal — não existem nos registros importados em lote pela `ingestion/`, por isso são todos opcionais.
+
+## Endpoints
+
+Todas as respostas são JSON. Não há autenticação/autorização implementada (ver [Roadmap](#roadmap--melhorias-futuras)).
+
+### Catálogo (`resource.routes.ts`)
+
+| Método | Rota | Descrição | Status de sucesso |
+|---|---|---|---|
+| `GET` | `/resources` | Lista o catálogo. Aceita `?type=`, `?environment=`, `?search=` | 200 |
+| `GET` | `/resources/:id` | Um recurso específico | 200 / 404 |
+| `GET` | `/summary` | Contagem por tipo (`total`, `apis`, `webServices`, `sites`) | 200 |
+| `POST` | `/resources` | Cria um recurso (`createResourceSchema`) | 201 / 400 / 409 |
+| `PUT` | `/resources/:id` | Atualiza parcialmente (`updateResourceSchema`) | 200 / 400 / 404 / 409 |
+| `DELETE` | `/resources/:id` | Remove um recurso | 204 / 404 |
+
+### Saúde (`resourceHealth.routes.ts` / `health.routes.ts`)
+
+| Método | Rota | Descrição |
+|---|---|---|
+| `GET` | `/health` | Liveness do processo — `{ status: 'UP' }` |
+| `GET` | `/health/resources` | Último status conhecido de todos os recursos |
+| `GET` | `/health/resources/:id` | Status de um recurso (`unknown` se ainda não varrido) |
+
+### Painel Operacional (`dashboard.routes.ts`)
+
+| Método | Rota | Descrição |
+|---|---|---|
+| `GET` | `/dashboard` | `{ summary, incidents }` combinados — usado pelo Painel |
+| `GET` | `/dashboard/summary` | Só o resumo consolidado |
+| `GET` | `/dashboard/incidents` | Só a lista de recursos que exigem atenção |
+
+### Raiz
+
+| Método | Rota | Descrição |
+|---|---|---|
+| `GET` | `/` | Metadados da API (`name`, `status`, `version`, `timestamp`) |
+
+## Fluxo da aplicação
+
+Requisição típica de escrita (`POST /resources`), mostrando as camadas envolvidas:
 
 ```mermaid
 sequenceDiagram
-    participant Cliente
-    participant Route
-    participant Controller
-    participant Service
-    participant Repository
-    participant Data as resources.json
+    participant Client as Frontend
+    participant Route as resource.routes.ts
+    participant Mid as validateBody
+    participant Ctrl as ResourceController
+    participant Svc as ResourceService
+    participant Repo as ResourceRepository
+    participant FS as resources.json
 
-    Cliente->>Route: GET /resources?type=api
-    Route->>Controller: controller.list(req, res, next)
-    Controller->>Service: service.listResources({ type: 'api' })
-    Service->>Repository: repository.findAll()
-    Repository->>Data: lê uma vez, mantém em cache
-    Data-->>Repository: Resource[]
-    Repository-->>Service: Resource[]
-    Service-->>Controller: filtrado + ordenado (pt-BR)
-    Controller-->>Cliente: 200 OK (JSON)
+    Client->>Route: POST /resources { name, type, url, ... }
+    Route->>Mid: valida contra createResourceSchema (Zod)
+    alt corpo inválido
+        Mid-->>Client: 400 VALIDATION_ERROR
+    else corpo válido
+        Mid->>Ctrl: req.body já normalizado
+        Ctrl->>Svc: createResource(input)
+        Svc->>Svc: checa duplicidade de nome/URL
+        alt duplicado
+            Svc-->>Client: 409 RESOURCE_DUPLICATE_NAME / _URL
+        else ok
+            Svc->>Svc: gera id, technicalName, keywords, searchIndex
+            Svc->>Repo: create(resource)
+            Repo->>FS: escreve .tmp + rename (atômico)
+            Repo-->>Svc: resource persistido
+            Svc-->>Ctrl: resource
+            Ctrl-->>Client: 201 Created
+        end
+    end
 ```
 
-Erros seguem o mesmo caminho de volta: `Service` lança `ApiError`, o `Controller` captura e repassa via `next(error)`, e o [middleware de erro](#-tratamento-de-erros) central decide a resposta HTTP.
+## Fluxo dos Dados
 
----
+Todo cadastro, edição, exclusão ou alteração de status feito pelo Portal de Serviços segue sempre o mesmo caminho, de ponta a ponta, sem atalhos e sem depender de nenhum processo externo:
 
-## 🔗 Endpoints
-
-| Método | Rota | Descrição |
-| --- | --- | --- |
-| `GET` | `/health` | Liveness do próprio servidor |
-| `GET` | `/resources` | Lista o catálogo completo (aceita `?type=`, `?environment=`, `?search=`) |
-| `GET` | `/resources/:id` | Um recurso específico |
-| `GET` | `/summary` | Contagens agregadas por tipo |
-| `GET` | `/health/resources` | Status de saúde de **todos** os recursos |
-| `GET` | `/health/resources/:id` | Status de saúde de **um** recurso |
-
-> [!NOTE]
-> `/health` (liveness do servidor) e `/health/resources` (saúde dos recursos monitorados) são conceitos diferentes, de propósito: o primeiro existe desde o início do backend; o segundo foi adicionado depois, para o health check dos recursos — e ficou sob `/health/resources` exatamente para não colidir com o liveness já em uso.
-
-### `GET /health`
-
-```json
-{ "status": "UP" }
+```
+Portal de Serviços
+        │
+        ▼
+REST API
+        │
+        ▼
+ResourceService
+        │
+        ▼
+ResourceRepository
+        │
+        ▼
+api/src/data/resources.json
 ```
 
-### `GET /resources` <sub>(também aceita `?type=api|web-service|site`, `?environment=homologacao|producao|unknown`, `?search=texto`)</sub>
+1. O usuário realiza uma ação no Portal (ex.: salvar um novo recurso no formulário de Cadastro).
+2. O Frontend envia a requisição HTTP correspondente (`POST`/`PUT`/`DELETE /resources`) para a REST API.
+3. A rota valida o corpo da requisição e delega para o `ResourceController`, que por sua vez chama o `ResourceService`.
+4. O `ResourceService` aplica as regras de negócio (checagem de duplicidade, geração de `id`/`technicalName`/`keywords`/`searchIndex`, timestamps) e chama o `ResourceRepository`.
+5. O `ResourceRepository` atualiza o array em cache (memória) e grava o resultado em `api/src/data/resources.json` de forma atômica (`.tmp` + `rename`).
+6. A partir desse momento, qualquer leitura (catálogo do Portal, Painel Operacional, health check) reflete o dado já persistido, servido diretamente do cache em memória do `ResourceRepository` — sem reler o disco a cada requisição.
 
-```json
-[
-  {
-    "id": "api-fiapiautclientepf",
-    "type": "api",
-    "displayName": "WebApi - Cadastro/Consulta de Cliente PF",
-    "name": "WebApi - Cadastro/Consulta de Cliente PF",
-    "technicalName": "FIApiAutClientePF",
-    "code": "APIDADCLIPF",
-    "url": "https://buncghml.funcao.digital/API/FIApiAutClientePF",
-    "environment": "homologacao",
-    "deprecated": false,
-    "active": true,
-    "keywords": ["cadastro/consulta", "cliente", "aut", "apidadclipf", "api", "homologacao"],
-    "tags": [],
-    "searchIndex": ["webapi - cadastro/consulta de cliente pf", "fiapiautclientepf", "..."]
-  }
-]
-```
+Esse é o **único** fluxo de escrita existente na aplicação. A `ingestion/` não faz parte dele: ela roda separadamente, sob demanda, e só afeta `api/src/data/resources.json` se alguém copiar manualmente o arquivo que ela gera (ver [README da `ingestion/`](../ingestion/README.md)).
 
-### `GET /resources/:id`
+## Persistência
 
-Mesmo formato de um item acima. Responde **404** (`{ "error": "Recurso não encontrado: <id>" }`) se o id não existir.
+`ResourceRepository` (`src/repositories/resource.repository.ts`) é a **única** camada que conhece o arquivo `src/data/resources.json`.
 
-### `GET /summary`
-
-```json
-{ "total": 156, "apis": 127, "webServices": 6, "sites": 23 }
-```
-
-### `GET /health/resources`
-
-```json
-[
-  {
-    "resourceId": "api-fiapiautclientepf",
-    "status": "online",
-    "httpStatus": 200,
-    "responseTime": 143,
-    "lastCheckedAt": "2026-07-13T17:32:39.961Z"
-  }
-]
-```
-
-### `GET /health/resources/:id`
-
-Mesmo formato de um item acima. Responde **404** se o `id` do recurso não existir; se o recurso existe mas ainda não passou por nenhuma varredura, devolve `{ "status": "unknown", "lastCheckedAt": "<agora>" }` em vez de quebrar.
-
----
-
-## ❤️ Health Check
-
-O backend verifica, periodicamente e de verdade (requisição HTTP real, não simulada), a URL de cada recurso do catálogo.
+- Leitura *lazy*: o arquivo é lido uma vez (`readFileSync`) na primeira chamada e mantido em cache em memória — não há I/O de disco nas leituras seguintes.
+- Escrita atômica: toda mutação (`create`/`update`/`remove`) grava em `resources.json.tmp` e depois faz `renameSync` para o arquivo final, evitando corromper o catálogo se o processo for interrompido no meio da escrita.
+- Não há banco de dados. Esta é uma decisão deliberada da sprint atual — ver [Roadmap](#roadmap--melhorias-futuras) para a migração planejada.
 
 ```mermaid
 flowchart LR
-    Boot["🚀 server.ts sobe"] --> Sweep0["Sweep imediato"]
-    Sweep0 --> Loop["⏱️ setInterval (60s)"]
-    Loop --> Sweep["HealthCheckService.runSweep()"]
-    Sweep --> Fetch["fetch(url) por recurso<br/>(até 20 em paralelo)"]
-    Fetch --> Classify["Classifica o status"]
-    Classify --> Store["HealthRepository<br/>(Map em memória)"]
-    Store -.->|GET /health/resources| Cliente
+    A["create / update / remove"] --> B["Atualiza array em memória"]
+    B --> C["JSON.stringify → resources.json.tmp"]
+    C --> D["renameSync → resources.json"]
+    D --> E["Próxima leitura usa o cache já atualizado"]
 ```
 
-### Como classifica
+## Fluxo de Persistência
 
-| Situação | Status |
-| --- | --- |
-| Recurso sem URL cadastrada | `unknown` — não há o que checar |
-| Timeout, erro de rede ou DNS inválido | `offline` |
-| HTTP `>= 500` | `offline` |
-| HTTP `2xx`/`3xx`, dentro do prazo | `online` |
-| HTTP `2xx`/`3xx`, acima do prazo | `slow` |
-| Qualquer outro caso (`4xx`, por exemplo) | `unknown` — a resposta não indica claramente que o recurso está fora do ar |
+As quatro operações de escrita da aplicação passam exatamente pelo mesmo caminho (Route → `validateBody` → Controller → Service → Repository → disco) — o que muda entre elas é só o método HTTP e a validação aplicada.
 
-```ts
-// healthCheck.service.ts
-private classify(httpStatus: number, responseTime: number): ResourceStatus {
-  if (httpStatus >= 500) return 'offline'
-  if (httpStatus >= 200 && httpStatus < 400) {
-    return responseTime > this.options.slowThresholdMs ? 'slow' : 'online'
-  }
-  return 'unknown'
+### Criação
+
+`POST /resources` → `validateBody(createResourceSchema)` → `ResourceController.create` → `ResourceService.createResource`:
+
+1. Valida duplicidade de `name`/`url` (case-insensitive, trim) contra `repository.findAll()` — se houver, `409 RESOURCE_DUPLICATE_NAME`/`_URL`.
+2. Gera `id`, `technicalName`, `keywords`, `searchIndex` e `createdAt`/`updatedAt`.
+3. Chama `ResourceRepository.create()`, que adiciona ao array em cache e persiste (`.tmp` + `rename`).
+4. Resposta `201 Created` com o recurso já persistido.
+
+### Edição
+
+`PUT /resources/:id` → `validateBody(updateResourceSchema)` → `ResourceController.update` → `ResourceService.updateResource`:
+
+1. Busca o recurso existente — `404 RESOURCE_NOT_FOUND` se não existir.
+2. Revalida duplicidade de `name`/`url`, excluindo o próprio `id` da checagem.
+3. Recalcula `searchIndex`/`keywords` se `name`, `description` ou `keywords` mudaram; atualiza `updatedAt`.
+4. Chama `ResourceRepository.update()`, que substitui o registro no array em cache e persiste.
+
+### Exclusão
+
+`DELETE /resources/:id` → `ResourceController.remove` → `ResourceService.deleteResource`:
+
+1. Busca o recurso — `404 RESOURCE_NOT_FOUND` se não existir.
+2. Chama `ResourceRepository.remove()`, que retira o registro do array em cache e persiste.
+3. Resposta `204 No Content`.
+
+### Alteração de status
+
+**Não é uma operação separada.** Ativar/desativar um recurso é uma edição comum — `PUT /resources/:id` com o campo `active` no corpo — e segue exatamente o fluxo de **Edição** acima. `DashboardService.resolveStatus()` usa esse campo (`active: false` → status `maintenance`, independentemente do resultado do Health Check) para decidir o status consolidado exibido no Painel Operacional.
+
+Em nenhum dos quatro casos existe um caminho alternativo de escrita: `HealthCheckService` e `DashboardService` só leem o estado já persistido, nunca o alteram.
+
+## Monitoramento de saúde e Painel Operacional
+
+`HealthCheckService` roda de forma totalmente autônoma no backend — o frontend nunca dispara nem depende de uma checagem própria. Um sweep varre todas as URLs cadastradas (disparo imediato no boot + `setInterval` a cada `HEALTH_CHECK_INTERVAL_MS`), classifica cada recurso (`online`/`slow`/`offline`/`unknown`) e grava o resultado em memória (`HealthRepository`). `DashboardService` agrega esse resultado com o campo `active` de cada recurso numa visão consolidada de 4 status (`online`/`offline`/`maintenance`/`unknown`), servida pelos endpoints `/dashboard*`.
+
+Documentação completa — agendamento, concorrência, tabela de classificação de status (os dois níveis: HTTP bruto e consolidado do Painel), fluxo Backend → Frontend, casos de uso, cenários de teste e limitações conhecidas — está em **[`docs/dashboard-operacional.md`](docs/dashboard-operacional.md)**.
+
+## Tratamento de erros
+
+Todo erro de negócio é lançado como `ApiError` (`src/utils/ApiError.ts`) e convertido pelo `errorHandler` (último middleware da cadeia) num envelope único:
+
+```json
+{
+  "status": 409,
+  "code": "RESOURCE_DUPLICATE_URL",
+  "message": "Já existe um recurso cadastrado utilizando esta URL."
 }
 ```
 
-### Como atualiza
+| Factory | Status | `code` padrão |
+|---|---|---|
+| `ApiError.badRequest(msg, code?)` | 400 | `VALIDATION_ERROR` |
+| `ApiError.notFound(msg, code?)` | 404 | `RESOURCE_NOT_FOUND` |
+| `ApiError.conflict(msg, code?)` | 409 | `RESOURCE_CONFLICT` |
+| `ApiError.unprocessable(msg, code?)` | 422 | `BUSINESS_RULE_ERROR` |
 
-- Um **sweep imediato** roda assim que o servidor sobe (para `/health/resources` nunca ficar vazio).
-- Depois, um `setInterval` dispara uma nova varredura a cada `HEALTH_CHECK_INTERVAL_MS` (default **60s**).
-- Cada varredura processa os recursos com **concorrência limitada** (`HEALTH_CHECK_CONCURRENCY`, default **20** por vez) via um pool de promises artesanal (`utils/promisePool.ts`) — sem biblioteca externa, para não abrir uma conexão simultânea por recurso do catálogo inteiro.
-- O resultado fica em um `Map<resourceId, ResourceHealth>` em memória (`HealthRepository`) — **perdido a cada restart**, repovoado em segundos pelo sweep inicial.
+`code`s efetivamente emitidos hoje: `VALIDATION_ERROR`, `RESOURCE_NOT_FOUND`, `RESOURCE_DUPLICATE_NAME`, `RESOURCE_DUPLICATE_URL`, `ROUTE_NOT_FOUND` (rota inexistente), `INTERNAL_ERROR` (qualquer erro não tratado, logado no console e nunca exposto ao cliente). `RESOURCE_CONFLICT` e `BUSINESS_RULE_ERROR` existem como defaults das factories mas não são emitidos por nenhuma regra atual — **Planejado** para uso em futuras regras de negócio mais específicas.
 
-### Como o frontend consome
+## Validação
 
-A `web/` usa `refetchInterval: 60_000` no React Query (mesmo intervalo do backend) — pedir mais rápido que isso só devolveria o mesmo dado. Detalhes em [web/README.md](../web/README.md#-health-check-no-frontend).
+`validateBody` (middleware) roda o corpo da requisição contra um schema Zod (`validators/resource.schema.ts`) antes do controller. `createResourceSchema` exige `name`, `type`, `url` (validada como URL) e `environment`; `updateResourceSchema` é o mesmo schema com todos os campos opcionais (`.partial()`), permitindo PATCH parcial via `PUT`.
 
----
+## Variáveis de ambiente
 
-## 💾 Cache em memória
+| Variável | Obrigatória | Default (schema) | Descrição |
+|---|---|---|---|
+| `PORT` | Não | `3333` | Porta HTTP do servidor |
+| `HEALTH_CHECK_INTERVAL_MS` | Não | `30000` | Intervalo entre sweeps de health check |
+| `HEALTH_CHECK_TIMEOUT_MS` | Não | `5000` | Timeout por requisição de verificação |
+| `HEALTH_CHECK_SLOW_THRESHOLD_MS` | Não | `1000` | Acima disso, um recurso saudável é classificado `slow` |
+| `HEALTH_CHECK_CONCURRENCY` | Não | `20` | Nº máximo de checagens HTTP simultâneas |
 
-Não há banco de dados em lugar nenhum — dois caches simples, em memória, no processo:
+O `.env.example` do repositório define `HEALTH_CHECK_INTERVAL_MS=60000` — ou seja, o valor efetivo em desenvolvimento local (60s) é mais conservador que o default embutido no código (30s), que só vale se a variável estiver totalmente ausente. Validação via Zod em `config/env.ts`; se qualquer variável definida for inválida, o processo falha no boot com uma mensagem detalhada (fail-fast, não silencioso).
 
-| Cache | Onde | O que guarda | Quando é populado |
-| --- | --- | --- | --- |
-| `ResourceRepository` | `repositories/resource.repository.ts` | O array de `Resource` lido de `src/data/resources.json` | Uma vez, no primeiro acesso (`fs.readFileSync` lazy) |
-| `HealthRepository` | `repositories/health.repository.ts` | `Map<resourceId, ResourceHealth>` | A cada sweep do Health Check |
+## Como executar localmente
 
----
-
-## ⚠️ Tratamento de erros
-
-```ts
-// utils/ApiError.ts
-export class ApiError extends Error {
-  readonly statusCode: number
-  static notFound(message: string): ApiError { return new ApiError(404, message) }
-}
-```
-
-- **`notFoundHandler`** — captura qualquer rota não registrada, responde `404` com `{ "error": "Rota não encontrada: <método> <path>" }`.
-- **`errorHandler`** — middleware de erro do Express (assinatura de 4 parâmetros). Se o erro for um `ApiError`, responde com o `statusCode` e mensagem dele; qualquer outro erro vira `500` genérico (logado no console, nunca vazado ao cliente).
-
----
-
-## 📁 Estrutura de pastas
-
-```text
-api/
-├── scripts/
-│   └── copy-data.mjs            Copia src/data/ → dist/data/ no build
-└── src/
-    ├── app.ts                   Fábrica do Express: cors → json → routes → 404 → errorHandler
-    ├── server.ts                 Ponto de entrada: sobe o servidor e agenda o Health Check
-    ├── config/
-    │   └── env.ts                 Validação (Zod) das variáveis de ambiente
-    ├── routes/
-    │   ├── index.ts                Agrega health / resourceHealth / resource routes
-    │   ├── health.routes.ts         GET /health
-    │   ├── resourceHealth.routes.ts  GET /health/resources[/:id] — também faz o wiring do Health Check
-    │   └── resource.routes.ts       GET /resources, /resources/:id, /summary
-    ├── controllers/
-    │   ├── health.controller.ts
-    │   ├── resource.controller.ts
-    │   └── resourceHealth.controller.ts
-    ├── services/
-    │   ├── resource.service.ts      Filtro, busca, ordenação, agregação
-    │   └── healthCheck.service.ts   Sweep, classificação, concorrência
-    ├── repositories/
-    │   ├── resource.repository.ts   Leitura + cache do resources.json
-    │   └── health.repository.ts     Map em memória do último health check
-    ├── models/
-    │   └── resource.model.ts        Resource, ResourceHealth (espelha ingestion/src/types.ts)
-    ├── types/
-    │   └── resourceSummary.type.ts
-    ├── middleware/
-    │   ├── errorHandler.ts
-    │   └── notFoundHandler.ts
-    ├── utils/
-    │   ├── ApiError.ts
-    │   ├── normalizeSearchTerm.ts   (mesma lógica usada no filterResources.ts do frontend)
-    │   └── promisePool.ts           Concorrência limitada, sem biblioteca externa
-    └── data/
-        └── resources.json          Copiado manualmente de ingestion/output/
-```
-
----
-
-## ⚙️ Variáveis de ambiente
-
-Todas têm valor default — nada é obrigatório para rodar localmente (`.env.example` já reflete os defaults).
-
-| Variável | Default | Descrição |
-| --- | --- | --- |
-| `PORT` | `3333` | Porta HTTP do servidor |
-| `HEALTH_CHECK_INTERVAL_MS` | `60000` | Intervalo entre varreduras do Health Check |
-| `HEALTH_CHECK_TIMEOUT_MS` | `5000` | Timeout de cada checagem HTTP individual |
-| `HEALTH_CHECK_SLOW_THRESHOLD_MS` | `1000` | Acima disso, um recurso saudável vira `slow` |
-| `HEALTH_CHECK_CONCURRENCY` | `20` | Quantas checagens rodam em paralelo por varredura |
-
----
-
-## ▶️ Como executar
+Pré-requisitos: Node.js compatível com ESM/TypeScript 6, npm.
 
 ```bash
 cd api
+cp .env.example .env      # ajuste os valores se necessário
 npm install
-cp .env.example .env
-npm run dev
+npm run dev                # tsx watch — recarrega a cada mudança
 ```
 
-A API sobe em `http://localhost:3333` (ou na porta definida em `PORT`).
+O servidor sobe em `http://localhost:3333` (ou o valor de `PORT`), executa o sweep inicial de health check imediatamente e depois periodicamente.
 
-> [!IMPORTANT]
-> Requer `src/data/resources.json` já existir — copie-o de `ingestion/output/resources.json` antes do primeiro boot. Ver [ingestion/README.md](../ingestion/README.md#-atualizando-o-catálogo).
-
-## 📜 Scripts disponíveis
-
-| Comando | Descrição |
-| --- | --- |
-| `npm run dev` | Sobe o servidor em modo desenvolvimento (`tsx watch`, recarrega ao salvar) |
-| `npm run build` | Compila para `dist/` e copia `src/data/resources.json` junto |
-| `npm run start` | Roda a versão compilada (`dist/server.js`) — requer `build` antes |
-| `npm run typecheck` | Verifica os tipos com `tsc --noEmit` |
-| `npm run lint` | Roda o ESLint |
-| `npm run lint:fix` | Roda o ESLint corrigindo o que for automaticamente corrigível |
-| `npm run format` | Formata o projeto com Prettier |
-
----
-
-## ➕ Como adicionar um endpoint novo
-
-1. **Repository** (se precisar de um dado novo) — método puro de acesso a dado, sem lógica de negócio.
-2. **Service** — a regra de negócio propriamente dita, recebendo/devolvendo tipos de domínio.
-3. **Controller** — um método que só lê `req`, chama o `service` e responde `res.json(...)`, com `try/catch` repassando pro `next(error)`.
-4. **Route** — registre o path chamando o método do controller; se for uma camada nova (não um endpoint a mais de uma já existente), crie o *wiring* (`new Repository()` → `new Service()` → `new Controller()`) no topo do arquivo de rota, no mesmo padrão de `resource.routes.ts`.
-5. Registre o router novo em `routes/index.ts`.
-
-```ts
-// exemplo minimal, seguindo o padrão de resource.routes.ts
-const repository = new MinhaRepository()
-const service = new MeuService(repository)
-const controller = new MeuController(service)
-
-export const minhasRoutes = Router()
-minhasRoutes.get('/meu-endpoint', controller.list)
-```
-
-## ➕ Como adicionar um Service novo
-
-Um Service é uma classe simples, injetada via construtor, **sem nenhum import de `express`**:
-
-```ts
-export class MeuService {
-  constructor(private readonly repository: MinhaRepository) {}
-
-  minhaRegra(): AlgumTipoDeDominio {
-    // só lógica de negócio — filtros, cálculos, validações
-  }
-}
-```
-
-Isso é o que garante que qualquer regra de negócio nova continue testável/reaproveitável fora do contexto HTTP.
-
----
-
-## 🧪 Como testar manualmente
-
-Não há suíte automatizada (`npm test`) configurada neste projeto. A validação de cada sprint foi feita com chamadas reais:
+Outros scripts:
 
 ```bash
-curl -s http://localhost:3333/health
-curl -s http://localhost:3333/summary
-curl -s http://localhost:3333/resources | head -c 300
-curl -s "http://localhost:3333/resources?type=api&search=cliente"
-curl -s http://localhost:3333/health/resources | head -c 300
-curl -s -w "\n%{http_code}\n" http://localhost:3333/resources/id-que-nao-existe
+npm run typecheck   # tsc --noEmit
+npm run lint         # eslint .
+npm run lint:fix
+npm run format       # prettier --write .
 ```
 
----
+Não há suíte de testes automatizados nesta sprint.
 
-## ✅ Boas práticas
+## Build e deploy
 
-- ✔️ Controllers nunca contêm regra de negócio — se você está filtrando/ordenando dentro de um controller, isso pertence ao Service.
-- ✔️ Services nunca importam `express` — se um método precisa de `req`/`res`, a assinatura está na camada errada.
-- ✔️ Rode `npm run typecheck && npm run lint && npm run build` antes de qualquer PR.
-- ❌ Não adicione banco de dados, autenticação, Docker ou Swagger sem alinhar antes — são exclusões deliberadas de escopo até aqui, não lacunas a preencher por conta própria.
-- ❌ Não edite `src/data/resources.json` manualmente — ele é sempre uma cópia do que a [`ingestion/`] gera.
+```bash
+npm run build   # tsc (compila src/ → dist/) + copy-data.mjs (copia resources.json)
+npm run start    # node dist/server.js
+```
 
----
+`scripts/copy-data.mjs` é necessário porque `tsc` só compila arquivos `.ts` — sem essa etapa, `dist/data/resources.json` não existiria e o `ResourceRepository` falharia ao subir em produção.
 
-<div align="center">
+Não há pipeline de CI/CD, Dockerfile ou script de deploy versionado neste repositório. O artefato de build (`dist/`) é um processo Node.js comum, executável em qualquer ambiente com Node instalado (`node dist/server.js`), atrás de um `PORT` configurável — compatível com plataformas como Render, Railway ou um container próprio, mas a configuração específica da hospedagem está fora deste repositório.
 
-</div>
+## Padrões arquiteturais e boas práticas
+
+- **Separação em camadas** (Route → Controller → Service → Repository) com responsabilidade única por camada: controllers só traduzem HTTP↔domínio, services concentram regra de negócio e nunca conhecem Express, repositories são o único ponto de acesso a dados.
+- **Repository Pattern** isolando toda a lógica de leitura/escrita do `resources.json`, preparando o terreno para trocar a persistência por um banco de dados sem tocar em service/controller/route.
+- **Injeção de dependência manual** via construtor (`new ResourceService(resourceRepository)`), sem container de DI — simples e suficiente para o tamanho atual do projeto.
+- **Fail-fast de configuração**: env vars inválidas derrubam o processo no boot, nunca falham silenciosamente em runtime.
+- **Envelope de erro único e estável** (`status`/`code`/`message`), permitindo que o frontend trate qualquer erro de forma genérica.
+- **Escrita atômica em disco** (tmp + rename) para nunca deixar o catálogo num estado corrompido.
+- **Tipagem forte de ponta a ponta** (TypeScript `strict`, schemas Zod inferindo tipos via `z.infer`).
+
+## Fluxo de desenvolvimento
+
+1. Alterações de schema de dados começam em `models/resource.model.ts` — e precisam ser replicadas manualmente em `ingestion/src/types.ts`, `web/src/features/catalog/types.ts` e `dashboard/src/types/index.ts`.
+2. Nova regra de negócio → `services/`; nova validação de entrada → `validators/` + `middleware/validateBody.ts`.
+3. `npm run typecheck && npm run lint` antes de qualquer commit.
+4. Não há testes automatizados — validação manual via `npm run dev` + requisições HTTP (curl/Postman) é o processo atual.
+
+## Roadmap / melhorias futuras
+
+> Itens listados aqui **não estão implementados** — documentados para transparência sobre a direção do projeto, não como funcionalidade existente.
+
+- **Persistência em banco de dados** — a arquitetura em camadas (Repository Pattern) já isola o suficiente para essa migração não exigir mudanças em service/controller.
+- **Autenticação e autorização** — hoje todos os endpoints são públicos.
+- **Testes automatizados** (unitários para services/utils, integração para rotas).
+- **Uso efetivo dos `code`s `RESOURCE_CONFLICT` e `BUSINESS_RULE_ERROR`** em novas regras de negócio.
+- **Automatizar a cópia do catálogo gerado por `ingestion/`** para `src/data/resources.json` (hoje é um passo manual, ver README de `ingestion/`).
+- **Pipeline de CI/CD** (build, typecheck, lint, deploy automatizados).
+
+Melhorias específicas do monitoramento (Health Check / Painel Operacional) estão priorizadas em [`docs/dashboard-operacional.md`](docs/dashboard-operacional.md#melhorias-futuras), não repetidas aqui.
+
+## Licença
+
+Não há arquivo de licença (`LICENSE`) neste repositório. Projeto proprietário/interno — uso restrito à organização, salvo indicação contrária de quem administra o repositório.

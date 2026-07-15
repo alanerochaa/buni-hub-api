@@ -405,37 +405,44 @@
     "id": "api-fiapiautincluirproposta",
     "type": "api",
     "displayName": "Web Api de Inclusão de Propostas CP",
-    "name": "Web Api de Inclusão de Propostas CP",
-    "technicalName": "FIApiAutIncluirProposta",
+    "name": "Web Api para Inclusão de Proposta Consig",
+    "technicalName": "web-api-para-inclusao-de-proposta-consig",
     "code": "APICPINCPROPOSTA",
     "url": "https://buncghml.funcao.digital/API/FIApiAutIncluirProposta",
     "environment": "homologacao",
     "deprecated": false,
     "active": true,
     "keywords": [
+      "web",
+      "api",
+      "para",
       "inclusao",
+      "proposta",
+      "consig",
       "propostas",
       "aut",
       "incluir",
-      "proposta",
       "apicpincproposta",
-      "api",
       "homologacao"
     ],
     "tags": [],
     "searchIndex": [
-      "web api de inclusao de propostas cp",
-      "fiapiautincluirproposta",
+      "web api para inclusao de proposta consig",
+      "web-api-para-inclusao-de-proposta-consig",
       "apicpincproposta",
       "https://buncghml.funcao.digital/api/fiapiautincluirproposta",
+      "web",
+      "api",
+      "para",
       "inclusao",
+      "proposta",
+      "consig",
       "propostas",
       "aut",
       "incluir",
-      "proposta",
-      "api",
       "homologacao"
-    ]
+    ],
+    "updatedAt": "2026-07-15T12:41:06.222Z"
   },
   {
     "id": "api-fiapiautsimularproposta",
@@ -657,39 +664,6 @@
       "emi",
       "plan",
       "prop",
-      "api",
-      "homologacao"
-    ]
-  },
-  {
-    "id": "api-webapiinclprop",
-    "type": "api",
-    "displayName": "Web Api para Inclusão de Proposta Consig",
-    "name": "Web Api para Inclusão de Proposta Consig",
-    "technicalName": "WEBAPIINCLPROP",
-    "code": "WEBAPIINCLPROP",
-    "url": "https://buncghml.funcao.digital/API/WEBAPIINCLPROP",
-    "environment": "homologacao",
-    "deprecated": false,
-    "active": true,
-    "keywords": [
-      "para",
-      "inclusao",
-      "proposta",
-      "consig",
-      "webapiinclprop",
-      "api",
-      "homologacao"
-    ],
-    "tags": [],
-    "searchIndex": [
-      "web api para inclusao de proposta consig",
-      "webapiinclprop",
-      "https://buncghml.funcao.digital/api/webapiinclprop",
-      "para",
-      "inclusao",
-      "proposta",
-      "consig",
       "api",
       "homologacao"
     ]
@@ -1781,12 +1755,13 @@
     "type": "api",
     "displayName": "Web API: Gerenciamento de PIN",
     "name": "FIApiAcessoGerenciaPIN",
-    "technicalName": "FIApiAcessoGerenciaPIN",
+    "technicalName": "fiapiacessogerenciapin",
     "url": "https://buncghml.funcao.digital/API/FIApiAcessoGerenciaPIN",
     "environment": "homologacao",
     "deprecated": false,
     "active": true,
     "keywords": [
+      "fiapiacessogerenciapin",
       "api:",
       "gerenciamento",
       "pin",
@@ -1797,7 +1772,6 @@
     ],
     "tags": [],
     "searchIndex": [
-      "web api: gerenciamento de pin",
       "fiapiacessogerenciapin",
       "https://buncghml.funcao.digital/api/fiapiacessogerenciapin",
       "api:",
@@ -1807,7 +1781,8 @@
       "gerencia",
       "api",
       "homologacao"
-    ]
+    ],
+    "updatedAt": "2026-07-15T13:05:48.910Z"
   },
   {
     "id": "api-fiapiatualizarinformacoesrh",
@@ -4601,12 +4576,13 @@
     "type": "web-service",
     "displayName": "WSAutorizador",
     "name": "WsAcordo/WSAutorizador.asmx",
-    "technicalName": "WsAcordo/WSAutorizador.asmx",
+    "technicalName": "wsacordo-wsautorizador-asmx",
     "url": "https://buncghml.funcao.digital/WsAcordo/WSAutorizador.asmx",
     "environment": "homologacao",
     "deprecated": false,
     "active": true,
     "keywords": [
+      "wsacordo/wsautorizador.asmx",
       "autorizador",
       "acordo/ws",
       "autorizador.asmx",
@@ -4616,8 +4592,8 @@
     ],
     "tags": [],
     "searchIndex": [
-      "wsautorizador",
       "wsacordo/wsautorizador.asmx",
+      "wsacordo-wsautorizador-asmx",
       "https://buncghml.funcao.digital/wsacordo/wsautorizador.asmx",
       "autorizador",
       "acordo/ws",
@@ -4625,7 +4601,8 @@
       "acordo",
       "web service",
       "homologacao"
-    ]
+    ],
+    "updatedAt": "2026-07-15T02:52:00.177Z"
   },
   {
     "id": "web-service-wsautorizador-wsautorizador-asmx",

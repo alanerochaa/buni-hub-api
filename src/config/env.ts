@@ -2,7 +2,7 @@ import { z } from 'zod'
 
 const envSchema = z.object({
   PORT: z.coerce.number().int().positive().default(3333),
-  HEALTH_CHECK_INTERVAL_MS: z.coerce.number().int().positive().default(60_000),
+  HEALTH_CHECK_INTERVAL_MS: z.coerce.number().int().positive().default(30_000),
   HEALTH_CHECK_TIMEOUT_MS: z.coerce.number().int().positive().default(5_000),
   HEALTH_CHECK_SLOW_THRESHOLD_MS: z.coerce.number().int().positive().default(1_000),
   HEALTH_CHECK_CONCURRENCY: z.coerce.number().int().positive().default(20),
