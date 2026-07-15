@@ -1,12 +1,13 @@
 import type { ResourceRepository } from '../repositories/resource.repository.js'
 import type { HealthCheckService } from './healthCheck.service.js'
-import type { Resource, ResourceHealth, ResourceType } from '../models/resource.model.js'
+import type { ResourceHealth, ResourceType } from '../models/resource.model.js'
 import type {
   DashboardCategoryCounts,
   DashboardIncident,
   DashboardResourceStatus,
   DashboardSummary,
 } from '../types/dashboard.type.js'
+import { calculateAvailabilityPercentage, resolveResourceStatus } from '../utils/dashboardStatus.js'
 
 // Quanto menor, mais urgente — determina a ordem da tabela de
 // incidentes. 'online' nunca aparece nos incidentes (filtrado antes).
@@ -45,14 +46,14 @@ export class DashboardService {
     }
 
     for (const resource of resources) {
-      const status = this.resolveStatus(resource, healthByResourceId.get(resource.id))
+      const status = resolveResourceStatus(resource, healthByResourceId.get(resource.id))
       this.accumulate(totals, status)
       this.accumulate(byType[resource.type], status)
     }
 
     return {
       ...totals,
-      availabilityPercentage: this.calculateAvailability(totals),
+      availabilityPercentage: calculateAvailabilityPercentage(totals.online, totals.total),
       byType,
       lastSweepAt: this.healthCheckService.getLastSweepAt(),
     }
@@ -66,7 +67,7 @@ export class DashboardService {
 
     for (const resource of resources) {
       const health = healthByResourceId.get(resource.id)
-      const status = this.resolveStatus(resource, health)
+      const status = resolveResourceStatus(resource, health)
       if (status === 'online') continue
 
       incidents.push({
@@ -96,22 +97,8 @@ export class DashboardService {
     return new Map(this.healthCheckService.getAll().map((health) => [health.resourceId, health]))
   }
 
-  private resolveStatus(resource: Resource, health: ResourceHealth | undefined): DashboardResourceStatus {
-    if (!resource.active) return 'maintenance'
-
-    const status = health?.status ?? 'unknown'
-    if (status === 'online' || status === 'slow') return 'online'
-    if (status === 'offline') return 'offline'
-    return 'unknown'
-  }
-
   private accumulate(counts: DashboardCategoryCounts, status: DashboardResourceStatus): void {
     counts.total += 1
     counts[status] += 1
-  }
-
-  private calculateAvailability(counts: DashboardCategoryCounts): number {
-    if (counts.total === 0) return 100
-    return Math.round((counts.online / counts.total) * 10_000) / 100
   }
 }

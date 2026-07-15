@@ -20,6 +20,7 @@ API REST em Node.js/Express/TypeScript que centraliza o catálogo de APIs, Web S
 - [Persistência](#persistência)
 - [Fluxo de Persistência](#fluxo-de-persistência)
 - [Monitoramento de saúde e Painel Operacional](#monitoramento-de-saúde-e-painel-operacional)
+- [Histórico Operacional](#histórico-operacional)
 - [Tratamento de erros](#tratamento-de-erros)
 - [Validação](#validação)
 - [Variáveis de ambiente](#variáveis-de-ambiente)
@@ -129,18 +130,24 @@ api/
 │   ├── controllers/
 │   │   ├── dashboard.controller.ts
 │   │   ├── health.controller.ts
+│   │   ├── history.controller.ts   # Histórico Operacional (snapshots + eventos)
 │   │   ├── resource.controller.ts
 │   │   └── resourceHealth.controller.ts
 │   ├── services/
 │   │   ├── dashboard.service.ts
+│   │   ├── event.service.ts        # detecção de transição de status
 │   │   ├── healthCheck.service.ts
+│   │   ├── history.service.ts      # orquestra snapshot + eventos por sweep
 │   │   └── resource.service.ts
 │   ├── repositories/
+│   │   ├── event.repository.ts     # JsonEventRepository (implementa EventRepository)
 │   │   ├── health.repository.ts
+│   │   ├── history.repository.ts   # JsonHistoryRepository (implementa HistoryRepository)
 │   │   └── resource.repository.ts
 │   ├── routes/
 │   │   ├── dashboard.routes.ts
 │   │   ├── health.routes.ts
+│   │   ├── history.routes.ts       # GET /dashboard/history, GET /dashboard/events
 │   │   ├── index.ts                # agrega todas as rotas
 │   │   ├── resource.routes.ts
 │   │   └── resourceHealth.routes.ts
@@ -151,17 +158,22 @@ api/
 │   ├── validators/
 │   │   └── resource.schema.ts      # schemas Zod de criação/edição
 │   ├── models/
+│   │   ├── event.model.ts          # OperationalEvent + interface EventRepository
+│   │   ├── history.model.ts        # HistorySnapshot + interface HistoryRepository
 │   │   └── resource.model.ts       # Resource, ResourceHealth e tipos relacionados
 │   ├── types/
 │   │   ├── dashboard.type.ts
 │   │   └── resourceSummary.type.ts
 │   ├── utils/
 │   │   ├── ApiError.ts
+│   │   ├── dashboardStatus.ts      # resolveResourceStatus/calculateAvailabilityPercentage (compartilhado)
 │   │   ├── generateKeywordsAndIndex.ts
 │   │   ├── normalizeSearchTerm.ts
 │   │   ├── promisePool.ts          # runWithConcurrency (pool de workers)
 │   │   └── slugify.ts
 │   ├── data/
+│   │   ├── events.json             # gerado em runtime — Histórico Operacional (eventos)
+│   │   ├── history.json            # gerado em runtime — Histórico Operacional (snapshots)
 │   │   └── resources.json          # catálogo oficial — única fonte de dados da aplicação, gerenciada pelo ResourceRepository
 │   ├── app.ts                      # composição do Express (middlewares + rotas)
 │   └── server.ts                   # bootstrap: agenda o sweep e sobe o servidor
@@ -269,6 +281,13 @@ Todas as respostas são JSON. Não há autenticação/autorização implementada
 | `GET` | `/dashboard` | `{ summary, incidents }` combinados — usado pelo Painel |
 | `GET` | `/dashboard/summary` | Só o resumo consolidado |
 | `GET` | `/dashboard/incidents` | Só a lista de recursos que exigem atenção |
+
+### Histórico Operacional (`history.routes.ts`)
+
+| Método | Rota | Descrição |
+|---|---|---|
+| `GET` | `/dashboard/history` | Snapshots agregados do ambiente, um por sweep (até 2000 mais recentes) |
+| `GET` | `/dashboard/events` | Transições reais de status por recurso, mais recente primeiro |
 
 ### Raiz
 
@@ -388,7 +407,7 @@ As quatro operações de escrita da aplicação passam exatamente pelo mesmo cam
 
 ### Alteração de status
 
-**Não é uma operação separada.** Ativar/desativar um recurso é uma edição comum — `PUT /resources/:id` com o campo `active` no corpo — e segue exatamente o fluxo de **Edição** acima. `DashboardService.resolveStatus()` usa esse campo (`active: false` → status `maintenance`, independentemente do resultado do Health Check) para decidir o status consolidado exibido no Painel Operacional.
+**Não é uma operação separada.** Ativar/desativar um recurso é uma edição comum — `PUT /resources/:id` com o campo `active` no corpo — e segue exatamente o fluxo de **Edição** acima. `resolveResourceStatus()` (`utils/dashboardStatus.ts`) usa esse campo (`active: false` → status `maintenance`, independentemente do resultado do Health Check) para decidir o status consolidado exibido no Painel Operacional e no Histórico Operacional — a mesma regra, reaproveitada nos dois lugares.
 
 Em nenhum dos quatro casos existe um caminho alternativo de escrita: `HealthCheckService` e `DashboardService` só leem o estado já persistido, nunca o alteram.
 
@@ -397,6 +416,82 @@ Em nenhum dos quatro casos existe um caminho alternativo de escrita: `HealthChec
 `HealthCheckService` roda de forma totalmente autônoma no backend — o frontend nunca dispara nem depende de uma checagem própria. Um sweep varre todas as URLs cadastradas (disparo imediato no boot + `setInterval` a cada `HEALTH_CHECK_INTERVAL_MS`), classifica cada recurso (`online`/`slow`/`offline`/`unknown`) e grava o resultado em memória (`HealthRepository`). `DashboardService` agrega esse resultado com o campo `active` de cada recurso numa visão consolidada de 4 status (`online`/`offline`/`maintenance`/`unknown`), servida pelos endpoints `/dashboard*`.
 
 Documentação completa — agendamento, concorrência, tabela de classificação de status (os dois níveis: HTTP bruto e consolidado do Painel), fluxo Backend → Frontend, casos de uso, cenários de teste e limitações conhecidas — está em **[`docs/dashboard-operacional.md`](docs/dashboard-operacional.md)**.
+
+## Histórico Operacional
+
+Evolução do Painel Operacional: além do estado *atual* do ambiente (`/dashboard`), a API agora mantém um histórico persistente do que já aconteceu — sem banco de dados, seguindo o mesmo padrão de arquivo JSON + cache em memória já usado por `ResourceRepository`.
+
+### Objetivo
+
+Alimentar, no futuro, gráficos de disponibilidade ao longo do tempo, timeline de incidentes, últimas ocorrências e indicadores executivos — a API já está preparada para isso; nenhuma dessas telas foi implementada nesta etapa.
+
+### Snapshot × Event — a diferença
+
+| | **Snapshot** (`HistorySnapshot`) | **Event** (`OperationalEvent`) |
+|---|---|---|
+| O que é | Uma fotografia agregada do ambiente inteiro | O registro de **um** recurso mudando de status |
+| Quando é gravado | A cada sweep do Health Check, sempre | Só quando o status de um recurso realmente muda |
+| Granularidade | Ambiente (total/online/offline/manutenção/desconhecidos/disponibilidade) | Por recurso (`ONLINE → OFFLINE`, `OFFLINE → ONLINE` etc.) |
+| Para que serve | Gráfico de disponibilidade/evolução da saúde | Timeline de incidentes, últimas ocorrências, tempo de indisponibilidade |
+| Frequência típica | Uma entrada por sweep (ex.: a cada 30–60s) | Rara — só existe se algo de fato mudou |
+
+Um sweep sem nenhuma mudança de status gera **1 snapshot e 0 eventos**. Isso é o comportamento esperado, não uma falha.
+
+### Arquitetura
+
+Módulo novo, sem mover nenhum arquivo existente — segue a mesma convenção de camadas já usada pelo resto da API (`controllers/`, `services/`, `repositories/`, `models/`, `routes/` por responsabilidade, não por pasta de domínio aninhada):
+
+```mermaid
+flowchart TB
+    subgraph Sweep["Ciclo do Health Check (server.ts)"]
+        HC[HealthCheckService.runSweep]
+        HC --> HS[HistoryService.recordSweepResult]
+    end
+
+    HS --> RS["resolveResourceStatus()<br/>(utils/dashboardStatus.ts — mesma regra do Painel)"]
+    HS --> ES[EventService.recordObservation]
+    ES -->|"status mudou?"| EW{"sim"}
+    EW -->|não| Skip["nada gravado"]
+    EW -->|sim| EAppend[EventRepository.append]
+
+    HS --> HAppend[HistoryRepository.append]
+
+    HAppend --> HJSON[("data/history.json")]
+    EAppend --> EJSON[("data/events.json")]
+
+    HTTP["GET /dashboard/history<br/>GET /dashboard/events"] --> HC2[HistoryController]
+    HC2 --> HS
+```
+
+`HealthCheckService` não foi alterado — `server.ts` só passou a chamar `historyService.recordSweepResult(...)` depois que `runSweep()` termina, reaproveitando o resultado que o sweep já calculou (`resourceRepository.findAll()` + `healthCheckService.getAll()`). Nenhuma chamada HTTP adicional é feita para gerar snapshots ou eventos.
+
+### Repository como interface — pronto para trocar de persistência
+
+`HistoryRepository` e `EventRepository` (`src/models/history.model.ts`, `src/models/event.model.ts`) são **interfaces**, não classes. `JsonHistoryRepository`/`JsonEventRepository` (`src/repositories/`) são a implementação atual — arquivo JSON, mesmo padrão de escrita atômica (`.tmp` + `rename`) de `ResourceRepository`. `HistoryService`/`EventService` dependem só da interface:
+
+```ts
+export class HistoryService {
+  constructor(
+    private readonly historyRepository: HistoryRepository, // interface, não JsonHistoryRepository
+    private readonly eventService: EventService,
+  ) {}
+}
+```
+
+Uma futura `PostgresHistoryRepository` ou `MongoHistoryRepository` bastaria implementar a mesma interface e ser trocada em `routes/history.routes.ts` — sem alterar `HistoryService`, `HistoryController`, os endpoints ou o Dashboard.
+
+### Histórico inteligente — sem crescimento ilimitado
+
+- **`history.json`**: mantém só os últimos **2000 snapshots** (`MAX_SNAPSHOTS`, em `history.repository.ts`) — a ~30–60s por sweep, cobre de ~16h a ~33h de histórico, suficiente para os gráficos previstos sem o arquivo crescer para sempre.
+- **`events.json`**: nunca recebe um evento repetido. `EventService` mantém em memória o último status conhecido de cada recurso (`lastKnownStatus`, semeado a partir do último evento persistido no boot) e só grava quando o status muda de fato — um recurso `ONLINE` por horas não gera nenhuma escrita nova. Limite de segurança de **2000 eventos** (`MAX_EVENTS`).
+- A primeira observação de um recurso (processo recém-iniciado, sem evento anterior persistido) nunca vira evento — evita gerar N eventos "fantasma" a cada restart do processo.
+
+### Endpoints
+
+| Método | Rota | Descrição |
+|---|---|---|
+| `GET` | `/dashboard/history` | Snapshots agregados do ambiente, um por sweep (até 2000 mais recentes) |
+| `GET` | `/dashboard/events` | Transições reais de status por recurso, mais recente primeiro |
 
 ## Tratamento de erros
 
