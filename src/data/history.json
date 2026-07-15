@@ -115,5 +115,14 @@
     "maintenance": 0,
     "unknown": 4,
     "availabilityPercentage": 97.42
+  },
+  {
+    "timestamp": "2026-07-15T22:23:56.695Z",
+    "total": 155,
+    "online": 151,
+    "offline": 0,
+    "maintenance": 0,
+    "unknown": 4,
+    "availabilityPercentage": 97.42
   }
 ]
