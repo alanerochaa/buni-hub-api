@@ -1,19 +1,21 @@
 import { existsSync, readFileSync, renameSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
-import type { EventRepository, OperationalEvent } from '../models/event.model.js'
+import type { OperationalEvent, OperationalLogRepository } from '../models/operationalLog.model.js'
 
-// Eventos só são gravados em transições reais (ver EventService), não
-// a cada sweep — 2000 eventos representam uma margem generosa antes
+// Eventos só são gravados em transições reais (ver OperationalLogService),
+// não a cada sweep — 2000 eventos representam uma margem generosa antes
 // de precisar de rotação/paginação.
 const MAX_EVENTS = 2000
 
 /**
- * Implementação em arquivo JSON de `EventRepository` — mesmo padrão de
- * `JsonHistoryRepository`/`ResourceRepository` (cache em memória,
- * escrita atômica). Substituível por uma implementação em banco sem
- * alterar EventService.
+ * Implementação em arquivo JSON de `OperationalLogRepository` — mesmo
+ * padrão de `JsonHistoryRepository`/`ResourceRepository` (cache em
+ * memória, escrita atômica). Persiste em `data/events.json` (nome do
+ * arquivo mantido por compatibilidade — o conceito exposto ao resto do
+ * sistema é o Log Operacional). Substituível por uma implementação em
+ * banco sem alterar OperationalLogService.
  */
-export class JsonEventRepository implements EventRepository {
+export class JsonOperationalLogRepository implements OperationalLogRepository {
   private cache: OperationalEvent[] | null = null
 
   constructor(

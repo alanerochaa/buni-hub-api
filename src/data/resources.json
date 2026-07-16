@@ -1782,19 +1782,20 @@
       "api",
       "homologacao"
     ],
-    "updatedAt": "2026-07-15T13:05:48.910Z"
+    "updatedAt": "2026-07-16T01:10:47.071Z"
   },
   {
     "id": "api-fiapiatualizarinformacoesrh",
     "type": "api",
     "displayName": "Web API: Atualizar Informações RH",
     "name": "FIApiAtualizarInformacoesRH",
-    "technicalName": "FIApiAtualizarInformacoesRH",
+    "technicalName": "fiapiatualizarinformacoesrh",
     "url": "https://buncghml.funcao.digital/API/FIApiAtualizarInformacoesRH",
     "environment": "homologacao",
     "deprecated": false,
     "active": true,
     "keywords": [
+      "fiapiatualizarinformacoesrh",
       "api:",
       "atualizar",
       "informacoes",
@@ -1803,7 +1804,6 @@
     ],
     "tags": [],
     "searchIndex": [
-      "web api: atualizar informacoes rh",
       "fiapiatualizarinformacoesrh",
       "https://buncghml.funcao.digital/api/fiapiatualizarinformacoesrh",
       "api:",
@@ -1811,7 +1811,8 @@
       "informacoes",
       "api",
       "homologacao"
-    ]
+    ],
+    "updatedAt": "2026-07-16T01:11:03.843Z"
   },
   {
     "id": "api-fiapiautconscliproposta",

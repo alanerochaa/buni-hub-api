@@ -99,8 +99,13 @@ export class HealthCheckService {
         responseTime,
         lastCheckedAt,
       }
-    } catch {
-      return { resourceId: resource.id, status: 'offline', lastCheckedAt }
+    } catch (error) {
+      const errorMessage = controller.signal.aborted
+        ? `Tempo limite excedido (${this.options.timeoutMs}ms)`
+        : error instanceof Error
+          ? error.message
+          : 'Erro desconhecido ao verificar o recurso'
+      return { resourceId: resource.id, status: 'offline', lastCheckedAt, errorMessage }
     } finally {
       clearTimeout(timeout)
     }

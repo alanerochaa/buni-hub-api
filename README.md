@@ -15,12 +15,13 @@ API REST em Node.js/Express/TypeScript que centraliza o catálogo de APIs, Web S
 - [Estrutura de diretórios](#estrutura-de-diretórios)
 - [Modelo de domínio](#modelo-de-domínio)
 - [Endpoints](#endpoints)
+- [Fluxo de Funcionamento](#fluxo-de-funcionamento)
 - [Fluxo da aplicação](#fluxo-da-aplicação)
 - [Fluxo dos Dados](#fluxo-dos-dados)
 - [Persistência](#persistência)
 - [Fluxo de Persistência](#fluxo-de-persistência)
 - [Monitoramento de saúde e Painel Operacional](#monitoramento-de-saúde-e-painel-operacional)
-- [Histórico Operacional](#histórico-operacional)
+- [Histórico Operacional e Log Operacional](#histórico-operacional-e-log-operacional)
 - [Tratamento de erros](#tratamento-de-erros)
 - [Validação](#validação)
 - [Variáveis de ambiente](#variáveis-de-ambiente)
@@ -130,19 +131,19 @@ api/
 │   ├── controllers/
 │   │   ├── dashboard.controller.ts
 │   │   ├── health.controller.ts
-│   │   ├── history.controller.ts   # Histórico Operacional (snapshots + eventos)
+│   │   ├── history.controller.ts   # Histórico Operacional (snapshots) + Log Operacional (eventos)
 │   │   ├── resource.controller.ts
 │   │   └── resourceHealth.controller.ts
 │   ├── services/
 │   │   ├── dashboard.service.ts
-│   │   ├── event.service.ts        # detecção de transição de status
 │   │   ├── healthCheck.service.ts
-│   │   ├── history.service.ts      # orquestra snapshot + eventos por sweep
+│   │   ├── history.service.ts        # orquestra Histórico Operacional (snapshot) + Log Operacional (eventos) por sweep
+│   │   ├── operationalLog.service.ts # Log Operacional — detecção de transição de status
 │   │   └── resource.service.ts
 │   ├── repositories/
-│   │   ├── event.repository.ts     # JsonEventRepository (implementa EventRepository)
 │   │   ├── health.repository.ts
-│   │   ├── history.repository.ts   # JsonHistoryRepository (implementa HistoryRepository)
+│   │   ├── history.repository.ts       # JsonHistoryRepository (implementa HistoryRepository) — Histórico Operacional
+│   │   ├── operationalLog.repository.ts # JsonOperationalLogRepository (implementa OperationalLogRepository) — Log Operacional
 │   │   └── resource.repository.ts
 │   ├── routes/
 │   │   ├── dashboard.routes.ts
@@ -158,9 +159,9 @@ api/
 │   ├── validators/
 │   │   └── resource.schema.ts      # schemas Zod de criação/edição
 │   ├── models/
-│   │   ├── event.model.ts          # OperationalEvent + interface EventRepository
-│   │   ├── history.model.ts        # HistorySnapshot + interface HistoryRepository
-│   │   └── resource.model.ts       # Resource, ResourceHealth e tipos relacionados
+│   │   ├── history.model.ts         # HistorySnapshot + interface HistoryRepository — Histórico Operacional
+│   │   ├── operationalLog.model.ts  # OperationalEvent + interface OperationalLogRepository — Log Operacional
+│   │   └── resource.model.ts        # Resource, ResourceHealth e tipos relacionados
 │   ├── types/
 │   │   ├── dashboard.type.ts
 │   │   └── resourceSummary.type.ts
@@ -172,7 +173,7 @@ api/
 │   │   ├── promisePool.ts          # runWithConcurrency (pool de workers)
 │   │   └── slugify.ts
 │   ├── data/
-│   │   ├── events.json             # gerado em runtime — Histórico Operacional (eventos)
+│   │   ├── events.json             # gerado em runtime — Log Operacional (eventos)
 │   │   ├── history.json            # gerado em runtime — Histórico Operacional (snapshots)
 │   │   └── resources.json          # catálogo oficial — única fonte de dados da aplicação, gerenciada pelo ResourceRepository
 │   ├── app.ts                      # composição do Express (middlewares + rotas)
@@ -222,6 +223,7 @@ classDiagram
         +number? httpStatus
         +number? responseTime
         +string lastCheckedAt
+        +string? errorMessage
     }
     class ResourceType {
         <<enumeration>>
@@ -282,18 +284,61 @@ Todas as respostas são JSON. Não há autenticação/autorização implementada
 | `GET` | `/dashboard/summary` | Só o resumo consolidado |
 | `GET` | `/dashboard/incidents` | Só a lista de recursos que exigem atenção |
 
-### Histórico Operacional (`history.routes.ts`)
+### Histórico Operacional e Log Operacional (`history.routes.ts`)
 
 | Método | Rota | Descrição |
 |---|---|---|
 | `GET` | `/dashboard/history` | Snapshots agregados do ambiente, um por sweep (até 2000 mais recentes) |
-| `GET` | `/dashboard/events` | Transições reais de status por recurso, mais recente primeiro |
+| `GET` | `/dashboard/events` | Transições reais de status por recurso, mais recente primeiro. Filtros opcionais via query string: `resourceId`, `status` (`online`\|`offline`\|`maintenance`\|`unknown`), `environment`, `since`/`until` (ISO 8601, sobre `timestamp`) — todos combináveis; valor inválido é ignorado (mesmo comportamento de `GET /resources`) |
 
 ### Raiz
 
 | Método | Rota | Descrição |
 |---|---|---|
 | `GET` | `/` | Metadados da API (`name`, `status`, `version`, `timestamp`) |
+
+## Fluxo de Funcionamento
+
+Sequência real de inicialização (`src/server.ts`), do processo subindo até o primeiro dado disponível para os frontends:
+
+```
+Inicialização do processo
+        │
+        ▼
+Validação das variáveis de ambiente (config/env.ts, Zod)
+        │  falha aqui derruba o processo (fail-fast)
+        ▼
+Composição do Express (app.ts: cors, json, rotas, error handlers)
+        │
+        ▼
+Carregamento do catálogo (resources.json → ResourceRepository, leitura lazy no primeiro acesso)
+        │
+        ▼
+Sweep inicial do Health Check (disparado imediatamente, antes de o servidor aceitar requisições)
+        │
+        ├─▶ Verificação HTTP de cada recurso cadastrado (HealthCheckService, concorrência limitada)
+        ├─▶ Classificação de status (online/slow/offline/unknown) → HealthRepository (memória)
+        ├─▶ Snapshot agregado do ambiente → Histórico Operacional (history.json)
+        └─▶ Transições de status por recurso → Log Operacional (events.json), só quando muda
+        │
+        ▼
+app.listen(PORT) — servidor aceita requisições HTTP
+        │
+        ▼
+setInterval a cada HEALTH_CHECK_INTERVAL_MS — repete o sweep indefinidamente
+        │
+        ▼
+Consumo pelos frontends: GET /resources, /dashboard*, /health* (web/, dashboard/) — sempre leitura do estado já calculado, nunca uma checagem sob demanda
+```
+
+1. **Inicialização da API** — `server.ts` importa `config/env.ts`; a validação Zod roda na importação do módulo, antes de qualquer outra coisa. Uma env var inválida lança exceção e encerra o processo imediatamente (fail-fast, nunca falha silenciosa em runtime).
+2. **Composição do Express** — `app.ts` monta `cors`, `express.json`, todas as rotas (`routes/index.ts`) e os middlewares finais (`notFoundHandler`, `errorHandler`).
+3. **Carregamento dos recursos** — não é um passo explícito de boot: `ResourceRepository` lê `resources.json` de forma *lazy*, na primeira chamada a `findAll()`/`findById()`. Na prática, isso acontece já no sweep inicial (próximo passo), então o catálogo está em memória antes do servidor aceitar a primeira requisição HTTP.
+4. **Processo de monitoramento** — `runSweepAndRecordHistory()` roda uma vez imediatamente e depois a cada `HEALTH_CHECK_INTERVAL_MS` (`setInterval`), chamando `HealthCheckService.runSweep()`.
+5. **Atualização dos status** — cada recurso é verificado via HTTP (`fetch`, timeout e concorrência configuráveis); o resultado (`online`/`slow`/`offline`/`unknown`, `httpStatus`, `responseTime`, `errorMessage` quando aplicável) fica em `HealthRepository`, só em memória.
+6. **Registro do Histórico Operacional** — depois que o sweep termina, `HistoryService.recordSweepResult()` grava sempre um `HistorySnapshot` agregado do ambiente inteiro.
+7. **Persistência** — o mesmo `recordSweepResult()` delega ao `OperationalLogService` a detecção de transições por recurso: só quando o status de um recurso muda é que um evento é gravado no Log Operacional. Snapshot e evento (quando existe) são persistidos de forma atômica (`.tmp` + `rename`) em `history.json`/`events.json`, respectivamente.
+8. **Consumo pelo Dashboard** — `dashboard/` (via `GET /dashboard` e `GET /dashboard/history`) e `web/` (via `GET /dashboard/events`) só leem o que já foi calculado e persistido nos passos acima; nenhum dos dois frontends dispara uma verificação própria.
 
 ## Fluxo da aplicação
 
@@ -413,33 +458,50 @@ Em nenhum dos quatro casos existe um caminho alternativo de escrita: `HealthChec
 
 ## Monitoramento de saúde e Painel Operacional
 
-`HealthCheckService` roda de forma totalmente autônoma no backend — o frontend nunca dispara nem depende de uma checagem própria. Um sweep varre todas as URLs cadastradas (disparo imediato no boot + `setInterval` a cada `HEALTH_CHECK_INTERVAL_MS`), classifica cada recurso (`online`/`slow`/`offline`/`unknown`) e grava o resultado em memória (`HealthRepository`). `DashboardService` agrega esse resultado com o campo `active` de cada recurso numa visão consolidada de 4 status (`online`/`offline`/`maintenance`/`unknown`), servida pelos endpoints `/dashboard*`.
+`HealthCheckService` roda de forma totalmente autônoma no backend — o frontend nunca dispara nem depende de uma checagem própria. Um sweep varre todas as URLs cadastradas (disparo imediato no boot + `setInterval` a cada `HEALTH_CHECK_INTERVAL_MS`), classifica cada recurso (`online`/`slow`/`offline`/`unknown`) e grava o resultado em memória (`HealthRepository`). Quando a falha não teve resposta HTTP alguma (timeout, DNS, conexão recusada), `ResourceHealth.errorMessage` guarda a mensagem real da exceção — consumida pelo Log Operacional (ver abaixo) para auditoria. `DashboardService` agrega esse resultado com o campo `active` de cada recurso numa visão consolidada de 4 status (`online`/`offline`/`maintenance`/`unknown`), servida pelos endpoints `/dashboard*`.
 
 Documentação completa — agendamento, concorrência, tabela de classificação de status (os dois níveis: HTTP bruto e consolidado do Painel), fluxo Backend → Frontend, casos de uso, cenários de teste e limitações conhecidas — está em **[`docs/dashboard-operacional.md`](docs/dashboard-operacional.md)**.
 
-## Histórico Operacional
+## Histórico Operacional e Log Operacional
 
-Evolução do Painel Operacional: além do estado *atual* do ambiente (`/dashboard`), a API agora mantém um histórico persistente do que já aconteceu — sem banco de dados, seguindo o mesmo padrão de arquivo JSON + cache em memória já usado por `ResourceRepository`.
+Evolução do Painel Operacional: além do estado *atual* do ambiente (`/dashboard`), a API mantém dois registros persistentes complementares do que já aconteceu — sem banco de dados, seguindo o mesmo padrão de arquivo JSON + cache em memória já usado por `ResourceRepository`. São dois conceitos oficiais do projeto, cada um com seu próprio arquivo de dados, modelo, repositório e service:
+
+- **Histórico Operacional** → **métricas agregadas e série temporal**. Persistido em `history.json`. Um `HistorySnapshot` do ambiente inteiro, gravado a cada sweep do Health Check, sempre.
+- **Log Operacional** → **eventos detalhados e auditoria**. Persistido em `events.json`. Um `OperationalEvent` por recurso, gravado só quando o status de fato muda — status anterior/novo, motivo, mensagem de erro real, duração da indisponibilidade, ambiente e origem da verificação.
+
+Os nomes dos arquivos de dados (`history.json`/`events.json`) e das rotas (`GET /dashboard/history`/`GET /dashboard/events`) são mantidos por compatibilidade — os dois conceitos acima são a nomenclatura oficial usada em classes, comentários, documentação e interface a partir daqui.
 
 ### Objetivo
 
-Alimentar, no futuro, gráficos de disponibilidade ao longo do tempo, timeline de incidentes, últimas ocorrências e indicadores executivos — a API já está preparada para isso; nenhuma dessas telas foi implementada nesta etapa.
+Alimentar gráficos de disponibilidade ao longo do tempo, timeline de incidentes e auditoria operacional. `dashboard/` (Painel Operacional/NOC) consome `GET /dashboard/history` (Histórico Operacional) para a tendência de disponibilidade; `web/` (Portal) consome `GET /dashboard/events` (Log Operacional) na tela **Log Operacional** (`/log-operacional`) para auditoria — listagem filtrável (recurso/status/ambiente/período) e exportação. Nenhum dos dois frontends grava nada aqui — é sempre o `HealthCheckService`/`HistoryService`/`OperationalLogService` desta API, via sweep automático.
 
-### Snapshot × Event — a diferença
+### Histórico Operacional × Log Operacional — a diferença
 
-| | **Snapshot** (`HistorySnapshot`) | **Event** (`OperationalEvent`) |
+| | **Histórico Operacional** (`HistorySnapshot`) | **Log Operacional** (`OperationalEvent`) |
 |---|---|---|
 | O que é | Uma fotografia agregada do ambiente inteiro | O registro de **um** recurso mudando de status |
 | Quando é gravado | A cada sweep do Health Check, sempre | Só quando o status de um recurso realmente muda |
 | Granularidade | Ambiente (total/online/offline/manutenção/desconhecidos/disponibilidade) | Por recurso (`ONLINE → OFFLINE`, `OFFLINE → ONLINE` etc.) |
-| Para que serve | Gráfico de disponibilidade/evolução da saúde | Timeline de incidentes, últimas ocorrências, tempo de indisponibilidade |
+| Para que serve | Gráfico de disponibilidade/evolução da saúde | Timeline de incidentes, últimas ocorrências, tempo de indisponibilidade, auditoria |
 | Frequência típica | Uma entrada por sweep (ex.: a cada 30–60s) | Rara — só existe se algo de fato mudou |
 
-Um sweep sem nenhuma mudança de status gera **1 snapshot e 0 eventos**. Isso é o comportamento esperado, não uma falha.
+Um sweep sem nenhuma mudança de status gera **1 entrada no Histórico Operacional e 0 no Log Operacional**. Isso é o comportamento esperado, não uma falha.
+
+### Campos de um evento do Log Operacional (`OperationalEvent`)
+
+Além do essencial (recurso, `previousStatus → currentStatus`, `reason`, `httpStatus`/`responseTime` quando existem), cada evento carrega dados voltados à auditoria — todos opcionais na leitura (eventos gravados antes desta evolução não os têm):
+
+| Campo | Origem | Observação |
+|---|---|---|
+| `environment` | `Resource.environment` no momento do evento | Usado pelo filtro `?environment=` |
+| `resourceUrl` | `Resource.url` no momento do evento | Preserva o dado mesmo se a URL do recurso for editada depois |
+| `errorMessage` | Exceção real da checagem HTTP (`HealthCheckService`) | Só em falhas de rede (timeout/DNS/conexão recusada) sem resposta HTTP — quando há `httpStatus`, ele já é o motivo |
+| `unavailabilityDurationMs` | Calculado por `OperationalLogService` (`lastTransitionAt`) | Só em eventos de recuperação (saindo de `offline`) — quanto tempo o recurso ficou indisponível |
+| `origin` | Fixo em `'scheduled-sweep'` hoje | Tipo já é a união `'scheduled-sweep' \| 'manual'` — pronto para uma futura checagem manual sem migrar o formato |
 
 ### Arquitetura
 
-Módulo novo, sem mover nenhum arquivo existente — segue a mesma convenção de camadas já usada pelo resto da API (`controllers/`, `services/`, `repositories/`, `models/`, `routes/` por responsabilidade, não por pasta de domínio aninhada):
+Módulo novo, sem mover nenhum arquivo existente — segue a mesma convenção de camadas já usada pelo resto da API (`controllers/`, `services/`, `repositories/`, `models/`, `routes/` por responsabilidade, não por pasta de domínio aninhada). `HistoryService` orquestra os dois pilares a cada sweep; `HistoryController` expõe os dois endpoints:
 
 ```mermaid
 flowchart TB
@@ -449,12 +511,12 @@ flowchart TB
     end
 
     HS --> RS["resolveResourceStatus()<br/>(utils/dashboardStatus.ts — mesma regra do Painel)"]
-    HS --> ES[EventService.recordObservation]
+    HS -->|"Log Operacional"| ES[OperationalLogService.recordObservation]
     ES -->|"status mudou?"| EW{"sim"}
     EW -->|não| Skip["nada gravado"]
-    EW -->|sim| EAppend[EventRepository.append]
+    EW -->|sim| EAppend[OperationalLogRepository.append]
 
-    HS --> HAppend[HistoryRepository.append]
+    HS -->|"Histórico Operacional"| HAppend[HistoryRepository.append]
 
     HAppend --> HJSON[("data/history.json")]
     EAppend --> EJSON[("data/events.json")]
@@ -463,27 +525,27 @@ flowchart TB
     HC2 --> HS
 ```
 
-`HealthCheckService` não foi alterado — `server.ts` só passou a chamar `historyService.recordSweepResult(...)` depois que `runSweep()` termina, reaproveitando o resultado que o sweep já calculou (`resourceRepository.findAll()` + `healthCheckService.getAll()`). Nenhuma chamada HTTP adicional é feita para gerar snapshots ou eventos.
+`server.ts` só passou a chamar `historyService.recordSweepResult(...)` depois que `runSweep()` termina, reaproveitando o resultado que o sweep já calculou (`resourceRepository.findAll()` + `healthCheckService.getAll()`). Nenhuma chamada HTTP adicional é feita para gerar snapshots ou eventos — a única mudança em `HealthCheckService` foi passar a capturar `errorMessage` na falha (ver seção anterior), consumido aqui pelo Log Operacional.
 
 ### Repository como interface — pronto para trocar de persistência
 
-`HistoryRepository` e `EventRepository` (`src/models/history.model.ts`, `src/models/event.model.ts`) são **interfaces**, não classes. `JsonHistoryRepository`/`JsonEventRepository` (`src/repositories/`) são a implementação atual — arquivo JSON, mesmo padrão de escrita atômica (`.tmp` + `rename`) de `ResourceRepository`. `HistoryService`/`EventService` dependem só da interface:
+`HistoryRepository` (Histórico Operacional, `src/models/history.model.ts`) e `OperationalLogRepository` (Log Operacional, `src/models/operationalLog.model.ts`) são **interfaces**, não classes. `JsonHistoryRepository`/`JsonOperationalLogRepository` (`src/repositories/`) são a implementação atual — arquivo JSON, mesmo padrão de escrita atômica (`.tmp` + `rename`) de `ResourceRepository`. `HistoryService`/`OperationalLogService` dependem só da interface:
 
 ```ts
 export class HistoryService {
   constructor(
     private readonly historyRepository: HistoryRepository, // interface, não JsonHistoryRepository
-    private readonly eventService: EventService,
+    private readonly operationalLogService: OperationalLogService,
   ) {}
 }
 ```
 
 Uma futura `PostgresHistoryRepository` ou `MongoHistoryRepository` bastaria implementar a mesma interface e ser trocada em `routes/history.routes.ts` — sem alterar `HistoryService`, `HistoryController`, os endpoints ou o Dashboard.
 
-### Histórico inteligente — sem crescimento ilimitado
+### Crescimento controlado — Histórico e Log sem crescimento ilimitado
 
-- **`history.json`**: mantém só os últimos **2000 snapshots** (`MAX_SNAPSHOTS`, em `history.repository.ts`) — a ~30–60s por sweep, cobre de ~16h a ~33h de histórico, suficiente para os gráficos previstos sem o arquivo crescer para sempre.
-- **`events.json`**: nunca recebe um evento repetido. `EventService` mantém em memória o último status conhecido de cada recurso (`lastKnownStatus`, semeado a partir do último evento persistido no boot) e só grava quando o status muda de fato — um recurso `ONLINE` por horas não gera nenhuma escrita nova. Limite de segurança de **2000 eventos** (`MAX_EVENTS`).
+- **`history.json`** (Histórico Operacional): mantém só os últimos **2000 snapshots** (`MAX_SNAPSHOTS`, em `history.repository.ts`) — a ~30–60s por sweep, cobre de ~16h a ~33h de histórico, suficiente para o gráfico de tendência do `dashboard/` (`HistoryPanel`) sem o arquivo crescer para sempre.
+- **`events.json`** (Log Operacional): nunca recebe um evento repetido. `OperationalLogService` mantém em memória o último status conhecido de cada recurso (`lastKnownStatus`, semeado a partir do último evento persistido no boot) e só grava quando o status muda de fato — um recurso `ONLINE` por horas não gera nenhuma escrita nova. Limite de segurança de **2000 eventos** (`MAX_EVENTS`, em `operationalLog.repository.ts`).
 - A primeira observação de um recurso (processo recém-iniciado, sem evento anterior persistido) nunca vira evento — evita gerar N eventos "fantasma" a cada restart do processo.
 
 ### Endpoints
@@ -491,7 +553,7 @@ Uma futura `PostgresHistoryRepository` ou `MongoHistoryRepository` bastaria impl
 | Método | Rota | Descrição |
 |---|---|---|
 | `GET` | `/dashboard/history` | Snapshots agregados do ambiente, um por sweep (até 2000 mais recentes) |
-| `GET` | `/dashboard/events` | Transições reais de status por recurso, mais recente primeiro |
+| `GET` | `/dashboard/events` | Transições reais de status por recurso, mais recente primeiro. Filtros opcionais via query string: `resourceId`, `status` (`online`\|`offline`\|`maintenance`\|`unknown`), `environment`, `since`/`until` (ISO 8601, sobre `timestamp`) — todos combináveis; valor inválido é ignorado (mesmo comportamento de `GET /resources`) |
 
 ## Tratamento de erros
 

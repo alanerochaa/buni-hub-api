@@ -52,4 +52,8 @@ export interface ResourceHealth {
   httpStatus?: number
   responseTime?: number
   lastCheckedAt: string
+  // Mensagem real da exceção de rede (timeout, DNS, conexão recusada
+  // etc.) — só presente quando a falha não teve resposta HTTP alguma
+  // (nesse caso `httpStatus` já basta como motivo).
+  errorMessage?: string
 }

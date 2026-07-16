@@ -1,4 +1,8 @@
 /**
+ * Modelo do **Histórico Operacional** — métricas agregadas e série
+ * temporal (ver `operationalLog.model.ts` para o outro pilar do módulo
+ * de auditoria, o **Log Operacional**, com eventos detalhados).
+ *
  * Snapshot agregado do ambiente, gravado a cada sweep do Health Check
  * — alimenta gráficos de disponibilidade ao longo do tempo. Mesmo
  * formato de contagem do DashboardSummary, sem o detalhamento por tipo
