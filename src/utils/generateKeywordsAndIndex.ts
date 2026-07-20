@@ -20,13 +20,6 @@ export interface KeywordSources {
   keywords?: string[]
 }
 
-/**
- * Versão simplificada da geração de keywords usada pela Ingestion
- * (ver ingestion/src/generateKeywords.ts) — aqui as palavras-chave são
- * majoritariamente digitadas pelo usuário no formulário; só
- * complementamos com o nome, para não depender de um projeto Node
- * separado (api/, web/ e ingestion/ não compartilham pacotes).
- */
 export function generateKeywords(source: KeywordSources): string[] {
   const tokens = new Set<string>()
 
@@ -55,12 +48,6 @@ export interface SearchIndexSources {
   environment: ResourceEnvironment
 }
 
-/**
- * Mesma composição usada pela Ingestion (ver
- * ingestion/src/generateSearchIndex.ts): name, technicalName, code,
- * url, description, keywords, tags e os rótulos de tipo/ambiente,
- * tudo normalizado para a busca livre (SearchBar) casar por substring.
- */
 export function generateSearchIndex(source: SearchIndexSources): string[] {
   const values = [
     source.name,

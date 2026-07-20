@@ -1,15 +1,8 @@
 import type { ResourceHealth } from '../models/resource.model.js'
 
-/**
- * Último resultado de health check por recurso, só em memória — perde-se
- * ao reiniciar o processo, aceitável porque o próximo sweep repovoa
- * tudo em segundos. Populado pelo HealthCheckService.
- */
+
 export class HealthRepository {
   private readonly cache = new Map<string, ResourceHealth>()
-  // Instante em que cada recurso passou a 'offline' na varredura mais
-  // recente (limpo assim que ele volta a responder). Usado pelo
-  // Painel Operacional para calcular "tempo offline" nos incidentes.
   private readonly offlineSince = new Map<string, string>()
 
   set(health: ResourceHealth): void {

@@ -4,15 +4,6 @@ import type { Resource, ResourceHealth } from '../models/resource.model.js'
 import type { OperationalLogService } from './operationalLog.service.js'
 import { calculateAvailabilityPercentage, resolveResourceStatus } from '../utils/dashboardStatus.js'
 
-/**
- * Orquestra os dois pilares do módulo de auditoria a cada sweep do
- * Health Check: grava um `HistorySnapshot` agregado (**Histórico
- * Operacional** — métricas e série temporal, sempre) e delega ao
- * `OperationalLogService` a detecção de transições por recurso
- * (**Log Operacional** — eventos detalhados e auditoria, só quando o
- * status de fato muda). Não faz nenhuma chamada HTTP própria — só lê o
- * resultado que `HealthCheckService` já calculou.
- */
 export class HistoryService {
   constructor(
     private readonly historyRepository: HistoryRepository,
@@ -52,12 +43,10 @@ export class HistoryService {
     this.historyRepository.append(snapshot)
   }
 
-  /** Histórico Operacional — métricas agregadas e série temporal (`GET /dashboard/history`). */
   getHistory(): HistorySnapshot[] {
     return this.historyRepository.findAll()
   }
 
-  /** Log Operacional — eventos detalhados e auditoria (`GET /dashboard/events`). */
   getOperationalLog(filters?: OperationalLogFilters): OperationalEvent[] {
     return this.operationalLogService.getOperationalLog(filters)
   }

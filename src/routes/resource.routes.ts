@@ -5,9 +5,6 @@ import { ResourceController } from '../controllers/resource.controller.js'
 import { validateBody } from '../middleware/validateBody.js'
 import { createResourceSchema, updateResourceSchema } from '../validators/resource.schema.js'
 
-// Exportado para outras rotas (health, dashboard) reaproveitarem a
-// mesma instância/cache em memória, em vez de recarregar resources.json
-// separadamente.
 export const resourceRepository = new ResourceRepository()
 const service = new ResourceService(resourceRepository)
 const controller = new ResourceController(service)

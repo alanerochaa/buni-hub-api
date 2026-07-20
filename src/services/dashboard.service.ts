@@ -7,10 +7,9 @@ import type {
   DashboardResourceStatus,
   DashboardSummary,
 } from '../types/dashboard.type.js'
-import { calculateAvailabilityPercentage, resolveResourceStatus } from '../utils/dashboardStatus.js'
+import { calculateAvailabilityPercentage } from '../utils/dashboardStatus.js'
+import { groupResourcesForDashboard, type DashboardResourceGroup } from '../utils/groupResourcesForDashboard.js'
 
-// Quanto menor, mais urgente — determina a ordem da tabela de
-// incidentes. 'online' nunca aparece nos incidentes (filtrado antes).
 const STATUS_PRIORITY: Record<DashboardResourceStatus, number> = {
   offline: 0,
   unknown: 1,
@@ -22,12 +21,6 @@ function emptyCounts(): DashboardCategoryCounts {
   return { total: 0, online: 0, offline: 0, maintenance: 0, unknown: 0 }
 }
 
-/**
- * Agrega Resource + ResourceHealth (já mantidos por
- * ResourceRepository/HealthCheckService) na visão consolidada do
- * Painel Operacional. Não faz nenhuma checagem HTTP própria — apenas
- * lê o estado mais recente já calculado pelo sweep periódico.
- */
 export class DashboardService {
   constructor(
     private readonly resourceRepository: ResourceRepository,
@@ -35,8 +28,7 @@ export class DashboardService {
   ) {}
 
   getSummary(): DashboardSummary {
-    const resources = this.resourceRepository.findAll()
-    const healthByResourceId = this.buildHealthMap()
+    const groups = this.buildGroups()
 
     const totals = emptyCounts()
     const byType: Record<ResourceType, DashboardCategoryCounts> = {
@@ -45,10 +37,9 @@ export class DashboardService {
       site: emptyCounts(),
     }
 
-    for (const resource of resources) {
-      const status = resolveResourceStatus(resource, healthByResourceId.get(resource.id))
-      this.accumulate(totals, status)
-      this.accumulate(byType[resource.type], status)
+    for (const group of groups) {
+      this.accumulate(totals, group.status)
+      this.accumulate(byType[group.type], group.status)
     }
 
     return {
@@ -60,37 +51,27 @@ export class DashboardService {
   }
 
   getIncidents(): DashboardIncident[] {
-    const resources = this.resourceRepository.findAll()
-    const healthByResourceId = this.buildHealthMap()
-
-    const incidents: DashboardIncident[] = []
-
-    for (const resource of resources) {
-      const health = healthByResourceId.get(resource.id)
-      const status = resolveResourceStatus(resource, health)
-      if (status === 'online') continue
-
-      incidents.push({
-        id: resource.id,
-        name: resource.displayName ?? resource.name,
-        type: resource.type,
-        environment: resource.environment,
-        status,
-        lastCheckedAt: health?.lastCheckedAt ?? new Date().toISOString(),
-        offlineSince:
-          status === 'offline' ? this.healthCheckService.getOfflineSince(resource.id) : undefined,
-      })
-    }
+    const incidents: DashboardIncident[] = this.buildGroups()
+      .filter((group) => group.status !== 'online')
+      .map((group) => ({
+        id: group.id,
+        name: group.name,
+        type: group.type,
+        status: group.status,
+        environments: group.environments,
+      }))
 
     return incidents.sort((a, b) => {
       const priorityDiff = STATUS_PRIORITY[a.status] - STATUS_PRIORITY[b.status]
       if (priorityDiff !== 0) return priorityDiff
-
-      if (a.status === 'offline' && b.status === 'offline') {
-        return (a.offlineSince ?? '').localeCompare(b.offlineSince ?? '')
-      }
       return a.name.localeCompare(b.name, 'pt-BR')
     })
+  }
+
+  private buildGroups(): DashboardResourceGroup[] {
+    return groupResourcesForDashboard(this.resourceRepository.findAll(), this.buildHealthMap(), (id) =>
+      this.healthCheckService.getOfflineSince(id),
+    )
   }
 
   private buildHealthMap(): Map<string, ResourceHealth> {

@@ -2,11 +2,6 @@ import { readFileSync, renameSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
 import type { Resource } from '../models/resource.model.js'
 
-/**
- * Única camada que conhece resources.json. Carrega uma vez e mantém
- * em cache — sem banco de dados, recarregar a cada requisição seria
- * custo sem benefício. Escritas atualizam cache e disco juntos.
- */
 export class ResourceRepository {
   private cache: Resource[] | null = null
 
@@ -61,11 +56,6 @@ export class ResourceRepository {
     return true
   }
 
-  /**
-   * Escreve o array atual em disco de forma atômica (arquivo temporário
-   * + rename) para não deixar resources.json corrompido caso o processo
-   * seja interrompido no meio da escrita.
-   */
   private persist(): void {
     const tempPath = `${this.dataFilePath}.tmp`
     writeFileSync(tempPath, JSON.stringify(this.cache, null, 2), 'utf-8')

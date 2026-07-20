@@ -32,22 +32,6 @@ function deriveReason(observation: ResourceStatusObservation): string {
   return 'Resposta do servidor não determina o status'
 }
 
-/**
- * Implementa o **Log Operacional**: detecta transições reais de status
- * por recurso e grava um `OperationalEvent` só quando o status muda —
- * nunca a cada sweep (ao contrário do Histórico Operacional, que grava
- * um snapshot sempre — ver HistoryService). O status anterior de cada
- * recurso vive em memória (`lastKnownStatus`), semeado a partir do
- * último evento persistido no boot: a primeira observação de um recurso
- * nunca vira evento (senão todo restart do processo geraria um evento
- * "fantasma" para cada recurso monitorado).
- *
- * `lastTransitionAt` guarda o instante da última mudança de status por
- * recurso (também semeado do log persistido) — é o que permite calcular
- * `unavailabilityDurationMs` num evento de recuperação sem depender de
- * nenhum outro serviço (HealthRepository.getOfflineSince, por exemplo,
- * já é limpo pelo próprio sweep antes deste código rodar).
- */
 export class OperationalLogService {
   private readonly lastKnownStatus = new Map<string, DashboardResourceStatus>()
   private readonly lastTransitionAt = new Map<string, string>()
@@ -103,7 +87,6 @@ export class OperationalLogService {
     this.repository.append(event)
   }
 
-  /** Mais recente primeiro, com filtros opcionais aplicados em memória. */
   getOperationalLog(filters: OperationalLogFilters = {}): OperationalEvent[] {
     let events = [...this.repository.findAll()].reverse()
 

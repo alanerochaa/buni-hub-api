@@ -1,6 +1,6 @@
 [
   {
-    "id": "api-fiapitabconsultaragencias",
+    "id": "api-homologacao-fiapitabconsultaragencias",
     "type": "api",
     "displayName": "WebApi - Consultar Agências",
     "name": "WebApi - Consultar Agências",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "id": "api-fiapitabconsorigem3",
+    "id": "api-homologacao-fiapitabconsorigem3",
     "type": "api",
     "displayName": "WebApi - Consulta Origem 3",
     "name": "WebApi - Consulta Origem 3",
@@ -68,7 +68,7 @@
     ]
   },
   {
-    "id": "api-fiapitabconsorigem4",
+    "id": "api-homologacao-fiapitabconsorigem4",
     "type": "api",
     "displayName": "WebApi - Consulta Origem 4",
     "name": "WebApi - Consulta Origem 4",
@@ -104,7 +104,7 @@
     ]
   },
   {
-    "id": "api-fiapitabconsorigem5",
+    "id": "api-homologacao-fiapitabconsorigem5",
     "type": "api",
     "displayName": "WebApi - Consulta Origem 5",
     "name": "WebApi - Consulta Origem 5",
@@ -140,7 +140,7 @@
     ]
   },
   {
-    "id": "api-fiapitabconsultabancos",
+    "id": "api-homologacao-fiapitabconsultabancos",
     "type": "api",
     "displayName": "WebApi - Consulta de Bancos",
     "name": "WebApi - Consulta de Bancos",
@@ -172,7 +172,7 @@
     ]
   },
   {
-    "id": "api-fiapitablocalrecebimento",
+    "id": "api-homologacao-fiapitablocalrecebimento",
     "type": "api",
     "displayName": "Web API: Lista de locais de recebimentos",
     "name": "Web API: Lista de locais de recebimentos",
@@ -212,7 +212,7 @@
     ]
   },
   {
-    "id": "api-fiapitabhistoricofinanceiro",
+    "id": "api-homologacao-fiapitabhistoricofinanceiro",
     "type": "api",
     "displayName": "Web API: Lista de Históricos Financeiros",
     "name": "Web API: Lista de Históricos Financeiros",
@@ -252,7 +252,7 @@
     ]
   },
   {
-    "id": "api-fiapitabconsnaturezaocupacao",
+    "id": "api-homologacao-fiapitabconsnaturezaocupacao",
     "type": "api",
     "displayName": "Web Api Consulta Natureza Ocupação",
     "name": "Web Api Consulta Natureza Ocupação",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id": "api-fiapitaborigem6",
+    "id": "api-homologacao-fiapitaborigem6",
     "type": "api",
     "displayName": "Web Api Cons. Origens6 sem paginação",
     "name": "Web Api Cons. Origens6 sem paginação",
@@ -326,7 +326,7 @@
     ]
   },
   {
-    "id": "api-fiapiautincluirpropostarefincp",
+    "id": "api-homologacao-fiapiautincluirpropostarefincp",
     "type": "api",
     "displayName": "Web API: Incluir Proposta Refinanciamento CP",
     "name": "Web API: Incluir Proposta Refinanciamento CP",
@@ -364,7 +364,7 @@
     ]
   },
   {
-    "id": "api-fiapiautincluirpropostarenegcp",
+    "id": "api-homologacao-fiapiautincluirpropostarenegcp",
     "type": "api",
     "displayName": "Web API: Incluir Proposta Renegociação CP",
     "name": "Web API: Incluir Proposta Renegociação CP",
@@ -402,7 +402,7 @@
     ]
   },
   {
-    "id": "api-fiapiautincluirproposta",
+    "id": "api-homologacao-web-api-para-inclusao-de-proposta-consig",
     "type": "api",
     "displayName": "Web Api de Inclusão de Propostas CP",
     "name": "Web Api para Inclusão de Proposta Consig",
@@ -445,7 +445,7 @@
     "updatedAt": "2026-07-15T12:41:06.222Z"
   },
   {
-    "id": "api-fiapiautsimularproposta",
+    "id": "api-homologacao-fiapiautsimularproposta",
     "type": "api",
     "displayName": "Web Api de Simulação de Propostas CP",
     "name": "Web Api de Simulação de Propostas CP",
@@ -481,7 +481,7 @@
     ]
   },
   {
-    "id": "api-fiapiautorizadortabelasfinanciamentocp",
+    "id": "api-homologacao-fiapiautorizadortabelasfinanciamentocp",
     "type": "api",
     "displayName": "Web Api de Tabela de Financiamento",
     "name": "Web Api de Tabela de Financiamento",
@@ -515,7 +515,7 @@
     ]
   },
   {
-    "id": "api-fiapiautorizadorclientescp",
+    "id": "api-homologacao-fiapiautorizadorclientescp",
     "type": "api",
     "displayName": "WebApi de Consulta e Alteração de Clientes CP",
     "name": "WebApi de Consulta e Alteração de Clientes CP",
@@ -549,7 +549,7 @@
     ]
   },
   {
-    "id": "api-fiapiautorizadorconsultarlojasprodutosusuarios",
+    "id": "api-homologacao-fiapiautorizadorconsultarlojasprodutosusuarios",
     "type": "api",
     "displayName": "WebApi - Consulta Lojas Produtos de Usuarios",
     "name": "WebApi - Consulta Lojas Produtos de Usuarios",
@@ -587,7 +587,7 @@
     ]
   },
   {
-    "id": "api-fiapiautorizadorsimulacaodepropostascp",
+    "id": "api-homologacao-fiapiautorizadorsimulacaodepropostascp",
     "type": "api",
     "displayName": "Web Api Restful para Simulação de Proposta",
     "name": "Web Api Restful para Simulação de Proposta",
@@ -625,7 +625,7 @@
     ]
   },
   {
-    "id": "api-fiapiautemiplanproparrayby",
+    "id": "api-homologacao-fiapiautemiplanproparrayby",
     "type": "api",
     "displayName": "WebApi - Emitir Planilha de Proposta Array Bytes",
     "name": "WebApi - Emitir Planilha de Proposta Array Bytes",
@@ -669,7 +669,7 @@
     ]
   },
   {
-    "id": "api-fiapiautclientepf",
+    "id": "api-homologacao-fiapiautclientepf",
     "type": "api",
     "displayName": "WebApi - Cadastro/Consulta de Cliente PF",
     "name": "WebApi - Cadastro/Consulta de Cliente PF",
@@ -701,7 +701,7 @@
     ]
   },
   {
-    "id": "api-fiapiautacionaesteira",
+    "id": "api-homologacao-fiapiautacionaesteira",
     "type": "api",
     "displayName": "WebApi - Acionamento de Esteira Aprovação Ext.",
     "name": "WebApi - Acionamento de Esteira Aprovação Ext.",
@@ -739,7 +739,7 @@
     ]
   },
   {
-    "id": "api-fiapiautconsultarcontratosrefin",
+    "id": "api-homologacao-fiapiautconsultarcontratosrefin",
     "type": "api",
     "displayName": "WebApi: Consultar contratos para refinanciamento",
     "name": "WebApi: Consultar contratos para refinanciamento",
@@ -779,7 +779,7 @@
     ]
   },
   {
-    "id": "api-fiapiautorizadorconsultarchecklist",
+    "id": "api-homologacao-fiapiautorizadorconsultarchecklist",
     "type": "api",
     "displayName": "Web API: Consultar checkLists",
     "name": "Web API: Consultar checkLists",
@@ -817,7 +817,7 @@
     ]
   },
   {
-    "id": "api-fiapiacrpropostaacordo",
+    "id": "api-homologacao-fiapiacrpropostaacordo",
     "type": "api",
     "displayName": "Web Api Proposta Acordo",
     "name": "Web Api Proposta Acordo",
@@ -849,7 +849,7 @@
     ]
   },
   {
-    "id": "api-fiapiautprimeirovencimento",
+    "id": "api-homologacao-fiapiautprimeirovencimento",
     "type": "api",
     "displayName": "Web Api para retornar data do primeiro vencimento",
     "name": "Web Api para retornar data do primeiro vencimento",
@@ -887,7 +887,7 @@
     ]
   },
   {
-    "id": "api-fiapiautchecklistproposta",
+    "id": "api-homologacao-fiapiautchecklistproposta",
     "type": "api",
     "displayName": "Web API: CheckList da Proposta",
     "name": "Web API: CheckList da Proposta",
@@ -925,7 +925,7 @@
     ]
   },
   {
-    "id": "api-fiapiautconspoliticasdespesas",
+    "id": "api-homologacao-fiapiautconspoliticasdespesas",
     "type": "api",
     "displayName": "WebApi - Consultar de Políticas de Despesas/Tarifa",
     "name": "WebApi - Consultar de Políticas de Despesas/Tarifa",
@@ -963,7 +963,7 @@
     ]
   },
   {
-    "id": "api-fiapiautconvenio",
+    "id": "api-homologacao-fiapiautconvenio",
     "type": "api",
     "displayName": "Web API: Autorizador Convênio",
     "name": "Web API: Autorizador Convênio",
@@ -997,7 +997,7 @@
     ]
   },
   {
-    "id": "api-fiapiautproposta",
+    "id": "api-homologacao-fiapiautproposta",
     "type": "api",
     "displayName": "Web API: Autorizador Proposta",
     "name": "Web API: Autorizador Proposta",
@@ -1031,7 +1031,7 @@
     ]
   },
   {
-    "id": "api-fiapiautdocumentosanexados",
+    "id": "api-homologacao-fiapiautdocumentosanexados",
     "type": "api",
     "displayName": "Web API: Autorizador Documentos Anexados",
     "name": "Web API: Autorizador Documentos Anexados",
@@ -1067,7 +1067,7 @@
     ]
   },
   {
-    "id": "api-fiapiautconsmeioliberacaoempregador",
+    "id": "api-homologacao-fiapiautconsmeioliberacaoempregador",
     "type": "api",
     "displayName": "Web API Meios de Liberação",
     "name": "Web API Meios de Liberação",
@@ -1105,7 +1105,7 @@
     ]
   },
   {
-    "id": "api-fiapiautemitirboleto1aparcela",
+    "id": "api-homologacao-fiapiautemitirboleto1aparcela",
     "type": "api",
     "displayName": "Web Api Emissão de Boleto da 1ª Parcela",
     "name": "Web Api Emissão de Boleto da 1ª Parcela",
@@ -1143,7 +1143,7 @@
     ]
   },
   {
-    "id": "api-fiapiautobservacao",
+    "id": "api-homologacao-fiapiautobservacao",
     "type": "api",
     "displayName": "FIApiAutObservacao - WebApi de Inclusão de Observa",
     "name": "FIApiAutObservacao - WebApi de Inclusão de Observa",
@@ -1176,7 +1176,7 @@
     ]
   },
   {
-    "id": "api-fiapiautsimularpropostarenegcp",
+    "id": "api-homologacao-fiapiautsimularpropostarenegcp",
     "type": "api",
     "displayName": "Simulação de Renegociação CP",
     "name": "Simulação de Renegociação CP",
@@ -1214,7 +1214,7 @@
     ]
   },
   {
-    "id": "api-fiapiautsimularpropostarefincp",
+    "id": "api-homologacao-fiapiautsimularpropostarefincp",
     "type": "api",
     "displayName": "Web Api Aut Veic: Simular proposta refinanciamento",
     "name": "Web Api Aut Veic: Simular proposta refinanciamento",
@@ -1252,7 +1252,7 @@
     ]
   },
   {
-    "id": "api-fiapiautetapasproposta",
+    "id": "api-homologacao-fiapiautetapasproposta",
     "type": "api",
     "displayName": "Web Api Etapas da Proposta",
     "name": "Web Api Etapas da Proposta",
@@ -1284,7 +1284,7 @@
     ]
   },
   {
-    "id": "api-fiapitabocorrencia",
+    "id": "api-homologacao-fiapitabocorrencia",
     "type": "api",
     "displayName": "Web API: Lista de Ocorrências dos lançamento",
     "name": "FiApiTabOcorrencia",
@@ -1321,7 +1321,7 @@
     ]
   },
   {
-    "id": "api-fiapiempracionaesteira-legado",
+    "id": "api-homologacao-fiapiempracionaesteira-legado",
     "type": "api",
     "displayName": "Web API: Acionamento de Esteira Legado",
     "name": "FIAPIEmprAcionaEsteira_LEGADO",
@@ -1356,7 +1356,7 @@
     ]
   },
   {
-    "id": "api-fiapiempracionasic-legado",
+    "id": "api-homologacao-fiapiempracionasic-legado",
     "type": "api",
     "displayName": "Web API: Aciona WsSIC",
     "name": "FIAPIEmprAcionaSIC_LEGADO",
@@ -1389,7 +1389,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprconsultacpf-legado",
+    "id": "api-homologacao-fiapiemprconsultacpf-legado",
     "type": "api",
     "displayName": "Web API: Consultar CPF",
     "name": "FIAPIEmprConsultaCPF_LEGADO",
@@ -1424,7 +1424,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprconsultanacionalidade-legado",
+    "id": "api-homologacao-fiapiemprconsultanacionalidade-legado",
     "type": "api",
     "displayName": "Web API: Consultar Nacionalidade Legado",
     "name": "FIAPIEmprConsultaNacionalidade_LEGADO",
@@ -1459,7 +1459,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprconsultaocorconsignacao-legado",
+    "id": "api-homologacao-fiapiemprconsultaocorconsignacao-legado",
     "type": "api",
     "displayName": "Web API: Consultar Ocorrências Consignadas",
     "name": "FIAPIEmprConsultaOcorConsignacao_LEGADO",
@@ -1500,7 +1500,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprconsultaopers-legado",
+    "id": "api-homologacao-fiapiemprconsultaopers-legado",
     "type": "api",
     "displayName": "Web API: Consultar Operações",
     "name": "FIAPIEmprConsultaOpers_LEGADO",
@@ -1537,7 +1537,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprconsultaperiodoconc-legado",
+    "id": "api-homologacao-fiapiemprconsultaperiodoconc-legado",
     "type": "api",
     "displayName": "Web API: Consulta Periodo de Conciliação",
     "name": "FIAPIEmprConsultaPeriodoConc_LEGADO",
@@ -1574,7 +1574,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprefetivarrescisao-legado",
+    "id": "api-homologacao-fiapiemprefetivarrescisao-legado",
     "type": "api",
     "displayName": "Web API: Efetiva Rescisão Legado",
     "name": "FIAPIEmprEfetivarRescisao_LEGADO",
@@ -1609,7 +1609,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprfaturarh-legado",
+    "id": "api-homologacao-fiapiemprfaturarh-legado",
     "type": "api",
     "displayName": "Web API: Fatura no Legado",
     "name": "FIAPIEmprFaturaRH_LEGADO",
@@ -1640,7 +1640,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprobterboletoprocessamento-legado",
+    "id": "api-homologacao-fiapiemprobterboletoprocessamento-legado",
     "type": "api",
     "displayName": "Web API: Gera Boleto de Processamento Legado",
     "name": "FIAPIEmprObterBoletoProcessamento_LEGADO",
@@ -1677,7 +1677,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprparcelasnaodisponiveispararefin-legado",
+    "id": "api-homologacao-fiapiemprparcelasnaodisponiveispararefin-legado",
     "type": "api",
     "displayName": "Web API: parcelas não disponíveis para refinanciamento",
     "name": "FIAPIEmprParcelasNaoDisponiveisParaRefin_LEGADO",
@@ -1718,7 +1718,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprverbasrescisorias-legado",
+    "id": "api-homologacao-fiapiemprverbasrescisorias-legado",
     "type": "api",
     "displayName": "Web API: Verbas Rescisórias",
     "name": "FIApiEmprVerbasRescisorias_LEGADO",
@@ -1751,7 +1751,7 @@
     ]
   },
   {
-    "id": "api-fiapiacessogerenciapin",
+    "id": "api-homologacao-fiapiacessogerenciapin",
     "type": "api",
     "displayName": "Web API: Gerenciamento de PIN",
     "name": "FIApiAcessoGerenciaPIN",
@@ -1782,10 +1782,11 @@
       "api",
       "homologacao"
     ],
-    "updatedAt": "2026-07-16T01:10:47.071Z"
+    "updatedAt": "2026-07-19T23:43:00.415Z",
+    "responsible": ""
   },
   {
-    "id": "api-fiapiatualizarinformacoesrh",
+    "id": "api-homologacao-fiapiatualizarinformacoesrh",
     "type": "api",
     "displayName": "Web API: Atualizar Informações RH",
     "name": "FIApiAtualizarInformacoesRH",
@@ -1815,7 +1816,7 @@
     "updatedAt": "2026-07-16T01:11:03.843Z"
   },
   {
-    "id": "api-fiapiautconscliproposta",
+    "id": "api-homologacao-fiapiautconscliproposta",
     "type": "api",
     "displayName": "Web API: para consulta de clientes por proposta",
     "name": "FIApiAutConsCliProposta",
@@ -1856,7 +1857,7 @@
     ]
   },
   {
-    "id": "api-fiapiautconsesteira",
+    "id": "api-homologacao-fiapiautconsesteira",
     "type": "api",
     "displayName": "Web API: Consulta de Esteiras",
     "name": "FIApiAutConsEsteira",
@@ -1891,7 +1892,7 @@
     ]
   },
   {
-    "id": "api-fiapiautconsultarmotivosexternos",
+    "id": "api-homologacao-fiapiautconsultarmotivosexternos",
     "type": "api",
     "displayName": "Web API: Consulta de Motivo Externo Consignado",
     "name": "FIApiAutConsultarMotivosExternos",
@@ -1932,7 +1933,7 @@
     ]
   },
   {
-    "id": "api-fiapiautconsultavalidacaobanco",
+    "id": "api-homologacao-fiapiautconsultavalidacaobanco",
     "type": "api",
     "displayName": "Web API: Consulta validação banco",
     "name": "FIApiAutConsultaValidacaoBanco",
@@ -1965,7 +1966,7 @@
     ]
   },
   {
-    "id": "api-fiapiautorizadorconsultapropostasportal",
+    "id": "api-homologacao-fiapiautorizadorconsultapropostasportal",
     "type": "api",
     "displayName": "Web API: Consultar propostas do portal",
     "name": "FiApiAutorizadorConsultaPropostasPortal",
@@ -2000,7 +2001,7 @@
     ]
   },
   {
-    "id": "api-fiapiautorizadorconsultarlinhadotempo",
+    "id": "api-homologacao-fiapiautorizadorconsultarlinhadotempo",
     "type": "api",
     "displayName": "Web API: Consultar dados da Linha do Tempo",
     "name": "FIApiAutorizadorConsultarLinhaDoTempo",
@@ -2035,7 +2036,7 @@
     ]
   },
   {
-    "id": "api-fiapiautorizadorconsultarproposta",
+    "id": "api-homologacao-fiapiautorizadorconsultarproposta",
     "type": "api",
     "displayName": "Web API: Consultar os dados de uma proposta",
     "name": "FIApiAutorizadorConsultarProposta",
@@ -2070,7 +2071,7 @@
     ]
   },
   {
-    "id": "api-fiapiautorizadordocumentoged",
+    "id": "api-homologacao-fiapiautorizadordocumentoged",
     "type": "api",
     "displayName": "Web API: Consulta e Anexo de Documentos GEDoc",
     "name": "FIApiAutorizadorDocumentoGed",
@@ -2109,7 +2110,7 @@
     ]
   },
   {
-    "id": "api-fiapiautorizadorpropostascp",
+    "id": "api-homologacao-fiapiautorizadorpropostascp",
     "type": "api",
     "displayName": "Web API: Inclusão de Propostas CP",
     "name": "FIApiAutorizadorPropostasCP",
@@ -2140,7 +2141,7 @@
     ]
   },
   {
-    "id": "api-fiapiautprodutos",
+    "id": "api-homologacao-fiapiautprodutos",
     "type": "api",
     "displayName": "Web API: Consulta de Produtos",
     "name": "FIApiAutProdutos",
@@ -2171,7 +2172,7 @@
     ]
   },
   {
-    "id": "api-fiapiautvalidadadosbancarios",
+    "id": "api-homologacao-fiapiautvalidadadosbancarios",
     "type": "api",
     "displayName": "Web API: Validação de dados bancários",
     "name": "FIApiAutValidaDadosBancarios",
@@ -2206,7 +2207,7 @@
     ]
   },
   {
-    "id": "api-fiapicallbackautorizador",
+    "id": "api-homologacao-fiapicallbackautorizador",
     "type": "api",
     "displayName": "Web API: de captura de transferência manual de estágios em lote",
     "name": "FIApiCallBackAutorizador",
@@ -2247,7 +2248,7 @@
     ]
   },
   {
-    "id": "api-fiapicapttransmanualestaglote",
+    "id": "api-homologacao-fiapicapttransmanualestaglote",
     "type": "api",
     "displayName": "Web API: de captura de fatores externos para perdas esperadas",
     "name": "FiApiCaptTransManualEstagLote",
@@ -2294,7 +2295,7 @@
     ]
   },
   {
-    "id": "api-fiapicapturafatoresexternos",
+    "id": "api-homologacao-fiapicapturafatoresexternos",
     "type": "api",
     "displayName": "Web API: para consulta de contratos por cliente",
     "name": "FIApiCapturaFatoresExternos",
@@ -2335,7 +2336,7 @@
     ]
   },
   {
-    "id": "api-fiapicdcconscontratoscpfmat",
+    "id": "api-homologacao-fiapicdcconscontratoscpfmat",
     "type": "api",
     "displayName": "Web API: Consultar os dados de uma operação",
     "name": "FIApiCdcConsContratosCpfMat",
@@ -2378,7 +2379,7 @@
     ]
   },
   {
-    "id": "api-fiapicdcconsultapendencia",
+    "id": "api-homologacao-fiapicdcconsultapendencia",
     "type": "api",
     "displayName": "Web API: Consulta de pendências",
     "name": "FIApiCdcConsultaPendencia",
@@ -2411,7 +2412,7 @@
     ]
   },
   {
-    "id": "api-fiapicdcconsultaroperacao",
+    "id": "api-homologacao-fiapicdcconsultaroperacao",
     "type": "api",
     "displayName": "Web API: Consultar os dados de uma operação",
     "name": "FIApiCdcConsultarOperacao",
@@ -2446,7 +2447,7 @@
     ]
   },
   {
-    "id": "api-fiapicdccpfoperacoes",
+    "id": "api-homologacao-fiapicdccpfoperacoes",
     "type": "api",
     "displayName": "Web API: CpfOperacoes",
     "name": "FiApiCdcCpfOperacoes",
@@ -2477,7 +2478,7 @@
     ]
   },
   {
-    "id": "api-fiapicdcdadosfinanceirosoperacoes",
+    "id": "api-homologacao-fiapicdcdadosfinanceirosoperacoes",
     "type": "api",
     "displayName": "Web API: Dados Financeiros Operações",
     "name": "FiApiCdcDadosFinanceirosOperacoes",
@@ -2510,7 +2511,7 @@
     ]
   },
   {
-    "id": "api-fiapicdcidentificatransacoes",
+    "id": "api-homologacao-fiapicdcidentificatransacoes",
     "type": "api",
     "displayName": "Web API: Identifica Transações - Assíncrona",
     "name": "FIApiCdcIdentificaTransacoes",
@@ -2543,7 +2544,7 @@
     ]
   },
   {
-    "id": "api-fiapicdclancaocorrencia",
+    "id": "api-homologacao-fiapicdclancaocorrencia",
     "type": "api",
     "displayName": "Web API: Lançamento de ocorrência na operação",
     "name": "FIApiCdcLancaOcorrencia",
@@ -2578,7 +2579,7 @@
     ]
   },
   {
-    "id": "api-fiapicdclancapendencia",
+    "id": "api-homologacao-fiapicdclancapendencia",
     "type": "api",
     "displayName": "Web API: Lançamento de pendência na operação",
     "name": "FIApiCdcLancaPendencia",
@@ -2613,7 +2614,7 @@
     ]
   },
   {
-    "id": "api-fiapicdcocorrencia",
+    "id": "api-homologacao-fiapicdcocorrencia",
     "type": "api",
     "displayName": "Web API: Web Api Consulta de Ocorrências",
     "name": "FiApiCdcOcorrencia",
@@ -2646,7 +2647,7 @@
     ]
   },
   {
-    "id": "api-fiapicdcparcelas",
+    "id": "api-homologacao-fiapicdcparcelas",
     "type": "api",
     "displayName": "Web API: Parcelas",
     "name": "FiApiCdcParcelas",
@@ -2675,7 +2676,7 @@
     ]
   },
   {
-    "id": "api-fiapicdcpesquisaoperacao",
+    "id": "api-homologacao-fiapicdcpesquisaoperacao",
     "type": "api",
     "displayName": "Web API: Pesquisa/Lista de Operações",
     "name": "FiApiCdcPesquisaOperacao",
@@ -2710,7 +2711,7 @@
     ]
   },
   {
-    "id": "api-fiapicdcrelinformerendimentos",
+    "id": "api-homologacao-fiapicdcrelinformerendimentos",
     "type": "api",
     "displayName": "Web API: Relatório de Informe de Rendimentos",
     "name": "FIApiCdcRelInformeRendimentos",
@@ -2745,7 +2746,7 @@
     ]
   },
   {
-    "id": "api-fiapicdcsaldos",
+    "id": "api-homologacao-fiapicdcsaldos",
     "type": "api",
     "displayName": "Web API: Saldos",
     "name": "FiApiCdcSaldos",
@@ -2774,7 +2775,7 @@
     ]
   },
   {
-    "id": "api-fiapicdcsegundaviacarne",
+    "id": "api-homologacao-fiapicdcsegundaviacarne",
     "type": "api",
     "displayName": "Web API: Segunda Via Carne",
     "name": "FiApiCdcSegundaViaCarne",
@@ -2807,7 +2808,7 @@
     ]
   },
   {
-    "id": "api-fiapicotacoes",
+    "id": "api-homologacao-fiapicotacoes",
     "type": "api",
     "displayName": "Web API: Consulta Cotação",
     "name": "FIAPICotacoes",
@@ -2838,7 +2839,7 @@
     ]
   },
   {
-    "id": "api-fiapiempractwsautorizador",
+    "id": "api-homologacao-fiapiempractwsautorizador",
     "type": "api",
     "name": "FIAPIEmprActWSAutorizador",
     "technicalName": "FIAPIEmprActWSAutorizador",
@@ -2865,7 +2866,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprcadastrofunc",
+    "id": "api-homologacao-fiapiemprcadastrofunc",
     "type": "api",
     "displayName": "Web API: Cadastro de Funcionário",
     "name": "FIAPIEmprCadastroFunc",
@@ -2898,7 +2899,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprgerarboleto",
+    "id": "api-homologacao-fiapiemprgerarboleto",
     "type": "api",
     "name": "FIAPIEmprGerarBoleto",
     "technicalName": "FIAPIEmprGerarBoleto",
@@ -2925,7 +2926,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprobterboletoprocessamento",
+    "id": "api-homologacao-fiapiemprobterboletoprocessamento",
     "type": "api",
     "displayName": "Web API: Gera Boleto de Processamento Legado.",
     "name": "FIAPIEmprObterBoletoProcessamento",
@@ -2962,7 +2963,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprpropostarh",
+    "id": "api-homologacao-fiapiemprpropostarh",
     "type": "api",
     "displayName": "Web API: Proposta RH",
     "name": "FIAPIEmprPropostaRH",
@@ -2991,7 +2992,7 @@
     ]
   },
   {
-    "id": "api-fiapigabaixaparcelamanual",
+    "id": "api-homologacao-fiapigabaixaparcelamanual",
     "type": "api",
     "displayName": "Web API: Baixa de parcela manual",
     "name": "FIApiGaBaixaParcelaManual",
@@ -3022,7 +3023,7 @@
     ]
   },
   {
-    "id": "api-fiapigacancelamentoautomaticoacordos",
+    "id": "api-homologacao-fiapigacancelamentoautomaticoacordos",
     "type": "api",
     "displayName": "Web API: Cancelamento Automatico de Acordos",
     "name": "FiApiGACancelamentoAutomaticoAcordos",
@@ -3053,7 +3054,7 @@
     ]
   },
   {
-    "id": "api-fiapigacancelamentomanualacordos",
+    "id": "api-homologacao-fiapigacancelamentomanualacordos",
     "type": "api",
     "displayName": "Web API: Cancelamento Manual de Acordos",
     "name": "FiApiGACancelamentoManualAcordos",
@@ -3084,7 +3085,7 @@
     ]
   },
   {
-    "id": "api-fiapigacancelamentomovimento",
+    "id": "api-homologacao-fiapigacancelamentomovimento",
     "type": "api",
     "displayName": "Web API: Cancelamento do movimento da parcela",
     "name": "FIApiGaCancelamentoMovimento",
@@ -3115,7 +3116,7 @@
     ]
   },
   {
-    "id": "api-fiapigaconsultaparcela",
+    "id": "api-homologacao-fiapigaconsultaparcela",
     "type": "api",
     "displayName": "Web API: Consulta das Parcelas das operações",
     "name": "FiApiGAConsultaParcela",
@@ -3150,7 +3151,7 @@
     ]
   },
   {
-    "id": "api-fiapigaconsultasaldo",
+    "id": "api-homologacao-fiapigaconsultasaldo",
     "type": "api",
     "displayName": "Web API: Web API de Consulta de saldo de parcela",
     "name": "FIApiGaConsultaSaldo",
@@ -3181,7 +3182,7 @@
     ]
   },
   {
-    "id": "api-fiapigaconsultaultimomovimento",
+    "id": "api-homologacao-fiapigaconsultaultimomovimento",
     "type": "api",
     "displayName": "Web API: Consulta ultimo movimento",
     "name": "FIApiGaConsultaUltimoMovimento",
@@ -3212,7 +3213,7 @@
     ]
   },
   {
-    "id": "api-fiapigaestornobaixa",
+    "id": "api-homologacao-fiapigaestornobaixa",
     "type": "api",
     "displayName": "Web API: Estorno de baixa",
     "name": "FIApiGaEstornoBaixa",
@@ -3241,7 +3242,7 @@
     ]
   },
   {
-    "id": "api-fiapigarantiascontabeis",
+    "id": "api-homologacao-fiapigarantiascontabeis",
     "type": "api",
     "displayName": "Web API: Restful Garantias Contabeis Online",
     "name": "FiApiGarantiasContabeis",
@@ -3274,7 +3275,7 @@
     ]
   },
   {
-    "id": "api-fiapimoduloscorpconsultarcep",
+    "id": "api-homologacao-fiapimoduloscorpconsultarcep",
     "type": "api",
     "displayName": "Web API: consulta de endereço por CEP",
     "name": "FIApiModulosCorpConsultarCEP",
@@ -3313,7 +3314,7 @@
     ]
   },
   {
-    "id": "api-fiapimonitor",
+    "id": "api-homologacao-fiapimonitor",
     "type": "api",
     "displayName": "Web API: Monitoramento do ServCon",
     "name": "FIApiMonitor",
@@ -3346,7 +3347,7 @@
     ]
   },
   {
-    "id": "api-fiapisif",
+    "id": "api-homologacao-fiapisif",
     "type": "api",
     "name": "FIApiSIF",
     "technicalName": "FIApiSIF",
@@ -3369,7 +3370,7 @@
     ]
   },
   {
-    "id": "api-fiapisrvgacancelamentoacordo",
+    "id": "api-homologacao-fiapisrvgacancelamentoacordo",
     "type": "api",
     "displayName": "Web API: Restful do plugin SrvPluginCancelamentoAcordo",
     "name": "FIApiSrvGACancelamentoAcordo",
@@ -3404,7 +3405,7 @@
     ]
   },
   {
-    "id": "api-fiapitabconsorigem1",
+    "id": "api-homologacao-fiapitabconsorigem1",
     "type": "api",
     "displayName": "Web API: Consulta das Origens1 cadastradas no sistema Função",
     "name": "FIApiTabConsOrigem1",
@@ -3447,7 +3448,7 @@
     ]
   },
   {
-    "id": "api-fiapitabconsorigem2",
+    "id": "api-homologacao-fiapitabconsorigem2",
     "type": "api",
     "displayName": "Web API: Consulta das Origens2 cadastradas no sistema Função",
     "name": "FIApiTabConsOrigem2",
@@ -3490,7 +3491,7 @@
     ]
   },
   {
-    "id": "api-fiapitabconsorigem3o",
+    "id": "api-homologacao-fiapitabconsorigem3o",
     "type": "api",
     "displayName": "Web API: Consulta das Origens 30 cadastradas no sistema Função",
     "name": "FIApiTabConsOrigem3O",
@@ -3533,7 +3534,7 @@
     ]
   },
   {
-    "id": "api-fiapitabregimecontratacao",
+    "id": "api-homologacao-fiapitabregimecontratacao",
     "type": "api",
     "displayName": "Web API: Regime de Contratação",
     "name": "FIApiTabRegimeContratacao",
@@ -3564,7 +3565,7 @@
     ]
   },
   {
-    "id": "api-fiapitabvalprofcert",
+    "id": "api-homologacao-fiapitabvalprofcert",
     "type": "api",
     "displayName": "Web API: Validação do Profissional Certificado",
     "name": "FiApiTabValProfCert",
@@ -3603,7 +3604,7 @@
     ]
   },
   {
-    "id": "api-fiapiautoservico",
+    "id": "api-homologacao-fiapiautoservico",
     "type": "api",
     "displayName": "Web API: Restful de Auto Serviço da Função Informática",
     "name": "FIAPIAutoServico",
@@ -3638,7 +3639,7 @@
     ]
   },
   {
-    "id": "api-fiapiconsultaparametrosgerais-autoserv",
+    "id": "api-homologacao-fiapiconsultaparametrosgerais-autoserv",
     "type": "api",
     "displayName": "Web API: Consultar Parametros Gerais",
     "name": "FIAPIConsultaParametrosGerais_AUTOSERV",
@@ -3675,7 +3676,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprconstfuncpropoper-autoserv",
+    "id": "api-homologacao-fiapiemprconstfuncpropoper-autoserv",
     "type": "api",
     "displayName": "Web API: Consulta de Funcionário de Prop/Oper.",
     "name": "FIAPIEmprConstFuncPropOper_AUTOSERV",
@@ -3720,7 +3721,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprconsultabancos-autoserv",
+    "id": "api-homologacao-fiapiemprconsultabancos-autoserv",
     "type": "api",
     "displayName": "Web API: Consultar Bancos",
     "name": "FIAPIEmprConsultaBancos_AUTOSERV",
@@ -3757,7 +3758,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprconsultaclienteportal-autoserv",
+    "id": "api-homologacao-fiapiemprconsultaclienteportal-autoserv",
     "type": "api",
     "displayName": "Web API: Consultar Clientes do portal",
     "name": "FIAPIEmprConsultaClientePortal_AUTOSERV",
@@ -3798,7 +3799,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprconsultacpf-autoserv",
+    "id": "api-homologacao-fiapiemprconsultacpf-autoserv",
     "type": "api",
     "displayName": "Web API: Consultar CPF",
     "name": "FIAPIEmprConsultaCPF_AUTOSERV",
@@ -3835,7 +3836,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprconsultadadosporproposta-autoserv",
+    "id": "api-homologacao-fiapiemprconsultadadosporproposta-autoserv",
     "type": "api",
     "displayName": "Web API: Consulta de Dados por Proposta",
     "name": "FIAPIEmprConsultaDadosPorProposta_AUTOSERV",
@@ -3874,7 +3875,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprconsultalinhadotempo-autoserv",
+    "id": "api-homologacao-fiapiemprconsultalinhadotempo-autoserv",
     "type": "api",
     "displayName": "Web API: Consultar Linha do Tempo - AutoServ",
     "name": "FIAPIEmprConsultaLinhaDoTempo_AUTOSERV",
@@ -3917,7 +3918,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprconsultanacionalidade-autoserv",
+    "id": "api-homologacao-fiapiemprconsultanacionalidade-autoserv",
     "type": "api",
     "displayName": "Web API: Consultar Nacionalidade AutoServ",
     "name": "FIAPIEmprConsultaNacionalidade_AUTOSERV",
@@ -3958,7 +3959,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprconsultaocorconsignacao-autoserv",
+    "id": "api-homologacao-fiapiemprconsultaocorconsignacao-autoserv",
     "type": "api",
     "displayName": "Web API: Consultar Ocorrências Consignadas",
     "name": "FIAPIEmprConsultaOcorConsignacao_AUTOSERV",
@@ -4001,7 +4002,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprconsultaopers-autoserv",
+    "id": "api-homologacao-fiapiemprconsultaopers-autoserv",
     "type": "api",
     "displayName": "Web API: Consultar Operações - AutoServ",
     "name": "FIAPIEmprConsultaOpers_AUTOSERV",
@@ -4044,7 +4045,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprconsultaorigem4-autoserv",
+    "id": "api-homologacao-fiapiemprconsultaorigem4-autoserv",
     "type": "api",
     "displayName": "Web API: Consultar Origens 4",
     "name": "FIApiEmprConsultaOrigem4_AUTOSERV",
@@ -4083,7 +4084,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprconsultaorigem5-autoserv",
+    "id": "api-homologacao-fiapiemprconsultaorigem5-autoserv",
     "type": "api",
     "displayName": "Web API: Consultar Origens 5",
     "name": "FIAPIEmprConsultaOrigem5_AUTOSERV",
@@ -4122,7 +4123,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprconsultaperiodoconc-autoserv",
+    "id": "api-homologacao-fiapiemprconsultaperiodoconc-autoserv",
     "type": "api",
     "displayName": "Web API: Consulta Periodo de Conciliação",
     "name": "FIAPIEmprConsultaPeriodoConc_AUTOSERV",
@@ -4161,7 +4162,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprconsultapropostasportal-autoserv",
+    "id": "api-homologacao-fiapiemprconsultapropostasportal-autoserv",
     "type": "api",
     "displayName": "Web API: Consultar propostas do portal - Autoservico",
     "name": "FIAPIEmprConsultaPropostasPortal_AUTOSERV",
@@ -4202,7 +4203,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprconsultarmotivosaut-autoserv",
+    "id": "api-homologacao-fiapiemprconsultarmotivosaut-autoserv",
     "type": "api",
     "displayName": "Web API: Consulta de Motivo Externo Consignado Auto Serviço",
     "name": "FIAPIEMPRConsultarMotivosAut_AUTOSERV",
@@ -4251,7 +4252,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprconsultarparcelasporoperacao-autoserv",
+    "id": "api-homologacao-fiapiemprconsultarparcelasporoperacao-autoserv",
     "type": "api",
     "displayName": "Web API: Consultar Parcelas Por Operação",
     "name": "FIAPIEmprConsultarParcelasPorOperacao_AUTOSERV",
@@ -4290,7 +4291,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprconsultarproposta-autoserv",
+    "id": "api-homologacao-fiapiemprconsultarproposta-autoserv",
     "type": "api",
     "displayName": "Web API: Consultar os dados de uma proposta",
     "name": "FIAPIEmprConsultarProposta_AUTOSERV",
@@ -4329,7 +4330,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprdocumentoged-autoserv",
+    "id": "api-homologacao-fiapiemprdocumentoged-autoserv",
     "type": "api",
     "displayName": "Web API: Consulta e Anexo de Documentos GEDoc AutoServ",
     "name": "FIAPIEmprDocumentoGed_AUTOSERV",
@@ -4376,7 +4377,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprefetivarrescisao-autoserv",
+    "id": "api-homologacao-fiapiemprefetivarrescisao-autoserv",
     "type": "api",
     "displayName": "Web API: Efetiva Rescisão Auto Serviço",
     "name": "FIAPIEmprEfetivarRescisao_AUTOSERV",
@@ -4417,7 +4418,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprfaturarh-autoserv",
+    "id": "api-homologacao-fiapiemprfaturarh-autoserv",
     "type": "api",
     "displayName": "Web API: Fatura AutoServico",
     "name": "FIAPIEmprFaturaRH_AUTOSERV",
@@ -4454,7 +4455,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprgenfatexcel-autoserv",
+    "id": "api-homologacao-fiapiemprgenfatexcel-autoserv",
     "type": "api",
     "displayName": "Web API: Gerenciamento de Faturas - Excel",
     "name": "FIAPIEmprGenFatExcel_AUTOSERV",
@@ -4495,7 +4496,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprrltaverb-autoserv",
+    "id": "api-homologacao-fiapiemprrltaverb-autoserv",
     "type": "api",
     "displayName": "Web API: Relatórios de Averbação",
     "name": "FIApiEmprRltAverb_AUTOSERV",
@@ -4534,7 +4535,7 @@
     ]
   },
   {
-    "id": "api-fiapiemprverbasrescisorias-autoserv",
+    "id": "api-homologacao-fiapiemprverbasrescisorias-autoserv",
     "type": "api",
     "displayName": "Web API: Verbas Rescisórias - AutoServiço",
     "name": "FIApiEmprVerbasRescisorias_AUTOSERV",
@@ -4573,7 +4574,7 @@
     ]
   },
   {
-    "id": "web-service-wsacordo-wsautorizador-asmx",
+    "id": "web-service-homologacao-wsacordo-wsautorizador-asmx",
     "type": "web-service",
     "displayName": "WSAutorizador",
     "name": "WsAcordo/WSAutorizador.asmx",
@@ -4606,7 +4607,7 @@
     "updatedAt": "2026-07-15T02:52:00.177Z"
   },
   {
-    "id": "web-service-wsautorizador-wsautorizador-asmx",
+    "id": "web-service-homologacao-wsautorizador-wsautorizador-asmx",
     "type": "web-service",
     "displayName": "WSAutorizador",
     "name": "WsAutorizador/WSAutorizador.asmx",
@@ -4635,7 +4636,7 @@
     ]
   },
   {
-    "id": "web-service-wscnab-wscnab-asmx",
+    "id": "web-service-homologacao-wscnab-wscnab-asmx",
     "type": "web-service",
     "displayName": "WSCNAB",
     "name": "WsCNAB/WsCNAB.asmx",
@@ -4665,7 +4666,7 @@
     ]
   },
   {
-    "id": "web-service-wsgedoc-wsged-asmx",
+    "id": "web-service-homologacao-wsgedoc-wsged-asmx",
     "type": "web-service",
     "displayName": "WsGED",
     "name": "WsGEDoc/WSGED.asmx",
@@ -4694,7 +4695,7 @@
     ]
   },
   {
-    "id": "web-service-wsmonitor-wsmonitor-asmx",
+    "id": "web-service-homologacao-wsmonitor-wsmonitor-asmx",
     "type": "web-service",
     "displayName": "WsMonitor",
     "name": "WsMonitor/WsMonitor.asmx",
@@ -4723,7 +4724,7 @@
     ]
   },
   {
-    "id": "web-service-wssic-wssic-asmx",
+    "id": "web-service-homologacao-wssic-wssic-asmx",
     "type": "web-service",
     "displayName": "WsSIC",
     "name": "WsSIC/WsSIC.asmx",
@@ -4752,7 +4753,7 @@
     ]
   },
   {
-    "id": "site-webacesso",
+    "id": "site-homologacao-webacesso",
     "type": "site",
     "name": "WebAcesso",
     "technicalName": "WebAcesso",
@@ -4775,7 +4776,7 @@
     ]
   },
   {
-    "id": "site-webautorizadorsubconsig",
+    "id": "site-homologacao-webautorizadorsubconsig",
     "type": "site",
     "name": "WebAutorizadorSubConsig",
     "technicalName": "WebAutorizadorSubConsig",
@@ -4802,7 +4803,7 @@
     ]
   },
   {
-    "id": "site-webautorizadorsubcp",
+    "id": "site-homologacao-webautorizadorsubcp",
     "type": "site",
     "name": "WebAutorizadorSubCp",
     "technicalName": "WebAutorizadorSubCp",
@@ -4827,7 +4828,7 @@
     ]
   },
   {
-    "id": "site-webautorizador",
+    "id": "site-homologacao-webautorizador",
     "type": "site",
     "name": "WebAutorizador",
     "technicalName": "WebAutorizador",
@@ -4850,7 +4851,7 @@
     ]
   },
   {
-    "id": "site-webbacenifrs",
+    "id": "site-homologacao-webbacenifrs",
     "type": "site",
     "name": "WebBacenIFRS",
     "technicalName": "WebBacenIFRS",
@@ -4875,7 +4876,7 @@
     ]
   },
   {
-    "id": "site-webccob",
+    "id": "site-homologacao-webccob",
     "type": "site",
     "name": "WebCCob",
     "technicalName": "WebCCob",
@@ -4898,7 +4899,7 @@
     ]
   },
   {
-    "id": "site-webcdccontabilifrs",
+    "id": "site-homologacao-webcdccontabilifrs",
     "type": "site",
     "name": "WebCdcContabilIFRS",
     "technicalName": "WebCdcContabilIFRS",
@@ -4925,7 +4926,7 @@
     ]
   },
   {
-    "id": "site-webcdc",
+    "id": "site-homologacao-webcdc",
     "type": "site",
     "name": "WebCdc",
     "technicalName": "WebCdc",
@@ -4948,7 +4949,7 @@
     ]
   },
   {
-    "id": "site-webcnab",
+    "id": "site-homologacao-webcnab",
     "type": "site",
     "name": "WebCNAB",
     "technicalName": "WebCNAB",
@@ -4971,7 +4972,7 @@
     ]
   },
   {
-    "id": "site-webcomissao",
+    "id": "site-homologacao-webcomissao",
     "type": "site",
     "name": "WebComissao",
     "technicalName": "WebComissao",
@@ -4994,7 +4995,7 @@
     ]
   },
   {
-    "id": "site-webctc",
+    "id": "site-homologacao-webctc",
     "type": "site",
     "name": "WebCTC",
     "technicalName": "WebCTC",
@@ -5017,7 +5018,7 @@
     ]
   },
   {
-    "id": "site-webempregador",
+    "id": "site-homologacao-webempregador",
     "type": "site",
     "name": "WebEmpregador",
     "technicalName": "WebEmpregador",
@@ -5040,7 +5041,7 @@
     ]
   },
   {
-    "id": "site-webfimenumvc",
+    "id": "site-homologacao-webfimenumvc",
     "type": "site",
     "name": "WebFIMenuMVC",
     "technicalName": "WebFIMenuMVC",
@@ -5065,7 +5066,7 @@
     ]
   },
   {
-    "id": "site-webgedoc",
+    "id": "site-homologacao-webgedoc",
     "type": "site",
     "name": "WebGEDoc",
     "technicalName": "WebGEDoc",
@@ -5088,7 +5089,7 @@
     ]
   },
   {
-    "id": "site-webgv",
+    "id": "site-homologacao-webgv",
     "type": "site",
     "name": "WebGV",
     "technicalName": "WebGV",
@@ -5109,7 +5110,7 @@
     ]
   },
   {
-    "id": "site-webmonitor",
+    "id": "site-homologacao-webmonitor",
     "type": "site",
     "name": "WebMonitor",
     "technicalName": "WebMonitor",
@@ -5132,7 +5133,7 @@
     ]
   },
   {
-    "id": "site-websic",
+    "id": "site-homologacao-websic",
     "type": "site",
     "name": "WebSIC",
     "technicalName": "WebSIC",
@@ -5155,7 +5156,7 @@
     ]
   },
   {
-    "id": "site-webtabelascorp",
+    "id": "site-homologacao-webtabelascorp",
     "type": "site",
     "name": "WebTabelasCorp",
     "technicalName": "WebTabelasCorp",
@@ -5180,7 +5181,7 @@
     ]
   },
   {
-    "id": "site-webtabelasempr",
+    "id": "site-homologacao-webtabelasempr",
     "type": "site",
     "name": "WebTabelasEmpr",
     "technicalName": "WebTabelasEmpr",
@@ -5205,7 +5206,7 @@
     ]
   },
   {
-    "id": "site-webacessoautoserv",
+    "id": "site-homologacao-webacessoautoserv",
     "type": "site",
     "name": "WebAcessoAUTOSERV",
     "technicalName": "WebAcessoAUTOSERV",
@@ -5230,7 +5231,7 @@
     ]
   },
   {
-    "id": "site-webfimenumvcautoserv",
+    "id": "site-homologacao-webfimenumvcautoserv",
     "type": "site",
     "name": "WebFIMenuMVCAUTOSERV",
     "technicalName": "WebFIMenuMVCAUTOSERV",
@@ -5255,7 +5256,7 @@
     ]
   },
   {
-    "id": "site-webportalempresa",
+    "id": "site-homologacao-webportalempresa",
     "type": "site",
     "name": "WebPortalEmpresa",
     "technicalName": "WebPortalEmpresa",
@@ -5280,7 +5281,7 @@
     ]
   },
   {
-    "id": "site-websicautoserv",
+    "id": "site-homologacao-websicautoserv",
     "type": "site",
     "name": "WebSICAUTOSERV",
     "technicalName": "WebSICAUTOSERV",
@@ -5301,5 +5302,5596 @@
       "site",
       "homologacao"
     ]
+  },
+  {
+    "id": "api-producao-webapi-consultar-agencias",
+    "type": "api",
+    "name": "WebApi - Consultar Agências",
+    "technicalName": "webapi-consultar-agencias",
+    "code": "APIAUTCONSAGE",
+    "url": "https://credito.buni.digital/API/FIApiTabConsultarAgencias",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webapi",
+      "consultar",
+      "agencias",
+      "tab",
+      "apiautconsage",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webapi - consultar agencias",
+      "webapi-consultar-agencias",
+      "apiautconsage",
+      "https://credito.buni.digital/api/fiapitabconsultaragencias",
+      "webapi",
+      "consultar",
+      "agencias",
+      "tab",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:26.786Z",
+    "updatedAt": "2026-07-16T17:37:26.786Z",
+    "displayName": "WebApi - Consultar Agências"
+  },
+  {
+    "id": "api-producao-webapi-consulta-origem-3",
+    "type": "api",
+    "name": "WebApi - Consulta Origem 3",
+    "technicalName": "webapi-consulta-origem-3",
+    "code": "APICONORIGEM3CAD",
+    "url": "https://credito.buni.digital/API/FIApiTabConsOrigem3",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webapi",
+      "consulta",
+      "origem",
+      "tab",
+      "cons",
+      "origem3",
+      "apiconorigem3cad",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webapi - consulta origem 3",
+      "webapi-consulta-origem-3",
+      "apiconorigem3cad",
+      "https://credito.buni.digital/api/fiapitabconsorigem3",
+      "webapi",
+      "consulta",
+      "origem",
+      "tab",
+      "cons",
+      "origem3",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:26.795Z",
+    "updatedAt": "2026-07-16T17:37:26.795Z",
+    "displayName": "WebApi - Consulta Origem 3"
+  },
+  {
+    "id": "api-producao-webapi-consulta-origem-4",
+    "type": "api",
+    "name": "WebApi - Consulta Origem 4",
+    "technicalName": "webapi-consulta-origem-4",
+    "code": "APICONORIGEM4CAD",
+    "url": "https://credito.buni.digital/API/FIApiTabConsOrigem4",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webapi",
+      "consulta",
+      "origem",
+      "tab",
+      "cons",
+      "origem4",
+      "apiconorigem4cad",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webapi - consulta origem 4",
+      "webapi-consulta-origem-4",
+      "apiconorigem4cad",
+      "https://credito.buni.digital/api/fiapitabconsorigem4",
+      "webapi",
+      "consulta",
+      "origem",
+      "tab",
+      "cons",
+      "origem4",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:26.801Z",
+    "updatedAt": "2026-07-16T17:37:26.801Z",
+    "displayName": "WebApi - Consulta Origem 4"
+  },
+  {
+    "id": "api-producao-webapi-consulta-origem-5",
+    "type": "api",
+    "name": "WebApi - Consulta Origem 5",
+    "technicalName": "webapi-consulta-origem-5",
+    "code": "APICONORIGEM5CAD",
+    "url": "https://credito.buni.digital/API/FIApiTabConsOrigem5",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webapi",
+      "consulta",
+      "origem",
+      "tab",
+      "cons",
+      "origem5",
+      "apiconorigem5cad",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webapi - consulta origem 5",
+      "webapi-consulta-origem-5",
+      "apiconorigem5cad",
+      "https://credito.buni.digital/api/fiapitabconsorigem5",
+      "webapi",
+      "consulta",
+      "origem",
+      "tab",
+      "cons",
+      "origem5",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:26.809Z",
+    "updatedAt": "2026-07-16T17:37:26.809Z",
+    "displayName": "WebApi - Consulta Origem 5"
+  },
+  {
+    "id": "api-producao-webapi-consulta-de-bancos",
+    "type": "api",
+    "name": "WebApi - Consulta de Bancos",
+    "technicalName": "webapi-consulta-de-bancos",
+    "code": "APICNSBCO",
+    "url": "https://credito.buni.digital/API/FIApiTabConsultaBancos",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webapi",
+      "consulta",
+      "bancos",
+      "tab",
+      "apicnsbco",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webapi - consulta de bancos",
+      "webapi-consulta-de-bancos",
+      "apicnsbco",
+      "https://credito.buni.digital/api/fiapitabconsultabancos",
+      "webapi",
+      "consulta",
+      "bancos",
+      "tab",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:26.819Z",
+    "updatedAt": "2026-07-16T17:37:26.819Z",
+    "displayName": "WebApi - Consulta de Bancos"
+  },
+  {
+    "id": "api-producao-web-api-lista-de-locais-de-recebimentos",
+    "type": "api",
+    "name": "Web API: Lista de locais de recebimentos",
+    "technicalName": "web-api-lista-de-locais-de-recebimentos",
+    "code": "APILISTLOCREC",
+    "url": "https://credito.buni.digital/API/FiApiTabLocalRecebimento",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "web",
+      "api:",
+      "lista",
+      "locais",
+      "recebimentos",
+      "tab",
+      "local",
+      "recebimento",
+      "apilistlocrec",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "web api: lista de locais de recebimentos",
+      "web-api-lista-de-locais-de-recebimentos",
+      "apilistlocrec",
+      "https://credito.buni.digital/api/fiapitablocalrecebimento",
+      "web",
+      "api:",
+      "lista",
+      "locais",
+      "recebimentos",
+      "tab",
+      "local",
+      "recebimento",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:26.828Z",
+    "updatedAt": "2026-07-16T17:37:26.828Z",
+    "displayName": "Web API: Lista de locais de recebimentos"
+  },
+  {
+    "id": "api-producao-web-api-lista-de-historicos-financeiros",
+    "type": "api",
+    "name": "Web API: Lista de Históricos Financeiros",
+    "technicalName": "web-api-lista-de-historicos-financeiros",
+    "code": "APILISTHISFIN",
+    "url": "https://credito.buni.digital/API/FiApiTabHistoricoFinanceiro",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "web",
+      "api:",
+      "lista",
+      "historicos",
+      "financeiros",
+      "tab",
+      "historico",
+      "financeiro",
+      "apilisthisfin",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "web api: lista de historicos financeiros",
+      "web-api-lista-de-historicos-financeiros",
+      "apilisthisfin",
+      "https://credito.buni.digital/api/fiapitabhistoricofinanceiro",
+      "web",
+      "api:",
+      "lista",
+      "historicos",
+      "financeiros",
+      "tab",
+      "historico",
+      "financeiro",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:26.836Z",
+    "updatedAt": "2026-07-16T17:37:26.836Z",
+    "displayName": "Web API: Lista de Históricos Financeiros"
+  },
+  {
+    "id": "api-producao-web-api-consulta-natureza-ocupacao",
+    "type": "api",
+    "name": "Web Api Consulta Natureza Ocupação",
+    "technicalName": "web-api-consulta-natureza-ocupacao",
+    "code": "APITABCONSNATUREZAOCUP",
+    "url": "https://credito.buni.digital/API/FIApiTabConsNaturezaOcupacao",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "web",
+      "api",
+      "consulta",
+      "natureza",
+      "ocupacao",
+      "tab",
+      "cons",
+      "apitabconsnaturezaocup"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "web api consulta natureza ocupacao",
+      "web-api-consulta-natureza-ocupacao",
+      "apitabconsnaturezaocup",
+      "https://credito.buni.digital/api/fiapitabconsnaturezaocupacao",
+      "web",
+      "api",
+      "consulta",
+      "natureza",
+      "ocupacao",
+      "tab",
+      "cons",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:26.844Z",
+    "updatedAt": "2026-07-16T17:37:26.844Z",
+    "displayName": "Web Api Consulta Natureza Ocupação"
+  },
+  {
+    "id": "api-producao-web-api-cons-origens6-sem-paginacao",
+    "type": "api",
+    "name": "Web Api Cons. Origens6 sem paginação",
+    "technicalName": "web-api-cons-origens6-sem-paginacao",
+    "code": "APICONSORG6SPAG",
+    "url": "https://credito.buni.digital/API/FIApiTabOrigem6",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "web",
+      "api",
+      "cons.",
+      "origens6",
+      "sem",
+      "paginacao",
+      "tab",
+      "origem6",
+      "apiconsorg6spag"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "web api cons. origens6 sem paginacao",
+      "web-api-cons-origens6-sem-paginacao",
+      "apiconsorg6spag",
+      "https://credito.buni.digital/api/fiapitaborigem6",
+      "web",
+      "api",
+      "cons.",
+      "origens6",
+      "sem",
+      "paginacao",
+      "tab",
+      "origem6",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:26.851Z",
+    "updatedAt": "2026-07-16T17:37:26.851Z",
+    "displayName": "Web Api Cons. Origens6 sem paginação"
+  },
+  {
+    "id": "api-producao-web-api-incluir-proposta-refinanciamento-cp",
+    "type": "api",
+    "name": "Web API: Incluir Proposta Refinanciamento CP",
+    "technicalName": "web-api-incluir-proposta-refinanciamento-cp",
+    "code": "APIAUTINCPROPREFINCP",
+    "url": "https://credito.buni.digital/API/FiApiAutIncluirPropostaRefinCP",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "web",
+      "api:",
+      "incluir",
+      "proposta",
+      "refinanciamento",
+      "aut",
+      "refin",
+      "apiautincproprefincp",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "web api: incluir proposta refinanciamento cp",
+      "web-api-incluir-proposta-refinanciamento-cp",
+      "apiautincproprefincp",
+      "https://credito.buni.digital/api/fiapiautincluirpropostarefincp",
+      "web",
+      "api:",
+      "incluir",
+      "proposta",
+      "refinanciamento",
+      "aut",
+      "refin",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:26.858Z",
+    "updatedAt": "2026-07-16T17:37:26.858Z",
+    "displayName": "Web API: Incluir Proposta Refinanciamento CP"
+  },
+  {
+    "id": "api-producao-web-api-incluir-proposta-renegociacao-cp",
+    "type": "api",
+    "name": "Web API: Incluir Proposta Renegociação CP",
+    "technicalName": "web-api-incluir-proposta-renegociacao-cp",
+    "code": "APIAUTINCPROPRENEGCP",
+    "url": "https://credito.buni.digital/API/FiApiAutIncluirPropostaRenegCP",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "web",
+      "api:",
+      "incluir",
+      "proposta",
+      "renegociacao",
+      "aut",
+      "reneg",
+      "apiautincproprenegcp",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "web api: incluir proposta renegociacao cp",
+      "web-api-incluir-proposta-renegociacao-cp",
+      "apiautincproprenegcp",
+      "https://credito.buni.digital/api/fiapiautincluirpropostarenegcp",
+      "web",
+      "api:",
+      "incluir",
+      "proposta",
+      "renegociacao",
+      "aut",
+      "reneg",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:26.866Z",
+    "updatedAt": "2026-07-16T17:37:26.866Z",
+    "displayName": "Web API: Incluir Proposta Renegociação CP"
+  },
+  {
+    "id": "api-producao-web-api-para-inclusao-de-proposta-consig",
+    "type": "api",
+    "name": "Web Api para Inclusão de Proposta Consig",
+    "technicalName": "web-api-para-inclusao-de-proposta-consig",
+    "code": "APICPINCPROPOSTA",
+    "url": "https://credito.buni.digital/API/FIApiAutIncluirProposta",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "web",
+      "api",
+      "para",
+      "inclusao",
+      "proposta",
+      "consig",
+      "propostas",
+      "aut",
+      "incluir",
+      "apicpincproposta"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "web api para inclusao de proposta consig",
+      "web-api-para-inclusao-de-proposta-consig",
+      "apicpincproposta",
+      "https://credito.buni.digital/api/fiapiautincluirproposta",
+      "web",
+      "api",
+      "para",
+      "inclusao",
+      "proposta",
+      "consig",
+      "propostas",
+      "aut",
+      "incluir",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:26.875Z",
+    "updatedAt": "2026-07-16T17:37:26.875Z",
+    "displayName": "Web Api de Inclusão de Propostas CP"
+  },
+  {
+    "id": "api-producao-web-api-de-simulacao-de-propostas-cp",
+    "type": "api",
+    "name": "Web Api de Simulação de Propostas CP",
+    "technicalName": "web-api-de-simulacao-de-propostas-cp",
+    "code": "APICPSIMPROPOSTA",
+    "url": "https://credito.buni.digital/API/FIApiAutSimularProposta",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "web",
+      "api",
+      "simulacao",
+      "propostas",
+      "aut",
+      "simular",
+      "proposta",
+      "apicpsimproposta"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "web api de simulacao de propostas cp",
+      "web-api-de-simulacao-de-propostas-cp",
+      "apicpsimproposta",
+      "https://credito.buni.digital/api/fiapiautsimularproposta",
+      "web",
+      "api",
+      "simulacao",
+      "propostas",
+      "aut",
+      "simular",
+      "proposta",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:26.882Z",
+    "updatedAt": "2026-07-16T17:37:26.882Z",
+    "displayName": "Web Api de Simulação de Propostas CP"
+  },
+  {
+    "id": "api-producao-web-api-de-tabela-de-financiamento",
+    "type": "api",
+    "name": "Web Api de Tabela de Financiamento",
+    "technicalName": "web-api-de-tabela-de-financiamento",
+    "code": "APIAUTCPTABFIN",
+    "url": "https://credito.buni.digital/API/FIApiAutorizadorTabelasFinanciamentoCP",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "web",
+      "api",
+      "tabela",
+      "financiamento",
+      "autorizador",
+      "tabelas",
+      "apiautcptabfin"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "web api de tabela de financiamento",
+      "web-api-de-tabela-de-financiamento",
+      "apiautcptabfin",
+      "https://credito.buni.digital/api/fiapiautorizadortabelasfinanciamentocp",
+      "web",
+      "api",
+      "tabela",
+      "financiamento",
+      "autorizador",
+      "tabelas",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:26.889Z",
+    "updatedAt": "2026-07-16T17:37:26.889Z",
+    "displayName": "Web Api de Tabela de Financiamento"
+  },
+  {
+    "id": "api-producao-webapi-de-consulta-e-alteracao-de-clientes-cp",
+    "type": "api",
+    "name": "WebApi de Consulta e Alteração de Clientes CP",
+    "technicalName": "webapi-de-consulta-e-alteracao-de-clientes-cp",
+    "code": "APICPCLIENTES",
+    "url": "https://credito.buni.digital/API/FIApiAutorizadorClientesCP",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webapi",
+      "consulta",
+      "alteracao",
+      "clientes",
+      "autorizador",
+      "apicpclientes",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webapi de consulta e alteracao de clientes cp",
+      "webapi-de-consulta-e-alteracao-de-clientes-cp",
+      "apicpclientes",
+      "https://credito.buni.digital/api/fiapiautorizadorclientescp",
+      "webapi",
+      "consulta",
+      "alteracao",
+      "clientes",
+      "autorizador",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:26.896Z",
+    "updatedAt": "2026-07-16T17:37:26.896Z",
+    "displayName": "WebApi de Consulta e Alteração de Clientes CP"
+  },
+  {
+    "id": "api-producao-webapi-consulta-lojas-produtos-de-usuarios",
+    "type": "api",
+    "name": "WebApi - Consulta Lojas Produtos de Usuarios",
+    "technicalName": "webapi-consulta-lojas-produtos-de-usuarios",
+    "code": "APIAUTCPCLPU",
+    "url": "https://credito.buni.digital/API/FIApiAutorizadorConsultarLojasProdutosUsuarios",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webapi",
+      "consulta",
+      "lojas",
+      "produtos",
+      "usuarios",
+      "autorizador",
+      "consultar",
+      "apiautcpclpu",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webapi - consulta lojas produtos de usuarios",
+      "webapi-consulta-lojas-produtos-de-usuarios",
+      "apiautcpclpu",
+      "https://credito.buni.digital/api/fiapiautorizadorconsultarlojasprodutosusuarios",
+      "webapi",
+      "consulta",
+      "lojas",
+      "produtos",
+      "usuarios",
+      "autorizador",
+      "consultar",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:26.902Z",
+    "updatedAt": "2026-07-16T17:37:26.902Z",
+    "displayName": "WebApi - Consulta Lojas Produtos de Usuarios"
+  },
+  {
+    "id": "api-producao-web-api-restful-para-simulacao-de-proposta",
+    "type": "api",
+    "name": "Web Api Restful para Simulação de Proposta",
+    "technicalName": "web-api-restful-para-simulacao-de-proposta",
+    "code": "APISIMULPROP",
+    "url": "https://credito.buni.digital/API/FIApiAutorizadorSimulacaoDePropostasCP",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "web",
+      "api",
+      "restful",
+      "para",
+      "simulacao",
+      "proposta",
+      "autorizador",
+      "propostas",
+      "apisimulprop"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "web api restful para simulacao de proposta",
+      "web-api-restful-para-simulacao-de-proposta",
+      "apisimulprop",
+      "https://credito.buni.digital/api/fiapiautorizadorsimulacaodepropostascp",
+      "web",
+      "api",
+      "restful",
+      "para",
+      "simulacao",
+      "proposta",
+      "autorizador",
+      "propostas",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:26.910Z",
+    "updatedAt": "2026-07-16T17:37:26.910Z",
+    "displayName": "Web Api Restful para Simulação de Proposta"
+  },
+  {
+    "id": "api-producao-webapi-emitir-planilha-de-proposta-array-bytes",
+    "type": "api",
+    "name": "WebApi - Emitir Planilha de Proposta Array Bytes",
+    "technicalName": "webapi-emitir-planilha-de-proposta-array-bytes",
+    "code": "APIWPEMPLPROPARRABYTES",
+    "url": "https://credito.buni.digital/API/FIApiAutEmiPlanPropArrayBy",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webapi",
+      "emitir",
+      "planilha",
+      "proposta",
+      "array",
+      "bytes",
+      "aut",
+      "emi",
+      "plan",
+      "prop",
+      "apiwpemplproparrabytes",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webapi - emitir planilha de proposta array bytes",
+      "webapi-emitir-planilha-de-proposta-array-bytes",
+      "apiwpemplproparrabytes",
+      "https://credito.buni.digital/api/fiapiautemiplanproparrayby",
+      "webapi",
+      "emitir",
+      "planilha",
+      "proposta",
+      "array",
+      "bytes",
+      "aut",
+      "emi",
+      "plan",
+      "prop",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:26.917Z",
+    "updatedAt": "2026-07-16T17:37:26.917Z",
+    "displayName": "WebApi - Emitir Planilha de Proposta Array Bytes"
+  },
+  {
+    "id": "api-producao-webapi-cadastro-consulta-de-cliente-pf",
+    "type": "api",
+    "name": "WebApi - Cadastro/Consulta de Cliente PF",
+    "technicalName": "webapi-cadastro-consulta-de-cliente-pf",
+    "code": "APIDADCLIPF",
+    "url": "https://credito.buni.digital/API/FIApiAutClientePF",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webapi",
+      "cadastro/consulta",
+      "cliente",
+      "aut",
+      "apidadclipf",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webapi - cadastro/consulta de cliente pf",
+      "webapi-cadastro-consulta-de-cliente-pf",
+      "apidadclipf",
+      "https://credito.buni.digital/api/fiapiautclientepf",
+      "webapi",
+      "cadastro/consulta",
+      "cliente",
+      "aut",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:26.926Z",
+    "updatedAt": "2026-07-16T17:37:26.926Z",
+    "displayName": "WebApi - Cadastro/Consulta de Cliente PF"
+  },
+  {
+    "id": "api-producao-webapi-acionamento-de-esteira-aprovacao-ext",
+    "type": "api",
+    "name": "WebApi - Acionamento de Esteira Aprovação Ext.",
+    "technicalName": "webapi-acionamento-de-esteira-aprovacao-ext",
+    "code": "APIACESTEXT",
+    "url": "https://credito.buni.digital/API/FIApiAutAcionaEsteira",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webapi",
+      "acionamento",
+      "esteira",
+      "aprovacao",
+      "ext.",
+      "aut",
+      "aciona",
+      "apiacestext",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webapi - acionamento de esteira aprovacao ext.",
+      "webapi-acionamento-de-esteira-aprovacao-ext",
+      "apiacestext",
+      "https://credito.buni.digital/api/fiapiautacionaesteira",
+      "webapi",
+      "acionamento",
+      "esteira",
+      "aprovacao",
+      "ext.",
+      "aut",
+      "aciona",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:26.934Z",
+    "updatedAt": "2026-07-16T17:37:26.934Z",
+    "displayName": "WebApi - Acionamento de Esteira Aprovação Ext."
+  },
+  {
+    "id": "api-producao-webapi-consultar-contratos-para-refinanciamento",
+    "type": "api",
+    "name": "WebApi: Consultar contratos para refinanciamento",
+    "technicalName": "webapi-consultar-contratos-para-refinanciamento",
+    "code": "APIAUTCNSCTOREFINPDR",
+    "url": "https://credito.buni.digital/API/FIApiAutConsultarContratosRefin",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webapi:",
+      "consultar",
+      "contratos",
+      "para",
+      "refinanciamento",
+      "api:",
+      "aut",
+      "refin",
+      "apiautcnsctorefinpdr",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webapi: consultar contratos para refinanciamento",
+      "webapi-consultar-contratos-para-refinanciamento",
+      "apiautcnsctorefinpdr",
+      "https://credito.buni.digital/api/fiapiautconsultarcontratosrefin",
+      "webapi:",
+      "consultar",
+      "contratos",
+      "para",
+      "refinanciamento",
+      "api:",
+      "aut",
+      "refin",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:26.943Z",
+    "updatedAt": "2026-07-16T17:37:26.943Z",
+    "displayName": "WebApi: Consultar contratos para refinanciamento"
+  },
+  {
+    "id": "api-producao-web-api-consultar-checklists",
+    "type": "api",
+    "name": "Web API: Consultar checkLists",
+    "technicalName": "web-api-consultar-checklists",
+    "code": "APIAUTCNSCHECKLIST",
+    "url": "https://credito.buni.digital/API/FIApiAutorizadorConsultarCheckList",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "web",
+      "api:",
+      "consultar",
+      "checklists",
+      "check",
+      "lists",
+      "autorizador",
+      "list",
+      "apiautcnschecklist",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "web api: consultar checklists",
+      "web-api-consultar-checklists",
+      "apiautcnschecklist",
+      "https://credito.buni.digital/api/fiapiautorizadorconsultarchecklist",
+      "web",
+      "api:",
+      "consultar",
+      "checklists",
+      "check",
+      "lists",
+      "autorizador",
+      "list",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:26.950Z",
+    "updatedAt": "2026-07-16T17:37:26.950Z",
+    "displayName": "Web API: Consultar checkLists"
+  },
+  {
+    "id": "api-producao-web-api-proposta-acordo",
+    "type": "api",
+    "name": "Web Api Proposta Acordo",
+    "technicalName": "web-api-proposta-acordo",
+    "code": "FIAPICADACR",
+    "url": "https://credito.buni.digital/API/FiApiAcrPropostaAcordo",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "web",
+      "api",
+      "proposta",
+      "acordo",
+      "acr",
+      "fiapicadacr"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "web api proposta acordo",
+      "web-api-proposta-acordo",
+      "fiapicadacr",
+      "https://credito.buni.digital/api/fiapiacrpropostaacordo",
+      "web",
+      "api",
+      "proposta",
+      "acordo",
+      "acr",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:26.958Z",
+    "updatedAt": "2026-07-16T17:37:26.958Z",
+    "displayName": "Web Api Proposta Acordo"
+  },
+  {
+    "id": "api-producao-web-api-para-retornar-data-do-primeiro-vencimento",
+    "type": "api",
+    "name": "Web Api para retornar data do primeiro vencimento",
+    "technicalName": "web-api-para-retornar-data-do-primeiro-vencimento",
+    "code": "APICNVPRIMEIROVCTO",
+    "url": "https://credito.buni.digital/API/FiApiAutPrimeiroVencimento",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "web",
+      "api",
+      "para",
+      "retornar",
+      "data",
+      "primeiro",
+      "vencimento",
+      "aut",
+      "apicnvprimeirovcto"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "web api para retornar data do primeiro vencimento",
+      "web-api-para-retornar-data-do-primeiro-vencimento",
+      "apicnvprimeirovcto",
+      "https://credito.buni.digital/api/fiapiautprimeirovencimento",
+      "web",
+      "api",
+      "para",
+      "retornar",
+      "data",
+      "primeiro",
+      "vencimento",
+      "aut",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:26.965Z",
+    "updatedAt": "2026-07-16T17:37:26.965Z",
+    "displayName": "Web Api para retornar data do primeiro vencimento"
+  },
+  {
+    "id": "api-producao-web-api-checklist-da-proposta",
+    "type": "api",
+    "name": "Web API: CheckList da Proposta",
+    "technicalName": "web-api-checklist-da-proposta",
+    "code": "APICHKLISTPROP",
+    "url": "https://credito.buni.digital/API/FIApiAutChecklistProposta",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "web",
+      "api:",
+      "checklist",
+      "proposta",
+      "check",
+      "list",
+      "aut",
+      "apichklistprop",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "web api: checklist da proposta",
+      "web-api-checklist-da-proposta",
+      "apichklistprop",
+      "https://credito.buni.digital/api/fiapiautchecklistproposta",
+      "web",
+      "api:",
+      "checklist",
+      "proposta",
+      "check",
+      "list",
+      "aut",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:26.973Z",
+    "updatedAt": "2026-07-16T17:37:26.973Z",
+    "displayName": "Web API: CheckList da Proposta"
+  },
+  {
+    "id": "api-producao-webapi-consultar-de-politicas-de-despesas-tarifa",
+    "type": "api",
+    "name": "WebApi - Consultar de Políticas de Despesas/Tarifa",
+    "technicalName": "webapi-consultar-de-politicas-de-despesas-tarifa",
+    "code": "APIAUTCONSPOLSDESP",
+    "url": "https://credito.buni.digital/API/FIApiAutConsPoliticasDespesas",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webapi",
+      "consultar",
+      "politicas",
+      "despesas/tarifa",
+      "aut",
+      "cons",
+      "despesas",
+      "apiautconspolsdesp",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webapi - consultar de politicas de despesas/tarifa",
+      "webapi-consultar-de-politicas-de-despesas-tarifa",
+      "apiautconspolsdesp",
+      "https://credito.buni.digital/api/fiapiautconspoliticasdespesas",
+      "webapi",
+      "consultar",
+      "politicas",
+      "despesas/tarifa",
+      "aut",
+      "cons",
+      "despesas",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:26.981Z",
+    "updatedAt": "2026-07-16T17:37:26.981Z",
+    "displayName": "WebApi - Consultar de Políticas de Despesas/Tarifa"
+  },
+  {
+    "id": "api-producao-web-api-autorizador-convenio",
+    "type": "api",
+    "name": "Web API: Autorizador Convênio",
+    "technicalName": "web-api-autorizador-convenio",
+    "code": "APIAUTCONVENIO",
+    "url": "https://credito.buni.digital/API/FIApiAutConvenio",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "web",
+      "api:",
+      "autorizador",
+      "convenio",
+      "aut",
+      "apiautconvenio",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "web api: autorizador convenio",
+      "web-api-autorizador-convenio",
+      "apiautconvenio",
+      "https://credito.buni.digital/api/fiapiautconvenio",
+      "web",
+      "api:",
+      "autorizador",
+      "convenio",
+      "aut",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:26.989Z",
+    "updatedAt": "2026-07-16T17:37:26.989Z",
+    "displayName": "Web API: Autorizador Convênio"
+  },
+  {
+    "id": "api-producao-web-api-autorizador-proposta",
+    "type": "api",
+    "name": "Web API: Autorizador Proposta",
+    "technicalName": "web-api-autorizador-proposta",
+    "code": "APIAUTPROPOSTA",
+    "url": "https://credito.buni.digital/API/FIApiAutProposta",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "web",
+      "api:",
+      "autorizador",
+      "proposta",
+      "aut",
+      "apiautproposta",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "web api: autorizador proposta",
+      "web-api-autorizador-proposta",
+      "apiautproposta",
+      "https://credito.buni.digital/api/fiapiautproposta",
+      "web",
+      "api:",
+      "autorizador",
+      "proposta",
+      "aut",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:26.997Z",
+    "updatedAt": "2026-07-16T17:37:26.997Z",
+    "displayName": "Web API: Autorizador Proposta"
+  },
+  {
+    "id": "api-producao-web-api-autorizador-documentos-anexados",
+    "type": "api",
+    "name": "Web API: Autorizador Documentos Anexados",
+    "technicalName": "web-api-autorizador-documentos-anexados",
+    "code": "APIAUTDOCANEXADOS",
+    "url": "https://credito.buni.digital/API/FIApiAutDocumentosAnexados",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "web",
+      "api:",
+      "autorizador",
+      "documentos",
+      "anexados",
+      "aut",
+      "apiautdocanexados",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "web api: autorizador documentos anexados",
+      "web-api-autorizador-documentos-anexados",
+      "apiautdocanexados",
+      "https://credito.buni.digital/api/fiapiautdocumentosanexados",
+      "web",
+      "api:",
+      "autorizador",
+      "documentos",
+      "anexados",
+      "aut",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.003Z",
+    "updatedAt": "2026-07-16T17:37:27.003Z",
+    "displayName": "Web API: Autorizador Documentos Anexados"
+  },
+  {
+    "id": "api-producao-web-api-meios-de-liberacao",
+    "type": "api",
+    "name": "Web API Meios de Liberação",
+    "technicalName": "web-api-meios-de-liberacao",
+    "code": "APICNSMEIOSLIBERACAOEMPR",
+    "url": "https://credito.buni.digital/API/FIApiAutConsMeioLiberacaoEmpregador",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "web",
+      "api",
+      "meios",
+      "liberacao",
+      "aut",
+      "cons",
+      "meio",
+      "empregador",
+      "apicnsmeiosliberacaoempr"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "web api meios de liberacao",
+      "web-api-meios-de-liberacao",
+      "apicnsmeiosliberacaoempr",
+      "https://credito.buni.digital/api/fiapiautconsmeioliberacaoempregador",
+      "web",
+      "api",
+      "meios",
+      "liberacao",
+      "aut",
+      "cons",
+      "meio",
+      "empregador",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.010Z",
+    "updatedAt": "2026-07-16T17:37:27.010Z",
+    "displayName": "Web API Meios de Liberação"
+  },
+  {
+    "id": "api-producao-web-api-emissao-de-boleto-da-1-parcela",
+    "type": "api",
+    "name": "Web Api Emissão de Boleto da 1ª Parcela",
+    "technicalName": "web-api-emissao-de-boleto-da-1-parcela",
+    "code": "APIAUTEMIBOL1APARC",
+    "url": "https://credito.buni.digital/API/FiApiAutEmitirBoleto1aParcela",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "web",
+      "api",
+      "emissao",
+      "boleto",
+      "parcela",
+      "aut",
+      "emitir",
+      "boleto1a",
+      "apiautemibol1aparc"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "web api emissao de boleto da 1ª parcela",
+      "web-api-emissao-de-boleto-da-1-parcela",
+      "apiautemibol1aparc",
+      "https://credito.buni.digital/api/fiapiautemitirboleto1aparcela",
+      "web",
+      "api",
+      "emissao",
+      "boleto",
+      "parcela",
+      "aut",
+      "emitir",
+      "boleto1a",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.017Z",
+    "updatedAt": "2026-07-16T17:37:27.017Z",
+    "displayName": "Web Api Emissão de Boleto da 1ª Parcela"
+  },
+  {
+    "id": "api-producao-fiapiautobservacao-webapi-de-inclusao-de-observa",
+    "type": "api",
+    "name": "FIApiAutObservacao - WebApi de Inclusão de Observa",
+    "technicalName": "fiapiautobservacao-webapi-de-inclusao-de-observa",
+    "code": "FIApiAutObservacao",
+    "url": "https://credito.buni.digital/API/FIApiAutObservacao",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiautobservacao",
+      "webapi",
+      "inclusao",
+      "observa",
+      "aut",
+      "observacao",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiautobservacao - webapi de inclusao de observa",
+      "fiapiautobservacao-webapi-de-inclusao-de-observa",
+      "fiapiautobservacao",
+      "https://credito.buni.digital/api/fiapiautobservacao",
+      "webapi",
+      "inclusao",
+      "observa",
+      "aut",
+      "observacao",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.026Z",
+    "updatedAt": "2026-07-16T17:37:27.026Z",
+    "displayName": "FIApiAutObservacao - WebApi de Inclusão de Observa"
+  },
+  {
+    "id": "api-producao-simulacao-de-renegociacao-cp",
+    "type": "api",
+    "name": "Simulação de Renegociação CP",
+    "technicalName": "simulacao-de-renegociacao-cp",
+    "code": "APIAUTSIMPROPRENEGCP",
+    "url": "https://credito.buni.digital/API/FiApiAutSimularPropostaRenegCP",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "simulacao",
+      "renegociacao",
+      "aut",
+      "simular",
+      "proposta",
+      "reneg",
+      "apiautsimproprenegcp",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "simulacao de renegociacao cp",
+      "simulacao-de-renegociacao-cp",
+      "apiautsimproprenegcp",
+      "https://credito.buni.digital/api/fiapiautsimularpropostarenegcp",
+      "simulacao",
+      "renegociacao",
+      "aut",
+      "simular",
+      "proposta",
+      "reneg",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.035Z",
+    "updatedAt": "2026-07-16T17:37:27.035Z",
+    "displayName": "Simulação de Renegociação CP"
+  },
+  {
+    "id": "api-producao-web-api-aut-veic-simular-proposta-refinanciamento",
+    "type": "api",
+    "name": "Web Api Aut Veic: Simular proposta refinanciamento",
+    "technicalName": "web-api-aut-veic-simular-proposta-refinanciamento",
+    "code": "APIAUTSIMPROPREFINCP",
+    "url": "https://credito.buni.digital/API/FiApiAutSimularPropostaRefinCP",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "web",
+      "api",
+      "aut",
+      "veic:",
+      "simular",
+      "proposta",
+      "refinanciamento",
+      "refin",
+      "apiautsimproprefincp"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "web api aut veic: simular proposta refinanciamento",
+      "web-api-aut-veic-simular-proposta-refinanciamento",
+      "apiautsimproprefincp",
+      "https://credito.buni.digital/api/fiapiautsimularpropostarefincp",
+      "web",
+      "api",
+      "aut",
+      "veic:",
+      "simular",
+      "proposta",
+      "refinanciamento",
+      "refin",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.044Z",
+    "updatedAt": "2026-07-16T17:37:27.044Z",
+    "displayName": "Web Api Aut Veic: Simular proposta refinanciamento"
+  },
+  {
+    "id": "api-producao-web-api-etapas-da-proposta",
+    "type": "api",
+    "name": "Web Api Etapas da Proposta",
+    "technicalName": "web-api-etapas-da-proposta",
+    "code": "APIETAPPROP",
+    "url": "https://credito.buni.digital/API/FIApiAutEtapasProposta",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "web",
+      "api",
+      "etapas",
+      "proposta",
+      "aut",
+      "apietapprop"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "web api etapas da proposta",
+      "web-api-etapas-da-proposta",
+      "apietapprop",
+      "https://credito.buni.digital/api/fiapiautetapasproposta",
+      "web",
+      "api",
+      "etapas",
+      "proposta",
+      "aut",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.051Z",
+    "updatedAt": "2026-07-16T17:37:27.051Z",
+    "displayName": "Web Api Etapas da Proposta"
+  },
+  {
+    "id": "api-producao-fiapitabocorrencia",
+    "type": "api",
+    "name": "FiApiTabOcorrencia",
+    "technicalName": "fiapitabocorrencia",
+    "url": "https://credito.buni.digital/API/FiApiTabOcorrencia",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapitabocorrencia",
+      "api:",
+      "lista",
+      "ocorrencias",
+      "dos",
+      "lancamento",
+      "tab",
+      "ocorrencia",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapitabocorrencia",
+      "https://credito.buni.digital/api/fiapitabocorrencia",
+      "api:",
+      "lista",
+      "ocorrencias",
+      "dos",
+      "lancamento",
+      "tab",
+      "ocorrencia",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.063Z",
+    "updatedAt": "2026-07-16T17:37:27.063Z",
+    "displayName": "Web API: Lista de Ocorrências dos lançamento"
+  },
+  {
+    "id": "api-producao-fiapiempracionaesteira-legado",
+    "type": "api",
+    "name": "FIAPIEmprAcionaEsteira_LEGADO",
+    "technicalName": "fiapiempracionaesteira-legado",
+    "url": "https://credito.buni.digital/API/FIAPIEmprAcionaEsteira_LEGADO",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiempracionaesteira_legado",
+      "api:",
+      "acionamento",
+      "esteira",
+      "legado",
+      "empr",
+      "aciona",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiempracionaesteira_legado",
+      "fiapiempracionaesteira-legado",
+      "https://credito.buni.digital/api/fiapiempracionaesteira_legado",
+      "api:",
+      "acionamento",
+      "esteira",
+      "legado",
+      "empr",
+      "aciona",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.072Z",
+    "updatedAt": "2026-07-16T17:37:27.072Z",
+    "displayName": "Web API: Acionamento de Esteira Legado"
+  },
+  {
+    "id": "api-producao-fiapiempracionasic-legado",
+    "type": "api",
+    "name": "FIAPIEmprAcionaSIC_LEGADO",
+    "technicalName": "fiapiempracionasic-legado",
+    "url": "https://credito.buni.digital/API/FIAPIEmprAcionaSIC_LEGADO",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiempracionasic_legado",
+      "api:",
+      "aciona",
+      "sic",
+      "empr",
+      "legado",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiempracionasic_legado",
+      "fiapiempracionasic-legado",
+      "https://credito.buni.digital/api/fiapiempracionasic_legado",
+      "api:",
+      "aciona",
+      "sic",
+      "empr",
+      "legado",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.079Z",
+    "updatedAt": "2026-07-16T17:37:27.079Z",
+    "displayName": "Web API: Aciona WsSIC"
+  },
+  {
+    "id": "api-producao-fiapiemprconsultacpf-legado",
+    "type": "api",
+    "name": "FIAPIEmprConsultaCPF_LEGADO",
+    "technicalName": "fiapiemprconsultacpf-legado",
+    "url": "https://credito.buni.digital/API/FIAPIEmprConsultaCPF_LEGADO",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprconsultacpf_legado",
+      "api:",
+      "consultar",
+      "cpf",
+      "empr",
+      "consulta",
+      "legado",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprconsultacpf_legado",
+      "fiapiemprconsultacpf-legado",
+      "https://credito.buni.digital/api/fiapiemprconsultacpf_legado",
+      "api:",
+      "consultar",
+      "cpf",
+      "empr",
+      "consulta",
+      "legado",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.086Z",
+    "updatedAt": "2026-07-16T17:37:27.086Z",
+    "displayName": "Web API: Consultar CPF"
+  },
+  {
+    "id": "api-producao-fiapiemprconsultanacionalidade-legado",
+    "type": "api",
+    "name": "FIAPIEmprConsultaNacionalidade_LEGADO",
+    "technicalName": "fiapiemprconsultanacionalidade-legado",
+    "url": "https://credito.buni.digital/API/FIAPIEmprConsultaNacionalidade_LEGADO",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprconsultanacionalidade_legado",
+      "api:",
+      "consultar",
+      "nacionalidade",
+      "legado",
+      "empr",
+      "consulta",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprconsultanacionalidade_legado",
+      "fiapiemprconsultanacionalidade-legado",
+      "https://credito.buni.digital/api/fiapiemprconsultanacionalidade_legado",
+      "api:",
+      "consultar",
+      "nacionalidade",
+      "legado",
+      "empr",
+      "consulta",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.094Z",
+    "updatedAt": "2026-07-16T17:37:27.094Z",
+    "displayName": "Web API: Consultar Nacionalidade Legado"
+  },
+  {
+    "id": "api-producao-fiapiemprconsultaocorconsignacao-legado",
+    "type": "api",
+    "name": "FIAPIEmprConsultaOcorConsignacao_LEGADO",
+    "technicalName": "fiapiemprconsultaocorconsignacao-legado",
+    "url": "https://credito.buni.digital/API/FIAPIEmprConsultaOcorConsignacao_LEGADO",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprconsultaocorconsignacao_legado",
+      "api:",
+      "consultar",
+      "ocorrencias",
+      "consignadas",
+      "empr",
+      "consulta",
+      "ocor",
+      "consignacao",
+      "legado",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprconsultaocorconsignacao_legado",
+      "fiapiemprconsultaocorconsignacao-legado",
+      "https://credito.buni.digital/api/fiapiemprconsultaocorconsignacao_legado",
+      "api:",
+      "consultar",
+      "ocorrencias",
+      "consignadas",
+      "empr",
+      "consulta",
+      "ocor",
+      "consignacao",
+      "legado",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.101Z",
+    "updatedAt": "2026-07-16T17:37:27.101Z",
+    "displayName": "Web API: Consultar Ocorrências Consignadas"
+  },
+  {
+    "id": "api-producao-fiapiemprconsultaopers-legado",
+    "type": "api",
+    "name": "FIAPIEmprConsultaOpers_LEGADO",
+    "technicalName": "fiapiemprconsultaopers-legado",
+    "url": "https://credito.buni.digital/API/FIAPIEmprConsultaOpers_LEGADO",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprconsultaopers_legado",
+      "api:",
+      "consultar",
+      "operacoes",
+      "empr",
+      "consulta",
+      "opers",
+      "legado",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprconsultaopers_legado",
+      "fiapiemprconsultaopers-legado",
+      "https://credito.buni.digital/api/fiapiemprconsultaopers_legado",
+      "api:",
+      "consultar",
+      "operacoes",
+      "empr",
+      "consulta",
+      "opers",
+      "legado",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.108Z",
+    "updatedAt": "2026-07-16T17:37:27.108Z",
+    "displayName": "Web API: Consultar Operações"
+  },
+  {
+    "id": "api-producao-fiapiemprconsultaperiodoconc-legado",
+    "type": "api",
+    "name": "FIAPIEmprConsultaPeriodoConc_LEGADO",
+    "technicalName": "fiapiemprconsultaperiodoconc-legado",
+    "url": "https://credito.buni.digital/API/FIAPIEmprConsultaPeriodoConc_LEGADO",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprconsultaperiodoconc_legado",
+      "api:",
+      "consulta",
+      "periodo",
+      "conciliacao",
+      "empr",
+      "conc",
+      "legado",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprconsultaperiodoconc_legado",
+      "fiapiemprconsultaperiodoconc-legado",
+      "https://credito.buni.digital/api/fiapiemprconsultaperiodoconc_legado",
+      "api:",
+      "consulta",
+      "periodo",
+      "conciliacao",
+      "empr",
+      "conc",
+      "legado",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.114Z",
+    "updatedAt": "2026-07-16T17:37:27.114Z",
+    "displayName": "Web API: Consulta Periodo de Conciliação"
+  },
+  {
+    "id": "api-producao-fiapiemprefetivarrescisao-legado",
+    "type": "api",
+    "name": "FIAPIEmprEfetivarRescisao_LEGADO",
+    "technicalName": "fiapiemprefetivarrescisao-legado",
+    "url": "https://credito.buni.digital/API/FIAPIEmprEfetivarRescisao_LEGADO",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprefetivarrescisao_legado",
+      "api:",
+      "efetiva",
+      "rescisao",
+      "legado",
+      "empr",
+      "efetivar",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprefetivarrescisao_legado",
+      "fiapiemprefetivarrescisao-legado",
+      "https://credito.buni.digital/api/fiapiemprefetivarrescisao_legado",
+      "api:",
+      "efetiva",
+      "rescisao",
+      "legado",
+      "empr",
+      "efetivar",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.121Z",
+    "updatedAt": "2026-07-16T17:37:27.121Z",
+    "displayName": "Web API: Efetiva Rescisão Legado"
+  },
+  {
+    "id": "api-producao-fiapiemprfaturarh-legado",
+    "type": "api",
+    "name": "FIAPIEmprFaturaRH_LEGADO",
+    "technicalName": "fiapiemprfaturarh-legado",
+    "url": "https://credito.buni.digital/API/FIAPIEmprFaturaRH_LEGADO",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprfaturarh_legado",
+      "api:",
+      "fatura",
+      "legado",
+      "empr",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprfaturarh_legado",
+      "fiapiemprfaturarh-legado",
+      "https://credito.buni.digital/api/fiapiemprfaturarh_legado",
+      "api:",
+      "fatura",
+      "legado",
+      "empr",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.130Z",
+    "updatedAt": "2026-07-16T17:37:27.130Z",
+    "displayName": "Web API: Fatura no Legado"
+  },
+  {
+    "id": "api-producao-fiapiemprobterboletoprocessamento-legado",
+    "type": "api",
+    "name": "FIAPIEmprObterBoletoProcessamento_LEGADO",
+    "technicalName": "fiapiemprobterboletoprocessamento-legado",
+    "url": "https://credito.buni.digital/API/FIAPIEmprObterBoletoProcessamento_LEGADO",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprobterboletoprocessamento_legado",
+      "api:",
+      "gera",
+      "boleto",
+      "processamento",
+      "legado",
+      "empr",
+      "obter",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprobterboletoprocessamento_legado",
+      "fiapiemprobterboletoprocessamento-legado",
+      "https://credito.buni.digital/api/fiapiemprobterboletoprocessamento_legado",
+      "api:",
+      "gera",
+      "boleto",
+      "processamento",
+      "legado",
+      "empr",
+      "obter",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.138Z",
+    "updatedAt": "2026-07-16T17:37:27.138Z",
+    "displayName": "Web API: Gera Boleto de Processamento Legado"
+  },
+  {
+    "id": "api-producao-fiapiemprparcelasnaodisponiveispararefin-legado",
+    "type": "api",
+    "name": "FIAPIEmprParcelasNaoDisponiveisParaRefin_LEGADO",
+    "technicalName": "fiapiemprparcelasnaodisponiveispararefin-legado",
+    "url": "https://credito.buni.digital/API/FIAPIEmprParcelasNaoDisponiveisParaRefin_LEGADO",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprparcelasnaodisponiveispararefin_legado",
+      "api:",
+      "parcelas",
+      "nao",
+      "disponiveis",
+      "para",
+      "refinanciamento",
+      "empr",
+      "refin",
+      "legado",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprparcelasnaodisponiveispararefin_legado",
+      "fiapiemprparcelasnaodisponiveispararefin-legado",
+      "https://credito.buni.digital/api/fiapiemprparcelasnaodisponiveispararefin_legado",
+      "api:",
+      "parcelas",
+      "nao",
+      "disponiveis",
+      "para",
+      "refinanciamento",
+      "empr",
+      "refin",
+      "legado",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.147Z",
+    "updatedAt": "2026-07-16T17:37:27.147Z",
+    "displayName": "Web API: parcelas não disponíveis para refinanciamento"
+  },
+  {
+    "id": "api-producao-fiapiemprverbasrescisorias-legado",
+    "type": "api",
+    "name": "FIApiEmprVerbasRescisorias_LEGADO",
+    "technicalName": "fiapiemprverbasrescisorias-legado",
+    "url": "https://credito.buni.digital/API/FIApiEmprVerbasRescisorias_LEGADO",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprverbasrescisorias_legado",
+      "api:",
+      "verbas",
+      "rescisorias",
+      "empr",
+      "legado",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprverbasrescisorias_legado",
+      "fiapiemprverbasrescisorias-legado",
+      "https://credito.buni.digital/api/fiapiemprverbasrescisorias_legado",
+      "api:",
+      "verbas",
+      "rescisorias",
+      "empr",
+      "legado",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.154Z",
+    "updatedAt": "2026-07-16T17:37:27.154Z",
+    "displayName": "Web API: Verbas Rescisórias"
+  },
+  {
+    "id": "api-producao-fiapiacessogerenciapin",
+    "type": "api",
+    "name": "FIApiAcessoGerenciaPIN",
+    "technicalName": "fiapiacessogerenciapin",
+    "url": "https://credito.buni.digital/API/FIApiAcessoGerenciaPIN",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiacessogerenciapin",
+      "api:",
+      "gerenciamento",
+      "pin",
+      "acesso",
+      "gerencia",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiacessogerenciapin",
+      "https://credito.buni.digital/api/fiapiacessogerenciapin",
+      "api:",
+      "gerenciamento",
+      "pin",
+      "acesso",
+      "gerencia",
+      "api",
+      "producao"
+    ],
+    "responsible": "",
+    "createdAt": "2026-07-16T17:37:27.161Z",
+    "updatedAt": "2026-07-19T23:43:22.330Z",
+    "displayName": "Web API: Gerenciamento de PIN"
+  },
+  {
+    "id": "api-producao-fiapiatualizarinformacoesrh",
+    "type": "api",
+    "name": "FIApiAtualizarInformacoesRH",
+    "technicalName": "fiapiatualizarinformacoesrh",
+    "url": "https://credito.buni.digital/API/FIApiAtualizarInformacoesRH",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiatualizarinformacoesrh",
+      "api:",
+      "atualizar",
+      "informacoes",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiatualizarinformacoesrh",
+      "https://credito.buni.digital/api/fiapiatualizarinformacoesrh",
+      "api:",
+      "atualizar",
+      "informacoes",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.168Z",
+    "updatedAt": "2026-07-19T23:43:13.292Z",
+    "displayName": "Web API: Atualizar Informações RH"
+  },
+  {
+    "id": "api-producao-fiapiautconscliproposta",
+    "type": "api",
+    "name": "FIApiAutConsCliProposta",
+    "technicalName": "fiapiautconscliproposta",
+    "url": "https://credito.buni.digital/API/FIApiAutConsCliProposta",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiautconscliproposta",
+      "api:",
+      "para",
+      "consulta",
+      "clientes",
+      "por",
+      "proposta",
+      "aut",
+      "cons",
+      "cli",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiautconscliproposta",
+      "https://credito.buni.digital/api/fiapiautconscliproposta",
+      "api:",
+      "para",
+      "consulta",
+      "clientes",
+      "por",
+      "proposta",
+      "aut",
+      "cons",
+      "cli",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.176Z",
+    "updatedAt": "2026-07-16T17:37:27.176Z",
+    "displayName": "Web API: para consulta de clientes por proposta"
+  },
+  {
+    "id": "api-producao-fiapiautconsesteira",
+    "type": "api",
+    "name": "FIApiAutConsEsteira",
+    "technicalName": "fiapiautconsesteira",
+    "url": "https://credito.buni.digital/API/FIApiAutConsEsteira",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiautconsesteira",
+      "api:",
+      "consulta",
+      "esteiras",
+      "aut",
+      "cons",
+      "esteira",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiautconsesteira",
+      "https://credito.buni.digital/api/fiapiautconsesteira",
+      "api:",
+      "consulta",
+      "esteiras",
+      "aut",
+      "cons",
+      "esteira",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.183Z",
+    "updatedAt": "2026-07-16T17:37:27.183Z",
+    "displayName": "Web API: Consulta de Esteiras"
+  },
+  {
+    "id": "api-producao-fiapiautconsultarmotivosexternos",
+    "type": "api",
+    "name": "FIApiAutConsultarMotivosExternos",
+    "technicalName": "fiapiautconsultarmotivosexternos",
+    "url": "https://credito.buni.digital/API/FIApiAutConsultarMotivosExternos",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiautconsultarmotivosexternos",
+      "api:",
+      "consulta",
+      "motivo",
+      "externo",
+      "consignado",
+      "aut",
+      "consultar",
+      "motivos",
+      "externos",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiautconsultarmotivosexternos",
+      "https://credito.buni.digital/api/fiapiautconsultarmotivosexternos",
+      "api:",
+      "consulta",
+      "motivo",
+      "externo",
+      "consignado",
+      "aut",
+      "consultar",
+      "motivos",
+      "externos",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.190Z",
+    "updatedAt": "2026-07-16T17:37:27.190Z",
+    "displayName": "Web API: Consulta de Motivo Externo Consignado"
+  },
+  {
+    "id": "api-producao-fiapiautconsultavalidacaobanco",
+    "type": "api",
+    "name": "FIApiAutConsultaValidacaoBanco",
+    "technicalName": "fiapiautconsultavalidacaobanco",
+    "url": "https://credito.buni.digital/API/FIApiAutConsultaValidacaoBanco",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiautconsultavalidacaobanco",
+      "api:",
+      "consulta",
+      "validacao",
+      "banco",
+      "aut",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiautconsultavalidacaobanco",
+      "https://credito.buni.digital/api/fiapiautconsultavalidacaobanco",
+      "api:",
+      "consulta",
+      "validacao",
+      "banco",
+      "aut",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.197Z",
+    "updatedAt": "2026-07-16T17:37:27.197Z",
+    "displayName": "Web API: Consulta validação banco"
+  },
+  {
+    "id": "api-producao-fiapiautorizadorconsultapropostasportal",
+    "type": "api",
+    "name": "FiApiAutorizadorConsultaPropostasPortal",
+    "technicalName": "fiapiautorizadorconsultapropostasportal",
+    "url": "https://credito.buni.digital/API/FiApiAutorizadorConsultaPropostasPortal",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiautorizadorconsultapropostasportal",
+      "api:",
+      "consultar",
+      "propostas",
+      "portal",
+      "autorizador",
+      "consulta",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiautorizadorconsultapropostasportal",
+      "https://credito.buni.digital/api/fiapiautorizadorconsultapropostasportal",
+      "api:",
+      "consultar",
+      "propostas",
+      "portal",
+      "autorizador",
+      "consulta",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.204Z",
+    "updatedAt": "2026-07-16T17:37:27.204Z",
+    "displayName": "Web API: Consultar propostas do portal"
+  },
+  {
+    "id": "api-producao-fiapiautorizadorconsultarlinhadotempo",
+    "type": "api",
+    "name": "FIApiAutorizadorConsultarLinhaDoTempo",
+    "technicalName": "fiapiautorizadorconsultarlinhadotempo",
+    "url": "https://credito.buni.digital/API/FIApiAutorizadorConsultarLinhaDoTempo",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiautorizadorconsultarlinhadotempo",
+      "api:",
+      "consultar",
+      "dados",
+      "linha",
+      "tempo",
+      "autorizador",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiautorizadorconsultarlinhadotempo",
+      "https://credito.buni.digital/api/fiapiautorizadorconsultarlinhadotempo",
+      "api:",
+      "consultar",
+      "dados",
+      "linha",
+      "tempo",
+      "autorizador",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.211Z",
+    "updatedAt": "2026-07-16T17:37:27.211Z",
+    "displayName": "Web API: Consultar dados da Linha do Tempo"
+  },
+  {
+    "id": "api-producao-fiapiautorizadorconsultarproposta",
+    "type": "api",
+    "name": "FIApiAutorizadorConsultarProposta",
+    "technicalName": "fiapiautorizadorconsultarproposta",
+    "url": "https://credito.buni.digital/API/FIApiAutorizadorConsultarProposta",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiautorizadorconsultarproposta",
+      "api:",
+      "consultar",
+      "dados",
+      "uma",
+      "proposta",
+      "autorizador",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiautorizadorconsultarproposta",
+      "https://credito.buni.digital/api/fiapiautorizadorconsultarproposta",
+      "api:",
+      "consultar",
+      "dados",
+      "uma",
+      "proposta",
+      "autorizador",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.219Z",
+    "updatedAt": "2026-07-16T17:37:27.219Z",
+    "displayName": "Web API: Consultar os dados de uma proposta"
+  },
+  {
+    "id": "api-producao-fiapiautorizadordocumentoged",
+    "type": "api",
+    "name": "FIApiAutorizadorDocumentoGed",
+    "technicalName": "fiapiautorizadordocumentoged",
+    "url": "https://credito.buni.digital/API/FIApiAutorizadorDocumentoGed",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiautorizadordocumentoged",
+      "api:",
+      "consulta",
+      "anexo",
+      "documentos",
+      "doc",
+      "autorizador",
+      "documento",
+      "ged",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiautorizadordocumentoged",
+      "https://credito.buni.digital/api/fiapiautorizadordocumentoged",
+      "api:",
+      "consulta",
+      "anexo",
+      "documentos",
+      "doc",
+      "autorizador",
+      "documento",
+      "ged",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.226Z",
+    "updatedAt": "2026-07-16T17:37:27.226Z",
+    "displayName": "Web API: Consulta e Anexo de Documentos GEDoc"
+  },
+  {
+    "id": "api-producao-fiapiautorizadorpropostascp",
+    "type": "api",
+    "name": "FIApiAutorizadorPropostasCP",
+    "technicalName": "fiapiautorizadorpropostascp",
+    "url": "https://credito.buni.digital/API/FIApiAutorizadorPropostasCP",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiautorizadorpropostascp",
+      "api:",
+      "inclusao",
+      "propostas",
+      "autorizador",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiautorizadorpropostascp",
+      "https://credito.buni.digital/api/fiapiautorizadorpropostascp",
+      "api:",
+      "inclusao",
+      "propostas",
+      "autorizador",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.234Z",
+    "updatedAt": "2026-07-16T17:37:27.234Z",
+    "displayName": "Web API: Inclusão de Propostas CP"
+  },
+  {
+    "id": "api-producao-fiapiautprodutos",
+    "type": "api",
+    "name": "FIApiAutProdutos",
+    "technicalName": "fiapiautprodutos",
+    "url": "https://credito.buni.digital/API/FIApiAutProdutos",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiautprodutos",
+      "api:",
+      "consulta",
+      "produtos",
+      "aut",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiautprodutos",
+      "https://credito.buni.digital/api/fiapiautprodutos",
+      "api:",
+      "consulta",
+      "produtos",
+      "aut",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.243Z",
+    "updatedAt": "2026-07-16T17:37:27.243Z",
+    "displayName": "Web API: Consulta de Produtos"
+  },
+  {
+    "id": "api-producao-fiapiautvalidadadosbancarios",
+    "type": "api",
+    "name": "FIApiAutValidaDadosBancarios",
+    "technicalName": "fiapiautvalidadadosbancarios",
+    "url": "https://credito.buni.digital/API/FIApiAutValidaDadosBancarios",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiautvalidadadosbancarios",
+      "api:",
+      "validacao",
+      "dados",
+      "bancarios",
+      "aut",
+      "valida",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiautvalidadadosbancarios",
+      "https://credito.buni.digital/api/fiapiautvalidadadosbancarios",
+      "api:",
+      "validacao",
+      "dados",
+      "bancarios",
+      "aut",
+      "valida",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.249Z",
+    "updatedAt": "2026-07-16T17:37:27.249Z",
+    "displayName": "Web API: Validação de dados bancários"
+  },
+  {
+    "id": "api-producao-fiapicallbackautorizador",
+    "type": "api",
+    "name": "FIApiCallBackAutorizador",
+    "technicalName": "fiapicallbackautorizador",
+    "url": "https://credito.buni.digital/API/FIApiCallBackAutorizador",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapicallbackautorizador",
+      "api:",
+      "captura",
+      "transferencia",
+      "manual",
+      "estagios",
+      "lote",
+      "call",
+      "back",
+      "autorizador",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapicallbackautorizador",
+      "https://credito.buni.digital/api/fiapicallbackautorizador",
+      "api:",
+      "captura",
+      "transferencia",
+      "manual",
+      "estagios",
+      "lote",
+      "call",
+      "back",
+      "autorizador",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.258Z",
+    "updatedAt": "2026-07-16T17:37:27.258Z",
+    "displayName": "Web API: de captura de transferência manual de estágios em lote"
+  },
+  {
+    "id": "api-producao-fiapicapttransmanualestaglote",
+    "type": "api",
+    "name": "FiApiCaptTransManualEstagLote",
+    "technicalName": "fiapicapttransmanualestaglote",
+    "url": "https://credito.buni.digital/API/FiApiCaptTransManualEstagLote",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapicapttransmanualestaglote",
+      "api:",
+      "captura",
+      "fatores",
+      "externos",
+      "para",
+      "perdas",
+      "esperadas",
+      "capt",
+      "trans",
+      "manual",
+      "estag",
+      "lote",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapicapttransmanualestaglote",
+      "https://credito.buni.digital/api/fiapicapttransmanualestaglote",
+      "api:",
+      "captura",
+      "fatores",
+      "externos",
+      "para",
+      "perdas",
+      "esperadas",
+      "capt",
+      "trans",
+      "manual",
+      "estag",
+      "lote",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.267Z",
+    "updatedAt": "2026-07-16T17:37:27.267Z",
+    "displayName": "Web API: de captura de fatores externos para perdas esperadas"
+  },
+  {
+    "id": "api-producao-fiapicapturafatoresexternos",
+    "type": "api",
+    "name": "FIApiCapturaFatoresExternos",
+    "technicalName": "fiapicapturafatoresexternos",
+    "url": "https://credito.buni.digital/API/FIApiCapturaFatoresExternos",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapicapturafatoresexternos",
+      "api:",
+      "para",
+      "consulta",
+      "contratos",
+      "por",
+      "cliente",
+      "captura",
+      "fatores",
+      "externos",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapicapturafatoresexternos",
+      "https://credito.buni.digital/api/fiapicapturafatoresexternos",
+      "api:",
+      "para",
+      "consulta",
+      "contratos",
+      "por",
+      "cliente",
+      "captura",
+      "fatores",
+      "externos",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.274Z",
+    "updatedAt": "2026-07-16T17:37:27.274Z",
+    "displayName": "Web API: para consulta de contratos por cliente"
+  },
+  {
+    "id": "api-producao-fiapicdcconscontratoscpfmat",
+    "type": "api",
+    "name": "FIApiCdcConsContratosCpfMat",
+    "technicalName": "fiapicdcconscontratoscpfmat",
+    "url": "https://credito.buni.digital/API/FIApiCdcConsContratosCpfMat",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapicdcconscontratoscpfmat",
+      "api:",
+      "consultar",
+      "dados",
+      "uma",
+      "operacao",
+      "cdc",
+      "cons",
+      "contratos",
+      "cpf",
+      "mat",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapicdcconscontratoscpfmat",
+      "https://credito.buni.digital/api/fiapicdcconscontratoscpfmat",
+      "api:",
+      "consultar",
+      "dados",
+      "uma",
+      "operacao",
+      "cdc",
+      "cons",
+      "contratos",
+      "cpf",
+      "mat",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.281Z",
+    "updatedAt": "2026-07-16T17:37:27.281Z",
+    "displayName": "Web API: Consultar os dados de uma operação"
+  },
+  {
+    "id": "api-producao-fiapicdcconsultapendencia",
+    "type": "api",
+    "name": "FIApiCdcConsultaPendencia",
+    "technicalName": "fiapicdcconsultapendencia",
+    "url": "https://credito.buni.digital/API/FIApiCdcConsultaPendencia",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapicdcconsultapendencia",
+      "api:",
+      "consulta",
+      "pendencias",
+      "cdc",
+      "pendencia",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapicdcconsultapendencia",
+      "https://credito.buni.digital/api/fiapicdcconsultapendencia",
+      "api:",
+      "consulta",
+      "pendencias",
+      "cdc",
+      "pendencia",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.288Z",
+    "updatedAt": "2026-07-16T17:37:27.288Z",
+    "displayName": "Web API: Consulta de pendências"
+  },
+  {
+    "id": "api-producao-fiapicdcconsultaroperacao",
+    "type": "api",
+    "name": "FIApiCdcConsultarOperacao",
+    "technicalName": "fiapicdcconsultaroperacao",
+    "url": "https://credito.buni.digital/API/FIApiCdcConsultarOperacao",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapicdcconsultaroperacao",
+      "api:",
+      "consultar",
+      "dados",
+      "uma",
+      "operacao",
+      "cdc",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapicdcconsultaroperacao",
+      "https://credito.buni.digital/api/fiapicdcconsultaroperacao",
+      "api:",
+      "consultar",
+      "dados",
+      "uma",
+      "operacao",
+      "cdc",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.295Z",
+    "updatedAt": "2026-07-16T17:37:27.295Z",
+    "displayName": "Web API: Consultar os dados de uma operação"
+  },
+  {
+    "id": "api-producao-fiapicdccpfoperacoes",
+    "type": "api",
+    "name": "FiApiCdcCpfOperacoes",
+    "technicalName": "fiapicdccpfoperacoes",
+    "url": "https://credito.buni.digital/API/FiApiCdcCpfOperacoes",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapicdccpfoperacoes",
+      "api:",
+      "cpf",
+      "operacoes",
+      "cdc",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapicdccpfoperacoes",
+      "https://credito.buni.digital/api/fiapicdccpfoperacoes",
+      "api:",
+      "cpf",
+      "operacoes",
+      "cdc",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.302Z",
+    "updatedAt": "2026-07-16T17:37:27.302Z",
+    "displayName": "Web API: CpfOperacoes"
+  },
+  {
+    "id": "api-producao-fiapicdcdadosfinanceirosoperacoes",
+    "type": "api",
+    "name": "FiApiCdcDadosFinanceirosOperacoes",
+    "technicalName": "fiapicdcdadosfinanceirosoperacoes",
+    "url": "https://credito.buni.digital/API/FiApiCdcDadosFinanceirosOperacoes",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapicdcdadosfinanceirosoperacoes",
+      "api:",
+      "dados",
+      "financeiros",
+      "operacoes",
+      "cdc",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapicdcdadosfinanceirosoperacoes",
+      "https://credito.buni.digital/api/fiapicdcdadosfinanceirosoperacoes",
+      "api:",
+      "dados",
+      "financeiros",
+      "operacoes",
+      "cdc",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.310Z",
+    "updatedAt": "2026-07-16T17:37:27.310Z",
+    "displayName": "Web API: Dados Financeiros Operações"
+  },
+  {
+    "id": "api-producao-fiapicdcidentificatransacoes",
+    "type": "api",
+    "name": "FIApiCdcIdentificaTransacoes",
+    "technicalName": "fiapicdcidentificatransacoes",
+    "url": "https://credito.buni.digital/API/FIApiCdcIdentificaTransacoes",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapicdcidentificatransacoes",
+      "api:",
+      "identifica",
+      "transacoes",
+      "assincrona",
+      "cdc",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapicdcidentificatransacoes",
+      "https://credito.buni.digital/api/fiapicdcidentificatransacoes",
+      "api:",
+      "identifica",
+      "transacoes",
+      "assincrona",
+      "cdc",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.318Z",
+    "updatedAt": "2026-07-16T17:37:27.318Z",
+    "displayName": "Web API: Identifica Transações - Assíncrona"
+  },
+  {
+    "id": "api-producao-fiapicdclancaocorrencia",
+    "type": "api",
+    "name": "FIApiCdcLancaOcorrencia",
+    "technicalName": "fiapicdclancaocorrencia",
+    "url": "https://credito.buni.digital/API/FIApiCdcLancaOcorrencia",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapicdclancaocorrencia",
+      "api:",
+      "lancamento",
+      "ocorrencia",
+      "operacao",
+      "cdc",
+      "lanca",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapicdclancaocorrencia",
+      "https://credito.buni.digital/api/fiapicdclancaocorrencia",
+      "api:",
+      "lancamento",
+      "ocorrencia",
+      "operacao",
+      "cdc",
+      "lanca",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.325Z",
+    "updatedAt": "2026-07-16T17:37:27.325Z",
+    "displayName": "Web API: Lançamento de ocorrência na operação"
+  },
+  {
+    "id": "api-producao-fiapicdclancapendencia",
+    "type": "api",
+    "name": "FIApiCdcLancaPendencia",
+    "technicalName": "fiapicdclancapendencia",
+    "url": "https://credito.buni.digital/API/FIApiCdcLancaPendencia",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapicdclancapendencia",
+      "api:",
+      "lancamento",
+      "pendencia",
+      "operacao",
+      "cdc",
+      "lanca",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapicdclancapendencia",
+      "https://credito.buni.digital/api/fiapicdclancapendencia",
+      "api:",
+      "lancamento",
+      "pendencia",
+      "operacao",
+      "cdc",
+      "lanca",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.333Z",
+    "updatedAt": "2026-07-16T17:37:27.333Z",
+    "displayName": "Web API: Lançamento de pendência na operação"
+  },
+  {
+    "id": "api-producao-fiapicdcocorrencia",
+    "type": "api",
+    "name": "FiApiCdcOcorrencia",
+    "technicalName": "fiapicdcocorrencia",
+    "url": "https://credito.buni.digital/API/FiApiCdcOcorrencia",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapicdcocorrencia",
+      "api:",
+      "consulta",
+      "ocorrencias",
+      "cdc",
+      "ocorrencia",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapicdcocorrencia",
+      "https://credito.buni.digital/api/fiapicdcocorrencia",
+      "api:",
+      "consulta",
+      "ocorrencias",
+      "cdc",
+      "ocorrencia",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.341Z",
+    "updatedAt": "2026-07-16T17:37:27.341Z",
+    "displayName": "Web API: Web Api Consulta de Ocorrências"
+  },
+  {
+    "id": "api-producao-fiapicdcparcelas",
+    "type": "api",
+    "name": "FiApiCdcParcelas",
+    "technicalName": "fiapicdcparcelas",
+    "url": "https://credito.buni.digital/API/FiApiCdcParcelas",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapicdcparcelas",
+      "api:",
+      "parcelas",
+      "cdc",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapicdcparcelas",
+      "https://credito.buni.digital/api/fiapicdcparcelas",
+      "api:",
+      "parcelas",
+      "cdc",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.348Z",
+    "updatedAt": "2026-07-16T17:37:27.348Z",
+    "displayName": "Web API: Parcelas"
+  },
+  {
+    "id": "api-producao-fiapicdcpesquisaoperacao",
+    "type": "api",
+    "name": "FiApiCdcPesquisaOperacao",
+    "technicalName": "fiapicdcpesquisaoperacao",
+    "url": "https://credito.buni.digital/API/FiApiCdcPesquisaOperacao",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapicdcpesquisaoperacao",
+      "api:",
+      "pesquisa/lista",
+      "operacoes",
+      "cdc",
+      "pesquisa",
+      "operacao",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapicdcpesquisaoperacao",
+      "https://credito.buni.digital/api/fiapicdcpesquisaoperacao",
+      "api:",
+      "pesquisa/lista",
+      "operacoes",
+      "cdc",
+      "pesquisa",
+      "operacao",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.357Z",
+    "updatedAt": "2026-07-16T17:37:27.357Z",
+    "displayName": "Web API: Pesquisa/Lista de Operações"
+  },
+  {
+    "id": "api-producao-fiapicdcrelinformerendimentos",
+    "type": "api",
+    "name": "FIApiCdcRelInformeRendimentos",
+    "technicalName": "fiapicdcrelinformerendimentos",
+    "url": "https://credito.buni.digital/API/FIApiCdcRelInformeRendimentos",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapicdcrelinformerendimentos",
+      "api:",
+      "relatorio",
+      "informe",
+      "rendimentos",
+      "cdc",
+      "rel",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapicdcrelinformerendimentos",
+      "https://credito.buni.digital/api/fiapicdcrelinformerendimentos",
+      "api:",
+      "relatorio",
+      "informe",
+      "rendimentos",
+      "cdc",
+      "rel",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.363Z",
+    "updatedAt": "2026-07-16T17:37:27.363Z",
+    "displayName": "Web API: Relatório de Informe de Rendimentos"
+  },
+  {
+    "id": "api-producao-fiapicdcsaldos",
+    "type": "api",
+    "name": "FiApiCdcSaldos",
+    "technicalName": "fiapicdcsaldos",
+    "url": "https://credito.buni.digital/API/FiApiCdcSaldos",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapicdcsaldos",
+      "api:",
+      "saldos",
+      "cdc",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapicdcsaldos",
+      "https://credito.buni.digital/api/fiapicdcsaldos",
+      "api:",
+      "saldos",
+      "cdc",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.372Z",
+    "updatedAt": "2026-07-16T17:37:27.372Z",
+    "displayName": "Web API: Saldos"
+  },
+  {
+    "id": "api-producao-fiapicdcsegundaviacarne",
+    "type": "api",
+    "name": "FiApiCdcSegundaViaCarne",
+    "technicalName": "fiapicdcsegundaviacarne",
+    "url": "https://credito.buni.digital/API/FiApiCdcSegundaViaCarne",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapicdcsegundaviacarne",
+      "api:",
+      "segunda",
+      "via",
+      "carne",
+      "cdc",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapicdcsegundaviacarne",
+      "https://credito.buni.digital/api/fiapicdcsegundaviacarne",
+      "api:",
+      "segunda",
+      "via",
+      "carne",
+      "cdc",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.382Z",
+    "updatedAt": "2026-07-16T17:37:27.382Z",
+    "displayName": "Web API: Segunda Via Carne"
+  },
+  {
+    "id": "api-producao-fiapicotacoes",
+    "type": "api",
+    "name": "FIAPICotacoes",
+    "technicalName": "fiapicotacoes",
+    "url": "https://credito.buni.digital/API/FIAPICotacoes",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapicotacoes",
+      "api:",
+      "consulta",
+      "cotacao",
+      "cotacoes",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapicotacoes",
+      "https://credito.buni.digital/api/fiapicotacoes",
+      "api:",
+      "consulta",
+      "cotacao",
+      "cotacoes",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.394Z",
+    "updatedAt": "2026-07-16T17:37:27.394Z",
+    "displayName": "Web API: Consulta Cotação"
+  },
+  {
+    "id": "api-producao-fiapiempractwsautorizador",
+    "type": "api",
+    "name": "FIAPIEmprActWSAutorizador",
+    "technicalName": "fiapiempractwsautorizador",
+    "url": "https://credito.buni.digital/API/FIAPIEmprActWSAutorizador",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiempractwsautorizador",
+      "empr",
+      "act",
+      "autorizador",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiempractwsautorizador",
+      "https://credito.buni.digital/api/fiapiempractwsautorizador",
+      "empr",
+      "act",
+      "autorizador",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.403Z",
+    "updatedAt": "2026-07-16T17:37:27.403Z"
+  },
+  {
+    "id": "api-producao-fiapiemprcadastrofunc",
+    "type": "api",
+    "name": "FIAPIEmprCadastroFunc",
+    "technicalName": "fiapiemprcadastrofunc",
+    "url": "https://credito.buni.digital/API/FIAPIEmprCadastroFunc",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprcadastrofunc",
+      "api:",
+      "cadastro",
+      "funcionario",
+      "empr",
+      "func",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprcadastrofunc",
+      "https://credito.buni.digital/api/fiapiemprcadastrofunc",
+      "api:",
+      "cadastro",
+      "funcionario",
+      "empr",
+      "func",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.408Z",
+    "updatedAt": "2026-07-16T17:37:27.408Z",
+    "displayName": "Web API: Cadastro de Funcionário"
+  },
+  {
+    "id": "api-producao-fiapiemprgerarboleto",
+    "type": "api",
+    "name": "FIAPIEmprGerarBoleto",
+    "technicalName": "fiapiemprgerarboleto",
+    "url": "https://credito.buni.digital/API/FIAPIEmprGerarBoleto",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprgerarboleto",
+      "empr",
+      "gerar",
+      "boleto",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprgerarboleto",
+      "https://credito.buni.digital/api/fiapiemprgerarboleto",
+      "empr",
+      "gerar",
+      "boleto",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.417Z",
+    "updatedAt": "2026-07-16T17:37:27.417Z"
+  },
+  {
+    "id": "api-producao-fiapiemprobterboletoprocessamento",
+    "type": "api",
+    "name": "FIAPIEmprObterBoletoProcessamento",
+    "technicalName": "fiapiemprobterboletoprocessamento",
+    "url": "https://credito.buni.digital/API/FIAPIEmprObterBoletoProcessamento",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprobterboletoprocessamento",
+      "api:",
+      "gera",
+      "boleto",
+      "processamento",
+      "legado.",
+      "empr",
+      "obter",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprobterboletoprocessamento",
+      "https://credito.buni.digital/api/fiapiemprobterboletoprocessamento",
+      "api:",
+      "gera",
+      "boleto",
+      "processamento",
+      "legado.",
+      "empr",
+      "obter",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.423Z",
+    "updatedAt": "2026-07-16T17:37:27.423Z",
+    "displayName": "Web API: Gera Boleto de Processamento Legado."
+  },
+  {
+    "id": "api-producao-fiapiemprpropostarh",
+    "type": "api",
+    "name": "FIAPIEmprPropostaRH",
+    "technicalName": "fiapiemprpropostarh",
+    "url": "https://credito.buni.digital/API/FIAPIEmprPropostaRH",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprpropostarh",
+      "api:",
+      "proposta",
+      "empr",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprpropostarh",
+      "https://credito.buni.digital/api/fiapiemprpropostarh",
+      "api:",
+      "proposta",
+      "empr",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.432Z",
+    "updatedAt": "2026-07-16T17:37:27.432Z",
+    "displayName": "Web API: Proposta RH"
+  },
+  {
+    "id": "api-producao-fiapigabaixaparcelamanual",
+    "type": "api",
+    "name": "FIApiGaBaixaParcelaManual",
+    "technicalName": "fiapigabaixaparcelamanual",
+    "url": "https://credito.buni.digital/API/FIApiGaBaixaParcelaManual",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapigabaixaparcelamanual",
+      "api:",
+      "baixa",
+      "parcela",
+      "manual",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapigabaixaparcelamanual",
+      "https://credito.buni.digital/api/fiapigabaixaparcelamanual",
+      "api:",
+      "baixa",
+      "parcela",
+      "manual",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.441Z",
+    "updatedAt": "2026-07-16T17:37:27.441Z",
+    "displayName": "Web API: Baixa de parcela manual"
+  },
+  {
+    "id": "api-producao-fiapigacancelamentoautomaticoacordos",
+    "type": "api",
+    "name": "FiApiGACancelamentoAutomaticoAcordos",
+    "technicalName": "fiapigacancelamentoautomaticoacordos",
+    "url": "https://credito.buni.digital/API/FiApiGACancelamentoAutomaticoAcordos",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapigacancelamentoautomaticoacordos",
+      "api:",
+      "cancelamento",
+      "automatico",
+      "acordos",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapigacancelamentoautomaticoacordos",
+      "https://credito.buni.digital/api/fiapigacancelamentoautomaticoacordos",
+      "api:",
+      "cancelamento",
+      "automatico",
+      "acordos",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.449Z",
+    "updatedAt": "2026-07-16T17:37:27.449Z",
+    "displayName": "Web API: Cancelamento Automatico de Acordos"
+  },
+  {
+    "id": "api-producao-fiapigacancelamentomanualacordos",
+    "type": "api",
+    "name": "FiApiGACancelamentoManualAcordos",
+    "technicalName": "fiapigacancelamentomanualacordos",
+    "url": "https://credito.buni.digital/API/FiApiGACancelamentoManualAcordos",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapigacancelamentomanualacordos",
+      "api:",
+      "cancelamento",
+      "manual",
+      "acordos",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapigacancelamentomanualacordos",
+      "https://credito.buni.digital/api/fiapigacancelamentomanualacordos",
+      "api:",
+      "cancelamento",
+      "manual",
+      "acordos",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.457Z",
+    "updatedAt": "2026-07-16T17:37:27.457Z",
+    "displayName": "Web API: Cancelamento Manual de Acordos"
+  },
+  {
+    "id": "api-producao-fiapigacancelamentomovimento",
+    "type": "api",
+    "name": "FIApiGaCancelamentoMovimento",
+    "technicalName": "fiapigacancelamentomovimento",
+    "url": "https://credito.buni.digital/API/FIApiGaCancelamentoMovimento",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapigacancelamentomovimento",
+      "api:",
+      "cancelamento",
+      "movimento",
+      "parcela",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapigacancelamentomovimento",
+      "https://credito.buni.digital/api/fiapigacancelamentomovimento",
+      "api:",
+      "cancelamento",
+      "movimento",
+      "parcela",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.465Z",
+    "updatedAt": "2026-07-16T17:37:27.465Z",
+    "displayName": "Web API: Cancelamento do movimento da parcela"
+  },
+  {
+    "id": "api-producao-fiapigaconsultaparcela",
+    "type": "api",
+    "name": "FiApiGAConsultaParcela",
+    "technicalName": "fiapigaconsultaparcela",
+    "url": "https://credito.buni.digital/API/FiApiGAConsultaParcela",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapigaconsultaparcela",
+      "api:",
+      "consulta",
+      "das",
+      "parcelas",
+      "operacoes",
+      "parcela",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapigaconsultaparcela",
+      "https://credito.buni.digital/api/fiapigaconsultaparcela",
+      "api:",
+      "consulta",
+      "das",
+      "parcelas",
+      "operacoes",
+      "parcela",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.472Z",
+    "updatedAt": "2026-07-16T17:37:27.472Z",
+    "displayName": "Web API: Consulta das Parcelas das operações"
+  },
+  {
+    "id": "api-producao-fiapigaconsultasaldo",
+    "type": "api",
+    "name": "FIApiGaConsultaSaldo",
+    "technicalName": "fiapigaconsultasaldo",
+    "url": "https://credito.buni.digital/API/FIApiGaConsultaSaldo",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapigaconsultasaldo",
+      "api:",
+      "consulta",
+      "saldo",
+      "parcela",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapigaconsultasaldo",
+      "https://credito.buni.digital/api/fiapigaconsultasaldo",
+      "api:",
+      "consulta",
+      "saldo",
+      "parcela",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.479Z",
+    "updatedAt": "2026-07-16T17:37:27.479Z",
+    "displayName": "Web API: Web API de Consulta de saldo de parcela"
+  },
+  {
+    "id": "api-producao-fiapigaconsultaultimomovimento",
+    "type": "api",
+    "name": "FIApiGaConsultaUltimoMovimento",
+    "technicalName": "fiapigaconsultaultimomovimento",
+    "url": "https://credito.buni.digital/API/FIApiGaConsultaUltimoMovimento",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapigaconsultaultimomovimento",
+      "api:",
+      "consulta",
+      "ultimo",
+      "movimento",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapigaconsultaultimomovimento",
+      "https://credito.buni.digital/api/fiapigaconsultaultimomovimento",
+      "api:",
+      "consulta",
+      "ultimo",
+      "movimento",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.486Z",
+    "updatedAt": "2026-07-16T17:37:27.486Z",
+    "displayName": "Web API: Consulta ultimo movimento"
+  },
+  {
+    "id": "api-producao-fiapigaestornobaixa",
+    "type": "api",
+    "name": "FIApiGaEstornoBaixa",
+    "technicalName": "fiapigaestornobaixa",
+    "url": "https://credito.buni.digital/API/FIApiGaEstornoBaixa",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapigaestornobaixa",
+      "api:",
+      "estorno",
+      "baixa",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapigaestornobaixa",
+      "https://credito.buni.digital/api/fiapigaestornobaixa",
+      "api:",
+      "estorno",
+      "baixa",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.494Z",
+    "updatedAt": "2026-07-16T17:37:27.494Z",
+    "displayName": "Web API: Estorno de baixa"
+  },
+  {
+    "id": "api-producao-fiapigarantiascontabeis",
+    "type": "api",
+    "name": "FiApiGarantiasContabeis",
+    "technicalName": "fiapigarantiascontabeis",
+    "url": "https://credito.buni.digital/API/FiApiGarantiasContabeis",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapigarantiascontabeis",
+      "api:",
+      "restful",
+      "garantias",
+      "contabeis",
+      "online",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapigarantiascontabeis",
+      "https://credito.buni.digital/api/fiapigarantiascontabeis",
+      "api:",
+      "restful",
+      "garantias",
+      "contabeis",
+      "online",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.501Z",
+    "updatedAt": "2026-07-16T17:37:27.501Z",
+    "displayName": "Web API: Restful Garantias Contabeis Online"
+  },
+  {
+    "id": "api-producao-fiapimoduloscorpconsultarcep",
+    "type": "api",
+    "name": "FIApiModulosCorpConsultarCEP",
+    "technicalName": "fiapimoduloscorpconsultarcep",
+    "url": "https://credito.buni.digital/API/FIApiModulosCorpConsultarCEP",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapimoduloscorpconsultarcep",
+      "api:",
+      "consulta",
+      "endereco",
+      "por",
+      "cep",
+      "modulos",
+      "corp",
+      "consultar",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapimoduloscorpconsultarcep",
+      "https://credito.buni.digital/api/fiapimoduloscorpconsultarcep",
+      "api:",
+      "consulta",
+      "endereco",
+      "por",
+      "cep",
+      "modulos",
+      "corp",
+      "consultar",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.509Z",
+    "updatedAt": "2026-07-16T17:37:27.509Z",
+    "displayName": "Web API: consulta de endereço por CEP"
+  },
+  {
+    "id": "api-producao-fiapimonitor",
+    "type": "api",
+    "name": "FIApiMonitor",
+    "technicalName": "fiapimonitor",
+    "url": "https://credito.buni.digital/API/FIApiMonitor",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapimonitor",
+      "api:",
+      "monitoramento",
+      "serv",
+      "con",
+      "monitor",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapimonitor",
+      "https://credito.buni.digital/api/fiapimonitor",
+      "api:",
+      "monitoramento",
+      "serv",
+      "con",
+      "monitor",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.517Z",
+    "updatedAt": "2026-07-16T17:37:27.517Z",
+    "displayName": "Web API: Monitoramento do ServCon"
+  },
+  {
+    "id": "api-producao-fiapisif",
+    "type": "api",
+    "name": "FIApiSIF",
+    "technicalName": "fiapisif",
+    "url": "https://credito.buni.digital/API/FIApiSIF",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapisif",
+      "sif",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapisif",
+      "https://credito.buni.digital/api/fiapisif",
+      "sif",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.527Z",
+    "updatedAt": "2026-07-16T17:37:27.527Z"
+  },
+  {
+    "id": "api-producao-fiapisrvgacancelamentoacordo",
+    "type": "api",
+    "name": "FIApiSrvGACancelamentoAcordo",
+    "technicalName": "fiapisrvgacancelamentoacordo",
+    "url": "https://credito.buni.digital/API/FIApiSrvGACancelamentoAcordo",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapisrvgacancelamentoacordo",
+      "api:",
+      "restful",
+      "plugin",
+      "srv",
+      "cancelamento",
+      "acordo",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapisrvgacancelamentoacordo",
+      "https://credito.buni.digital/api/fiapisrvgacancelamentoacordo",
+      "api:",
+      "restful",
+      "plugin",
+      "srv",
+      "cancelamento",
+      "acordo",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.531Z",
+    "updatedAt": "2026-07-16T17:37:27.531Z",
+    "displayName": "Web API: Restful do plugin SrvPluginCancelamentoAcordo"
+  },
+  {
+    "id": "api-producao-fiapitabconsorigem1",
+    "type": "api",
+    "name": "FIApiTabConsOrigem1",
+    "technicalName": "fiapitabconsorigem1",
+    "url": "https://credito.buni.digital/API/FIApiTabConsOrigem1",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapitabconsorigem1",
+      "api:",
+      "consulta",
+      "das",
+      "origens1",
+      "cadastradas",
+      "sistema",
+      "funcao",
+      "tab",
+      "cons",
+      "origem1",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapitabconsorigem1",
+      "https://credito.buni.digital/api/fiapitabconsorigem1",
+      "api:",
+      "consulta",
+      "das",
+      "origens1",
+      "cadastradas",
+      "sistema",
+      "funcao",
+      "tab",
+      "cons",
+      "origem1",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.540Z",
+    "updatedAt": "2026-07-16T17:37:27.540Z",
+    "displayName": "Web API: Consulta das Origens1 cadastradas no sistema Função"
+  },
+  {
+    "id": "api-producao-fiapitabconsorigem2",
+    "type": "api",
+    "name": "FIApiTabConsOrigem2",
+    "technicalName": "fiapitabconsorigem2",
+    "url": "https://credito.buni.digital/API/FIApiTabConsOrigem2",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapitabconsorigem2",
+      "api:",
+      "consulta",
+      "das",
+      "origens2",
+      "cadastradas",
+      "sistema",
+      "funcao",
+      "tab",
+      "cons",
+      "origem2",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapitabconsorigem2",
+      "https://credito.buni.digital/api/fiapitabconsorigem2",
+      "api:",
+      "consulta",
+      "das",
+      "origens2",
+      "cadastradas",
+      "sistema",
+      "funcao",
+      "tab",
+      "cons",
+      "origem2",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.550Z",
+    "updatedAt": "2026-07-16T17:37:27.550Z",
+    "displayName": "Web API: Consulta das Origens2 cadastradas no sistema Função"
+  },
+  {
+    "id": "api-producao-fiapitabconsorigem3o",
+    "type": "api",
+    "name": "FIApiTabConsOrigem3O",
+    "technicalName": "fiapitabconsorigem3o",
+    "url": "https://credito.buni.digital/API/FIApiTabConsOrigem3O",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapitabconsorigem3o",
+      "api:",
+      "consulta",
+      "das",
+      "origens",
+      "cadastradas",
+      "sistema",
+      "funcao",
+      "tab",
+      "cons",
+      "origem3",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapitabconsorigem3o",
+      "https://credito.buni.digital/api/fiapitabconsorigem3o",
+      "api:",
+      "consulta",
+      "das",
+      "origens",
+      "cadastradas",
+      "sistema",
+      "funcao",
+      "tab",
+      "cons",
+      "origem3",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.558Z",
+    "updatedAt": "2026-07-16T17:37:27.558Z",
+    "displayName": "Web API: Consulta das Origens 30 cadastradas no sistema Função"
+  },
+  {
+    "id": "api-producao-fiapitabregimecontratacao",
+    "type": "api",
+    "name": "FIApiTabRegimeContratacao",
+    "technicalName": "fiapitabregimecontratacao",
+    "url": "https://credito.buni.digital/API/FIApiTabRegimeContratacao",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapitabregimecontratacao",
+      "api:",
+      "regime",
+      "contratacao",
+      "tab",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapitabregimecontratacao",
+      "https://credito.buni.digital/api/fiapitabregimecontratacao",
+      "api:",
+      "regime",
+      "contratacao",
+      "tab",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.567Z",
+    "updatedAt": "2026-07-16T17:37:27.567Z",
+    "displayName": "Web API: Regime de Contratação"
+  },
+  {
+    "id": "api-producao-fiapitabvalprofcert",
+    "type": "api",
+    "name": "FiApiTabValProfCert",
+    "technicalName": "fiapitabvalprofcert",
+    "url": "https://credito.buni.digital/API/FiApiTabValProfCert",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapitabvalprofcert",
+      "api:",
+      "validacao",
+      "profissional",
+      "certificado",
+      "tab",
+      "val",
+      "prof",
+      "cert",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapitabvalprofcert",
+      "https://credito.buni.digital/api/fiapitabvalprofcert",
+      "api:",
+      "validacao",
+      "profissional",
+      "certificado",
+      "tab",
+      "val",
+      "prof",
+      "cert",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.576Z",
+    "updatedAt": "2026-07-16T17:37:27.576Z",
+    "displayName": "Web API: Validação do Profissional Certificado"
+  },
+  {
+    "id": "api-producao-fiapiautoservico",
+    "type": "api",
+    "name": "FIAPIAutoServico",
+    "technicalName": "fiapiautoservico",
+    "url": "https://credito.buni.digital/API/FIAPIAutoServico",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiautoservico",
+      "api:",
+      "restful",
+      "auto",
+      "servico",
+      "funcao",
+      "informatica",
+      "api"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiautoservico",
+      "https://credito.buni.digital/api/fiapiautoservico",
+      "api:",
+      "restful",
+      "auto",
+      "servico",
+      "funcao",
+      "informatica",
+      "api",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.583Z",
+    "updatedAt": "2026-07-16T17:37:27.583Z",
+    "displayName": "Web API: Restful de Auto Serviço da Função Informática"
+  },
+  {
+    "id": "api-producao-fiapiconsultaparametrosgerais-autoserv",
+    "type": "api",
+    "name": "FIAPIConsultaParametrosGerais_AUTOSERV",
+    "technicalName": "fiapiconsultaparametrosgerais-autoserv",
+    "url": "https://credito.buni.digital/API/FIAPIConsultaParametrosGerais_AUTOSERV",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiconsultaparametrosgerais_autoserv",
+      "api:",
+      "consultar",
+      "parametros",
+      "gerais",
+      "consulta",
+      "autoserv",
+      "api",
+      "autoatendimento"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiconsultaparametrosgerais_autoserv",
+      "fiapiconsultaparametrosgerais-autoserv",
+      "https://credito.buni.digital/api/fiapiconsultaparametrosgerais_autoserv",
+      "api:",
+      "consultar",
+      "parametros",
+      "gerais",
+      "consulta",
+      "autoserv",
+      "api",
+      "autoatendimento",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.590Z",
+    "updatedAt": "2026-07-16T17:37:27.590Z",
+    "displayName": "Web API: Consultar Parametros Gerais"
+  },
+  {
+    "id": "api-producao-fiapiemprconstfuncpropoper-autoserv",
+    "type": "api",
+    "name": "FIAPIEmprConstFuncPropOper_AUTOSERV",
+    "technicalName": "fiapiemprconstfuncpropoper-autoserv",
+    "url": "https://credito.buni.digital/API/FIAPIEmprConstFuncPropOper_AUTOSERV",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprconstfuncpropoper_autoserv",
+      "api:",
+      "consulta",
+      "funcionario",
+      "prop/oper.",
+      "empr",
+      "const",
+      "func",
+      "prop",
+      "oper",
+      "autoserv",
+      "api",
+      "autoatendimento"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprconstfuncpropoper_autoserv",
+      "fiapiemprconstfuncpropoper-autoserv",
+      "https://credito.buni.digital/api/fiapiemprconstfuncpropoper_autoserv",
+      "api:",
+      "consulta",
+      "funcionario",
+      "prop/oper.",
+      "empr",
+      "const",
+      "func",
+      "prop",
+      "oper",
+      "autoserv",
+      "api",
+      "autoatendimento",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.597Z",
+    "updatedAt": "2026-07-16T17:37:27.597Z",
+    "displayName": "Web API: Consulta de Funcionário de Prop/Oper."
+  },
+  {
+    "id": "api-producao-fiapiemprconsultabancos-autoserv",
+    "type": "api",
+    "name": "FIAPIEmprConsultaBancos_AUTOSERV",
+    "technicalName": "fiapiemprconsultabancos-autoserv",
+    "url": "https://credito.buni.digital/API/FIAPIEmprConsultaBancos_AUTOSERV",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprconsultabancos_autoserv",
+      "api:",
+      "consultar",
+      "bancos",
+      "empr",
+      "consulta",
+      "autoserv",
+      "api",
+      "autoatendimento"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprconsultabancos_autoserv",
+      "fiapiemprconsultabancos-autoserv",
+      "https://credito.buni.digital/api/fiapiemprconsultabancos_autoserv",
+      "api:",
+      "consultar",
+      "bancos",
+      "empr",
+      "consulta",
+      "autoserv",
+      "api",
+      "autoatendimento",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.604Z",
+    "updatedAt": "2026-07-16T17:37:27.604Z",
+    "displayName": "Web API: Consultar Bancos"
+  },
+  {
+    "id": "api-producao-fiapiemprconsultaclienteportal-autoserv",
+    "type": "api",
+    "name": "FIAPIEmprConsultaClientePortal_AUTOSERV",
+    "technicalName": "fiapiemprconsultaclienteportal-autoserv",
+    "url": "https://credito.buni.digital/API/FIAPIEmprConsultaClientePortal_AUTOSERV",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprconsultaclienteportal_autoserv",
+      "api:",
+      "consultar",
+      "clientes",
+      "portal",
+      "empr",
+      "consulta",
+      "cliente",
+      "autoserv",
+      "api",
+      "autoatendimento"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprconsultaclienteportal_autoserv",
+      "fiapiemprconsultaclienteportal-autoserv",
+      "https://credito.buni.digital/api/fiapiemprconsultaclienteportal_autoserv",
+      "api:",
+      "consultar",
+      "clientes",
+      "portal",
+      "empr",
+      "consulta",
+      "cliente",
+      "autoserv",
+      "api",
+      "autoatendimento",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.611Z",
+    "updatedAt": "2026-07-16T17:37:27.611Z",
+    "displayName": "Web API: Consultar Clientes do portal"
+  },
+  {
+    "id": "api-producao-fiapiemprconsultacpf-autoserv",
+    "type": "api",
+    "name": "FIAPIEmprConsultaCPF_AUTOSERV",
+    "technicalName": "fiapiemprconsultacpf-autoserv",
+    "url": "https://credito.buni.digital/API/FIAPIEmprConsultaCPF_AUTOSERV",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprconsultacpf_autoserv",
+      "api:",
+      "consultar",
+      "cpf",
+      "empr",
+      "consulta",
+      "autoserv",
+      "api",
+      "autoatendimento"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprconsultacpf_autoserv",
+      "fiapiemprconsultacpf-autoserv",
+      "https://credito.buni.digital/api/fiapiemprconsultacpf_autoserv",
+      "api:",
+      "consultar",
+      "cpf",
+      "empr",
+      "consulta",
+      "autoserv",
+      "api",
+      "autoatendimento",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.618Z",
+    "updatedAt": "2026-07-16T17:37:27.618Z",
+    "displayName": "Web API: Consultar CPF"
+  },
+  {
+    "id": "api-producao-fiapiemprconsultadadosporproposta-autoserv",
+    "type": "api",
+    "name": "FIAPIEmprConsultaDadosPorProposta_AUTOSERV",
+    "technicalName": "fiapiemprconsultadadosporproposta-autoserv",
+    "url": "https://credito.buni.digital/API/FIAPIEmprConsultaDadosPorProposta_AUTOSERV",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprconsultadadosporproposta_autoserv",
+      "api:",
+      "consulta",
+      "dados",
+      "por",
+      "proposta",
+      "empr",
+      "autoserv",
+      "api",
+      "autoatendimento"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprconsultadadosporproposta_autoserv",
+      "fiapiemprconsultadadosporproposta-autoserv",
+      "https://credito.buni.digital/api/fiapiemprconsultadadosporproposta_autoserv",
+      "api:",
+      "consulta",
+      "dados",
+      "por",
+      "proposta",
+      "empr",
+      "autoserv",
+      "api",
+      "autoatendimento",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.625Z",
+    "updatedAt": "2026-07-16T17:37:27.625Z",
+    "displayName": "Web API: Consulta de Dados por Proposta"
+  },
+  {
+    "id": "api-producao-fiapiemprconsultalinhadotempo-autoserv",
+    "type": "api",
+    "name": "FIAPIEmprConsultaLinhaDoTempo_AUTOSERV",
+    "technicalName": "fiapiemprconsultalinhadotempo-autoserv",
+    "url": "https://credito.buni.digital/API/FIAPIEmprConsultaLinhaDoTempo_AUTOSERV",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprconsultalinhadotempo_autoserv",
+      "api:",
+      "consultar",
+      "linha",
+      "tempo",
+      "auto",
+      "serv",
+      "empr",
+      "consulta",
+      "autoserv",
+      "api",
+      "autoatendimento"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprconsultalinhadotempo_autoserv",
+      "fiapiemprconsultalinhadotempo-autoserv",
+      "https://credito.buni.digital/api/fiapiemprconsultalinhadotempo_autoserv",
+      "api:",
+      "consultar",
+      "linha",
+      "tempo",
+      "auto",
+      "serv",
+      "empr",
+      "consulta",
+      "autoserv",
+      "api",
+      "autoatendimento",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.632Z",
+    "updatedAt": "2026-07-16T17:37:27.632Z",
+    "displayName": "Web API: Consultar Linha do Tempo - AutoServ"
+  },
+  {
+    "id": "api-producao-fiapiemprconsultanacionalidade-autoserv",
+    "type": "api",
+    "name": "FIAPIEmprConsultaNacionalidade_AUTOSERV",
+    "technicalName": "fiapiemprconsultanacionalidade-autoserv",
+    "url": "https://credito.buni.digital/API/FIAPIEmprConsultaNacionalidade_AUTOSERV",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprconsultanacionalidade_autoserv",
+      "api:",
+      "consultar",
+      "nacionalidade",
+      "auto",
+      "serv",
+      "empr",
+      "consulta",
+      "autoserv",
+      "api",
+      "autoatendimento"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprconsultanacionalidade_autoserv",
+      "fiapiemprconsultanacionalidade-autoserv",
+      "https://credito.buni.digital/api/fiapiemprconsultanacionalidade_autoserv",
+      "api:",
+      "consultar",
+      "nacionalidade",
+      "auto",
+      "serv",
+      "empr",
+      "consulta",
+      "autoserv",
+      "api",
+      "autoatendimento",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.639Z",
+    "updatedAt": "2026-07-16T17:37:27.639Z",
+    "displayName": "Web API: Consultar Nacionalidade AutoServ"
+  },
+  {
+    "id": "api-producao-fiapiemprconsultaocorconsignacao-autoserv",
+    "type": "api",
+    "name": "FIAPIEmprConsultaOcorConsignacao_AUTOSERV",
+    "technicalName": "fiapiemprconsultaocorconsignacao-autoserv",
+    "url": "https://credito.buni.digital/API/FIAPIEmprConsultaOcorConsignacao_AUTOSERV",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprconsultaocorconsignacao_autoserv",
+      "api:",
+      "consultar",
+      "ocorrencias",
+      "consignadas",
+      "empr",
+      "consulta",
+      "ocor",
+      "consignacao",
+      "autoserv",
+      "api",
+      "autoatendimento"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprconsultaocorconsignacao_autoserv",
+      "fiapiemprconsultaocorconsignacao-autoserv",
+      "https://credito.buni.digital/api/fiapiemprconsultaocorconsignacao_autoserv",
+      "api:",
+      "consultar",
+      "ocorrencias",
+      "consignadas",
+      "empr",
+      "consulta",
+      "ocor",
+      "consignacao",
+      "autoserv",
+      "api",
+      "autoatendimento",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.646Z",
+    "updatedAt": "2026-07-16T17:37:27.646Z",
+    "displayName": "Web API: Consultar Ocorrências Consignadas"
+  },
+  {
+    "id": "api-producao-fiapiemprconsultaopers-autoserv",
+    "type": "api",
+    "name": "FIAPIEmprConsultaOpers_AUTOSERV",
+    "technicalName": "fiapiemprconsultaopers-autoserv",
+    "url": "https://credito.buni.digital/API/FIAPIEmprConsultaOpers_AUTOSERV",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprconsultaopers_autoserv",
+      "api:",
+      "consultar",
+      "operacoes",
+      "auto",
+      "serv",
+      "empr",
+      "consulta",
+      "opers",
+      "autoserv",
+      "api",
+      "autoatendimento"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprconsultaopers_autoserv",
+      "fiapiemprconsultaopers-autoserv",
+      "https://credito.buni.digital/api/fiapiemprconsultaopers_autoserv",
+      "api:",
+      "consultar",
+      "operacoes",
+      "auto",
+      "serv",
+      "empr",
+      "consulta",
+      "opers",
+      "autoserv",
+      "api",
+      "autoatendimento",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.654Z",
+    "updatedAt": "2026-07-16T17:37:27.654Z",
+    "displayName": "Web API: Consultar Operações - AutoServ"
+  },
+  {
+    "id": "api-producao-fiapiemprconsultaorigem4-autoserv",
+    "type": "api",
+    "name": "FIApiEmprConsultaOrigem4_AUTOSERV",
+    "technicalName": "fiapiemprconsultaorigem4-autoserv",
+    "url": "https://credito.buni.digital/API/FIApiEmprConsultaOrigem4_AUTOSERV",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprconsultaorigem4_autoserv",
+      "api:",
+      "consultar",
+      "origens",
+      "empr",
+      "consulta",
+      "origem4",
+      "autoserv",
+      "api",
+      "autoatendimento"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprconsultaorigem4_autoserv",
+      "fiapiemprconsultaorigem4-autoserv",
+      "https://credito.buni.digital/api/fiapiemprconsultaorigem4_autoserv",
+      "api:",
+      "consultar",
+      "origens",
+      "empr",
+      "consulta",
+      "origem4",
+      "autoserv",
+      "api",
+      "autoatendimento",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.661Z",
+    "updatedAt": "2026-07-16T17:37:27.661Z",
+    "displayName": "Web API: Consultar Origens 4"
+  },
+  {
+    "id": "api-producao-fiapiemprconsultaorigem5-autoserv",
+    "type": "api",
+    "name": "FIAPIEmprConsultaOrigem5_AUTOSERV",
+    "technicalName": "fiapiemprconsultaorigem5-autoserv",
+    "url": "https://credito.buni.digital/API/FIAPIEmprConsultaOrigem5_AUTOSERV",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprconsultaorigem5_autoserv",
+      "api:",
+      "consultar",
+      "origens",
+      "empr",
+      "consulta",
+      "origem5",
+      "autoserv",
+      "api",
+      "autoatendimento"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprconsultaorigem5_autoserv",
+      "fiapiemprconsultaorigem5-autoserv",
+      "https://credito.buni.digital/api/fiapiemprconsultaorigem5_autoserv",
+      "api:",
+      "consultar",
+      "origens",
+      "empr",
+      "consulta",
+      "origem5",
+      "autoserv",
+      "api",
+      "autoatendimento",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.670Z",
+    "updatedAt": "2026-07-16T17:37:27.670Z",
+    "displayName": "Web API: Consultar Origens 5"
+  },
+  {
+    "id": "api-producao-fiapiemprconsultaperiodoconc-autoserv",
+    "type": "api",
+    "name": "FIAPIEmprConsultaPeriodoConc_AUTOSERV",
+    "technicalName": "fiapiemprconsultaperiodoconc-autoserv",
+    "url": "https://credito.buni.digital/API/FIAPIEmprConsultaPeriodoConc_AUTOSERV",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprconsultaperiodoconc_autoserv",
+      "api:",
+      "consulta",
+      "periodo",
+      "conciliacao",
+      "empr",
+      "conc",
+      "autoserv",
+      "api",
+      "autoatendimento"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprconsultaperiodoconc_autoserv",
+      "fiapiemprconsultaperiodoconc-autoserv",
+      "https://credito.buni.digital/api/fiapiemprconsultaperiodoconc_autoserv",
+      "api:",
+      "consulta",
+      "periodo",
+      "conciliacao",
+      "empr",
+      "conc",
+      "autoserv",
+      "api",
+      "autoatendimento",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.679Z",
+    "updatedAt": "2026-07-16T17:37:27.679Z",
+    "displayName": "Web API: Consulta Periodo de Conciliação"
+  },
+  {
+    "id": "api-producao-fiapiemprconsultapropostasportal-autoserv",
+    "type": "api",
+    "name": "FIAPIEmprConsultaPropostasPortal_AUTOSERV",
+    "technicalName": "fiapiemprconsultapropostasportal-autoserv",
+    "url": "https://credito.buni.digital/API/FIAPIEmprConsultaPropostasPortal_AUTOSERV",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprconsultapropostasportal_autoserv",
+      "api:",
+      "consultar",
+      "propostas",
+      "portal",
+      "autoservico",
+      "empr",
+      "consulta",
+      "autoserv",
+      "api",
+      "autoatendimento"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprconsultapropostasportal_autoserv",
+      "fiapiemprconsultapropostasportal-autoserv",
+      "https://credito.buni.digital/api/fiapiemprconsultapropostasportal_autoserv",
+      "api:",
+      "consultar",
+      "propostas",
+      "portal",
+      "autoservico",
+      "empr",
+      "consulta",
+      "autoserv",
+      "api",
+      "autoatendimento",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.686Z",
+    "updatedAt": "2026-07-16T17:37:27.686Z",
+    "displayName": "Web API: Consultar propostas do portal - Autoservico"
+  },
+  {
+    "id": "api-producao-fiapiemprconsultarmotivosaut-autoserv",
+    "type": "api",
+    "name": "FIAPIEMPRConsultarMotivosAut_AUTOSERV",
+    "technicalName": "fiapiemprconsultarmotivosaut-autoserv",
+    "url": "https://credito.buni.digital/API/FIAPIEMPRConsultarMotivosAut_AUTOSERV",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprconsultarmotivosaut_autoserv",
+      "api:",
+      "consulta",
+      "motivo",
+      "externo",
+      "consignado",
+      "auto",
+      "servico",
+      "fiapiempr",
+      "consultar",
+      "motivos",
+      "aut",
+      "autoserv",
+      "api",
+      "autoatendimento"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprconsultarmotivosaut_autoserv",
+      "fiapiemprconsultarmotivosaut-autoserv",
+      "https://credito.buni.digital/api/fiapiemprconsultarmotivosaut_autoserv",
+      "api:",
+      "consulta",
+      "motivo",
+      "externo",
+      "consignado",
+      "auto",
+      "servico",
+      "fiapiempr",
+      "consultar",
+      "motivos",
+      "aut",
+      "autoserv",
+      "api",
+      "autoatendimento",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.696Z",
+    "updatedAt": "2026-07-16T17:37:27.696Z",
+    "displayName": "Web API: Consulta de Motivo Externo Consignado Auto Serviço"
+  },
+  {
+    "id": "api-producao-fiapiemprconsultarparcelasporoperacao-autoserv",
+    "type": "api",
+    "name": "FIAPIEmprConsultarParcelasPorOperacao_AUTOSERV",
+    "technicalName": "fiapiemprconsultarparcelasporoperacao-autoserv",
+    "url": "https://credito.buni.digital/API/FIAPIEmprConsultarParcelasPorOperacao_AUTOSERV",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprconsultarparcelasporoperacao_autoserv",
+      "api:",
+      "consultar",
+      "parcelas",
+      "por",
+      "operacao",
+      "empr",
+      "autoserv",
+      "api",
+      "autoatendimento"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprconsultarparcelasporoperacao_autoserv",
+      "fiapiemprconsultarparcelasporoperacao-autoserv",
+      "https://credito.buni.digital/api/fiapiemprconsultarparcelasporoperacao_autoserv",
+      "api:",
+      "consultar",
+      "parcelas",
+      "por",
+      "operacao",
+      "empr",
+      "autoserv",
+      "api",
+      "autoatendimento",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.703Z",
+    "updatedAt": "2026-07-16T17:37:27.703Z",
+    "displayName": "Web API: Consultar Parcelas Por Operação"
+  },
+  {
+    "id": "api-producao-fiapiemprconsultarproposta-autoserv",
+    "type": "api",
+    "name": "FIAPIEmprConsultarProposta_AUTOSERV",
+    "technicalName": "fiapiemprconsultarproposta-autoserv",
+    "url": "https://credito.buni.digital/API/FIAPIEmprConsultarProposta_AUTOSERV",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprconsultarproposta_autoserv",
+      "api:",
+      "consultar",
+      "dados",
+      "uma",
+      "proposta",
+      "empr",
+      "autoserv",
+      "api",
+      "autoatendimento"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprconsultarproposta_autoserv",
+      "fiapiemprconsultarproposta-autoserv",
+      "https://credito.buni.digital/api/fiapiemprconsultarproposta_autoserv",
+      "api:",
+      "consultar",
+      "dados",
+      "uma",
+      "proposta",
+      "empr",
+      "autoserv",
+      "api",
+      "autoatendimento",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.711Z",
+    "updatedAt": "2026-07-16T17:37:27.711Z",
+    "displayName": "Web API: Consultar os dados de uma proposta"
+  },
+  {
+    "id": "api-producao-fiapiemprdocumentoged-autoserv",
+    "type": "api",
+    "name": "FIAPIEmprDocumentoGed_AUTOSERV",
+    "technicalName": "fiapiemprdocumentoged-autoserv",
+    "url": "https://credito.buni.digital/API/FIAPIEmprDocumentoGed_AUTOSERV",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprdocumentoged_autoserv",
+      "api:",
+      "consulta",
+      "anexo",
+      "documentos",
+      "doc",
+      "auto",
+      "serv",
+      "empr",
+      "documento",
+      "ged",
+      "autoserv",
+      "api",
+      "autoatendimento"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprdocumentoged_autoserv",
+      "fiapiemprdocumentoged-autoserv",
+      "https://credito.buni.digital/api/fiapiemprdocumentoged_autoserv",
+      "api:",
+      "consulta",
+      "anexo",
+      "documentos",
+      "doc",
+      "auto",
+      "serv",
+      "empr",
+      "documento",
+      "ged",
+      "autoserv",
+      "api",
+      "autoatendimento",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.721Z",
+    "updatedAt": "2026-07-16T17:37:27.721Z",
+    "displayName": "Web API: Consulta e Anexo de Documentos GEDoc AutoServ"
+  },
+  {
+    "id": "api-producao-fiapiemprefetivarrescisao-autoserv",
+    "type": "api",
+    "name": "FIAPIEmprEfetivarRescisao_AUTOSERV",
+    "technicalName": "fiapiemprefetivarrescisao-autoserv",
+    "url": "https://credito.buni.digital/API/FIAPIEmprEfetivarRescisao_AUTOSERV",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprefetivarrescisao_autoserv",
+      "api:",
+      "efetiva",
+      "rescisao",
+      "auto",
+      "servico",
+      "empr",
+      "efetivar",
+      "autoserv",
+      "api",
+      "autoatendimento"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprefetivarrescisao_autoserv",
+      "fiapiemprefetivarrescisao-autoserv",
+      "https://credito.buni.digital/api/fiapiemprefetivarrescisao_autoserv",
+      "api:",
+      "efetiva",
+      "rescisao",
+      "auto",
+      "servico",
+      "empr",
+      "efetivar",
+      "autoserv",
+      "api",
+      "autoatendimento",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.729Z",
+    "updatedAt": "2026-07-16T17:37:27.729Z",
+    "displayName": "Web API: Efetiva Rescisão Auto Serviço"
+  },
+  {
+    "id": "api-producao-fiapiemprfaturarh-autoserv",
+    "type": "api",
+    "name": "FIAPIEmprFaturaRH_AUTOSERV",
+    "technicalName": "fiapiemprfaturarh-autoserv",
+    "url": "https://credito.buni.digital/API/FIAPIEmprFaturaRH_AUTOSERV",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprfaturarh_autoserv",
+      "api:",
+      "fatura",
+      "auto",
+      "servico",
+      "empr",
+      "autoserv",
+      "api",
+      "autoatendimento"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprfaturarh_autoserv",
+      "fiapiemprfaturarh-autoserv",
+      "https://credito.buni.digital/api/fiapiemprfaturarh_autoserv",
+      "api:",
+      "fatura",
+      "auto",
+      "servico",
+      "empr",
+      "autoserv",
+      "api",
+      "autoatendimento",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.738Z",
+    "updatedAt": "2026-07-16T17:37:27.738Z",
+    "displayName": "Web API: Fatura AutoServico"
+  },
+  {
+    "id": "api-producao-fiapiemprgenfatexcel-autoserv",
+    "type": "api",
+    "name": "FIAPIEmprGenFatExcel_AUTOSERV",
+    "technicalName": "fiapiemprgenfatexcel-autoserv",
+    "url": "https://credito.buni.digital/API/FIAPIEmprGenFatExcel_AUTOSERV",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprgenfatexcel_autoserv",
+      "api:",
+      "gerenciamento",
+      "faturas",
+      "excel",
+      "empr",
+      "gen",
+      "fat",
+      "autoserv",
+      "api",
+      "autoatendimento"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprgenfatexcel_autoserv",
+      "fiapiemprgenfatexcel-autoserv",
+      "https://credito.buni.digital/api/fiapiemprgenfatexcel_autoserv",
+      "api:",
+      "gerenciamento",
+      "faturas",
+      "excel",
+      "empr",
+      "gen",
+      "fat",
+      "autoserv",
+      "api",
+      "autoatendimento",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.748Z",
+    "updatedAt": "2026-07-16T17:37:27.748Z",
+    "displayName": "Web API: Gerenciamento de Faturas - Excel"
+  },
+  {
+    "id": "api-producao-fiapiemprrltaverb-autoserv",
+    "type": "api",
+    "name": "FIApiEmprRltAverb_AUTOSERV",
+    "technicalName": "fiapiemprrltaverb-autoserv",
+    "url": "https://credito.buni.digital/API/FIApiEmprRltAverb_AUTOSERV",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprrltaverb_autoserv",
+      "api:",
+      "relatorios",
+      "averbacao",
+      "empr",
+      "rlt",
+      "averb",
+      "autoserv",
+      "api",
+      "autoatendimento"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprrltaverb_autoserv",
+      "fiapiemprrltaverb-autoserv",
+      "https://credito.buni.digital/api/fiapiemprrltaverb_autoserv",
+      "api:",
+      "relatorios",
+      "averbacao",
+      "empr",
+      "rlt",
+      "averb",
+      "autoserv",
+      "api",
+      "autoatendimento",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.758Z",
+    "updatedAt": "2026-07-16T17:37:27.758Z",
+    "displayName": "Web API: Relatórios de Averbação"
+  },
+  {
+    "id": "api-producao-fiapiemprverbasrescisorias-autoserv",
+    "type": "api",
+    "name": "FIApiEmprVerbasRescisorias_AUTOSERV",
+    "technicalName": "fiapiemprverbasrescisorias-autoserv",
+    "url": "https://credito.buni.digital/API/FIApiEmprVerbasRescisorias_AUTOSERV",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "fiapiemprverbasrescisorias_autoserv",
+      "api:",
+      "verbas",
+      "rescisorias",
+      "auto",
+      "servico",
+      "empr",
+      "autoserv",
+      "api",
+      "autoatendimento"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "fiapiemprverbasrescisorias_autoserv",
+      "fiapiemprverbasrescisorias-autoserv",
+      "https://credito.buni.digital/api/fiapiemprverbasrescisorias_autoserv",
+      "api:",
+      "verbas",
+      "rescisorias",
+      "auto",
+      "servico",
+      "empr",
+      "autoserv",
+      "api",
+      "autoatendimento",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.767Z",
+    "updatedAt": "2026-07-16T17:37:27.767Z",
+    "displayName": "Web API: Verbas Rescisórias - AutoServiço"
+  },
+  {
+    "id": "web-service-producao-wsacordo-wsautorizador-asmx",
+    "type": "web-service",
+    "name": "WsAcordo/WSAutorizador.asmx",
+    "technicalName": "wsacordo-wsautorizador-asmx",
+    "url": "https://credito.buni.digital/WsAcordo/WSAutorizador.asmx",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "wsacordo/wsautorizador.asmx",
+      "autorizador",
+      "acordo/ws",
+      "autorizador.asmx",
+      "acordo",
+      "web service"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "wsacordo/wsautorizador.asmx",
+      "wsacordo-wsautorizador-asmx",
+      "https://credito.buni.digital/wsacordo/wsautorizador.asmx",
+      "autorizador",
+      "acordo/ws",
+      "autorizador.asmx",
+      "acordo",
+      "web service",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.777Z",
+    "updatedAt": "2026-07-16T17:37:27.777Z",
+    "displayName": "WSAutorizador"
+  },
+  {
+    "id": "web-service-producao-wsautorizador-wsautorizador-asmx",
+    "type": "web-service",
+    "name": "WsAutorizador/WSAutorizador.asmx",
+    "technicalName": "wsautorizador-wsautorizador-asmx",
+    "url": "https://credito.buni.digital/WsAutorizador/WSAutorizador.asmx",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "wsautorizador/wsautorizador.asmx",
+      "autorizador",
+      "autorizador/ws",
+      "autorizador.asmx",
+      "web service"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "wsautorizador/wsautorizador.asmx",
+      "wsautorizador-wsautorizador-asmx",
+      "https://credito.buni.digital/wsautorizador/wsautorizador.asmx",
+      "autorizador",
+      "autorizador/ws",
+      "autorizador.asmx",
+      "web service",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.786Z",
+    "updatedAt": "2026-07-16T17:37:27.786Z",
+    "displayName": "WSAutorizador"
+  },
+  {
+    "id": "web-service-producao-wscnab-wscnab-asmx",
+    "type": "web-service",
+    "name": "WsCNAB/WsCNAB.asmx",
+    "technicalName": "wscnab-wscnab-asmx",
+    "url": "https://credito.buni.digital/WsCNAB/WsCNAB.asmx",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "wscnab/wscnab.asmx",
+      "wscnab",
+      "cnab/ws",
+      "cnab.asmx",
+      "cnab",
+      "web service"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "wscnab/wscnab.asmx",
+      "wscnab-wscnab-asmx",
+      "https://credito.buni.digital/wscnab/wscnab.asmx",
+      "wscnab",
+      "cnab/ws",
+      "cnab.asmx",
+      "cnab",
+      "web service",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.797Z",
+    "updatedAt": "2026-07-16T17:37:27.797Z",
+    "displayName": "WSCNAB"
+  },
+  {
+    "id": "web-service-producao-wsgedoc-wsged-asmx",
+    "type": "web-service",
+    "name": "WsGEDoc/WSGED.asmx",
+    "technicalName": "wsgedoc-wsged-asmx",
+    "url": "https://credito.buni.digital/WsGEDoc/WSGED.asmx",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "wsgedoc/wsged.asmx",
+      "ged",
+      "doc/wsged.asmx",
+      "doc",
+      "web service"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "wsgedoc/wsged.asmx",
+      "wsgedoc-wsged-asmx",
+      "https://credito.buni.digital/wsgedoc/wsged.asmx",
+      "ged",
+      "doc/wsged.asmx",
+      "doc",
+      "web service",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.805Z",
+    "updatedAt": "2026-07-16T17:37:27.805Z",
+    "displayName": "WsGED"
+  },
+  {
+    "id": "web-service-producao-wsmonitor-wsmonitor-asmx",
+    "type": "web-service",
+    "name": "WsMonitor/WsMonitor.asmx",
+    "technicalName": "wsmonitor-wsmonitor-asmx",
+    "url": "https://credito.buni.digital/WsMonitor/WsMonitor.asmx",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "wsmonitor/wsmonitor.asmx",
+      "monitor",
+      "monitor/ws",
+      "monitor.asmx",
+      "web service"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "wsmonitor/wsmonitor.asmx",
+      "wsmonitor-wsmonitor-asmx",
+      "https://credito.buni.digital/wsmonitor/wsmonitor.asmx",
+      "monitor",
+      "monitor/ws",
+      "monitor.asmx",
+      "web service",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.813Z",
+    "updatedAt": "2026-07-16T17:37:27.813Z",
+    "displayName": "WsMonitor"
+  },
+  {
+    "id": "web-service-producao-wssic-wssic-asmx",
+    "type": "web-service",
+    "name": "WsSIC/WsSIC.asmx",
+    "technicalName": "wssic-wssic-asmx",
+    "url": "https://credito.buni.digital/WsSIC/WsSIC.asmx",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "wssic/wssic.asmx",
+      "sic",
+      "sic/ws",
+      "sic.asmx",
+      "web service"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "wssic/wssic.asmx",
+      "wssic-wssic-asmx",
+      "https://credito.buni.digital/wssic/wssic.asmx",
+      "sic",
+      "sic/ws",
+      "sic.asmx",
+      "web service",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.823Z",
+    "updatedAt": "2026-07-16T17:37:27.823Z",
+    "displayName": "WsSIC"
+  },
+  {
+    "id": "site-producao-webacesso",
+    "type": "site",
+    "name": "WebAcesso",
+    "technicalName": "webacesso",
+    "url": "https://credito.buni.digital/WebAcesso",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webacesso",
+      "acesso",
+      "site"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webacesso",
+      "https://credito.buni.digital/webacesso",
+      "acesso",
+      "site",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.833Z",
+    "updatedAt": "2026-07-16T17:37:27.833Z"
+  },
+  {
+    "id": "site-producao-webautorizadorsubconsig",
+    "type": "site",
+    "name": "WebAutorizadorSubConsig",
+    "technicalName": "webautorizadorsubconsig",
+    "url": "https://credito.buni.digital/WebAutorizadorSubConsig",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webautorizadorsubconsig",
+      "autorizador",
+      "sub",
+      "consig",
+      "site"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webautorizadorsubconsig",
+      "https://credito.buni.digital/webautorizadorsubconsig",
+      "autorizador",
+      "sub",
+      "consig",
+      "site",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.839Z",
+    "updatedAt": "2026-07-16T17:37:27.839Z"
+  },
+  {
+    "id": "site-producao-webautorizadorsubcp",
+    "type": "site",
+    "name": "WebAutorizadorSubCp",
+    "technicalName": "webautorizadorsubcp",
+    "url": "https://credito.buni.digital/WebAutorizadorSubCp",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webautorizadorsubcp",
+      "autorizador",
+      "sub",
+      "site"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webautorizadorsubcp",
+      "https://credito.buni.digital/webautorizadorsubcp",
+      "autorizador",
+      "sub",
+      "site",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.845Z",
+    "updatedAt": "2026-07-16T17:37:27.845Z"
+  },
+  {
+    "id": "site-producao-webautorizador",
+    "type": "site",
+    "name": "WebAutorizador",
+    "technicalName": "webautorizador",
+    "url": "https://credito.buni.digital/WebAutorizador",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webautorizador",
+      "autorizador",
+      "site"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webautorizador",
+      "https://credito.buni.digital/webautorizador",
+      "autorizador",
+      "site",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.850Z",
+    "updatedAt": "2026-07-16T17:37:27.850Z"
+  },
+  {
+    "id": "site-producao-webbacenifrs",
+    "type": "site",
+    "name": "WebBacenIFRS",
+    "technicalName": "webbacenifrs",
+    "url": "https://credito.buni.digital/WebBacenIFRS",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webbacenifrs",
+      "bacen",
+      "ifrs",
+      "site"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webbacenifrs",
+      "https://credito.buni.digital/webbacenifrs",
+      "bacen",
+      "ifrs",
+      "site",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.856Z",
+    "updatedAt": "2026-07-16T17:37:27.856Z"
+  },
+  {
+    "id": "site-producao-webccob",
+    "type": "site",
+    "name": "WebCCob",
+    "technicalName": "webccob",
+    "url": "https://credito.buni.digital/WebCCob",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webccob",
+      "cob",
+      "site"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webccob",
+      "https://credito.buni.digital/webccob",
+      "cob",
+      "site",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.861Z",
+    "updatedAt": "2026-07-16T17:37:27.861Z"
+  },
+  {
+    "id": "site-producao-webcdccontabilifrs",
+    "type": "site",
+    "name": "WebCdcContabilIFRS",
+    "technicalName": "webcdccontabilifrs",
+    "url": "https://credito.buni.digital/WebCdcContabilIFRS",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webcdccontabilifrs",
+      "cdc",
+      "contabil",
+      "ifrs",
+      "site"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webcdccontabilifrs",
+      "https://credito.buni.digital/webcdccontabilifrs",
+      "cdc",
+      "contabil",
+      "ifrs",
+      "site",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.866Z",
+    "updatedAt": "2026-07-16T17:37:27.866Z"
+  },
+  {
+    "id": "site-producao-webcdc",
+    "type": "site",
+    "name": "WebCdc",
+    "technicalName": "webcdc",
+    "url": "https://credito.buni.digital/WebCdc",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webcdc",
+      "cdc",
+      "site"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webcdc",
+      "https://credito.buni.digital/webcdc",
+      "cdc",
+      "site",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.871Z",
+    "updatedAt": "2026-07-16T17:37:27.871Z"
+  },
+  {
+    "id": "site-producao-webcnab",
+    "type": "site",
+    "name": "WebCNAB",
+    "technicalName": "webcnab",
+    "url": "https://credito.buni.digital/WebCNAB",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webcnab",
+      "cnab",
+      "site"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webcnab",
+      "https://credito.buni.digital/webcnab",
+      "cnab",
+      "site",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.876Z",
+    "updatedAt": "2026-07-16T17:37:27.876Z"
+  },
+  {
+    "id": "site-producao-webcomissao",
+    "type": "site",
+    "name": "WebComissao",
+    "technicalName": "webcomissao",
+    "url": "https://credito.buni.digital/WebComissao",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webcomissao",
+      "comissao",
+      "site"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webcomissao",
+      "https://credito.buni.digital/webcomissao",
+      "comissao",
+      "site",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.881Z",
+    "updatedAt": "2026-07-16T17:37:27.881Z"
+  },
+  {
+    "id": "site-producao-webctc",
+    "type": "site",
+    "name": "WebCTC",
+    "technicalName": "webctc",
+    "url": "https://credito.buni.digital/WebCTC",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webctc",
+      "ctc",
+      "site"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webctc",
+      "https://credito.buni.digital/webctc",
+      "ctc",
+      "site",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.886Z",
+    "updatedAt": "2026-07-16T17:37:27.886Z"
+  },
+  {
+    "id": "site-producao-webempregador",
+    "type": "site",
+    "name": "WebEmpregador",
+    "technicalName": "webempregador",
+    "url": "https://credito.buni.digital/WebEmpregador",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webempregador",
+      "empregador",
+      "site"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webempregador",
+      "https://credito.buni.digital/webempregador",
+      "empregador",
+      "site",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.890Z",
+    "updatedAt": "2026-07-16T17:37:27.890Z"
+  },
+  {
+    "id": "site-producao-webfimenumvc",
+    "type": "site",
+    "name": "WebFIMenuMVC",
+    "technicalName": "webfimenumvc",
+    "url": "https://credito.buni.digital/WebFIMenuMVC",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webfimenumvc",
+      "menu",
+      "mvc",
+      "site"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webfimenumvc",
+      "https://credito.buni.digital/webfimenumvc",
+      "menu",
+      "mvc",
+      "site",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.894Z",
+    "updatedAt": "2026-07-16T17:37:27.894Z"
+  },
+  {
+    "id": "site-producao-webgedoc",
+    "type": "site",
+    "name": "WebGEDoc",
+    "technicalName": "webgedoc",
+    "url": "https://credito.buni.digital/WebGEDoc",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webgedoc",
+      "doc",
+      "site"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webgedoc",
+      "https://credito.buni.digital/webgedoc",
+      "doc",
+      "site",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.900Z",
+    "updatedAt": "2026-07-16T17:37:27.900Z"
+  },
+  {
+    "id": "site-producao-webgv",
+    "type": "site",
+    "name": "WebGV",
+    "technicalName": "webgv",
+    "url": "https://credito.buni.digital/WebGV",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webgv",
+      "site"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webgv",
+      "https://credito.buni.digital/webgv",
+      "site",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.905Z",
+    "updatedAt": "2026-07-16T17:37:27.905Z"
+  },
+  {
+    "id": "site-producao-webmonitor",
+    "type": "site",
+    "name": "WebMonitor",
+    "technicalName": "webmonitor",
+    "url": "https://credito.buni.digital/WebMonitor",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webmonitor",
+      "monitor",
+      "site"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webmonitor",
+      "https://credito.buni.digital/webmonitor",
+      "monitor",
+      "site",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.909Z",
+    "updatedAt": "2026-07-16T17:37:27.909Z"
+  },
+  {
+    "id": "site-producao-websic",
+    "type": "site",
+    "name": "WebSIC",
+    "technicalName": "websic",
+    "url": "https://credito.buni.digital/WebSIC",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "websic",
+      "sic",
+      "site"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "websic",
+      "https://credito.buni.digital/websic",
+      "sic",
+      "site",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.914Z",
+    "updatedAt": "2026-07-16T17:37:27.914Z"
+  },
+  {
+    "id": "site-producao-webtabelascorp",
+    "type": "site",
+    "name": "WebTabelasCorp",
+    "technicalName": "webtabelascorp",
+    "url": "https://credito.buni.digital/WebTabelasCorp",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webtabelascorp",
+      "tabelas",
+      "corp",
+      "site"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webtabelascorp",
+      "https://credito.buni.digital/webtabelascorp",
+      "tabelas",
+      "corp",
+      "site",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.920Z",
+    "updatedAt": "2026-07-16T17:37:27.920Z"
+  },
+  {
+    "id": "site-producao-webtabelasempr",
+    "type": "site",
+    "name": "WebTabelasEmpr",
+    "technicalName": "webtabelasempr",
+    "url": "https://credito.buni.digital/WebTabelasEmpr",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webtabelasempr",
+      "tabelas",
+      "empr",
+      "site"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webtabelasempr",
+      "https://credito.buni.digital/webtabelasempr",
+      "tabelas",
+      "empr",
+      "site",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.926Z",
+    "updatedAt": "2026-07-16T17:37:27.926Z"
+  },
+  {
+    "id": "site-producao-webacessoautoserv",
+    "type": "site",
+    "name": "WebAcessoAUTOSERV",
+    "technicalName": "webacessoautoserv",
+    "url": "https://credito.buni.digital/WebAcessoAUTOSERV",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webacessoautoserv",
+      "acesso",
+      "autoserv",
+      "site"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webacessoautoserv",
+      "https://credito.buni.digital/webacessoautoserv",
+      "acesso",
+      "autoserv",
+      "site",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.931Z",
+    "updatedAt": "2026-07-16T17:37:27.931Z"
+  },
+  {
+    "id": "site-producao-webfimenumvcautoserv",
+    "type": "site",
+    "name": "WebFIMenuMVCAUTOSERV",
+    "technicalName": "webfimenumvcautoserv",
+    "url": "https://credito.buni.digital/WebFIMenuMVCAUTOSERV",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webfimenumvcautoserv",
+      "menu",
+      "mvcautoserv",
+      "site"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webfimenumvcautoserv",
+      "https://credito.buni.digital/webfimenumvcautoserv",
+      "menu",
+      "mvcautoserv",
+      "site",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.936Z",
+    "updatedAt": "2026-07-16T17:37:27.936Z"
+  },
+  {
+    "id": "site-producao-webportalempresa",
+    "type": "site",
+    "name": "WebPortalEmpresa",
+    "technicalName": "webportalempresa",
+    "url": "https://credito.buni.digital/WebPortalEmpresa",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "webportalempresa",
+      "portal",
+      "empresa",
+      "site"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "webportalempresa",
+      "https://credito.buni.digital/webportalempresa",
+      "portal",
+      "empresa",
+      "site",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.941Z",
+    "updatedAt": "2026-07-16T17:37:27.941Z"
+  },
+  {
+    "id": "site-producao-websicautoserv",
+    "type": "site",
+    "name": "WebSICAUTOSERV",
+    "technicalName": "websicautoserv",
+    "url": "https://credito.buni.digital/WebSICAUTOSERV",
+    "environment": "producao",
+    "deprecated": false,
+    "active": true,
+    "keywords": [
+      "websicautoserv",
+      "sicautoserv",
+      "site"
+    ],
+    "tags": [],
+    "searchIndex": [
+      "websicautoserv",
+      "https://credito.buni.digital/websicautoserv",
+      "sicautoserv",
+      "site",
+      "producao"
+    ],
+    "createdAt": "2026-07-16T17:37:27.947Z",
+    "updatedAt": "2026-07-16T17:37:27.947Z"
   }
 ]

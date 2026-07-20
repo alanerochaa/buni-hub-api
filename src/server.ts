@@ -6,9 +6,7 @@ import { historyService } from './routes/history.routes.js'
 
 const app = createApp()
 
-// Estende o resultado do sweep (não altera HealthCheckService.runSweep):
-// depois que a varredura termina, registra o snapshot agregado e as
-// transições de status do ciclo no Histórico Operacional.
+
 async function runSweepAndRecordHistory(): Promise<void> {
   await healthCheckService.runSweep()
 
@@ -17,14 +15,21 @@ async function runSweepAndRecordHistory(): Promise<void> {
   historyService.recordSweepResult(resources, healthByResourceId)
 }
 
-runSweepAndRecordHistory().catch((error: unknown) => {
-  console.error('Falha no sweep inicial do health check:', error)
-})
-setInterval(() => {
-  runSweepAndRecordHistory().catch((error: unknown) => {
-    console.error('Falha no sweep periódico do health check:', error)
+function scheduleNextSweep(): void {
+  setTimeout(() => {
+    runSweepAndRecordHistory()
+      .catch((error: unknown) => {
+        console.error('Falha no sweep periódico do health check:', error)
+      })
+      .finally(scheduleNextSweep)
+  }, env.healthCheck.intervalMs)
+}
+
+runSweepAndRecordHistory()
+  .catch((error: unknown) => {
+    console.error('Falha no sweep inicial do health check:', error)
   })
-}, env.healthCheck.intervalMs)
+  .finally(scheduleNextSweep)
 
 app.listen(env.port, () => {
   console.log(`Portal de Serviços — API rodando em http://localhost:${env.port}`)

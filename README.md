@@ -20,6 +20,7 @@ API REST em Node.js/Express/TypeScript que centraliza o catálogo de APIs, Web S
 - [Fluxo dos Dados](#fluxo-dos-dados)
 - [Persistência](#persistência)
 - [Fluxo de Persistência](#fluxo-de-persistência)
+  - [Consistência ambiente × URL](#consistência-ambiente--url)
 - [Monitoramento de saúde e Painel Operacional](#monitoramento-de-saúde-e-painel-operacional)
 - [Histórico Operacional e Log Operacional](#histórico-operacional-e-log-operacional)
 - [Tratamento de erros](#tratamento-de-erros)
@@ -171,6 +172,7 @@ api/
 │   │   ├── generateKeywordsAndIndex.ts
 │   │   ├── normalizeSearchTerm.ts
 │   │   ├── promisePool.ts          # runWithConcurrency (pool de workers)
+│   │   ├── resolveResourceEnvironment.ts # URL → homologacao|producao|unknown (domínios oficiais)
 │   │   └── slugify.ts
 │   ├── data/
 │   │   ├── events.json             # gerado em runtime — Log Operacional (eventos)
@@ -268,6 +270,12 @@ Todas as respostas são JSON. Não há autenticação/autorização implementada
 | `PUT` | `/resources/:id` | Atualiza parcialmente (`updateResourceSchema`) | 200 / 400 / 404 / 409 |
 | `DELETE` | `/resources/:id` | Remove um recurso | 204 / 404 |
 
+### Administração (`resourcePromotion.routes.ts`)
+
+| Método | Rota | Descrição | Status de sucesso |
+|---|---|---|---|
+| `POST` | `/admin/resources/promote-to-producao` | Promove em lote todos os recursos de Homologação para Produção (idempotente, ver [Promoção em lote](#promoção-em-lote-homologação--produção)) | 200 / 422 |
+
 ### Saúde (`resourceHealth.routes.ts` / `health.routes.ts`)
 
 | Método | Rota | Descrição |
@@ -361,7 +369,7 @@ sequenceDiagram
     else corpo válido
         Mid->>Ctrl: req.body já normalizado
         Ctrl->>Svc: createResource(input)
-        Svc->>Svc: checa duplicidade de nome/URL
+        Svc->>Svc: checa duplicidade de nome (escopada por environment) / URL (global)
         alt duplicado
             Svc-->>Client: 409 RESOURCE_DUPLICATE_NAME / _URL
         else ok
@@ -428,19 +436,22 @@ As quatro operações de escrita da aplicação passam exatamente pelo mesmo cam
 
 `POST /resources` → `validateBody(createResourceSchema)` → `ResourceController.create` → `ResourceService.createResource`:
 
-1. Valida duplicidade de `name`/`url` (case-insensitive, trim) contra `repository.findAll()` — se houver, `409 RESOURCE_DUPLICATE_NAME`/`_URL`.
-2. Gera `id`, `technicalName`, `keywords`, `searchIndex` e `createdAt`/`updatedAt`.
-3. Chama `ResourceRepository.create()`, que adiciona ao array em cache e persiste (`.tmp` + `rename`).
-4. Resposta `201 Created` com o recurso já persistido.
+1. Valida duplicidade de `name` (escopada por `environment` — ver [Unicidade de nome por ambiente](#unicidade-de-nome-por-ambiente)) e de `url` (case-insensitive, trim, **global**) contra `repository.findAll()` — se houver, `409 RESOURCE_DUPLICATE_NAME`/`_URL`.
+2. Valida consistência entre `environment` e `url` — se houver, `422 RESOURCE_ENVIRONMENT_MISMATCH` (ver [Consistência ambiente × URL](#consistência-ambiente--url) abaixo).
+3. Gera `id` (`${type}-${environment}-${slug(technicalName)}`, ver [Geração de id](#geração-de-id)), `technicalName`, `keywords`, `searchIndex` e `createdAt`/`updatedAt`.
+4. Chama `ResourceRepository.create()`, que adiciona ao array em cache e persiste (`.tmp` + `rename`).
+5. Resposta `201 Created` com o recurso já persistido.
 
 ### Edição
 
 `PUT /resources/:id` → `validateBody(updateResourceSchema)` → `ResourceController.update` → `ResourceService.updateResource`:
 
 1. Busca o recurso existente — `404 RESOURCE_NOT_FOUND` se não existir.
-2. Revalida duplicidade de `name`/`url`, excluindo o próprio `id` da checagem.
-3. Recalcula `searchIndex`/`keywords` se `name`, `description` ou `keywords` mudaram; atualiza `updatedAt`.
-4. Chama `ResourceRepository.update()`, que substitui o registro no array em cache e persiste.
+2. Calcula os valores efetivos pós-merge de `name`/`url`/`environment` (PATCH sobrepõe o registro existente).
+3. Revalida duplicidade de `name` (escopada pelo `environment` efetivo) e de `url` (global), excluindo o próprio `id` da checagem.
+4. Revalida consistência entre `environment` e `url` — usando os mesmos valores efetivos pós-merge (um PATCH que só manda `environment`, por exemplo, é validado contra a `url` que já estava salva).
+5. Recalcula `searchIndex`/`keywords` se `name`, `description` ou `keywords` mudaram; atualiza `updatedAt`. **O `id` nunca é regerado numa edição** — nem quando `name` muda, nem quando `environment` muda (mesma política já existente para `name`, agora só estendida para cobrir `environment` também; ver [Geração de id](#geração-de-id)).
+6. Chama `ResourceRepository.update()`, que substitui o registro no array em cache e persiste.
 
 ### Exclusão
 
@@ -455,6 +466,76 @@ As quatro operações de escrita da aplicação passam exatamente pelo mesmo cam
 **Não é uma operação separada.** Ativar/desativar um recurso é uma edição comum — `PUT /resources/:id` com o campo `active` no corpo — e segue exatamente o fluxo de **Edição** acima. `resolveResourceStatus()` (`utils/dashboardStatus.ts`) usa esse campo (`active: false` → status `maintenance`, independentemente do resultado do Health Check) para decidir o status consolidado exibido no Painel Operacional e no Histórico Operacional — a mesma regra, reaproveitada nos dois lugares.
 
 Em nenhum dos quatro casos existe um caminho alternativo de escrita: `HealthCheckService` e `DashboardService` só leem o estado já persistido, nunca o alteram.
+
+### Unicidade de nome por ambiente
+
+O Portal de Serviços suporta múltiplos ambientes (Homologação e Produção, com Desenvolvimento reservado para o futuro) **coexistindo no mesmo catálogo** — decisão de negócio que reflete a operação real: o mesmo recurso lógico (ex.: `FIApiAcessoGerenciaPIN`) é implantado em ambientes diferentes, com URLs diferentes, e ambas as versões precisam estar cadastradas simultaneamente.
+
+`ResourceService.assertNoDuplicate(name, url, environment, excludeId?)` reflete essa regra com dois escopos diferentes por campo:
+
+- **Nome** — único apenas dentro do mesmo `environment`. Dois recursos podem ter o mesmo `name` desde que estejam em ambientes diferentes; dois recursos no *mesmo* ambiente com o mesmo nome continuam bloqueados (`409 RESOURCE_DUPLICATE_NAME`).
+- **URL** — única **globalmente**, independente de ambiente. Não faz sentido dois recursos diferentes apontarem para o mesmo endereço, mesmo em ambientes diferentes (`409 RESOURCE_DUPLICATE_URL`).
+
+Essa é a única mudança na regra de duplicidade em si; a validação de [consistência ambiente × URL](#consistência-ambiente--url) abaixo continua funcionando exatamente como antes, checando a `url` contra o `environment` informado.
+
+### Geração de id
+
+O `id` é a chave primária do catálogo (`ResourceRepository` usa `resource.id` para localizar registros em `update`/`remove`; o frontend usa `resource.id` em favoritos, rotas de detalhe e nas chaves de listas React). Como o nome deixou de ser globalmente único, o `id` — que antes era derivado só de `type` + `technicalName` — precisava passar a encodar também o `environment`, senão duas linhas legitimamente diferentes (mesmo nome, ambientes diferentes) colidiriam no mesmo `id`.
+
+`utils/slugify.ts::generateResourceId(type, environment, technicalName)`:
+
+```
+id = `${type}-${environment}-${slug(technicalName)}`
+```
+
+exemplo: `FIApiAcessoGerenciaPIN` em Homologação → `api-homologacao-fiapiacessogerenciapin`; a mesma API em Produção → `api-producao-fiapiacessogerenciapin`. `environment` fica no meio (não no fim) do formato de propósito: é um vocabulário fechado (4 valores possíveis) numa posição fixa, o que deixa o formato previsível de inspecionar mesmo lendo o JSON bruto — diferente do slug, que pode conter qualquer sequência de palavras do nome digitado.
+
+**Imutável após a criação** — o `id` nunca é regerado numa edição, nem quando `name` muda (política que já existia antes desta mudança) nem quando `environment` muda (extensão da mesma política). Isso preserva referências externas ao `id` (favoritos no `localStorage` do Portal, filtros por `?resourceId=` no Log Operacional) através de uma edição comum.
+
+#### Migração dos ids existentes
+
+Antes desta mudança, `resources.json` tinha 155 registros, todos no formato antigo (`${type}-${slug}`, sem segmento de ambiente) — e, coincidentemente, todos com `environment: "homologacao"`. Para adotar o novo formato sem perder nenhum recurso cadastrado, foi executado um script de migração único (`api/scripts/migrate-resource-ids.ts`, mantido no repositório para auditoria — não faz parte do fluxo de execução normal da API):
+
+1. Backup automático de `resources.json` antes de qualquer escrita (`resources.json.bak-<timestamp>`).
+2. Recalcula o `id` de cada um dos 155 registros com `generateResourceId(type, environment, technicalName)` — todos ganharam o segmento `-homologacao-` (ex.: `api-fiapitabconsultaragencias` → `api-homologacao-fiapitabconsultaragencias`).
+3. Validação de integridade antes de gravar: confirma que a contagem de registros não mudou e que não há colisão de `id` após a migração (aborta sem escrever se houver).
+4. Escrita atômica do arquivo migrado.
+
+Executada com o processo da API **parado**, para o cache em memória do `ResourceRepository` (que só é populado uma vez, na primeira leitura) não sobrescrever o arquivo recém-migrado no primeiro `create`/`update`/`remove` seguinte. Depois de migrado, o servidor foi reiniciado normalmente e recarregou o array já com os novos ids.
+
+**Efeitos colaterais conhecidos e aceitos**, todos limitados a estado que não tem — e nunca teve — mecanismo de migração automática:
+
+- **Favoritos** (`web/src/features/catalog/favoritesStore.ts`) — persistidos como `Set<string>` de `id`s no `localStorage` do navegador de cada usuário, sem qualquer vínculo com o backend. Favoritos marcados antes da migração ficam órfãos (apontam para um `id` que não existe mais) e precisam ser remarcados manualmente. Não há como migrar `localStorage` de um cliente a partir do servidor.
+- **Log Operacional** (`events.json`) — os 1262 eventos históricos gravados antes da migração continuam referenciando `resourceId`s no formato antigo; **não foram reescritos**, por ser um log de auditoria (histórico do que já aconteceu não deveria ser reescrito retroativamente). Consequência prática: filtrar `GET /dashboard/events?resourceId=...` com um `id` novo não traz eventos anteriores à migração, e o `OperationalLogService`, ao carregar esses eventos no boot para popular seu mapa em memória de "último status conhecido" por recurso, não encontra correspondência para nenhum `id` novo. Isso é seguro por desenho: a própria regra de negócio do serviço é que a **primeira observação de um `resourceId` nunca gera evento** (evita duplicar o "nascimento" de um recurso como se fosse uma transição de status) — então essa lacuna de estado no boot não produz eventos falsos, só um período sem histórico de transição imediatamente após a migração até a próxima mudança real de status.
+- **Histórico Operacional** (`history.json`) — não é afetado: os snapshots são agregados do ambiente inteiro, sem referência a `resourceId`.
+
+### Consistência ambiente × URL
+
+`ResourceService.assertEnvironmentMatchesUrl(environment, url)` — mesmo padrão de `assertNoDuplicate` (método privado, chamado por `createResource` e `updateResource`, lança `ApiError` que o `errorHandler` já sabe converter). Regra:
+
+1. `utils/resolveResourceEnvironment.ts` identifica a qual domínio **oficial** (`RESOURCE_DOMAIN_HOMOLOGACAO`/`RESOURCE_DOMAIN_PRODUCAO`, ver [Variáveis de ambiente](#variáveis-de-ambiente)) a `url` pertence, comparando o `hostname` — devolve `'homologacao'`, `'producao'` ou `'unknown'`.
+2. Se `'unknown'` (domínio não é nenhum dos dois oficiais — ex.: API de terceiro, parceiro) → **não valida nada**, o cadastro segue normalmente, qualquer que seja o `environment` escolhido.
+3. Se o domínio detectado bate com o `environment` informado → ok.
+4. Se o domínio detectado **diverge** do `environment` informado (ex.: `environment: "producao"` com URL do domínio oficial de Homologação) → `422 RESOURCE_ENVIRONMENT_MISMATCH`.
+
+Deliberadamente **não** existe qualquer inferência automática de `environment` a partir da `url` — o campo continua 100% escolhido pelo usuário; a URL só é usada para *confirmar* consistência quando há um domínio oficial conhecido para comparar.
+
+## Promoção em lote Homologação → Produção
+
+Operação **administrativa**, fora do CRUD comum: popula o catálogo de Produção a partir dos recursos já cadastrados em Homologação, evitando recadastro manual de ~155 recursos cujo único dado que muda é o domínio da URL.
+
+`POST /admin/resources/promote-to-producao` (sem corpo) → `ResourcePromotionController.promoteToProducao` → `ResourcePromotionService.promoteHomologacaoToProducao()`:
+
+1. Lê todos os recursos com `environment: "homologacao"` via `ResourceRepository.findAll()`.
+2. Para cada um, deriva a URL de Produção substituindo só a origem (protocolo + host) — `utils/substituteResourceDomain.ts` troca `RESOURCE_DOMAIN_HOMOLOGACAO` por `RESOURCE_DOMAIN_PRODUCAO` preservando path/query/hash — e faz o mesmo com `docUrl`, se presente e se pertencer ao mesmo domínio (senão fica como está).
+3. Prevê o `id` que o recurso promovido teria (`generateResourceId(type, 'producao', slugify(name))` — mesma fórmula usada internamente por `createResource`) e, se um recurso com esse `id` já existir, **pula** (idempotente: rodar a operação várias vezes nunca duplica).
+4. Caso contrário, monta um `CreateResourceInput` com todos os demais campos copiados do recurso de origem (`type`, `active`, `description`, `responsible`, `area`, `notes`, `category`, `code`, `tags`, `keywords`) e `environment: "producao"`, e chama **`ResourceService.createResource(input)`** — a mesma rotina usada por um cadastro manual comum, então toda validação (duplicidade de nome escopada por ambiente, duplicidade de URL global, consistência ambiente×URL) roda normalmente para cada recurso promovido. `keywords`/`searchIndex` são recalculados do zero por essa mesma chamada — nunca copiados como texto — o que também descarta um artefato legado da Ingestion: alguns registros antigos carregam o rótulo do próprio ambiente (`"homologacao"`) dentro do array `keywords`; esse token é filtrado antes de repassar, para não vazar um `"homologacao"` incorreto para dentro de um recurso de Produção.
+5. `displayName` é o único campo copiado fora do `ResourceService`: não existe no schema de criação do CRUD (é um campo legado, só populado pela Ingestion), então é replicado com um `ResourceRepository.update()` direto, só quando presente na origem.
+6. **Transacional (all-or-nothing) por compensação**: se qualquer recurso falhar (ex.: URL já usada por outro recurso não relacionado), a operação inteira é abortada e todos os recursos já criados *nesta mesma execução* são removidos antes de responder — o catálogo volta exatamente ao estado anterior. Não há suporte a transação real de banco de dados (não há banco de dados); esse é o equivalente possível num arquivo JSON.
+7. Nunca lê nem grava nada em Homologação além da leitura inicial — os recursos de origem nunca são alterados.
+8. Responde um relatório: `{ success, totalFoundInHomologacao, created, skipped, failed, rolledBack, items[], errors[] }`, `200` se `success: true`, `422` se a operação foi abortada/revertida. Cada item em `items[]` mostra `sourceId`, `name`, `status` (`created`/`skipped`/`error`/`rolled-back`) e `reason` quando aplicável — inclusive identificando exatamente qual recurso causou um abort, quando há um.
+
+Não há campo "health check" no modelo `Resource` para copiar — status de disponibilidade nunca foi persistido por recurso, é sempre calculado ao vivo pelo `HealthCheckService` (ver [Monitoramento de saúde](#monitoramento-de-saúde-e-painel-operacional) abaixo). O recurso recém-criado em Produção passa a ser varrido normalmente a partir do próximo sweep, como qualquer outro recurso do catálogo — nada precisa ser copiado manualmente.
 
 ## Monitoramento de saúde e Painel Operacional
 
@@ -574,7 +655,7 @@ Todo erro de negócio é lançado como `ApiError` (`src/utils/ApiError.ts`) e co
 | `ApiError.conflict(msg, code?)` | 409 | `RESOURCE_CONFLICT` |
 | `ApiError.unprocessable(msg, code?)` | 422 | `BUSINESS_RULE_ERROR` |
 
-`code`s efetivamente emitidos hoje: `VALIDATION_ERROR`, `RESOURCE_NOT_FOUND`, `RESOURCE_DUPLICATE_NAME`, `RESOURCE_DUPLICATE_URL`, `ROUTE_NOT_FOUND` (rota inexistente), `INTERNAL_ERROR` (qualquer erro não tratado, logado no console e nunca exposto ao cliente). `RESOURCE_CONFLICT` e `BUSINESS_RULE_ERROR` existem como defaults das factories mas não são emitidos por nenhuma regra atual — **Planejado** para uso em futuras regras de negócio mais específicas.
+`code`s efetivamente emitidos hoje: `VALIDATION_ERROR`, `RESOURCE_NOT_FOUND`, `RESOURCE_DUPLICATE_NAME`, `RESOURCE_DUPLICATE_URL`, `RESOURCE_ENVIRONMENT_MISMATCH` (422 — `environment` informado não bate com o domínio oficial da `url`, ver [Fluxo de Persistência](#fluxo-de-persistência)), `ROUTE_NOT_FOUND` (rota inexistente), `INTERNAL_ERROR` (qualquer erro não tratado, logado no console e nunca exposto ao cliente). `RESOURCE_CONFLICT` continua como default não emitido por nenhuma regra atual; `BUSINESS_RULE_ERROR` (também default de `ApiError.unprocessable`) passou a ter uso real — `RESOURCE_ENVIRONMENT_MISMATCH` é gerado pela mesma factory, só com um `code` mais específico.
 
 ## Validação
 
@@ -589,6 +670,8 @@ Todo erro de negócio é lançado como `ApiError` (`src/utils/ApiError.ts`) e co
 | `HEALTH_CHECK_TIMEOUT_MS` | Não | `5000` | Timeout por requisição de verificação |
 | `HEALTH_CHECK_SLOW_THRESHOLD_MS` | Não | `1000` | Acima disso, um recurso saudável é classificado `slow` |
 | `HEALTH_CHECK_CONCURRENCY` | Não | `20` | Nº máximo de checagens HTTP simultâneas |
+| `RESOURCE_DOMAIN_HOMOLOGACAO` | Não | `https://buncghml.funcao.digital` | Domínio oficial de Homologação — usado só para validar consistência `environment`×`url` no CRUD (`ResourceService.assertEnvironmentMatchesUrl`, ver [Fluxo de Persistência](#fluxo-de-persistência)) |
+| `RESOURCE_DOMAIN_PRODUCAO` | Não | `https://credito.buni.digital` | Domínio oficial de Produção — mesmo uso acima |
 
 O `.env.example` do repositório define `HEALTH_CHECK_INTERVAL_MS=60000` — ou seja, o valor efetivo em desenvolvimento local (60s) é mais conservador que o default embutido no código (30s), que só vale se a variável estiver totalmente ausente. Validação via Zod em `config/env.ts`; se qualquer variável definida for inválida, o processo falha no boot com uma mensagem detalhada (fail-fast, não silencioso).
 

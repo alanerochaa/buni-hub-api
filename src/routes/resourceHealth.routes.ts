@@ -6,9 +6,6 @@ import { ResourceHealthController } from '../controllers/resourceHealth.controll
 import { resourceRepository } from './resource.routes.js'
 
 const healthRepository = new HealthRepository()
-
-// Exportado para server.ts poder disparar o sweep inicial e agendar as
-// varreduras periódicas — é a mesma instância lida pelas rotas abaixo.
 export const healthCheckService = new HealthCheckService(
   resourceRepository,
   healthRepository,

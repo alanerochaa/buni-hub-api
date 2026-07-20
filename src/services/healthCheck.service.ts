@@ -10,24 +10,7 @@ export interface HealthCheckOptions {
   concurrency: number
 }
 
-/**
- * Faz a checagem real (HTTP) de cada recurso e mantém o resultado mais
- * recente em memória (HealthRepository). Não conhece Express — só
- * domínio e regras de classificação.
- *
- * Classificação:
- * - sem URL cadastrada           -> unknown  (não há o que checar)
- * - timeout / erro de rede / DNS -> offline
- * - HTTP >= 500                  -> offline
- * - HTTP 2xx/3xx dentro do prazo -> online
- * - HTTP 2xx/3xx acima do prazo  -> slow
- * - qualquer outro caso (4xx...) -> unknown (resposta do servidor não
- *   indica claramente que o recurso está fora do ar)
- */
 export class HealthCheckService {
-  // Instante em que a última varredura completa terminou — exposto ao
-  // Painel Operacional como "última sincronização" (não confundir com
-  // `lastCheckedAt` de cada recurso, que é por item).
   private lastSweepAt: string | null = null
 
   constructor(
@@ -105,6 +88,8 @@ export class HealthCheckService {
         : error instanceof Error
           ? error.message
           : 'Erro desconhecido ao verificar o recurso'
+
+      
       return { resourceId: resource.id, status: 'offline', lastCheckedAt, errorMessage }
     } finally {
       clearTimeout(timeout)

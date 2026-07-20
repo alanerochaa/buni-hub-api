@@ -23,21 +23,11 @@ function parseEnvironment(value: unknown): ResourceEnvironment | undefined {
     : undefined
 }
 
-// Aceita apenas datas ISO 8601 válidas — um valor malformado é
-// silenciosamente ignorado (mesmo espírito de parseType/parseEnvironment
-// em ResourceController: filtro inválido não aplica, não quebra a
-// requisição).
 function parseIsoDate(value: unknown): string | undefined {
   if (typeof value !== 'string' || Number.isNaN(Date.parse(value))) return undefined
   return value
 }
 
-/**
- * Traduz HTTP <-> domínio para os dois endpoints do módulo de auditoria:
- * Histórico Operacional (`getHistory`) e Log Operacional
- * (`getOperationalLog`). Nenhuma regra de negócio aqui — só parsing de
- * query string e delegação ao `HistoryService`.
- */
 export class HistoryController {
   constructor(private readonly service: HistoryService) {}
 

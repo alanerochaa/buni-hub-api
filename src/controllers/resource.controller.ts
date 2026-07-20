@@ -3,7 +3,12 @@ import type { ResourceService } from '../services/resource.service.js'
 import type { ResourceEnvironment, ResourceType } from '../models/resource.model.js'
 
 const RESOURCE_TYPES: ResourceType[] = ['api', 'web-service', 'site']
-const RESOURCE_ENVIRONMENTS: ResourceEnvironment[] = ['homologacao', 'producao', 'unknown']
+const RESOURCE_ENVIRONMENTS: ResourceEnvironment[] = [
+  'homologacao',
+  'producao',
+  'desenvolvimento',
+  'unknown',
+]
 
 function parseType(value: unknown): ResourceType | undefined {
   return RESOURCE_TYPES.includes(value as ResourceType) ? (value as ResourceType) : undefined
@@ -15,10 +20,6 @@ function parseEnvironment(value: unknown): ResourceEnvironment | undefined {
     : undefined
 }
 
-/**
- * Apenas traduz HTTP <-> domínio: lê query/params da requisição, chama
- * o service e devolve a resposta. Nenhuma regra de negócio aqui.
- */
 export class ResourceController {
   constructor(private readonly service: ResourceService) {}
 

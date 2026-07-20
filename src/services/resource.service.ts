@@ -6,19 +6,18 @@ import { ApiError } from '../utils/ApiError.js'
 import { normalizeSearchTerm } from '../utils/normalizeSearchTerm.js'
 import { generateResourceId, slugify } from '../utils/slugify.js'
 import { generateKeywords, generateSearchIndex } from '../utils/generateKeywordsAndIndex.js'
+import { resolveResourceEnvironmentFromUrl } from '../utils/resolveResourceEnvironment.js'
+
+const OFFICIAL_ENVIRONMENT_LABELS: Record<'homologacao' | 'producao', string> = {
+  homologacao: 'Homologação',
+  producao: 'Produção',
+}
 
 export interface ResourceQuery {
   type?: ResourceType
   environment?: ResourceEnvironment
   search?: string
 }
-
-/**
- * Regras de negócio do catálogo: filtragem, ordenação e agregações.
- * Não conhece Express — recebe e devolve apenas tipos de domínio, o
- * que permite reutilizar esta classe em qualquer camada de entrega
- * (HTTP hoje, CLI ou fila no futuro, se necessário).
- */
 export class ResourceService {
   constructor(private readonly repository: ResourceRepository) {}
 
@@ -50,10 +49,11 @@ export class ResourceService {
   }
 
   createResource(input: CreateResourceInput): Resource {
-    this.assertNoDuplicate(input.name, input.url)
+    this.assertNoDuplicate(input.name, input.url, input.environment)
+    this.assertEnvironmentMatchesUrl(input.environment, input.url)
 
     const technicalName = slugify(input.name)
-    const id = generateResourceId(input.type, technicalName)
+    const id = generateResourceId(input.type, input.environment, technicalName)
     const keywords = generateKeywords({
       name: input.name,
       description: input.description,
@@ -99,7 +99,6 @@ export class ResourceService {
 
   updateResource(id: string, input: UpdateResourceInput): Resource {
     const existing = this.getResourceById(id)
-    this.assertNoDuplicate(input.name, input.url, id)
 
     const name = input.name ?? existing.name
     const description = input.description ?? existing.description
@@ -110,6 +109,9 @@ export class ResourceService {
     const code = input.code ?? existing.code
     const url = input.url ?? existing.url
     const tags = input.tags ?? existing.tags
+
+    this.assertNoDuplicate(name, url, environment, id)
+    this.assertEnvironmentMatchesUrl(environment, url)
 
     const keywords = generateKeywords({ name, description, keywords: keywordsInput })
 
@@ -144,7 +146,12 @@ export class ResourceService {
     this.repository.remove(id)
   }
 
-  private assertNoDuplicate(name: string | undefined, url: string | undefined, excludeId?: string): void {
+  private assertNoDuplicate(
+    name: string | undefined,
+    url: string | undefined,
+    environment: ResourceEnvironment,
+    excludeId?: string,
+  ): void {
     if (!name && !url) return
 
     const resources = this.repository.findAll().filter((resource) => resource.id !== excludeId)
@@ -153,11 +160,13 @@ export class ResourceService {
 
     if (normalizedName) {
       const nameExists = resources.some(
-        (resource) => normalizeSearchTerm(resource.name) === normalizedName,
+        (resource) =>
+          resource.environment === environment &&
+          normalizeSearchTerm(resource.name) === normalizedName,
       )
       if (nameExists) {
         throw ApiError.conflict(
-          'Já existe um recurso cadastrado com este nome.',
+          'Já existe um recurso cadastrado com este nome neste ambiente.',
           'RESOURCE_DUPLICATE_NAME',
         )
       }
@@ -174,6 +183,21 @@ export class ResourceService {
         )
       }
     }
+  }
+
+  private assertEnvironmentMatchesUrl(
+    environment: ResourceEnvironment | undefined,
+    url: string | undefined,
+  ): void {
+    if (!environment || !url) return
+
+    const detected = resolveResourceEnvironmentFromUrl(url)
+    if (detected === 'unknown' || detected === environment) return
+
+    throw ApiError.unprocessable(
+      `A URL informada pertence ao domínio oficial de ${OFFICIAL_ENVIRONMENT_LABELS[detected]}, mas o ambiente selecionado foi "${environment}". Ajuste o ambiente ou a URL antes de salvar.`,
+      'RESOURCE_ENVIRONMENT_MISMATCH',
+    )
   }
 
   private matchesQuery(resource: Resource, query: ResourceQuery): boolean {

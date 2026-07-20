@@ -1,10 +1,3 @@
-/**
- * Executa `task` para cada item de `items`, limitando quantas promises
- * ficam em voo ao mesmo tempo. Evita abrir uma conexão simultânea para
- * cada um dos recursos do catálogo a cada varredura do health check.
- * Não usa nenhuma lib externa (ex.: p-limit) — a lógica cabe em poucas
- * linhas e não justifica uma nova dependência.
- */
 export async function runWithConcurrency<T, R>(
   items: T[],
   limit: number,
