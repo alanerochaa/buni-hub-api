@@ -1,0 +1,18 @@
+[
+  {
+    "id": "user-admin",
+    "nome": "Administrador",
+    "email": "admin@catarse.co",
+    "passwordHash": "$2b$10$m9qotjXT21Cm8EwvLkBSIuXPE3TTwpGfUE5DvgoyFCglcb5HvQgGO",
+    "role": "ROLE_ADMIN",
+    "ativo": true
+  },
+  {
+    "id": "user-usuario",
+    "nome": "Usuário",
+    "email": "usuario@catarse.co",
+    "passwordHash": "$2b$10$LhoZeIUEv98zhOS4.5JaYuayrs3Al3hxF.//RE4aMN6sCBIircdf.",
+    "role": "ROLE_USER",
+    "ativo": true
+  }
+]

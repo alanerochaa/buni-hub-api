@@ -9,6 +9,9 @@ const envSchema = z.object({
   
   RESOURCE_DOMAIN_HOMOLOGACAO: z.url().default('https://buncghml.funcao.digital'),
   RESOURCE_DOMAIN_PRODUCAO: z.url().default('https://credito.buni.digital'),
+
+  JWT_SECRET: z.string().min(1, 'JWT_SECRET é obrigatório.'),
+  JWT_EXPIRES_IN: z.string().default('8h'),
 })
 
 const parsed = envSchema.safeParse(process.env)
@@ -28,6 +31,10 @@ export const env = {
   resourceDomains: {
     homologacao: parsed.data.RESOURCE_DOMAIN_HOMOLOGACAO,
     producao: parsed.data.RESOURCE_DOMAIN_PRODUCAO,
+  },
+  jwt: {
+    secret: parsed.data.JWT_SECRET,
+    expiresIn: parsed.data.JWT_EXPIRES_IN,
   },
 }
 

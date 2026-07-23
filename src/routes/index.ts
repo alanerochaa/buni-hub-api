@@ -5,6 +5,7 @@ import { resourceHealthRoutes } from './resourceHealth.routes.js'
 import { dashboardRoutes } from './dashboard.routes.js'
 import { historyRoutes } from './history.routes.js'
 import { resourcePromotionRoutes } from './resourcePromotion.routes.js'
+import { authRoutes } from './auth.routes.js'
 
 export const routes = Router()
 
@@ -18,6 +19,7 @@ routes.get('/', (_req, res) => {
 })
 
 routes.use(healthRoutes)
+routes.use(authRoutes)
 routes.use(resourceHealthRoutes)
 routes.use(dashboardRoutes)
 routes.use(historyRoutes)

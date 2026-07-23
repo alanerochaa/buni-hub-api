@@ -24,4 +24,12 @@ export class ApiError extends Error {
   static unprocessable(message: string, code = 'BUSINESS_RULE_ERROR'): ApiError {
     return new ApiError(422, code, message)
   }
+
+  static unauthorized(message: string, code = 'UNAUTHORIZED'): ApiError {
+    return new ApiError(401, code, message)
+  }
+
+  static forbidden(message: string, code = 'FORBIDDEN'): ApiError {
+    return new ApiError(403, code, message)
+  }
 }
