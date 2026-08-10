@@ -3,13 +3,13 @@ import type { HistoryService } from '../services/history.service.js'
 import type { ResourceEnvironment } from '../models/resource.model.js'
 import type { DashboardResourceStatus } from '../types/dashboard.type.js'
 
-const OPERATIONAL_LOG_STATUSES: DashboardResourceStatus[] = ['online', 'offline', 'maintenance', 'unknown']
-const RESOURCE_ENVIRONMENTS: ResourceEnvironment[] = [
-  'homologacao',
-  'producao',
-  'desenvolvimento',
+const OPERATIONAL_LOG_STATUSES: DashboardResourceStatus[] = [
+  'online',
+  'offline',
+  'maintenance',
   'unknown',
 ]
+const RESOURCE_ENVIRONMENTS: ResourceEnvironment[] = ['homologacao', 'producao', 'unknown']
 
 function parseStatus(value: unknown): DashboardResourceStatus | undefined {
   return OPERATIONAL_LOG_STATUSES.includes(value as DashboardResourceStatus)

@@ -1,5 +1,5 @@
 export type ResourceType = 'api' | 'web-service' | 'site'
-export type ResourceEnvironment = 'homologacao' | 'producao' | 'desenvolvimento' | 'unknown'
+export type ResourceEnvironment = 'homologacao' | 'producao' | 'unknown'
 
 export interface Resource {
   id: string
@@ -12,6 +12,8 @@ export interface Resource {
   url?: string
 
   environment: ResourceEnvironment
+  /** id do registro do mesmo recurso lógico no outro ambiente (HML<->PROD), preenchido na promoção */
+  pairedResourceId?: string
   category?: string
   deprecated: boolean
   active: boolean
@@ -21,7 +23,6 @@ export interface Resource {
   tags: string[]
 
   searchIndex: string[]
-
 
   docUrl?: string
   responsible?: string

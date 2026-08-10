@@ -1,0 +1,82 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: buni-api-hub-api
+  labels:
+    app: buni-api-hub-api
+spec:
+  # A persistência é um único arquivo JSON por entidade, sem lock distribuído entre
+  # nós. Rodar mais de 1 réplica faria cada pod ler/gravar o mesmo volume sem
+  # coordenação entre processos de nós diferentes, arriscando estado inconsistente.
+  # Se precisar de mais capacidade de request, escale verticalmente (mais CPU/memória
+  # no pod), não horizontalmente — ou reavalie a arquitetura de persistência.
+  replicas: 1
+  strategy:
+    # Recreate (não RollingUpdate): com replicas: 1 e um volume ReadWriteOnce,
+    # um rolling update tentaria subir o pod novo antes de matar o antigo, e os
+    # dois disputariam o mesmo PVC — o pod novo ficaria em Pending.
+    type: Recreate
+  selector:
+    matchLabels:
+      app: buni-api-hub-api
+  template:
+    metadata:
+      labels:
+        app: buni-api-hub-api
+    spec:
+      containers:
+        - name: api
+          image: buni-api-hub-api:latest
+          ports:
+            - containerPort: 3333
+          envFrom:
+            - configMapRef:
+                name: buni-api-config
+            - secretRef:
+                name: buni-api-secrets
+          volumeMounts:
+            - name: data
+              mountPath: /app/dist/data
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 3333
+            initialDelaySeconds: 10
+            periodSeconds: 15
+          readinessProbe:
+            httpGet:
+              path: /health/ready
+              port: 3333
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "256Mi"
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: buni-api-data
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: buni-api-config
+data:
+  NODE_ENV: "production"
+  PORT: "3333"
+  LOG_LEVEL: "info"
+  TRUST_PROXY: "1"
+  CORS_ORIGIN: "https://app.exemplo.com"
+  JWT_EXPIRES_IN: "8h"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: buni-api-secrets
+type: Opaque
+stringData:
+  JWT_SECRET: "substitua-por-um-segredo-forte-de-32-ou-mais-caracteres"

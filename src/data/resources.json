@@ -29,7 +29,8 @@
       "tab",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-webapi-consultar-agencias"
   },
   {
     "id": "api-homologacao-fiapitabconsorigem3",
@@ -65,7 +66,8 @@
       "origem3",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-webapi-consulta-origem-3"
   },
   {
     "id": "api-homologacao-fiapitabconsorigem4",
@@ -101,7 +103,8 @@
       "origem4",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-webapi-consulta-origem-4"
   },
   {
     "id": "api-homologacao-fiapitabconsorigem5",
@@ -137,7 +140,8 @@
       "origem5",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-webapi-consulta-origem-5"
   },
   {
     "id": "api-homologacao-fiapitabconsultabancos",
@@ -169,7 +173,8 @@
       "tab",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-webapi-consulta-de-bancos"
   },
   {
     "id": "api-homologacao-fiapitablocalrecebimento",
@@ -209,7 +214,8 @@
       "recebimento",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-web-api-lista-de-locais-de-recebimentos"
   },
   {
     "id": "api-homologacao-fiapitabhistoricofinanceiro",
@@ -249,7 +255,8 @@
       "financeiro",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-web-api-lista-de-historicos-financeiros"
   },
   {
     "id": "api-homologacao-fiapitabconsnaturezaocupacao",
@@ -285,7 +292,8 @@
       "cons",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-web-api-consulta-natureza-ocupacao"
   },
   {
     "id": "api-homologacao-fiapitaborigem6",
@@ -323,7 +331,8 @@
       "origem6",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-web-api-cons-origens6-sem-paginacao"
   },
   {
     "id": "api-homologacao-fiapiautincluirpropostarefincp",
@@ -361,7 +370,8 @@
       "refin",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-web-api-incluir-proposta-refinanciamento-cp"
   },
   {
     "id": "api-homologacao-fiapiautincluirpropostarenegcp",
@@ -399,7 +409,8 @@
       "reneg",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-web-api-incluir-proposta-renegociacao-cp"
   },
   {
     "id": "api-homologacao-web-api-para-inclusao-de-proposta-consig",
@@ -442,7 +453,8 @@
       "incluir",
       "homologacao"
     ],
-    "updatedAt": "2026-07-15T12:41:06.222Z"
+    "updatedAt": "2026-07-15T12:41:06.222Z",
+    "pairedResourceId": "api-producao-web-api-para-inclusao-de-proposta-consig"
   },
   {
     "id": "api-homologacao-fiapiautsimularproposta",
@@ -478,7 +490,8 @@
       "proposta",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-web-api-de-simulacao-de-propostas-cp"
   },
   {
     "id": "api-homologacao-fiapiautorizadortabelasfinanciamentocp",
@@ -512,7 +525,8 @@
       "tabelas",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-web-api-de-tabela-de-financiamento"
   },
   {
     "id": "api-homologacao-fiapiautorizadorclientescp",
@@ -546,7 +560,8 @@
       "autorizador",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-webapi-de-consulta-e-alteracao-de-clientes-cp"
   },
   {
     "id": "api-homologacao-fiapiautorizadorconsultarlojasprodutosusuarios",
@@ -584,7 +599,8 @@
       "consultar",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-webapi-consulta-lojas-produtos-de-usuarios"
   },
   {
     "id": "api-homologacao-fiapiautorizadorsimulacaodepropostascp",
@@ -622,7 +638,8 @@
       "propostas",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-web-api-restful-para-simulacao-de-proposta"
   },
   {
     "id": "api-homologacao-fiapiautemiplanproparrayby",
@@ -666,7 +683,8 @@
       "prop",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-webapi-emitir-planilha-de-proposta-array-bytes"
   },
   {
     "id": "api-homologacao-fiapiautclientepf",
@@ -698,7 +716,8 @@
       "aut",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-webapi-cadastro-consulta-de-cliente-pf"
   },
   {
     "id": "api-homologacao-fiapiautacionaesteira",
@@ -736,7 +755,8 @@
       "aciona",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-webapi-acionamento-de-esteira-aprovacao-ext"
   },
   {
     "id": "api-homologacao-fiapiautconsultarcontratosrefin",
@@ -776,7 +796,8 @@
       "refin",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-webapi-consultar-contratos-para-refinanciamento"
   },
   {
     "id": "api-homologacao-fiapiautorizadorconsultarchecklist",
@@ -814,7 +835,8 @@
       "list",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-web-api-consultar-checklists"
   },
   {
     "id": "api-homologacao-fiapiacrpropostaacordo",
@@ -846,7 +868,8 @@
       "acr",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-web-api-proposta-acordo"
   },
   {
     "id": "api-homologacao-fiapiautprimeirovencimento",
@@ -884,7 +907,8 @@
       "aut",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-web-api-para-retornar-data-do-primeiro-vencimento"
   },
   {
     "id": "api-homologacao-fiapiautchecklistproposta",
@@ -922,7 +946,8 @@
       "checklist",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-web-api-checklist-da-proposta"
   },
   {
     "id": "api-homologacao-fiapiautconspoliticasdespesas",
@@ -960,7 +985,8 @@
       "despesas",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-webapi-consultar-de-politicas-de-despesas-tarifa"
   },
   {
     "id": "api-homologacao-fiapiautconvenio",
@@ -994,7 +1020,8 @@
       "aut",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-web-api-autorizador-convenio"
   },
   {
     "id": "api-homologacao-fiapiautproposta",
@@ -1028,7 +1055,8 @@
       "aut",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-web-api-autorizador-proposta"
   },
   {
     "id": "api-homologacao-fiapiautdocumentosanexados",
@@ -1064,7 +1092,8 @@
       "aut",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-web-api-autorizador-documentos-anexados"
   },
   {
     "id": "api-homologacao-fiapiautconsmeioliberacaoempregador",
@@ -1102,7 +1131,8 @@
       "empregador",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-web-api-meios-de-liberacao"
   },
   {
     "id": "api-homologacao-fiapiautemitirboleto1aparcela",
@@ -1140,7 +1170,8 @@
       "boleto1a",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-web-api-emissao-de-boleto-da-1-parcela"
   },
   {
     "id": "api-homologacao-fiapiautobservacao",
@@ -1173,7 +1204,8 @@
       "observa",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiautobservacao-webapi-de-inclusao-de-observa"
   },
   {
     "id": "api-homologacao-fiapiautsimularpropostarenegcp",
@@ -1211,7 +1243,8 @@
       "reneg",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-simulacao-de-renegociacao-cp"
   },
   {
     "id": "api-homologacao-fiapiautsimularpropostarefincp",
@@ -1249,7 +1282,8 @@
       "refin",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-web-api-aut-veic-simular-proposta-refinanciamento"
   },
   {
     "id": "api-homologacao-fiapiautetapasproposta",
@@ -1281,7 +1315,8 @@
       "aut",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-web-api-etapas-da-proposta"
   },
   {
     "id": "api-homologacao-fiapitabocorrencia",
@@ -1318,7 +1353,8 @@
       "ocorrencia",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapitabocorrencia"
   },
   {
     "id": "api-homologacao-fiapiempracionaesteira-legado",
@@ -1353,7 +1389,8 @@
       "aciona",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiempracionaesteira-legado"
   },
   {
     "id": "api-homologacao-fiapiempracionasic-legado",
@@ -1386,7 +1423,8 @@
       "legado",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiempracionasic-legado"
   },
   {
     "id": "api-homologacao-fiapiemprconsultacpf-legado",
@@ -1421,7 +1459,8 @@
       "legado",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprconsultacpf-legado"
   },
   {
     "id": "api-homologacao-fiapiemprconsultanacionalidade-legado",
@@ -1456,7 +1495,8 @@
       "consulta",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprconsultanacionalidade-legado"
   },
   {
     "id": "api-homologacao-fiapiemprconsultaocorconsignacao-legado",
@@ -1497,7 +1537,8 @@
       "legado",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprconsultaocorconsignacao-legado"
   },
   {
     "id": "api-homologacao-fiapiemprconsultaopers-legado",
@@ -1534,7 +1575,8 @@
       "legado",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprconsultaopers-legado"
   },
   {
     "id": "api-homologacao-fiapiemprconsultaperiodoconc-legado",
@@ -1571,7 +1613,8 @@
       "legado",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprconsultaperiodoconc-legado"
   },
   {
     "id": "api-homologacao-fiapiemprefetivarrescisao-legado",
@@ -1606,7 +1649,8 @@
       "efetivar",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprefetivarrescisao-legado"
   },
   {
     "id": "api-homologacao-fiapiemprfaturarh-legado",
@@ -1637,7 +1681,8 @@
       "empr",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprfaturarh-legado"
   },
   {
     "id": "api-homologacao-fiapiemprobterboletoprocessamento-legado",
@@ -1674,7 +1719,8 @@
       "obter",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprobterboletoprocessamento-legado"
   },
   {
     "id": "api-homologacao-fiapiemprparcelasnaodisponiveispararefin-legado",
@@ -1715,7 +1761,8 @@
       "legado",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprparcelasnaodisponiveispararefin-legado"
   },
   {
     "id": "api-homologacao-fiapiemprverbasrescisorias-legado",
@@ -1748,7 +1795,8 @@
       "legado",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprverbasrescisorias-legado"
   },
   {
     "id": "api-homologacao-fiapiacessogerenciapin",
@@ -1782,8 +1830,9 @@
       "api",
       "homologacao"
     ],
-    "updatedAt": "2026-07-19T23:43:00.415Z",
-    "responsible": ""
+    "updatedAt": "2026-08-07T18:31:42.252Z",
+    "responsible": "",
+    "pairedResourceId": "api-producao-fiapiacessogerenciapin"
   },
   {
     "id": "api-homologacao-fiapiatualizarinformacoesrh",
@@ -1813,7 +1862,8 @@
       "api",
       "homologacao"
     ],
-    "updatedAt": "2026-07-16T01:11:03.843Z"
+    "updatedAt": "2026-07-16T01:11:03.843Z",
+    "pairedResourceId": "api-producao-fiapiatualizarinformacoesrh"
   },
   {
     "id": "api-homologacao-fiapiautconscliproposta",
@@ -1854,7 +1904,8 @@
       "cli",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiautconscliproposta"
   },
   {
     "id": "api-homologacao-fiapiautconsesteira",
@@ -1889,7 +1940,8 @@
       "esteira",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiautconsesteira"
   },
   {
     "id": "api-homologacao-fiapiautconsultarmotivosexternos",
@@ -1930,7 +1982,8 @@
       "externos",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiautconsultarmotivosexternos"
   },
   {
     "id": "api-homologacao-fiapiautconsultavalidacaobanco",
@@ -1963,7 +2016,8 @@
       "aut",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiautconsultavalidacaobanco"
   },
   {
     "id": "api-homologacao-fiapiautorizadorconsultapropostasportal",
@@ -1998,7 +2052,8 @@
       "consulta",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiautorizadorconsultapropostasportal"
   },
   {
     "id": "api-homologacao-fiapiautorizadorconsultarlinhadotempo",
@@ -2033,7 +2088,8 @@
       "autorizador",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiautorizadorconsultarlinhadotempo"
   },
   {
     "id": "api-homologacao-fiapiautorizadorconsultarproposta",
@@ -2068,7 +2124,8 @@
       "autorizador",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiautorizadorconsultarproposta"
   },
   {
     "id": "api-homologacao-fiapiautorizadordocumentoged",
@@ -2107,7 +2164,8 @@
       "ged",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiautorizadordocumentoged"
   },
   {
     "id": "api-homologacao-fiapiautorizadorpropostascp",
@@ -2138,7 +2196,8 @@
       "autorizador",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiautorizadorpropostascp"
   },
   {
     "id": "api-homologacao-fiapiautprodutos",
@@ -2169,7 +2228,8 @@
       "aut",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiautprodutos"
   },
   {
     "id": "api-homologacao-fiapiautvalidadadosbancarios",
@@ -2204,7 +2264,8 @@
       "valida",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiautvalidadadosbancarios"
   },
   {
     "id": "api-homologacao-fiapicallbackautorizador",
@@ -2245,7 +2306,8 @@
       "autorizador",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapicallbackautorizador"
   },
   {
     "id": "api-homologacao-fiapicapttransmanualestaglote",
@@ -2292,7 +2354,8 @@
       "lote",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapicapttransmanualestaglote"
   },
   {
     "id": "api-homologacao-fiapicapturafatoresexternos",
@@ -2333,7 +2396,8 @@
       "externos",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapicapturafatoresexternos"
   },
   {
     "id": "api-homologacao-fiapicdcconscontratoscpfmat",
@@ -2376,7 +2440,8 @@
       "mat",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapicdcconscontratoscpfmat"
   },
   {
     "id": "api-homologacao-fiapicdcconsultapendencia",
@@ -2409,7 +2474,8 @@
       "pendencia",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapicdcconsultapendencia"
   },
   {
     "id": "api-homologacao-fiapicdcconsultaroperacao",
@@ -2444,7 +2510,8 @@
       "cdc",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapicdcconsultaroperacao"
   },
   {
     "id": "api-homologacao-fiapicdccpfoperacoes",
@@ -2475,7 +2542,8 @@
       "cdc",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapicdccpfoperacoes"
   },
   {
     "id": "api-homologacao-fiapicdcdadosfinanceirosoperacoes",
@@ -2508,7 +2576,8 @@
       "cdc",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapicdcdadosfinanceirosoperacoes"
   },
   {
     "id": "api-homologacao-fiapicdcidentificatransacoes",
@@ -2541,7 +2610,8 @@
       "cdc",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapicdcidentificatransacoes"
   },
   {
     "id": "api-homologacao-fiapicdclancaocorrencia",
@@ -2576,7 +2646,8 @@
       "lanca",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapicdclancaocorrencia"
   },
   {
     "id": "api-homologacao-fiapicdclancapendencia",
@@ -2611,7 +2682,8 @@
       "lanca",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapicdclancapendencia"
   },
   {
     "id": "api-homologacao-fiapicdcocorrencia",
@@ -2644,7 +2716,8 @@
       "ocorrencia",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapicdcocorrencia"
   },
   {
     "id": "api-homologacao-fiapicdcparcelas",
@@ -2673,7 +2746,8 @@
       "cdc",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapicdcparcelas"
   },
   {
     "id": "api-homologacao-fiapicdcpesquisaoperacao",
@@ -2708,7 +2782,8 @@
       "operacao",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapicdcpesquisaoperacao"
   },
   {
     "id": "api-homologacao-fiapicdcrelinformerendimentos",
@@ -2743,7 +2818,8 @@
       "rel",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapicdcrelinformerendimentos"
   },
   {
     "id": "api-homologacao-fiapicdcsaldos",
@@ -2772,7 +2848,8 @@
       "cdc",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapicdcsaldos"
   },
   {
     "id": "api-homologacao-fiapicdcsegundaviacarne",
@@ -2805,7 +2882,8 @@
       "cdc",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapicdcsegundaviacarne"
   },
   {
     "id": "api-homologacao-fiapicotacoes",
@@ -2836,7 +2914,8 @@
       "cotacoes",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapicotacoes"
   },
   {
     "id": "api-homologacao-fiapiempractwsautorizador",
@@ -2863,7 +2942,8 @@
       "autorizador",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiempractwsautorizador"
   },
   {
     "id": "api-homologacao-fiapiemprcadastrofunc",
@@ -2896,18 +2976,20 @@
       "func",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprcadastrofunc"
   },
   {
     "id": "api-homologacao-fiapiemprgerarboleto",
     "type": "api",
     "name": "FIAPIEmprGerarBoleto",
-    "technicalName": "FIAPIEmprGerarBoleto",
+    "technicalName": "fiapiemprgerarboleto",
     "url": "https://buncghml.funcao.digital/API/FIAPIEmprGerarBoleto",
     "environment": "homologacao",
     "deprecated": false,
     "active": true,
     "keywords": [
+      "fiapiemprgerarboleto",
       "empr",
       "gerar",
       "boleto",
@@ -2923,7 +3005,9 @@
       "boleto",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprgerarboleto",
+    "updatedAt": "2026-08-10T13:08:45.887Z"
   },
   {
     "id": "api-homologacao-fiapiemprobterboletoprocessamento",
@@ -2960,7 +3044,8 @@
       "obter",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprobterboletoprocessamento"
   },
   {
     "id": "api-homologacao-fiapiemprpropostarh",
@@ -2989,7 +3074,8 @@
       "empr",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprpropostarh"
   },
   {
     "id": "api-homologacao-fiapigabaixaparcelamanual",
@@ -3020,7 +3106,8 @@
       "manual",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapigabaixaparcelamanual"
   },
   {
     "id": "api-homologacao-fiapigacancelamentoautomaticoacordos",
@@ -3051,7 +3138,8 @@
       "acordos",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapigacancelamentoautomaticoacordos"
   },
   {
     "id": "api-homologacao-fiapigacancelamentomanualacordos",
@@ -3082,7 +3170,8 @@
       "acordos",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapigacancelamentomanualacordos"
   },
   {
     "id": "api-homologacao-fiapigacancelamentomovimento",
@@ -3113,7 +3202,8 @@
       "parcela",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapigacancelamentomovimento"
   },
   {
     "id": "api-homologacao-fiapigaconsultaparcela",
@@ -3148,7 +3238,8 @@
       "parcela",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapigaconsultaparcela"
   },
   {
     "id": "api-homologacao-fiapigaconsultasaldo",
@@ -3179,7 +3270,8 @@
       "parcela",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapigaconsultasaldo"
   },
   {
     "id": "api-homologacao-fiapigaconsultaultimomovimento",
@@ -3210,7 +3302,8 @@
       "movimento",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapigaconsultaultimomovimento"
   },
   {
     "id": "api-homologacao-fiapigaestornobaixa",
@@ -3239,7 +3332,8 @@
       "baixa",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapigaestornobaixa"
   },
   {
     "id": "api-homologacao-fiapigarantiascontabeis",
@@ -3272,7 +3366,8 @@
       "online",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapigarantiascontabeis"
   },
   {
     "id": "api-homologacao-fiapimoduloscorpconsultarcep",
@@ -3311,7 +3406,8 @@
       "consultar",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapimoduloscorpconsultarcep"
   },
   {
     "id": "api-homologacao-fiapimonitor",
@@ -3344,7 +3440,8 @@
       "monitor",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapimonitor"
   },
   {
     "id": "api-homologacao-fiapisif",
@@ -3367,7 +3464,8 @@
       "sif",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapisif"
   },
   {
     "id": "api-homologacao-fiapisrvgacancelamentoacordo",
@@ -3402,7 +3500,8 @@
       "acordo",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapisrvgacancelamentoacordo"
   },
   {
     "id": "api-homologacao-fiapitabconsorigem1",
@@ -3445,7 +3544,8 @@
       "origem1",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapitabconsorigem1"
   },
   {
     "id": "api-homologacao-fiapitabconsorigem2",
@@ -3488,7 +3588,8 @@
       "origem2",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapitabconsorigem2"
   },
   {
     "id": "api-homologacao-fiapitabconsorigem3o",
@@ -3531,7 +3632,8 @@
       "origem3",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapitabconsorigem3o"
   },
   {
     "id": "api-homologacao-fiapitabregimecontratacao",
@@ -3562,7 +3664,8 @@
       "tab",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapitabregimecontratacao"
   },
   {
     "id": "api-homologacao-fiapitabvalprofcert",
@@ -3601,7 +3704,8 @@
       "cert",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapitabvalprofcert"
   },
   {
     "id": "api-homologacao-fiapiautoservico",
@@ -3636,7 +3740,8 @@
       "informatica",
       "api",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiautoservico"
   },
   {
     "id": "api-homologacao-fiapiconsultaparametrosgerais-autoserv",
@@ -3673,7 +3778,8 @@
       "api",
       "homologacao",
       "autoatendimento"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiconsultaparametrosgerais-autoserv"
   },
   {
     "id": "api-homologacao-fiapiemprconstfuncpropoper-autoserv",
@@ -3718,7 +3824,8 @@
       "api",
       "homologacao",
       "autoatendimento"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprconstfuncpropoper-autoserv"
   },
   {
     "id": "api-homologacao-fiapiemprconsultabancos-autoserv",
@@ -3755,7 +3862,8 @@
       "api",
       "homologacao",
       "autoatendimento"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprconsultabancos-autoserv"
   },
   {
     "id": "api-homologacao-fiapiemprconsultaclienteportal-autoserv",
@@ -3796,7 +3904,8 @@
       "api",
       "homologacao",
       "autoatendimento"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprconsultaclienteportal-autoserv"
   },
   {
     "id": "api-homologacao-fiapiemprconsultacpf-autoserv",
@@ -3833,7 +3942,8 @@
       "api",
       "homologacao",
       "autoatendimento"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprconsultacpf-autoserv"
   },
   {
     "id": "api-homologacao-fiapiemprconsultadadosporproposta-autoserv",
@@ -3872,7 +3982,8 @@
       "api",
       "homologacao",
       "autoatendimento"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprconsultadadosporproposta-autoserv"
   },
   {
     "id": "api-homologacao-fiapiemprconsultalinhadotempo-autoserv",
@@ -3915,7 +4026,8 @@
       "api",
       "homologacao",
       "autoatendimento"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprconsultalinhadotempo-autoserv"
   },
   {
     "id": "api-homologacao-fiapiemprconsultanacionalidade-autoserv",
@@ -3956,7 +4068,8 @@
       "api",
       "homologacao",
       "autoatendimento"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprconsultanacionalidade-autoserv"
   },
   {
     "id": "api-homologacao-fiapiemprconsultaocorconsignacao-autoserv",
@@ -3999,7 +4112,8 @@
       "api",
       "homologacao",
       "autoatendimento"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprconsultaocorconsignacao-autoserv"
   },
   {
     "id": "api-homologacao-fiapiemprconsultaopers-autoserv",
@@ -4042,7 +4156,8 @@
       "api",
       "homologacao",
       "autoatendimento"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprconsultaopers-autoserv"
   },
   {
     "id": "api-homologacao-fiapiemprconsultaorigem4-autoserv",
@@ -4081,7 +4196,8 @@
       "api",
       "homologacao",
       "autoatendimento"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprconsultaorigem4-autoserv"
   },
   {
     "id": "api-homologacao-fiapiemprconsultaorigem5-autoserv",
@@ -4120,7 +4236,8 @@
       "api",
       "homologacao",
       "autoatendimento"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprconsultaorigem5-autoserv"
   },
   {
     "id": "api-homologacao-fiapiemprconsultaperiodoconc-autoserv",
@@ -4159,7 +4276,8 @@
       "api",
       "homologacao",
       "autoatendimento"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprconsultaperiodoconc-autoserv"
   },
   {
     "id": "api-homologacao-fiapiemprconsultapropostasportal-autoserv",
@@ -4200,7 +4318,8 @@
       "api",
       "homologacao",
       "autoatendimento"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprconsultapropostasportal-autoserv"
   },
   {
     "id": "api-homologacao-fiapiemprconsultarmotivosaut-autoserv",
@@ -4249,7 +4368,8 @@
       "api",
       "homologacao",
       "autoatendimento"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprconsultarmotivosaut-autoserv"
   },
   {
     "id": "api-homologacao-fiapiemprconsultarparcelasporoperacao-autoserv",
@@ -4288,7 +4408,8 @@
       "api",
       "homologacao",
       "autoatendimento"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprconsultarparcelasporoperacao-autoserv"
   },
   {
     "id": "api-homologacao-fiapiemprconsultarproposta-autoserv",
@@ -4327,7 +4448,8 @@
       "api",
       "homologacao",
       "autoatendimento"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprconsultarproposta-autoserv"
   },
   {
     "id": "api-homologacao-fiapiemprdocumentoged-autoserv",
@@ -4374,7 +4496,8 @@
       "api",
       "homologacao",
       "autoatendimento"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprdocumentoged-autoserv"
   },
   {
     "id": "api-homologacao-fiapiemprefetivarrescisao-autoserv",
@@ -4415,7 +4538,8 @@
       "api",
       "homologacao",
       "autoatendimento"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprefetivarrescisao-autoserv"
   },
   {
     "id": "api-homologacao-fiapiemprfaturarh-autoserv",
@@ -4452,7 +4576,8 @@
       "api",
       "homologacao",
       "autoatendimento"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprfaturarh-autoserv"
   },
   {
     "id": "api-homologacao-fiapiemprgenfatexcel-autoserv",
@@ -4493,7 +4618,8 @@
       "api",
       "homologacao",
       "autoatendimento"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprgenfatexcel-autoserv"
   },
   {
     "id": "api-homologacao-fiapiemprrltaverb-autoserv",
@@ -4532,7 +4658,8 @@
       "api",
       "homologacao",
       "autoatendimento"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprrltaverb-autoserv"
   },
   {
     "id": "api-homologacao-fiapiemprverbasrescisorias-autoserv",
@@ -4571,7 +4698,8 @@
       "api",
       "homologacao",
       "autoatendimento"
-    ]
+    ],
+    "pairedResourceId": "api-producao-fiapiemprverbasrescisorias-autoserv"
   },
   {
     "id": "web-service-homologacao-wsacordo-wsautorizador-asmx",
@@ -4604,7 +4732,8 @@
       "web service",
       "homologacao"
     ],
-    "updatedAt": "2026-07-15T02:52:00.177Z"
+    "updatedAt": "2026-07-15T02:52:00.177Z",
+    "pairedResourceId": "web-service-producao-wsacordo-wsautorizador-asmx"
   },
   {
     "id": "web-service-homologacao-wsautorizador-wsautorizador-asmx",
@@ -4633,7 +4762,8 @@
       "autorizador.asmx",
       "web service",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "web-service-producao-wsautorizador-wsautorizador-asmx"
   },
   {
     "id": "web-service-homologacao-wscnab-wscnab-asmx",
@@ -4663,7 +4793,8 @@
       "cnab",
       "web service",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "web-service-producao-wscnab-wscnab-asmx"
   },
   {
     "id": "web-service-homologacao-wsgedoc-wsged-asmx",
@@ -4692,7 +4823,8 @@
       "doc",
       "web service",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "web-service-producao-wsgedoc-wsged-asmx"
   },
   {
     "id": "web-service-homologacao-wsmonitor-wsmonitor-asmx",
@@ -4721,7 +4853,8 @@
       "monitor.asmx",
       "web service",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "web-service-producao-wsmonitor-wsmonitor-asmx"
   },
   {
     "id": "web-service-homologacao-wssic-wssic-asmx",
@@ -4750,7 +4883,8 @@
       "sic.asmx",
       "web service",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "web-service-producao-wssic-wssic-asmx"
   },
   {
     "id": "site-homologacao-webacesso",
@@ -4773,7 +4907,8 @@
       "acesso",
       "site",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "site-producao-webacesso"
   },
   {
     "id": "site-homologacao-webautorizadorsubconsig",
@@ -4800,7 +4935,8 @@
       "consig",
       "site",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "site-producao-webautorizadorsubconsig"
   },
   {
     "id": "site-homologacao-webautorizadorsubcp",
@@ -4825,7 +4961,8 @@
       "sub",
       "site",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "site-producao-webautorizadorsubcp"
   },
   {
     "id": "site-homologacao-webautorizador",
@@ -4848,7 +4985,8 @@
       "autorizador",
       "site",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "site-producao-webautorizador"
   },
   {
     "id": "site-homologacao-webbacenifrs",
@@ -4873,7 +5011,8 @@
       "ifrs",
       "site",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "site-producao-webbacenifrs"
   },
   {
     "id": "site-homologacao-webccob",
@@ -4896,7 +5035,8 @@
       "cob",
       "site",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "site-producao-webccob"
   },
   {
     "id": "site-homologacao-webcdccontabilifrs",
@@ -4923,7 +5063,8 @@
       "ifrs",
       "site",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "site-producao-webcdccontabilifrs"
   },
   {
     "id": "site-homologacao-webcdc",
@@ -4946,7 +5087,8 @@
       "cdc",
       "site",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "site-producao-webcdc"
   },
   {
     "id": "site-homologacao-webcnab",
@@ -4969,7 +5111,8 @@
       "cnab",
       "site",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "site-producao-webcnab"
   },
   {
     "id": "site-homologacao-webcomissao",
@@ -4992,7 +5135,8 @@
       "comissao",
       "site",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "site-producao-webcomissao"
   },
   {
     "id": "site-homologacao-webctc",
@@ -5015,7 +5159,8 @@
       "ctc",
       "site",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "site-producao-webctc"
   },
   {
     "id": "site-homologacao-webempregador",
@@ -5038,7 +5183,8 @@
       "empregador",
       "site",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "site-producao-webempregador"
   },
   {
     "id": "site-homologacao-webfimenumvc",
@@ -5063,7 +5209,8 @@
       "mvc",
       "site",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "site-producao-webfimenumvc"
   },
   {
     "id": "site-homologacao-webgedoc",
@@ -5086,7 +5233,8 @@
       "doc",
       "site",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "site-producao-webgedoc"
   },
   {
     "id": "site-homologacao-webgv",
@@ -5107,7 +5255,8 @@
       "https://buncghml.funcao.digital/webgv",
       "site",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "site-producao-webgv"
   },
   {
     "id": "site-homologacao-webmonitor",
@@ -5130,7 +5279,8 @@
       "monitor",
       "site",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "site-producao-webmonitor"
   },
   {
     "id": "site-homologacao-websic",
@@ -5153,7 +5303,8 @@
       "sic",
       "site",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "site-producao-websic"
   },
   {
     "id": "site-homologacao-webtabelascorp",
@@ -5178,7 +5329,8 @@
       "corp",
       "site",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "site-producao-webtabelascorp"
   },
   {
     "id": "site-homologacao-webtabelasempr",
@@ -5203,7 +5355,8 @@
       "empr",
       "site",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "site-producao-webtabelasempr"
   },
   {
     "id": "site-homologacao-webacessoautoserv",
@@ -5228,7 +5381,8 @@
       "autoserv",
       "site",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "site-producao-webacessoautoserv"
   },
   {
     "id": "site-homologacao-webfimenumvcautoserv",
@@ -5253,7 +5407,8 @@
       "mvcautoserv",
       "site",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "site-producao-webfimenumvcautoserv"
   },
   {
     "id": "site-homologacao-webportalempresa",
@@ -5278,7 +5433,8 @@
       "empresa",
       "site",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "site-producao-webportalempresa"
   },
   {
     "id": "site-homologacao-websicautoserv",
@@ -5301,7 +5457,8 @@
       "sicautoserv",
       "site",
       "homologacao"
-    ]
+    ],
+    "pairedResourceId": "site-producao-websicautoserv"
   },
   {
     "id": "api-producao-webapi-consultar-agencias",
@@ -5336,7 +5493,8 @@
     ],
     "createdAt": "2026-07-16T17:37:26.786Z",
     "updatedAt": "2026-07-16T17:37:26.786Z",
-    "displayName": "WebApi - Consultar Agências"
+    "displayName": "WebApi - Consultar Agências",
+    "pairedResourceId": "api-homologacao-fiapitabconsultaragencias"
   },
   {
     "id": "api-producao-webapi-consulta-origem-3",
@@ -5375,7 +5533,8 @@
     ],
     "createdAt": "2026-07-16T17:37:26.795Z",
     "updatedAt": "2026-07-16T17:37:26.795Z",
-    "displayName": "WebApi - Consulta Origem 3"
+    "displayName": "WebApi - Consulta Origem 3",
+    "pairedResourceId": "api-homologacao-fiapitabconsorigem3"
   },
   {
     "id": "api-producao-webapi-consulta-origem-4",
@@ -5414,7 +5573,8 @@
     ],
     "createdAt": "2026-07-16T17:37:26.801Z",
     "updatedAt": "2026-07-16T17:37:26.801Z",
-    "displayName": "WebApi - Consulta Origem 4"
+    "displayName": "WebApi - Consulta Origem 4",
+    "pairedResourceId": "api-homologacao-fiapitabconsorigem4"
   },
   {
     "id": "api-producao-webapi-consulta-origem-5",
@@ -5453,7 +5613,8 @@
     ],
     "createdAt": "2026-07-16T17:37:26.809Z",
     "updatedAt": "2026-07-16T17:37:26.809Z",
-    "displayName": "WebApi - Consulta Origem 5"
+    "displayName": "WebApi - Consulta Origem 5",
+    "pairedResourceId": "api-homologacao-fiapitabconsorigem5"
   },
   {
     "id": "api-producao-webapi-consulta-de-bancos",
@@ -5488,7 +5649,8 @@
     ],
     "createdAt": "2026-07-16T17:37:26.819Z",
     "updatedAt": "2026-07-16T17:37:26.819Z",
-    "displayName": "WebApi - Consulta de Bancos"
+    "displayName": "WebApi - Consulta de Bancos",
+    "pairedResourceId": "api-homologacao-fiapitabconsultabancos"
   },
   {
     "id": "api-producao-web-api-lista-de-locais-de-recebimentos",
@@ -5531,7 +5693,8 @@
     ],
     "createdAt": "2026-07-16T17:37:26.828Z",
     "updatedAt": "2026-07-16T17:37:26.828Z",
-    "displayName": "Web API: Lista de locais de recebimentos"
+    "displayName": "Web API: Lista de locais de recebimentos",
+    "pairedResourceId": "api-homologacao-fiapitablocalrecebimento"
   },
   {
     "id": "api-producao-web-api-lista-de-historicos-financeiros",
@@ -5574,7 +5737,8 @@
     ],
     "createdAt": "2026-07-16T17:37:26.836Z",
     "updatedAt": "2026-07-16T17:37:26.836Z",
-    "displayName": "Web API: Lista de Históricos Financeiros"
+    "displayName": "Web API: Lista de Históricos Financeiros",
+    "pairedResourceId": "api-homologacao-fiapitabhistoricofinanceiro"
   },
   {
     "id": "api-producao-web-api-consulta-natureza-ocupacao",
@@ -5613,7 +5777,8 @@
     ],
     "createdAt": "2026-07-16T17:37:26.844Z",
     "updatedAt": "2026-07-16T17:37:26.844Z",
-    "displayName": "Web Api Consulta Natureza Ocupação"
+    "displayName": "Web Api Consulta Natureza Ocupação",
+    "pairedResourceId": "api-homologacao-fiapitabconsnaturezaocupacao"
   },
   {
     "id": "api-producao-web-api-cons-origens6-sem-paginacao",
@@ -5654,7 +5819,8 @@
     ],
     "createdAt": "2026-07-16T17:37:26.851Z",
     "updatedAt": "2026-07-16T17:37:26.851Z",
-    "displayName": "Web Api Cons. Origens6 sem paginação"
+    "displayName": "Web Api Cons. Origens6 sem paginação",
+    "pairedResourceId": "api-homologacao-fiapitaborigem6"
   },
   {
     "id": "api-producao-web-api-incluir-proposta-refinanciamento-cp",
@@ -5695,7 +5861,8 @@
     ],
     "createdAt": "2026-07-16T17:37:26.858Z",
     "updatedAt": "2026-07-16T17:37:26.858Z",
-    "displayName": "Web API: Incluir Proposta Refinanciamento CP"
+    "displayName": "Web API: Incluir Proposta Refinanciamento CP",
+    "pairedResourceId": "api-homologacao-fiapiautincluirpropostarefincp"
   },
   {
     "id": "api-producao-web-api-incluir-proposta-renegociacao-cp",
@@ -5736,7 +5903,8 @@
     ],
     "createdAt": "2026-07-16T17:37:26.866Z",
     "updatedAt": "2026-07-16T17:37:26.866Z",
-    "displayName": "Web API: Incluir Proposta Renegociação CP"
+    "displayName": "Web API: Incluir Proposta Renegociação CP",
+    "pairedResourceId": "api-homologacao-fiapiautincluirpropostarenegcp"
   },
   {
     "id": "api-producao-web-api-para-inclusao-de-proposta-consig",
@@ -5778,8 +5946,9 @@
       "producao"
     ],
     "createdAt": "2026-07-16T17:37:26.875Z",
-    "updatedAt": "2026-07-16T17:37:26.875Z",
-    "displayName": "Web Api de Inclusão de Propostas CP"
+    "updatedAt": "2026-08-04T12:28:08.229Z",
+    "displayName": "Web Api de Inclusão de Propostas CP",
+    "pairedResourceId": "api-homologacao-web-api-para-inclusao-de-proposta-consig"
   },
   {
     "id": "api-producao-web-api-de-simulacao-de-propostas-cp",
@@ -5818,7 +5987,8 @@
     ],
     "createdAt": "2026-07-16T17:37:26.882Z",
     "updatedAt": "2026-07-16T17:37:26.882Z",
-    "displayName": "Web Api de Simulação de Propostas CP"
+    "displayName": "Web Api de Simulação de Propostas CP",
+    "pairedResourceId": "api-homologacao-fiapiautsimularproposta"
   },
   {
     "id": "api-producao-web-api-de-tabela-de-financiamento",
@@ -5855,7 +6025,8 @@
     ],
     "createdAt": "2026-07-16T17:37:26.889Z",
     "updatedAt": "2026-07-16T17:37:26.889Z",
-    "displayName": "Web Api de Tabela de Financiamento"
+    "displayName": "Web Api de Tabela de Financiamento",
+    "pairedResourceId": "api-homologacao-fiapiautorizadortabelasfinanciamentocp"
   },
   {
     "id": "api-producao-webapi-de-consulta-e-alteracao-de-clientes-cp",
@@ -5892,7 +6063,8 @@
     ],
     "createdAt": "2026-07-16T17:37:26.896Z",
     "updatedAt": "2026-07-16T17:37:26.896Z",
-    "displayName": "WebApi de Consulta e Alteração de Clientes CP"
+    "displayName": "WebApi de Consulta e Alteração de Clientes CP",
+    "pairedResourceId": "api-homologacao-fiapiautorizadorclientescp"
   },
   {
     "id": "api-producao-webapi-consulta-lojas-produtos-de-usuarios",
@@ -5933,7 +6105,8 @@
     ],
     "createdAt": "2026-07-16T17:37:26.902Z",
     "updatedAt": "2026-07-16T17:37:26.902Z",
-    "displayName": "WebApi - Consulta Lojas Produtos de Usuarios"
+    "displayName": "WebApi - Consulta Lojas Produtos de Usuarios",
+    "pairedResourceId": "api-homologacao-fiapiautorizadorconsultarlojasprodutosusuarios"
   },
   {
     "id": "api-producao-web-api-restful-para-simulacao-de-proposta",
@@ -5974,7 +6147,8 @@
     ],
     "createdAt": "2026-07-16T17:37:26.910Z",
     "updatedAt": "2026-07-16T17:37:26.910Z",
-    "displayName": "Web Api Restful para Simulação de Proposta"
+    "displayName": "Web Api Restful para Simulação de Proposta",
+    "pairedResourceId": "api-homologacao-fiapiautorizadorsimulacaodepropostascp"
   },
   {
     "id": "api-producao-webapi-emitir-planilha-de-proposta-array-bytes",
@@ -6021,7 +6195,8 @@
     ],
     "createdAt": "2026-07-16T17:37:26.917Z",
     "updatedAt": "2026-07-16T17:37:26.917Z",
-    "displayName": "WebApi - Emitir Planilha de Proposta Array Bytes"
+    "displayName": "WebApi - Emitir Planilha de Proposta Array Bytes",
+    "pairedResourceId": "api-homologacao-fiapiautemiplanproparrayby"
   },
   {
     "id": "api-producao-webapi-cadastro-consulta-de-cliente-pf",
@@ -6056,7 +6231,8 @@
     ],
     "createdAt": "2026-07-16T17:37:26.926Z",
     "updatedAt": "2026-07-16T17:37:26.926Z",
-    "displayName": "WebApi - Cadastro/Consulta de Cliente PF"
+    "displayName": "WebApi - Cadastro/Consulta de Cliente PF",
+    "pairedResourceId": "api-homologacao-fiapiautclientepf"
   },
   {
     "id": "api-producao-webapi-acionamento-de-esteira-aprovacao-ext",
@@ -6097,7 +6273,8 @@
     ],
     "createdAt": "2026-07-16T17:37:26.934Z",
     "updatedAt": "2026-07-16T17:37:26.934Z",
-    "displayName": "WebApi - Acionamento de Esteira Aprovação Ext."
+    "displayName": "WebApi - Acionamento de Esteira Aprovação Ext.",
+    "pairedResourceId": "api-homologacao-fiapiautacionaesteira"
   },
   {
     "id": "api-producao-webapi-consultar-contratos-para-refinanciamento",
@@ -6140,7 +6317,8 @@
     ],
     "createdAt": "2026-07-16T17:37:26.943Z",
     "updatedAt": "2026-07-16T17:37:26.943Z",
-    "displayName": "WebApi: Consultar contratos para refinanciamento"
+    "displayName": "WebApi: Consultar contratos para refinanciamento",
+    "pairedResourceId": "api-homologacao-fiapiautconsultarcontratosrefin"
   },
   {
     "id": "api-producao-web-api-consultar-checklists",
@@ -6183,7 +6361,8 @@
     ],
     "createdAt": "2026-07-16T17:37:26.950Z",
     "updatedAt": "2026-07-16T17:37:26.950Z",
-    "displayName": "Web API: Consultar checkLists"
+    "displayName": "Web API: Consultar checkLists",
+    "pairedResourceId": "api-homologacao-fiapiautorizadorconsultarchecklist"
   },
   {
     "id": "api-producao-web-api-proposta-acordo",
@@ -6218,7 +6397,8 @@
     ],
     "createdAt": "2026-07-16T17:37:26.958Z",
     "updatedAt": "2026-07-16T17:37:26.958Z",
-    "displayName": "Web Api Proposta Acordo"
+    "displayName": "Web Api Proposta Acordo",
+    "pairedResourceId": "api-homologacao-fiapiacrpropostaacordo"
   },
   {
     "id": "api-producao-web-api-para-retornar-data-do-primeiro-vencimento",
@@ -6259,7 +6439,8 @@
     ],
     "createdAt": "2026-07-16T17:37:26.965Z",
     "updatedAt": "2026-07-16T17:37:26.965Z",
-    "displayName": "Web Api para retornar data do primeiro vencimento"
+    "displayName": "Web Api para retornar data do primeiro vencimento",
+    "pairedResourceId": "api-homologacao-fiapiautprimeirovencimento"
   },
   {
     "id": "api-producao-web-api-checklist-da-proposta",
@@ -6300,7 +6481,8 @@
     ],
     "createdAt": "2026-07-16T17:37:26.973Z",
     "updatedAt": "2026-07-16T17:37:26.973Z",
-    "displayName": "Web API: CheckList da Proposta"
+    "displayName": "Web API: CheckList da Proposta",
+    "pairedResourceId": "api-homologacao-fiapiautchecklistproposta"
   },
   {
     "id": "api-producao-webapi-consultar-de-politicas-de-despesas-tarifa",
@@ -6341,7 +6523,8 @@
     ],
     "createdAt": "2026-07-16T17:37:26.981Z",
     "updatedAt": "2026-07-16T17:37:26.981Z",
-    "displayName": "WebApi - Consultar de Políticas de Despesas/Tarifa"
+    "displayName": "WebApi - Consultar de Políticas de Despesas/Tarifa",
+    "pairedResourceId": "api-homologacao-fiapiautconspoliticasdespesas"
   },
   {
     "id": "api-producao-web-api-autorizador-convenio",
@@ -6378,7 +6561,8 @@
     ],
     "createdAt": "2026-07-16T17:37:26.989Z",
     "updatedAt": "2026-07-16T17:37:26.989Z",
-    "displayName": "Web API: Autorizador Convênio"
+    "displayName": "Web API: Autorizador Convênio",
+    "pairedResourceId": "api-homologacao-fiapiautconvenio"
   },
   {
     "id": "api-producao-web-api-autorizador-proposta",
@@ -6415,7 +6599,8 @@
     ],
     "createdAt": "2026-07-16T17:37:26.997Z",
     "updatedAt": "2026-07-16T17:37:26.997Z",
-    "displayName": "Web API: Autorizador Proposta"
+    "displayName": "Web API: Autorizador Proposta",
+    "pairedResourceId": "api-homologacao-fiapiautproposta"
   },
   {
     "id": "api-producao-web-api-autorizador-documentos-anexados",
@@ -6454,7 +6639,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.003Z",
     "updatedAt": "2026-07-16T17:37:27.003Z",
-    "displayName": "Web API: Autorizador Documentos Anexados"
+    "displayName": "Web API: Autorizador Documentos Anexados",
+    "pairedResourceId": "api-homologacao-fiapiautdocumentosanexados"
   },
   {
     "id": "api-producao-web-api-meios-de-liberacao",
@@ -6495,7 +6681,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.010Z",
     "updatedAt": "2026-07-16T17:37:27.010Z",
-    "displayName": "Web API Meios de Liberação"
+    "displayName": "Web API Meios de Liberação",
+    "pairedResourceId": "api-homologacao-fiapiautconsmeioliberacaoempregador"
   },
   {
     "id": "api-producao-web-api-emissao-de-boleto-da-1-parcela",
@@ -6536,7 +6723,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.017Z",
     "updatedAt": "2026-07-16T17:37:27.017Z",
-    "displayName": "Web Api Emissão de Boleto da 1ª Parcela"
+    "displayName": "Web Api Emissão de Boleto da 1ª Parcela",
+    "pairedResourceId": "api-homologacao-fiapiautemitirboleto1aparcela"
   },
   {
     "id": "api-producao-fiapiautobservacao-webapi-de-inclusao-de-observa",
@@ -6573,7 +6761,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.026Z",
     "updatedAt": "2026-07-16T17:37:27.026Z",
-    "displayName": "FIApiAutObservacao - WebApi de Inclusão de Observa"
+    "displayName": "FIApiAutObservacao - WebApi de Inclusão de Observa",
+    "pairedResourceId": "api-homologacao-fiapiautobservacao"
   },
   {
     "id": "api-producao-simulacao-de-renegociacao-cp",
@@ -6612,7 +6801,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.035Z",
     "updatedAt": "2026-07-16T17:37:27.035Z",
-    "displayName": "Simulação de Renegociação CP"
+    "displayName": "Simulação de Renegociação CP",
+    "pairedResourceId": "api-homologacao-fiapiautsimularpropostarenegcp"
   },
   {
     "id": "api-producao-web-api-aut-veic-simular-proposta-refinanciamento",
@@ -6653,7 +6843,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.044Z",
     "updatedAt": "2026-07-16T17:37:27.044Z",
-    "displayName": "Web Api Aut Veic: Simular proposta refinanciamento"
+    "displayName": "Web Api Aut Veic: Simular proposta refinanciamento",
+    "pairedResourceId": "api-homologacao-fiapiautsimularpropostarefincp"
   },
   {
     "id": "api-producao-web-api-etapas-da-proposta",
@@ -6688,7 +6879,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.051Z",
     "updatedAt": "2026-07-16T17:37:27.051Z",
-    "displayName": "Web Api Etapas da Proposta"
+    "displayName": "Web Api Etapas da Proposta",
+    "pairedResourceId": "api-homologacao-fiapiautetapasproposta"
   },
   {
     "id": "api-producao-fiapitabocorrencia",
@@ -6726,7 +6918,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.063Z",
     "updatedAt": "2026-07-16T17:37:27.063Z",
-    "displayName": "Web API: Lista de Ocorrências dos lançamento"
+    "displayName": "Web API: Lista de Ocorrências dos lançamento",
+    "pairedResourceId": "api-homologacao-fiapitabocorrencia"
   },
   {
     "id": "api-producao-fiapiempracionaesteira-legado",
@@ -6763,7 +6956,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.072Z",
     "updatedAt": "2026-07-16T17:37:27.072Z",
-    "displayName": "Web API: Acionamento de Esteira Legado"
+    "displayName": "Web API: Acionamento de Esteira Legado",
+    "pairedResourceId": "api-homologacao-fiapiempracionaesteira-legado"
   },
   {
     "id": "api-producao-fiapiempracionasic-legado",
@@ -6798,7 +6992,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.079Z",
     "updatedAt": "2026-07-16T17:37:27.079Z",
-    "displayName": "Web API: Aciona WsSIC"
+    "displayName": "Web API: Aciona WsSIC",
+    "pairedResourceId": "api-homologacao-fiapiempracionasic-legado"
   },
   {
     "id": "api-producao-fiapiemprconsultacpf-legado",
@@ -6835,7 +7030,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.086Z",
     "updatedAt": "2026-07-16T17:37:27.086Z",
-    "displayName": "Web API: Consultar CPF"
+    "displayName": "Web API: Consultar CPF",
+    "pairedResourceId": "api-homologacao-fiapiemprconsultacpf-legado"
   },
   {
     "id": "api-producao-fiapiemprconsultanacionalidade-legado",
@@ -6872,7 +7068,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.094Z",
     "updatedAt": "2026-07-16T17:37:27.094Z",
-    "displayName": "Web API: Consultar Nacionalidade Legado"
+    "displayName": "Web API: Consultar Nacionalidade Legado",
+    "pairedResourceId": "api-homologacao-fiapiemprconsultanacionalidade-legado"
   },
   {
     "id": "api-producao-fiapiemprconsultaocorconsignacao-legado",
@@ -6915,7 +7112,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.101Z",
     "updatedAt": "2026-07-16T17:37:27.101Z",
-    "displayName": "Web API: Consultar Ocorrências Consignadas"
+    "displayName": "Web API: Consultar Ocorrências Consignadas",
+    "pairedResourceId": "api-homologacao-fiapiemprconsultaocorconsignacao-legado"
   },
   {
     "id": "api-producao-fiapiemprconsultaopers-legado",
@@ -6954,7 +7152,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.108Z",
     "updatedAt": "2026-07-16T17:37:27.108Z",
-    "displayName": "Web API: Consultar Operações"
+    "displayName": "Web API: Consultar Operações",
+    "pairedResourceId": "api-homologacao-fiapiemprconsultaopers-legado"
   },
   {
     "id": "api-producao-fiapiemprconsultaperiodoconc-legado",
@@ -6993,7 +7192,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.114Z",
     "updatedAt": "2026-07-16T17:37:27.114Z",
-    "displayName": "Web API: Consulta Periodo de Conciliação"
+    "displayName": "Web API: Consulta Periodo de Conciliação",
+    "pairedResourceId": "api-homologacao-fiapiemprconsultaperiodoconc-legado"
   },
   {
     "id": "api-producao-fiapiemprefetivarrescisao-legado",
@@ -7030,7 +7230,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.121Z",
     "updatedAt": "2026-07-16T17:37:27.121Z",
-    "displayName": "Web API: Efetiva Rescisão Legado"
+    "displayName": "Web API: Efetiva Rescisão Legado",
+    "pairedResourceId": "api-homologacao-fiapiemprefetivarrescisao-legado"
   },
   {
     "id": "api-producao-fiapiemprfaturarh-legado",
@@ -7063,7 +7264,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.130Z",
     "updatedAt": "2026-07-16T17:37:27.130Z",
-    "displayName": "Web API: Fatura no Legado"
+    "displayName": "Web API: Fatura no Legado",
+    "pairedResourceId": "api-homologacao-fiapiemprfaturarh-legado"
   },
   {
     "id": "api-producao-fiapiemprobterboletoprocessamento-legado",
@@ -7102,7 +7304,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.138Z",
     "updatedAt": "2026-07-16T17:37:27.138Z",
-    "displayName": "Web API: Gera Boleto de Processamento Legado"
+    "displayName": "Web API: Gera Boleto de Processamento Legado",
+    "pairedResourceId": "api-homologacao-fiapiemprobterboletoprocessamento-legado"
   },
   {
     "id": "api-producao-fiapiemprparcelasnaodisponiveispararefin-legado",
@@ -7145,7 +7348,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.147Z",
     "updatedAt": "2026-07-16T17:37:27.147Z",
-    "displayName": "Web API: parcelas não disponíveis para refinanciamento"
+    "displayName": "Web API: parcelas não disponíveis para refinanciamento",
+    "pairedResourceId": "api-homologacao-fiapiemprparcelasnaodisponiveispararefin-legado"
   },
   {
     "id": "api-producao-fiapiemprverbasrescisorias-legado",
@@ -7180,7 +7384,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.154Z",
     "updatedAt": "2026-07-16T17:37:27.154Z",
-    "displayName": "Web API: Verbas Rescisórias"
+    "displayName": "Web API: Verbas Rescisórias",
+    "pairedResourceId": "api-homologacao-fiapiemprverbasrescisorias-legado"
   },
   {
     "id": "api-producao-fiapiacessogerenciapin",
@@ -7215,7 +7420,8 @@
     "responsible": "",
     "createdAt": "2026-07-16T17:37:27.161Z",
     "updatedAt": "2026-07-19T23:43:22.330Z",
-    "displayName": "Web API: Gerenciamento de PIN"
+    "displayName": "Web API: Gerenciamento de PIN",
+    "pairedResourceId": "api-homologacao-fiapiacessogerenciapin"
   },
   {
     "id": "api-producao-fiapiatualizarinformacoesrh",
@@ -7245,7 +7451,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.168Z",
     "updatedAt": "2026-07-19T23:43:13.292Z",
-    "displayName": "Web API: Atualizar Informações RH"
+    "displayName": "Web API: Atualizar Informações RH",
+    "pairedResourceId": "api-homologacao-fiapiatualizarinformacoesrh"
   },
   {
     "id": "api-producao-fiapiautconscliproposta",
@@ -7287,7 +7494,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.176Z",
     "updatedAt": "2026-07-16T17:37:27.176Z",
-    "displayName": "Web API: para consulta de clientes por proposta"
+    "displayName": "Web API: para consulta de clientes por proposta",
+    "pairedResourceId": "api-homologacao-fiapiautconscliproposta"
   },
   {
     "id": "api-producao-fiapiautconsesteira",
@@ -7323,7 +7531,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.183Z",
     "updatedAt": "2026-07-16T17:37:27.183Z",
-    "displayName": "Web API: Consulta de Esteiras"
+    "displayName": "Web API: Consulta de Esteiras",
+    "pairedResourceId": "api-homologacao-fiapiautconsesteira"
   },
   {
     "id": "api-producao-fiapiautconsultarmotivosexternos",
@@ -7365,7 +7574,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.190Z",
     "updatedAt": "2026-07-16T17:37:27.190Z",
-    "displayName": "Web API: Consulta de Motivo Externo Consignado"
+    "displayName": "Web API: Consulta de Motivo Externo Consignado",
+    "pairedResourceId": "api-homologacao-fiapiautconsultarmotivosexternos"
   },
   {
     "id": "api-producao-fiapiautconsultavalidacaobanco",
@@ -7399,7 +7609,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.197Z",
     "updatedAt": "2026-07-16T17:37:27.197Z",
-    "displayName": "Web API: Consulta validação banco"
+    "displayName": "Web API: Consulta validação banco",
+    "pairedResourceId": "api-homologacao-fiapiautconsultavalidacaobanco"
   },
   {
     "id": "api-producao-fiapiautorizadorconsultapropostasportal",
@@ -7435,7 +7646,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.204Z",
     "updatedAt": "2026-07-16T17:37:27.204Z",
-    "displayName": "Web API: Consultar propostas do portal"
+    "displayName": "Web API: Consultar propostas do portal",
+    "pairedResourceId": "api-homologacao-fiapiautorizadorconsultapropostasportal"
   },
   {
     "id": "api-producao-fiapiautorizadorconsultarlinhadotempo",
@@ -7471,7 +7683,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.211Z",
     "updatedAt": "2026-07-16T17:37:27.211Z",
-    "displayName": "Web API: Consultar dados da Linha do Tempo"
+    "displayName": "Web API: Consultar dados da Linha do Tempo",
+    "pairedResourceId": "api-homologacao-fiapiautorizadorconsultarlinhadotempo"
   },
   {
     "id": "api-producao-fiapiautorizadorconsultarproposta",
@@ -7507,7 +7720,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.219Z",
     "updatedAt": "2026-07-16T17:37:27.219Z",
-    "displayName": "Web API: Consultar os dados de uma proposta"
+    "displayName": "Web API: Consultar os dados de uma proposta",
+    "pairedResourceId": "api-homologacao-fiapiautorizadorconsultarproposta"
   },
   {
     "id": "api-producao-fiapiautorizadordocumentoged",
@@ -7547,7 +7761,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.226Z",
     "updatedAt": "2026-07-16T17:37:27.226Z",
-    "displayName": "Web API: Consulta e Anexo de Documentos GEDoc"
+    "displayName": "Web API: Consulta e Anexo de Documentos GEDoc",
+    "pairedResourceId": "api-homologacao-fiapiautorizadordocumentoged"
   },
   {
     "id": "api-producao-fiapiautorizadorpropostascp",
@@ -7579,7 +7794,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.234Z",
     "updatedAt": "2026-07-16T17:37:27.234Z",
-    "displayName": "Web API: Inclusão de Propostas CP"
+    "displayName": "Web API: Inclusão de Propostas CP",
+    "pairedResourceId": "api-homologacao-fiapiautorizadorpropostascp"
   },
   {
     "id": "api-producao-fiapiautprodutos",
@@ -7611,7 +7827,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.243Z",
     "updatedAt": "2026-07-16T17:37:27.243Z",
-    "displayName": "Web API: Consulta de Produtos"
+    "displayName": "Web API: Consulta de Produtos",
+    "pairedResourceId": "api-homologacao-fiapiautprodutos"
   },
   {
     "id": "api-producao-fiapiautvalidadadosbancarios",
@@ -7647,7 +7864,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.249Z",
     "updatedAt": "2026-07-16T17:37:27.249Z",
-    "displayName": "Web API: Validação de dados bancários"
+    "displayName": "Web API: Validação de dados bancários",
+    "pairedResourceId": "api-homologacao-fiapiautvalidadadosbancarios"
   },
   {
     "id": "api-producao-fiapicallbackautorizador",
@@ -7689,7 +7907,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.258Z",
     "updatedAt": "2026-07-16T17:37:27.258Z",
-    "displayName": "Web API: de captura de transferência manual de estágios em lote"
+    "displayName": "Web API: de captura de transferência manual de estágios em lote",
+    "pairedResourceId": "api-homologacao-fiapicallbackautorizador"
   },
   {
     "id": "api-producao-fiapicapttransmanualestaglote",
@@ -7737,7 +7956,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.267Z",
     "updatedAt": "2026-07-16T17:37:27.267Z",
-    "displayName": "Web API: de captura de fatores externos para perdas esperadas"
+    "displayName": "Web API: de captura de fatores externos para perdas esperadas",
+    "pairedResourceId": "api-homologacao-fiapicapttransmanualestaglote"
   },
   {
     "id": "api-producao-fiapicapturafatoresexternos",
@@ -7779,7 +7999,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.274Z",
     "updatedAt": "2026-07-16T17:37:27.274Z",
-    "displayName": "Web API: para consulta de contratos por cliente"
+    "displayName": "Web API: para consulta de contratos por cliente",
+    "pairedResourceId": "api-homologacao-fiapicapturafatoresexternos"
   },
   {
     "id": "api-producao-fiapicdcconscontratoscpfmat",
@@ -7823,7 +8044,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.281Z",
     "updatedAt": "2026-07-16T17:37:27.281Z",
-    "displayName": "Web API: Consultar os dados de uma operação"
+    "displayName": "Web API: Consultar os dados de uma operação",
+    "pairedResourceId": "api-homologacao-fiapicdcconscontratoscpfmat"
   },
   {
     "id": "api-producao-fiapicdcconsultapendencia",
@@ -7857,7 +8079,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.288Z",
     "updatedAt": "2026-07-16T17:37:27.288Z",
-    "displayName": "Web API: Consulta de pendências"
+    "displayName": "Web API: Consulta de pendências",
+    "pairedResourceId": "api-homologacao-fiapicdcconsultapendencia"
   },
   {
     "id": "api-producao-fiapicdcconsultaroperacao",
@@ -7893,7 +8116,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.295Z",
     "updatedAt": "2026-07-16T17:37:27.295Z",
-    "displayName": "Web API: Consultar os dados de uma operação"
+    "displayName": "Web API: Consultar os dados de uma operação",
+    "pairedResourceId": "api-homologacao-fiapicdcconsultaroperacao"
   },
   {
     "id": "api-producao-fiapicdccpfoperacoes",
@@ -7925,7 +8149,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.302Z",
     "updatedAt": "2026-07-16T17:37:27.302Z",
-    "displayName": "Web API: CpfOperacoes"
+    "displayName": "Web API: CpfOperacoes",
+    "pairedResourceId": "api-homologacao-fiapicdccpfoperacoes"
   },
   {
     "id": "api-producao-fiapicdcdadosfinanceirosoperacoes",
@@ -7959,7 +8184,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.310Z",
     "updatedAt": "2026-07-16T17:37:27.310Z",
-    "displayName": "Web API: Dados Financeiros Operações"
+    "displayName": "Web API: Dados Financeiros Operações",
+    "pairedResourceId": "api-homologacao-fiapicdcdadosfinanceirosoperacoes"
   },
   {
     "id": "api-producao-fiapicdcidentificatransacoes",
@@ -7993,7 +8219,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.318Z",
     "updatedAt": "2026-07-16T17:37:27.318Z",
-    "displayName": "Web API: Identifica Transações - Assíncrona"
+    "displayName": "Web API: Identifica Transações - Assíncrona",
+    "pairedResourceId": "api-homologacao-fiapicdcidentificatransacoes"
   },
   {
     "id": "api-producao-fiapicdclancaocorrencia",
@@ -8029,7 +8256,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.325Z",
     "updatedAt": "2026-07-16T17:37:27.325Z",
-    "displayName": "Web API: Lançamento de ocorrência na operação"
+    "displayName": "Web API: Lançamento de ocorrência na operação",
+    "pairedResourceId": "api-homologacao-fiapicdclancaocorrencia"
   },
   {
     "id": "api-producao-fiapicdclancapendencia",
@@ -8065,7 +8293,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.333Z",
     "updatedAt": "2026-07-16T17:37:27.333Z",
-    "displayName": "Web API: Lançamento de pendência na operação"
+    "displayName": "Web API: Lançamento de pendência na operação",
+    "pairedResourceId": "api-homologacao-fiapicdclancapendencia"
   },
   {
     "id": "api-producao-fiapicdcocorrencia",
@@ -8099,7 +8328,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.341Z",
     "updatedAt": "2026-07-16T17:37:27.341Z",
-    "displayName": "Web API: Web Api Consulta de Ocorrências"
+    "displayName": "Web API: Web Api Consulta de Ocorrências",
+    "pairedResourceId": "api-homologacao-fiapicdcocorrencia"
   },
   {
     "id": "api-producao-fiapicdcparcelas",
@@ -8129,7 +8359,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.348Z",
     "updatedAt": "2026-07-16T17:37:27.348Z",
-    "displayName": "Web API: Parcelas"
+    "displayName": "Web API: Parcelas",
+    "pairedResourceId": "api-homologacao-fiapicdcparcelas"
   },
   {
     "id": "api-producao-fiapicdcpesquisaoperacao",
@@ -8165,7 +8396,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.357Z",
     "updatedAt": "2026-07-16T17:37:27.357Z",
-    "displayName": "Web API: Pesquisa/Lista de Operações"
+    "displayName": "Web API: Pesquisa/Lista de Operações",
+    "pairedResourceId": "api-homologacao-fiapicdcpesquisaoperacao"
   },
   {
     "id": "api-producao-fiapicdcrelinformerendimentos",
@@ -8201,7 +8433,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.363Z",
     "updatedAt": "2026-07-16T17:37:27.363Z",
-    "displayName": "Web API: Relatório de Informe de Rendimentos"
+    "displayName": "Web API: Relatório de Informe de Rendimentos",
+    "pairedResourceId": "api-homologacao-fiapicdcrelinformerendimentos"
   },
   {
     "id": "api-producao-fiapicdcsaldos",
@@ -8231,7 +8464,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.372Z",
     "updatedAt": "2026-07-16T17:37:27.372Z",
-    "displayName": "Web API: Saldos"
+    "displayName": "Web API: Saldos",
+    "pairedResourceId": "api-homologacao-fiapicdcsaldos"
   },
   {
     "id": "api-producao-fiapicdcsegundaviacarne",
@@ -8265,7 +8499,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.382Z",
     "updatedAt": "2026-07-16T17:37:27.382Z",
-    "displayName": "Web API: Segunda Via Carne"
+    "displayName": "Web API: Segunda Via Carne",
+    "pairedResourceId": "api-homologacao-fiapicdcsegundaviacarne"
   },
   {
     "id": "api-producao-fiapicotacoes",
@@ -8297,7 +8532,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.394Z",
     "updatedAt": "2026-07-16T17:37:27.394Z",
-    "displayName": "Web API: Consulta Cotação"
+    "displayName": "Web API: Consulta Cotação",
+    "pairedResourceId": "api-homologacao-fiapicotacoes"
   },
   {
     "id": "api-producao-fiapiempractwsautorizador",
@@ -8326,7 +8562,8 @@
       "producao"
     ],
     "createdAt": "2026-07-16T17:37:27.403Z",
-    "updatedAt": "2026-07-16T17:37:27.403Z"
+    "updatedAt": "2026-07-16T17:37:27.403Z",
+    "pairedResourceId": "api-homologacao-fiapiempractwsautorizador"
   },
   {
     "id": "api-producao-fiapiemprcadastrofunc",
@@ -8360,7 +8597,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.408Z",
     "updatedAt": "2026-07-16T17:37:27.408Z",
-    "displayName": "Web API: Cadastro de Funcionário"
+    "displayName": "Web API: Cadastro de Funcionário",
+    "pairedResourceId": "api-homologacao-fiapiemprcadastrofunc"
   },
   {
     "id": "api-producao-fiapiemprgerarboleto",
@@ -8389,7 +8627,8 @@
       "producao"
     ],
     "createdAt": "2026-07-16T17:37:27.417Z",
-    "updatedAt": "2026-07-16T17:37:27.417Z"
+    "updatedAt": "2026-07-16T17:37:27.417Z",
+    "pairedResourceId": "api-homologacao-fiapiemprgerarboleto"
   },
   {
     "id": "api-producao-fiapiemprobterboletoprocessamento",
@@ -8427,7 +8666,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.423Z",
     "updatedAt": "2026-07-16T17:37:27.423Z",
-    "displayName": "Web API: Gera Boleto de Processamento Legado."
+    "displayName": "Web API: Gera Boleto de Processamento Legado.",
+    "pairedResourceId": "api-homologacao-fiapiemprobterboletoprocessamento"
   },
   {
     "id": "api-producao-fiapiemprpropostarh",
@@ -8457,7 +8697,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.432Z",
     "updatedAt": "2026-07-16T17:37:27.432Z",
-    "displayName": "Web API: Proposta RH"
+    "displayName": "Web API: Proposta RH",
+    "pairedResourceId": "api-homologacao-fiapiemprpropostarh"
   },
   {
     "id": "api-producao-fiapigabaixaparcelamanual",
@@ -8489,7 +8730,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.441Z",
     "updatedAt": "2026-07-16T17:37:27.441Z",
-    "displayName": "Web API: Baixa de parcela manual"
+    "displayName": "Web API: Baixa de parcela manual",
+    "pairedResourceId": "api-homologacao-fiapigabaixaparcelamanual"
   },
   {
     "id": "api-producao-fiapigacancelamentoautomaticoacordos",
@@ -8521,7 +8763,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.449Z",
     "updatedAt": "2026-07-16T17:37:27.449Z",
-    "displayName": "Web API: Cancelamento Automatico de Acordos"
+    "displayName": "Web API: Cancelamento Automatico de Acordos",
+    "pairedResourceId": "api-homologacao-fiapigacancelamentoautomaticoacordos"
   },
   {
     "id": "api-producao-fiapigacancelamentomanualacordos",
@@ -8553,7 +8796,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.457Z",
     "updatedAt": "2026-07-16T17:37:27.457Z",
-    "displayName": "Web API: Cancelamento Manual de Acordos"
+    "displayName": "Web API: Cancelamento Manual de Acordos",
+    "pairedResourceId": "api-homologacao-fiapigacancelamentomanualacordos"
   },
   {
     "id": "api-producao-fiapigacancelamentomovimento",
@@ -8585,7 +8829,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.465Z",
     "updatedAt": "2026-07-16T17:37:27.465Z",
-    "displayName": "Web API: Cancelamento do movimento da parcela"
+    "displayName": "Web API: Cancelamento do movimento da parcela",
+    "pairedResourceId": "api-homologacao-fiapigacancelamentomovimento"
   },
   {
     "id": "api-producao-fiapigaconsultaparcela",
@@ -8621,7 +8866,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.472Z",
     "updatedAt": "2026-07-16T17:37:27.472Z",
-    "displayName": "Web API: Consulta das Parcelas das operações"
+    "displayName": "Web API: Consulta das Parcelas das operações",
+    "pairedResourceId": "api-homologacao-fiapigaconsultaparcela"
   },
   {
     "id": "api-producao-fiapigaconsultasaldo",
@@ -8653,7 +8899,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.479Z",
     "updatedAt": "2026-07-16T17:37:27.479Z",
-    "displayName": "Web API: Web API de Consulta de saldo de parcela"
+    "displayName": "Web API: Web API de Consulta de saldo de parcela",
+    "pairedResourceId": "api-homologacao-fiapigaconsultasaldo"
   },
   {
     "id": "api-producao-fiapigaconsultaultimomovimento",
@@ -8685,7 +8932,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.486Z",
     "updatedAt": "2026-07-16T17:37:27.486Z",
-    "displayName": "Web API: Consulta ultimo movimento"
+    "displayName": "Web API: Consulta ultimo movimento",
+    "pairedResourceId": "api-homologacao-fiapigaconsultaultimomovimento"
   },
   {
     "id": "api-producao-fiapigaestornobaixa",
@@ -8715,7 +8963,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.494Z",
     "updatedAt": "2026-07-16T17:37:27.494Z",
-    "displayName": "Web API: Estorno de baixa"
+    "displayName": "Web API: Estorno de baixa",
+    "pairedResourceId": "api-homologacao-fiapigaestornobaixa"
   },
   {
     "id": "api-producao-fiapigarantiascontabeis",
@@ -8749,7 +8998,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.501Z",
     "updatedAt": "2026-07-16T17:37:27.501Z",
-    "displayName": "Web API: Restful Garantias Contabeis Online"
+    "displayName": "Web API: Restful Garantias Contabeis Online",
+    "pairedResourceId": "api-homologacao-fiapigarantiascontabeis"
   },
   {
     "id": "api-producao-fiapimoduloscorpconsultarcep",
@@ -8789,7 +9039,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.509Z",
     "updatedAt": "2026-07-16T17:37:27.509Z",
-    "displayName": "Web API: consulta de endereço por CEP"
+    "displayName": "Web API: consulta de endereço por CEP",
+    "pairedResourceId": "api-homologacao-fiapimoduloscorpconsultarcep"
   },
   {
     "id": "api-producao-fiapimonitor",
@@ -8823,7 +9074,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.517Z",
     "updatedAt": "2026-07-16T17:37:27.517Z",
-    "displayName": "Web API: Monitoramento do ServCon"
+    "displayName": "Web API: Monitoramento do ServCon",
+    "pairedResourceId": "api-homologacao-fiapimonitor"
   },
   {
     "id": "api-producao-fiapisif",
@@ -8848,7 +9100,8 @@
       "producao"
     ],
     "createdAt": "2026-07-16T17:37:27.527Z",
-    "updatedAt": "2026-07-16T17:37:27.527Z"
+    "updatedAt": "2026-07-16T17:37:27.527Z",
+    "pairedResourceId": "api-homologacao-fiapisif"
   },
   {
     "id": "api-producao-fiapisrvgacancelamentoacordo",
@@ -8884,7 +9137,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.531Z",
     "updatedAt": "2026-07-16T17:37:27.531Z",
-    "displayName": "Web API: Restful do plugin SrvPluginCancelamentoAcordo"
+    "displayName": "Web API: Restful do plugin SrvPluginCancelamentoAcordo",
+    "pairedResourceId": "api-homologacao-fiapisrvgacancelamentoacordo"
   },
   {
     "id": "api-producao-fiapitabconsorigem1",
@@ -8928,7 +9182,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.540Z",
     "updatedAt": "2026-07-16T17:37:27.540Z",
-    "displayName": "Web API: Consulta das Origens1 cadastradas no sistema Função"
+    "displayName": "Web API: Consulta das Origens1 cadastradas no sistema Função",
+    "pairedResourceId": "api-homologacao-fiapitabconsorigem1"
   },
   {
     "id": "api-producao-fiapitabconsorigem2",
@@ -8972,7 +9227,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.550Z",
     "updatedAt": "2026-07-16T17:37:27.550Z",
-    "displayName": "Web API: Consulta das Origens2 cadastradas no sistema Função"
+    "displayName": "Web API: Consulta das Origens2 cadastradas no sistema Função",
+    "pairedResourceId": "api-homologacao-fiapitabconsorigem2"
   },
   {
     "id": "api-producao-fiapitabconsorigem3o",
@@ -9016,7 +9272,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.558Z",
     "updatedAt": "2026-07-16T17:37:27.558Z",
-    "displayName": "Web API: Consulta das Origens 30 cadastradas no sistema Função"
+    "displayName": "Web API: Consulta das Origens 30 cadastradas no sistema Função",
+    "pairedResourceId": "api-homologacao-fiapitabconsorigem3o"
   },
   {
     "id": "api-producao-fiapitabregimecontratacao",
@@ -9048,7 +9305,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.567Z",
     "updatedAt": "2026-07-16T17:37:27.567Z",
-    "displayName": "Web API: Regime de Contratação"
+    "displayName": "Web API: Regime de Contratação",
+    "pairedResourceId": "api-homologacao-fiapitabregimecontratacao"
   },
   {
     "id": "api-producao-fiapitabvalprofcert",
@@ -9088,7 +9346,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.576Z",
     "updatedAt": "2026-07-16T17:37:27.576Z",
-    "displayName": "Web API: Validação do Profissional Certificado"
+    "displayName": "Web API: Validação do Profissional Certificado",
+    "pairedResourceId": "api-homologacao-fiapitabvalprofcert"
   },
   {
     "id": "api-producao-fiapiautoservico",
@@ -9124,7 +9383,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.583Z",
     "updatedAt": "2026-07-16T17:37:27.583Z",
-    "displayName": "Web API: Restful de Auto Serviço da Função Informática"
+    "displayName": "Web API: Restful de Auto Serviço da Função Informática",
+    "pairedResourceId": "api-homologacao-fiapiautoservico"
   },
   {
     "id": "api-producao-fiapiconsultaparametrosgerais-autoserv",
@@ -9163,7 +9423,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.590Z",
     "updatedAt": "2026-07-16T17:37:27.590Z",
-    "displayName": "Web API: Consultar Parametros Gerais"
+    "displayName": "Web API: Consultar Parametros Gerais",
+    "pairedResourceId": "api-homologacao-fiapiconsultaparametrosgerais-autoserv"
   },
   {
     "id": "api-producao-fiapiemprconstfuncpropoper-autoserv",
@@ -9210,7 +9471,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.597Z",
     "updatedAt": "2026-07-16T17:37:27.597Z",
-    "displayName": "Web API: Consulta de Funcionário de Prop/Oper."
+    "displayName": "Web API: Consulta de Funcionário de Prop/Oper.",
+    "pairedResourceId": "api-homologacao-fiapiemprconstfuncpropoper-autoserv"
   },
   {
     "id": "api-producao-fiapiemprconsultabancos-autoserv",
@@ -9249,7 +9511,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.604Z",
     "updatedAt": "2026-07-16T17:37:27.604Z",
-    "displayName": "Web API: Consultar Bancos"
+    "displayName": "Web API: Consultar Bancos",
+    "pairedResourceId": "api-homologacao-fiapiemprconsultabancos-autoserv"
   },
   {
     "id": "api-producao-fiapiemprconsultaclienteportal-autoserv",
@@ -9292,7 +9555,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.611Z",
     "updatedAt": "2026-07-16T17:37:27.611Z",
-    "displayName": "Web API: Consultar Clientes do portal"
+    "displayName": "Web API: Consultar Clientes do portal",
+    "pairedResourceId": "api-homologacao-fiapiemprconsultaclienteportal-autoserv"
   },
   {
     "id": "api-producao-fiapiemprconsultacpf-autoserv",
@@ -9331,7 +9595,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.618Z",
     "updatedAt": "2026-07-16T17:37:27.618Z",
-    "displayName": "Web API: Consultar CPF"
+    "displayName": "Web API: Consultar CPF",
+    "pairedResourceId": "api-homologacao-fiapiemprconsultacpf-autoserv"
   },
   {
     "id": "api-producao-fiapiemprconsultadadosporproposta-autoserv",
@@ -9372,7 +9637,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.625Z",
     "updatedAt": "2026-07-16T17:37:27.625Z",
-    "displayName": "Web API: Consulta de Dados por Proposta"
+    "displayName": "Web API: Consulta de Dados por Proposta",
+    "pairedResourceId": "api-homologacao-fiapiemprconsultadadosporproposta-autoserv"
   },
   {
     "id": "api-producao-fiapiemprconsultalinhadotempo-autoserv",
@@ -9417,7 +9683,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.632Z",
     "updatedAt": "2026-07-16T17:37:27.632Z",
-    "displayName": "Web API: Consultar Linha do Tempo - AutoServ"
+    "displayName": "Web API: Consultar Linha do Tempo - AutoServ",
+    "pairedResourceId": "api-homologacao-fiapiemprconsultalinhadotempo-autoserv"
   },
   {
     "id": "api-producao-fiapiemprconsultanacionalidade-autoserv",
@@ -9460,7 +9727,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.639Z",
     "updatedAt": "2026-07-16T17:37:27.639Z",
-    "displayName": "Web API: Consultar Nacionalidade AutoServ"
+    "displayName": "Web API: Consultar Nacionalidade AutoServ",
+    "pairedResourceId": "api-homologacao-fiapiemprconsultanacionalidade-autoserv"
   },
   {
     "id": "api-producao-fiapiemprconsultaocorconsignacao-autoserv",
@@ -9505,7 +9773,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.646Z",
     "updatedAt": "2026-07-16T17:37:27.646Z",
-    "displayName": "Web API: Consultar Ocorrências Consignadas"
+    "displayName": "Web API: Consultar Ocorrências Consignadas",
+    "pairedResourceId": "api-homologacao-fiapiemprconsultaocorconsignacao-autoserv"
   },
   {
     "id": "api-producao-fiapiemprconsultaopers-autoserv",
@@ -9550,7 +9819,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.654Z",
     "updatedAt": "2026-07-16T17:37:27.654Z",
-    "displayName": "Web API: Consultar Operações - AutoServ"
+    "displayName": "Web API: Consultar Operações - AutoServ",
+    "pairedResourceId": "api-homologacao-fiapiemprconsultaopers-autoserv"
   },
   {
     "id": "api-producao-fiapiemprconsultaorigem4-autoserv",
@@ -9591,7 +9861,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.661Z",
     "updatedAt": "2026-07-16T17:37:27.661Z",
-    "displayName": "Web API: Consultar Origens 4"
+    "displayName": "Web API: Consultar Origens 4",
+    "pairedResourceId": "api-homologacao-fiapiemprconsultaorigem4-autoserv"
   },
   {
     "id": "api-producao-fiapiemprconsultaorigem5-autoserv",
@@ -9632,7 +9903,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.670Z",
     "updatedAt": "2026-07-16T17:37:27.670Z",
-    "displayName": "Web API: Consultar Origens 5"
+    "displayName": "Web API: Consultar Origens 5",
+    "pairedResourceId": "api-homologacao-fiapiemprconsultaorigem5-autoserv"
   },
   {
     "id": "api-producao-fiapiemprconsultaperiodoconc-autoserv",
@@ -9673,7 +9945,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.679Z",
     "updatedAt": "2026-07-16T17:37:27.679Z",
-    "displayName": "Web API: Consulta Periodo de Conciliação"
+    "displayName": "Web API: Consulta Periodo de Conciliação",
+    "pairedResourceId": "api-homologacao-fiapiemprconsultaperiodoconc-autoserv"
   },
   {
     "id": "api-producao-fiapiemprconsultapropostasportal-autoserv",
@@ -9716,7 +9989,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.686Z",
     "updatedAt": "2026-07-16T17:37:27.686Z",
-    "displayName": "Web API: Consultar propostas do portal - Autoservico"
+    "displayName": "Web API: Consultar propostas do portal - Autoservico",
+    "pairedResourceId": "api-homologacao-fiapiemprconsultapropostasportal-autoserv"
   },
   {
     "id": "api-producao-fiapiemprconsultarmotivosaut-autoserv",
@@ -9767,7 +10041,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.696Z",
     "updatedAt": "2026-07-16T17:37:27.696Z",
-    "displayName": "Web API: Consulta de Motivo Externo Consignado Auto Serviço"
+    "displayName": "Web API: Consulta de Motivo Externo Consignado Auto Serviço",
+    "pairedResourceId": "api-homologacao-fiapiemprconsultarmotivosaut-autoserv"
   },
   {
     "id": "api-producao-fiapiemprconsultarparcelasporoperacao-autoserv",
@@ -9808,7 +10083,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.703Z",
     "updatedAt": "2026-07-16T17:37:27.703Z",
-    "displayName": "Web API: Consultar Parcelas Por Operação"
+    "displayName": "Web API: Consultar Parcelas Por Operação",
+    "pairedResourceId": "api-homologacao-fiapiemprconsultarparcelasporoperacao-autoserv"
   },
   {
     "id": "api-producao-fiapiemprconsultarproposta-autoserv",
@@ -9849,7 +10125,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.711Z",
     "updatedAt": "2026-07-16T17:37:27.711Z",
-    "displayName": "Web API: Consultar os dados de uma proposta"
+    "displayName": "Web API: Consultar os dados de uma proposta",
+    "pairedResourceId": "api-homologacao-fiapiemprconsultarproposta-autoserv"
   },
   {
     "id": "api-producao-fiapiemprdocumentoged-autoserv",
@@ -9898,7 +10175,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.721Z",
     "updatedAt": "2026-07-16T17:37:27.721Z",
-    "displayName": "Web API: Consulta e Anexo de Documentos GEDoc AutoServ"
+    "displayName": "Web API: Consulta e Anexo de Documentos GEDoc AutoServ",
+    "pairedResourceId": "api-homologacao-fiapiemprdocumentoged-autoserv"
   },
   {
     "id": "api-producao-fiapiemprefetivarrescisao-autoserv",
@@ -9941,7 +10219,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.729Z",
     "updatedAt": "2026-07-16T17:37:27.729Z",
-    "displayName": "Web API: Efetiva Rescisão Auto Serviço"
+    "displayName": "Web API: Efetiva Rescisão Auto Serviço",
+    "pairedResourceId": "api-homologacao-fiapiemprefetivarrescisao-autoserv"
   },
   {
     "id": "api-producao-fiapiemprfaturarh-autoserv",
@@ -9980,7 +10259,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.738Z",
     "updatedAt": "2026-07-16T17:37:27.738Z",
-    "displayName": "Web API: Fatura AutoServico"
+    "displayName": "Web API: Fatura AutoServico",
+    "pairedResourceId": "api-homologacao-fiapiemprfaturarh-autoserv"
   },
   {
     "id": "api-producao-fiapiemprgenfatexcel-autoserv",
@@ -10023,7 +10303,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.748Z",
     "updatedAt": "2026-07-16T17:37:27.748Z",
-    "displayName": "Web API: Gerenciamento de Faturas - Excel"
+    "displayName": "Web API: Gerenciamento de Faturas - Excel",
+    "pairedResourceId": "api-homologacao-fiapiemprgenfatexcel-autoserv"
   },
   {
     "id": "api-producao-fiapiemprrltaverb-autoserv",
@@ -10064,7 +10345,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.758Z",
     "updatedAt": "2026-07-16T17:37:27.758Z",
-    "displayName": "Web API: Relatórios de Averbação"
+    "displayName": "Web API: Relatórios de Averbação",
+    "pairedResourceId": "api-homologacao-fiapiemprrltaverb-autoserv"
   },
   {
     "id": "api-producao-fiapiemprverbasrescisorias-autoserv",
@@ -10105,7 +10387,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.767Z",
     "updatedAt": "2026-07-16T17:37:27.767Z",
-    "displayName": "Web API: Verbas Rescisórias - AutoServiço"
+    "displayName": "Web API: Verbas Rescisórias - AutoServiço",
+    "pairedResourceId": "api-homologacao-fiapiemprverbasrescisorias-autoserv"
   },
   {
     "id": "web-service-producao-wsacordo-wsautorizador-asmx",
@@ -10138,7 +10421,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.777Z",
     "updatedAt": "2026-07-16T17:37:27.777Z",
-    "displayName": "WSAutorizador"
+    "displayName": "WSAutorizador",
+    "pairedResourceId": "web-service-homologacao-wsacordo-wsautorizador-asmx"
   },
   {
     "id": "web-service-producao-wsautorizador-wsautorizador-asmx",
@@ -10169,7 +10453,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.786Z",
     "updatedAt": "2026-07-16T17:37:27.786Z",
-    "displayName": "WSAutorizador"
+    "displayName": "WSAutorizador",
+    "pairedResourceId": "web-service-homologacao-wsautorizador-wsautorizador-asmx"
   },
   {
     "id": "web-service-producao-wscnab-wscnab-asmx",
@@ -10202,7 +10487,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.797Z",
     "updatedAt": "2026-07-16T17:37:27.797Z",
-    "displayName": "WSCNAB"
+    "displayName": "WSCNAB",
+    "pairedResourceId": "web-service-homologacao-wscnab-wscnab-asmx"
   },
   {
     "id": "web-service-producao-wsgedoc-wsged-asmx",
@@ -10233,7 +10519,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.805Z",
     "updatedAt": "2026-07-16T17:37:27.805Z",
-    "displayName": "WsGED"
+    "displayName": "WsGED",
+    "pairedResourceId": "web-service-homologacao-wsgedoc-wsged-asmx"
   },
   {
     "id": "web-service-producao-wsmonitor-wsmonitor-asmx",
@@ -10264,7 +10551,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.813Z",
     "updatedAt": "2026-07-16T17:37:27.813Z",
-    "displayName": "WsMonitor"
+    "displayName": "WsMonitor",
+    "pairedResourceId": "web-service-homologacao-wsmonitor-wsmonitor-asmx"
   },
   {
     "id": "web-service-producao-wssic-wssic-asmx",
@@ -10295,7 +10583,8 @@
     ],
     "createdAt": "2026-07-16T17:37:27.823Z",
     "updatedAt": "2026-07-16T17:37:27.823Z",
-    "displayName": "WsSIC"
+    "displayName": "WsSIC",
+    "pairedResourceId": "web-service-homologacao-wssic-wssic-asmx"
   },
   {
     "id": "site-producao-webacesso",
@@ -10320,7 +10609,8 @@
       "producao"
     ],
     "createdAt": "2026-07-16T17:37:27.833Z",
-    "updatedAt": "2026-07-16T17:37:27.833Z"
+    "updatedAt": "2026-07-16T17:37:27.833Z",
+    "pairedResourceId": "site-homologacao-webacesso"
   },
   {
     "id": "site-producao-webautorizadorsubconsig",
@@ -10349,7 +10639,8 @@
       "producao"
     ],
     "createdAt": "2026-07-16T17:37:27.839Z",
-    "updatedAt": "2026-07-16T17:37:27.839Z"
+    "updatedAt": "2026-07-16T17:37:27.839Z",
+    "pairedResourceId": "site-homologacao-webautorizadorsubconsig"
   },
   {
     "id": "site-producao-webautorizadorsubcp",
@@ -10376,7 +10667,8 @@
       "producao"
     ],
     "createdAt": "2026-07-16T17:37:27.845Z",
-    "updatedAt": "2026-07-16T17:37:27.845Z"
+    "updatedAt": "2026-07-16T17:37:27.845Z",
+    "pairedResourceId": "site-homologacao-webautorizadorsubcp"
   },
   {
     "id": "site-producao-webautorizador",
@@ -10401,7 +10693,8 @@
       "producao"
     ],
     "createdAt": "2026-07-16T17:37:27.850Z",
-    "updatedAt": "2026-07-16T17:37:27.850Z"
+    "updatedAt": "2026-07-16T17:37:27.850Z",
+    "pairedResourceId": "site-homologacao-webautorizador"
   },
   {
     "id": "site-producao-webbacenifrs",
@@ -10428,7 +10721,8 @@
       "producao"
     ],
     "createdAt": "2026-07-16T17:37:27.856Z",
-    "updatedAt": "2026-07-16T17:37:27.856Z"
+    "updatedAt": "2026-07-16T17:37:27.856Z",
+    "pairedResourceId": "site-homologacao-webbacenifrs"
   },
   {
     "id": "site-producao-webccob",
@@ -10453,7 +10747,8 @@
       "producao"
     ],
     "createdAt": "2026-07-16T17:37:27.861Z",
-    "updatedAt": "2026-07-16T17:37:27.861Z"
+    "updatedAt": "2026-07-16T17:37:27.861Z",
+    "pairedResourceId": "site-homologacao-webccob"
   },
   {
     "id": "site-producao-webcdccontabilifrs",
@@ -10482,7 +10777,8 @@
       "producao"
     ],
     "createdAt": "2026-07-16T17:37:27.866Z",
-    "updatedAt": "2026-07-16T17:37:27.866Z"
+    "updatedAt": "2026-07-16T17:37:27.866Z",
+    "pairedResourceId": "site-homologacao-webcdccontabilifrs"
   },
   {
     "id": "site-producao-webcdc",
@@ -10507,7 +10803,8 @@
       "producao"
     ],
     "createdAt": "2026-07-16T17:37:27.871Z",
-    "updatedAt": "2026-07-16T17:37:27.871Z"
+    "updatedAt": "2026-07-16T17:37:27.871Z",
+    "pairedResourceId": "site-homologacao-webcdc"
   },
   {
     "id": "site-producao-webcnab",
@@ -10532,7 +10829,8 @@
       "producao"
     ],
     "createdAt": "2026-07-16T17:37:27.876Z",
-    "updatedAt": "2026-07-16T17:37:27.876Z"
+    "updatedAt": "2026-07-16T17:37:27.876Z",
+    "pairedResourceId": "site-homologacao-webcnab"
   },
   {
     "id": "site-producao-webcomissao",
@@ -10557,7 +10855,8 @@
       "producao"
     ],
     "createdAt": "2026-07-16T17:37:27.881Z",
-    "updatedAt": "2026-07-16T17:37:27.881Z"
+    "updatedAt": "2026-07-16T17:37:27.881Z",
+    "pairedResourceId": "site-homologacao-webcomissao"
   },
   {
     "id": "site-producao-webctc",
@@ -10582,7 +10881,8 @@
       "producao"
     ],
     "createdAt": "2026-07-16T17:37:27.886Z",
-    "updatedAt": "2026-07-16T17:37:27.886Z"
+    "updatedAt": "2026-07-16T17:37:27.886Z",
+    "pairedResourceId": "site-homologacao-webctc"
   },
   {
     "id": "site-producao-webempregador",
@@ -10607,7 +10907,8 @@
       "producao"
     ],
     "createdAt": "2026-07-16T17:37:27.890Z",
-    "updatedAt": "2026-07-16T17:37:27.890Z"
+    "updatedAt": "2026-07-16T17:37:27.890Z",
+    "pairedResourceId": "site-homologacao-webempregador"
   },
   {
     "id": "site-producao-webfimenumvc",
@@ -10634,7 +10935,8 @@
       "producao"
     ],
     "createdAt": "2026-07-16T17:37:27.894Z",
-    "updatedAt": "2026-07-16T17:37:27.894Z"
+    "updatedAt": "2026-07-16T17:37:27.894Z",
+    "pairedResourceId": "site-homologacao-webfimenumvc"
   },
   {
     "id": "site-producao-webgedoc",
@@ -10659,7 +10961,8 @@
       "producao"
     ],
     "createdAt": "2026-07-16T17:37:27.900Z",
-    "updatedAt": "2026-07-16T17:37:27.900Z"
+    "updatedAt": "2026-07-16T17:37:27.900Z",
+    "pairedResourceId": "site-homologacao-webgedoc"
   },
   {
     "id": "site-producao-webgv",
@@ -10682,7 +10985,8 @@
       "producao"
     ],
     "createdAt": "2026-07-16T17:37:27.905Z",
-    "updatedAt": "2026-07-16T17:37:27.905Z"
+    "updatedAt": "2026-07-16T17:37:27.905Z",
+    "pairedResourceId": "site-homologacao-webgv"
   },
   {
     "id": "site-producao-webmonitor",
@@ -10707,7 +11011,8 @@
       "producao"
     ],
     "createdAt": "2026-07-16T17:37:27.909Z",
-    "updatedAt": "2026-07-16T17:37:27.909Z"
+    "updatedAt": "2026-07-16T17:37:27.909Z",
+    "pairedResourceId": "site-homologacao-webmonitor"
   },
   {
     "id": "site-producao-websic",
@@ -10732,7 +11037,8 @@
       "producao"
     ],
     "createdAt": "2026-07-16T17:37:27.914Z",
-    "updatedAt": "2026-07-16T17:37:27.914Z"
+    "updatedAt": "2026-07-16T17:37:27.914Z",
+    "pairedResourceId": "site-homologacao-websic"
   },
   {
     "id": "site-producao-webtabelascorp",
@@ -10759,7 +11065,8 @@
       "producao"
     ],
     "createdAt": "2026-07-16T17:37:27.920Z",
-    "updatedAt": "2026-07-16T17:37:27.920Z"
+    "updatedAt": "2026-07-16T17:37:27.920Z",
+    "pairedResourceId": "site-homologacao-webtabelascorp"
   },
   {
     "id": "site-producao-webtabelasempr",
@@ -10786,7 +11093,8 @@
       "producao"
     ],
     "createdAt": "2026-07-16T17:37:27.926Z",
-    "updatedAt": "2026-07-16T17:37:27.926Z"
+    "updatedAt": "2026-07-16T17:37:27.926Z",
+    "pairedResourceId": "site-homologacao-webtabelasempr"
   },
   {
     "id": "site-producao-webacessoautoserv",
@@ -10813,7 +11121,8 @@
       "producao"
     ],
     "createdAt": "2026-07-16T17:37:27.931Z",
-    "updatedAt": "2026-07-16T17:37:27.931Z"
+    "updatedAt": "2026-07-16T17:37:27.931Z",
+    "pairedResourceId": "site-homologacao-webacessoautoserv"
   },
   {
     "id": "site-producao-webfimenumvcautoserv",
@@ -10840,7 +11149,8 @@
       "producao"
     ],
     "createdAt": "2026-07-16T17:37:27.936Z",
-    "updatedAt": "2026-07-16T17:37:27.936Z"
+    "updatedAt": "2026-07-16T17:37:27.936Z",
+    "pairedResourceId": "site-homologacao-webfimenumvcautoserv"
   },
   {
     "id": "site-producao-webportalempresa",
@@ -10867,7 +11177,8 @@
       "producao"
     ],
     "createdAt": "2026-07-16T17:37:27.941Z",
-    "updatedAt": "2026-07-16T17:37:27.941Z"
+    "updatedAt": "2026-07-16T17:37:27.941Z",
+    "pairedResourceId": "site-homologacao-webportalempresa"
   },
   {
     "id": "site-producao-websicautoserv",
@@ -10892,6 +11203,7 @@
       "producao"
     ],
     "createdAt": "2026-07-16T17:37:27.947Z",
-    "updatedAt": "2026-07-16T17:37:27.947Z"
+    "updatedAt": "2026-07-16T17:37:27.947Z",
+    "pairedResourceId": "site-homologacao-websicautoserv"
   }
 ]

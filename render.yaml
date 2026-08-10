@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: buni-api-hub-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    dockerCommand: node dist/server.js
+    plan: starter
+    region: oregon
+    healthCheckPath: /health/ready
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3333
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 8h
+      - key: CORS_ORIGIN
+        sync: false # preencher manualmente com a(s) origem(ns) do frontend em produção
+      - key: TRUST_PROXY
+        value: 1 # Render fica atrás do próprio load balancer — 1 hop confiável
+      - key: LOG_LEVEL
+        value: info
+    disk:
+      # OBRIGATÓRIO: sem disco persistente, resources.json/history.json/events.json/
+      # users.json voltam ao estado embutido na imagem a cada deploy (o filesystem do
+      # Render é efêmero fora de um disco anexado). Só funciona com plan >= Starter
+      # e 1 única instância — Render Disks não suportam múltiplas réplicas.
+      name: buni-api-data
+      mountPath: /app/dist/data
+      sizeGB: 1

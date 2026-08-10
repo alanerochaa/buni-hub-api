@@ -1,0 +1,25 @@
+services:
+  api:
+    build:
+      context: .
+      target: runtime
+    image: buni-api-hub-api:latest
+    ports:
+      - "${PORT:-3333}:${PORT:-3333}"
+    environment:
+      NODE_ENV: production
+    env_file:
+      - .env
+    volumes:
+      - buni-api-data:/app/dist/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:3333/health"]
+      interval: 30s
+      timeout: 5s
+      start_period: 10s
+      retries: 3
+
+volumes:
+  buni-api-data:
+    driver: local

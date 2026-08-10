@@ -2,7 +2,7 @@
 
 API REST em Node.js/Express/TypeScript que centraliza o catálogo de APIs, Web Services e Sites da instituição, expõe um mecanismo de monitoramento de saúde em tempo real e serve os dados consumidos pelo Portal de Serviços (`web/`) e pelo Painel Operacional (`dashboard/`).
 
-> Repositório: `buni-api-hub-api` · Parte do ecossistema **Buni API Hub** (`web/` — Portal de Serviços, `dashboard/` — Painel Operacional, `ingestion/` — importação em lote, ferramenta auxiliar).
+> Repositório: `buni-api-hub-api` · Parte do ecossistema **Buni API Hub** (`web/` — Portal de Serviços, `dashboard/` — Painel Operacional).
 
 ---
 
@@ -51,11 +51,11 @@ Esta API é a única porta de entrada para o catálogo de recursos da solução 
 
 Em todo erro, a API retorna um envelope padronizado (`status`, `code`, `message`) para que nenhum frontend precise interpretar mensagens técnicas.
 
-**A API é totalmente independente da `ingestion/` em tempo de execução.** A fonte oficial de dados é o `ResourceRepository` (`src/repositories/resource.repository.ts`), que lê e escreve exclusivamente em `src/data/resources.json` — o catálogo efetivamente usado pela aplicação. Toda operação de escrita (criar, editar, excluir, alterar status), disparada pelo Portal ou por qualquer outro cliente HTTP, persiste diretamente nesse arquivo através do `ResourceRepository`, cujo conteúdo permanece em cache em memória durante a execução do processo. A `ingestion/` não participa do fluxo operacional da aplicação — é uma ferramenta de importação em lote, executada manualmente e de forma independente (detalhes em [Fluxo dos Dados](#fluxo-dos-dados), [Fluxo de Persistência](#fluxo-de-persistência) e no [README da `ingestion/`](../ingestion/README.md)).
+**A API é totalmente independente em tempo de execução.** A fonte de dados é o `ResourceRepository` (`src/repositories/resource.repository.ts`), que lê e escreve exclusivamente em `src/data/resources.json` — o catálogo efetivamente usado pela aplicação. Toda operação de escrita (criar, editar, excluir, alterar status), disparada pelo Portal ou por qualquer outro cliente HTTP, persiste diretamente nesse arquivo através do `ResourceRepository`, cujo conteúdo permanece em cache em memória durante a execução do processo (detalhes em [Fluxo dos Dados](#fluxo-dos-dados), [Fluxo de Persistência](#fluxo-de-persistência)).
 
 ## Objetivo
 
-Eliminar o processo manual de "editar um arquivo, rodar a ingestão, fazer deploy" toda vez que um novo recurso precisa entrar no catálogo, ao mesmo tempo em que fornece uma fonte única e sempre atualizada de status operacional dos serviços — sem depender de o frontend fazer qualquer verificação própria.
+Eliminar o processo manual de editar o arquivo de catálogo e fazer deploy toda vez que um novo recurso precisa entrar no ar, ao mesmo tempo em que fornece uma fonte única e sempre atualizada de status operacional dos serviços — sem depender de o frontend fazer qualquer verificação própria.
 
 ## Arquitetura
 
@@ -120,7 +120,7 @@ Pontos-chave:
 | Lint/format | ESLint 10 (flat config) + Prettier 3.9 |
 | Empacotamento | `tsc` (compilação direta, sem bundler) |
 
-Não há suíte de testes automatizados configurada (sem Jest/Vitest) — `typecheck` (`tsc --noEmit`) é a única verificação estática além do lint.
+Testes automatizados usam o test runner nativo do Node (`node:test`, via `tsx --test`) + `supertest` para os testes de integração HTTP — sem dependência de Jest/Vitest. `typecheck` (`tsc --noEmit`) e `lint` continuam sendo as verificações estáticas complementares, todas rodadas no pipeline de CI (`.github/workflows/ci.yml`).
 
 ## Estrutura de diretórios
 
@@ -192,7 +192,7 @@ api/
 
 ## Modelo de domínio
 
-`src/models/resource.model.ts` é a fonte de verdade — espelhada manualmente em `ingestion/src/types.ts`, `web/src/features/catalog/types.ts` e `dashboard/src/types/index.ts` (os quatro projetos são Node independentes, sem pacote compartilhado).
+`src/models/resource.model.ts` é a fonte de verdade — espelhada manualmente em `web/src/features/catalog/types.ts` e `dashboard/src/types/index.ts` (os três projetos são Node independentes, sem pacote compartilhado).
 
 ```mermaid
 classDiagram
@@ -253,51 +253,94 @@ classDiagram
     Resource "1" --> "0..1" ResourceHealth : id = resourceId
 ```
 
-Os campos `docUrl`, `responsible`, `area`, `notes`, `createdAt`, `updatedAt` são metadados do cadastro manual via API/Portal — não existem nos registros importados em lote pela `ingestion/`, por isso são todos opcionais.
+Os campos `docUrl`, `responsible`, `area`, `notes`, `createdAt`, `updatedAt` são metadados do cadastro manual via API/Portal.
 
 ## Endpoints
 
-Todas as respostas são JSON. Não há autenticação/autorização implementada (ver [Roadmap](#roadmap--melhorias-futuras)).
+Todas as respostas são JSON. Autenticação via JWT (`Authorization: Bearer <token>`) e autorização por papel (`ROLE_ADMIN`/`ROLE_USER`) estão implementadas — ver [Autenticação e autorização](#autenticação-e-autorização). Rotas marcadas com 🔒 exigem token válido; 🔒🛡️ exige adicionalmente `ROLE_ADMIN`.
+
+### Tabela consolidada (verificada diretamente em `src/routes/*.ts`)
+
+| Método | Endpoint | Autenticação | Role | Finalidade |
+|---|---|---|---|---|
+| `GET` | `/` | Pública | — | Metadados da API (`name`, `status`, `version`, `timestamp`) |
+| `GET` | `/health` | Pública | — | Liveness do processo |
+| `GET` | `/health/ready` | Pública | — | Readiness — `503` se o catálogo não carregou |
+| `POST` | `/auth/login` | Pública (rate limit dedicado) | — | Login e-mail/senha, retorna JWT |
+| `GET` | `/health/resources` | JWT | Qualquer autenticado | Último status conhecido de todos os recursos |
+| `GET` | `/health/resources/:id` | JWT | Qualquer autenticado | Status de um recurso específico |
+| `GET` | `/dashboard` | Pública | — | `{ summary, incidents }` combinados |
+| `GET` | `/dashboard/rankings` | Pública | — | `{ slowest, mostUnstable }` |
+| `GET` | `/dashboard/overview` | Pública | — | `{ summary, incidents, rankings }` consolidado — usado pelo Painel de TV |
+| `GET` | `/dashboard/summary` | JWT | Qualquer autenticado | Só o resumo consolidado |
+| `GET` | `/dashboard/incidents` | JWT | Qualquer autenticado | Só a lista de incidentes |
+| `GET` | `/dashboard/history` | Pública | — | Histórico Operacional — snapshots agregados (até 2000 mais recentes) |
+| `GET` | `/dashboard/events` | JWT | `ROLE_ADMIN` | Log Operacional — transições de status, filtrável |
+| `POST` | `/admin/resources/promote-to-producao` | JWT | `ROLE_ADMIN` | Promoção em lote Homologação → Produção |
+| `GET` | `/resources` | JWT | Qualquer autenticado | Lista o catálogo (`?type=`, `?environment=`, `?search=`) |
+| `GET` | `/resources/:id` | JWT | Qualquer autenticado | Um recurso específico |
+| `GET` | `/summary` | JWT | Qualquer autenticado | Contagem por tipo |
+| `POST` | `/resources` | JWT | `ROLE_ADMIN` | Cria um recurso |
+| `PUT` | `/resources/:id` | JWT | `ROLE_ADMIN` | Atualiza parcialmente |
+| `DELETE` | `/resources/:id` | JWT | `ROLE_ADMIN` | Remove um recurso |
+| `POST` | `/resources/:id/usage` | JWT | Qualquer autenticado | Registra uso do recurso — sem consumidor real hoje (ver [Roadmap](#roadmap--melhorias-futuras)) |
+
+As tabelas por grupo de rota, abaixo, repetem a mesma informação com mais contexto de negócio.
 
 ### Catálogo (`resource.routes.ts`)
 
 | Método | Rota | Descrição | Status de sucesso |
 |---|---|---|---|
-| `GET` | `/resources` | Lista o catálogo. Aceita `?type=`, `?environment=`, `?search=` | 200 |
-| `GET` | `/resources/:id` | Um recurso específico | 200 / 404 |
-| `GET` | `/summary` | Contagem por tipo (`total`, `apis`, `webServices`, `sites`) | 200 |
-| `POST` | `/resources` | Cria um recurso (`createResourceSchema`) | 201 / 400 / 409 |
-| `PUT` | `/resources/:id` | Atualiza parcialmente (`updateResourceSchema`) | 200 / 400 / 404 / 409 |
-| `DELETE` | `/resources/:id` | Remove um recurso | 204 / 404 |
+| `GET` | 🔒 `/resources` | Lista o catálogo. Aceita `?type=`, `?environment=`, `?search=` | 200 |
+| `GET` | 🔒 `/resources/:id` | Um recurso específico | 200 / 404 |
+| `GET` | 🔒 `/summary` | Contagem por tipo (`total`, `apis`, `webServices`, `sites`) | 200 |
+| `POST` | 🔒🛡️ `/resources` | Cria um recurso (`createResourceSchema`) | 201 / 400 / 409 |
+| `PUT` | 🔒🛡️ `/resources/:id` | Atualiza parcialmente (`updateResourceSchema`) | 200 / 400 / 404 / 409 |
+| `DELETE` | 🔒🛡️ `/resources/:id` | Remove um recurso | 204 / 404 |
+
+### Autenticação (`auth.routes.ts`)
+
+| Método | Rota | Descrição | Status de sucesso |
+|---|---|---|---|
+| `POST` | `/auth/login` | Autentica por e-mail/senha (`users.json`), retorna JWT | 200 / 400 / 401 |
+
+Limitado por um rate limit dedicado (`AUTH_RATE_LIMIT_MAX` tentativas a cada `AUTH_RATE_LIMIT_WINDOW_MS`, padrão 5 a cada 15min por IP) contra força bruta de senha.
 
 ### Administração (`resourcePromotion.routes.ts`)
 
 | Método | Rota | Descrição | Status de sucesso |
 |---|---|---|---|
-| `POST` | `/admin/resources/promote-to-producao` | Promove em lote todos os recursos de Homologação para Produção (idempotente, ver [Promoção em lote](#promoção-em-lote-homologação--produção)) | 200 / 422 |
+| `POST` | 🔒🛡️ `/admin/resources/promote-to-producao` | Promove em lote todos os recursos de Homologação para Produção (idempotente, ver [Promoção em lote](#promoção-em-lote-homologação--produção)) | 200 / 422 |
 
 ### Saúde (`resourceHealth.routes.ts` / `health.routes.ts`)
 
 | Método | Rota | Descrição |
 |---|---|---|
-| `GET` | `/health` | Liveness do processo — `{ status: 'UP' }` |
-| `GET` | `/health/resources` | Último status conhecido de todos os recursos |
-| `GET` | `/health/resources/:id` | Status de um recurso (`unknown` se ainda não varrido) |
+| `GET` | `/health` | Liveness do processo — `{ status: 'UP' }`. Usado pelo `HEALTHCHECK` do Docker |
+| `GET` | `/health/ready` | Readiness — confirma que o catálogo de recursos foi carregado do disco com sucesso; `503` caso contrário. Usado por load balancers/orquestradores para decidir se a instância entra no pool |
+| `GET` | 🔒 `/health/resources` | Último status conhecido de todos os recursos |
+| `GET` | 🔒 `/health/resources/:id` | Status de um recurso (`unknown` se ainda não varrido) |
 
 ### Painel Operacional (`dashboard.routes.ts`)
 
-| Método | Rota | Descrição |
-|---|---|---|
-| `GET` | `/dashboard` | `{ summary, incidents }` combinados — usado pelo Painel |
-| `GET` | `/dashboard/summary` | Só o resumo consolidado |
-| `GET` | `/dashboard/incidents` | Só a lista de recursos que exigem atenção |
+| Método | Rota | Autenticação | Descrição |
+|---|---|---|---|
+| `GET` | `/dashboard` | **Pública** | `{ summary, incidents }` combinados |
+| `GET` | `/dashboard/rankings` | **Pública** | `{ slowest, mostUnstable }` |
+| `GET` | `/dashboard/overview` | **Pública** | `{ summary, incidents, rankings }` — chamada única e consolidada, efetivamente usada pelo Painel de TV (`dashboard/`) |
+| `GET` | 🔒 `/dashboard/summary` | JWT | Só o resumo consolidado |
+| `GET` | 🔒 `/dashboard/incidents` | JWT | Só a lista de recursos que exigem atenção |
+
+> **Públicas de propósito** (comentário explícito em `dashboard.routes.ts`): o Painel de TV (`dashboard/`) abre direto por URL, sem login, e consome só `GET /dashboard/overview` (chamada única e consolidada). `GET /dashboard` e `GET /dashboard/rankings` seguem públicas e no ar por compatibilidade, mesmo não sendo mais consumidas diretamente pelo Painel. `GET /dashboard/summary` e `GET /dashboard/incidents` continuam autenticadas por não serem usadas por esse painel.
 
 ### Histórico Operacional e Log Operacional (`history.routes.ts`)
 
-| Método | Rota | Descrição |
-|---|---|---|
-| `GET` | `/dashboard/history` | Snapshots agregados do ambiente, um por sweep (até 2000 mais recentes) |
-| `GET` | `/dashboard/events` | Transições reais de status por recurso, mais recente primeiro. Filtros opcionais via query string: `resourceId`, `status` (`online`\|`offline`\|`maintenance`\|`unknown`), `environment`, `since`/`until` (ISO 8601, sobre `timestamp`) — todos combináveis; valor inválido é ignorado (mesmo comportamento de `GET /resources`) |
+| Método | Rota | Autenticação | Descrição |
+|---|---|---|---|
+| `GET` | `/dashboard/history` | **Pública** | Snapshots agregados do ambiente, um por sweep (até 2000 mais recentes) |
+| `GET` | 🔒🛡️ `/dashboard/events` | JWT + `ROLE_ADMIN` | Transições reais de status por recurso, mais recente primeiro. Filtros opcionais via query string: `resourceId`, `status` (`online`\|`offline`\|`maintenance`\|`unknown`), `environment`, `since`/`until` (ISO 8601, sobre `timestamp`) — todos combináveis; valor inválido é ignorado (mesmo comportamento de `GET /resources`) |
+
+> `GET /dashboard/history` é pública de propósito (mesmo motivo de `/dashboard` acima — consumida pelo Painel de TV, que abre sem login). `GET /dashboard/events` é o Log Operacional do portal administrativo (`web/`), não do Painel de TV, e por isso continua exigindo `ROLE_ADMIN`.
 
 ### Raiz
 
@@ -409,8 +452,6 @@ api/src/data/resources.json
 4. O `ResourceService` aplica as regras de negócio (checagem de duplicidade, geração de `id`/`technicalName`/`keywords`/`searchIndex`, timestamps) e chama o `ResourceRepository`.
 5. O `ResourceRepository` atualiza o array em cache (memória) e grava o resultado em `api/src/data/resources.json` de forma atômica (`.tmp` + `rename`).
 6. A partir desse momento, qualquer leitura (catálogo do Portal, Painel Operacional, health check) reflete o dado já persistido, servido diretamente do cache em memória do `ResourceRepository` — sem reler o disco a cada requisição.
-
-Esse é o **único** fluxo de escrita existente na aplicação. A `ingestion/` não faz parte dele: ela roda separadamente, sob demanda, e só afeta `api/src/data/resources.json` se alguém copiar manualmente o arquivo que ela gera (ver [README da `ingestion/`](../ingestion/README.md)).
 
 ## Persistência
 
@@ -529,8 +570,8 @@ Operação **administrativa**, fora do CRUD comum: popula o catálogo de Produç
 1. Lê todos os recursos com `environment: "homologacao"` via `ResourceRepository.findAll()`.
 2. Para cada um, deriva a URL de Produção substituindo só a origem (protocolo + host) — `utils/substituteResourceDomain.ts` troca `RESOURCE_DOMAIN_HOMOLOGACAO` por `RESOURCE_DOMAIN_PRODUCAO` preservando path/query/hash — e faz o mesmo com `docUrl`, se presente e se pertencer ao mesmo domínio (senão fica como está).
 3. Prevê o `id` que o recurso promovido teria (`generateResourceId(type, 'producao', slugify(name))` — mesma fórmula usada internamente por `createResource`) e, se um recurso com esse `id` já existir, **pula** (idempotente: rodar a operação várias vezes nunca duplica).
-4. Caso contrário, monta um `CreateResourceInput` com todos os demais campos copiados do recurso de origem (`type`, `active`, `description`, `responsible`, `area`, `notes`, `category`, `code`, `tags`, `keywords`) e `environment: "producao"`, e chama **`ResourceService.createResource(input)`** — a mesma rotina usada por um cadastro manual comum, então toda validação (duplicidade de nome escopada por ambiente, duplicidade de URL global, consistência ambiente×URL) roda normalmente para cada recurso promovido. `keywords`/`searchIndex` são recalculados do zero por essa mesma chamada — nunca copiados como texto — o que também descarta um artefato legado da Ingestion: alguns registros antigos carregam o rótulo do próprio ambiente (`"homologacao"`) dentro do array `keywords`; esse token é filtrado antes de repassar, para não vazar um `"homologacao"` incorreto para dentro de um recurso de Produção.
-5. `displayName` é o único campo copiado fora do `ResourceService`: não existe no schema de criação do CRUD (é um campo legado, só populado pela Ingestion), então é replicado com um `ResourceRepository.update()` direto, só quando presente na origem.
+4. Caso contrário, monta um `CreateResourceInput` com todos os demais campos copiados do recurso de origem (`type`, `active`, `description`, `responsible`, `area`, `notes`, `category`, `code`, `tags`, `keywords`) e `environment: "producao"`, e chama **`ResourceService.createResource(input)`** — a mesma rotina usada por um cadastro manual comum, então toda validação (duplicidade de nome escopada por ambiente, duplicidade de URL global, consistência ambiente×URL) roda normalmente para cada recurso promovido. `keywords`/`searchIndex` são recalculados do zero por essa mesma chamada — nunca copiados como texto — o que também descarta um artefato legado: alguns registros antigos carregam o rótulo do próprio ambiente (`"homologacao"`) dentro do array `keywords`; esse token é filtrado antes de repassar, para não vazar um `"homologacao"` incorreto para dentro de um recurso de Produção.
+5. `displayName` é o único campo copiado fora do `ResourceService`: não existe no schema de criação do CRUD (é um campo legado, populado apenas em registros mais antigos do catálogo), então é replicado com um `ResourceRepository.update()` direto, só quando presente na origem.
 6. **Transacional (all-or-nothing) por compensação**: se qualquer recurso falhar (ex.: URL já usada por outro recurso não relacionado), a operação inteira é abortada e todos os recursos já criados *nesta mesma execução* são removidos antes de responder — o catálogo volta exatamente ao estado anterior. Não há suporte a transação real de banco de dados (não há banco de dados); esse é o equivalente possível num arquivo JSON.
 7. Nunca lê nem grava nada em Homologação além da leitura inicial — os recursos de origem nunca são alterados.
 8. Responde um relatório: `{ success, totalFoundInHomologacao, created, skipped, failed, rolledBack, items[], errors[] }`, `200` se `success: true`, `422` se a operação foi abortada/revertida. Cada item em `items[]` mostra `sourceId`, `name`, `status` (`created`/`skipped`/`error`/`rolled-back`) e `reason` quando aplicável — inclusive identificando exatamente qual recurso causou um abort, quando há um.
@@ -665,15 +706,44 @@ Todo erro de negócio é lançado como `ApiError` (`src/utils/ApiError.ts`) e co
 
 | Variável | Obrigatória | Default (schema) | Descrição |
 |---|---|---|---|
+| `NODE_ENV` | Não | `development` | `development` \| `test` \| `production`. Em `production`, `CORS_ORIGIN` vazio ou `JWT_SECRET=change-me` derrubam o boot |
 | `PORT` | Não | `3333` | Porta HTTP do servidor |
+| `LOG_LEVEL` | Não | `info` | Nível do logger estruturado (pino): `fatal`\|`error`\|`warn`\|`info`\|`debug`\|`trace`\|`silent` |
 | `HEALTH_CHECK_INTERVAL_MS` | Não | `30000` | Intervalo entre sweeps de health check |
 | `HEALTH_CHECK_TIMEOUT_MS` | Não | `5000` | Timeout por requisição de verificação |
 | `HEALTH_CHECK_SLOW_THRESHOLD_MS` | Não | `1000` | Acima disso, um recurso saudável é classificado `slow` |
 | `HEALTH_CHECK_CONCURRENCY` | Não | `20` | Nº máximo de checagens HTTP simultâneas |
 | `RESOURCE_DOMAIN_HOMOLOGACAO` | Não | `https://buncghml.funcao.digital` | Domínio oficial de Homologação — usado só para validar consistência `environment`×`url` no CRUD (`ResourceService.assertEnvironmentMatchesUrl`, ver [Fluxo de Persistência](#fluxo-de-persistência)) |
 | `RESOURCE_DOMAIN_PRODUCAO` | Não | `https://credito.buni.digital` | Domínio oficial de Produção — mesmo uso acima |
+| `JWT_SECRET` | **Sim** | — | Segredo de assinatura do JWT (HS256). Mínimo de 32 caracteres; boot falha se ausente, curto, ou se valer `change-me` em produção |
+| `JWT_EXPIRES_IN` | Não | `8h` | Validade do token emitido em `/auth/login` |
+| `CORS_ORIGIN` | Em produção | `` (vazio) | Lista separada por vírgula das origens autorizadas. Vazio libera qualquer origem, mas **só** fora de produção |
+| `TRUST_PROXY` | Não | `0` | Nº de proxies reversos confiáveis à frente da API (Render/Railway/ALB/Nginx tipicamente `1`). Afeta `req.ip` e o rate limit por IP |
+| `RATE_LIMIT_WINDOW_MS` / `RATE_LIMIT_MAX` | Não | `900000` / `300` | Janela e limite do rate limit global (por IP) |
+| `AUTH_RATE_LIMIT_WINDOW_MS` / `AUTH_RATE_LIMIT_MAX` | Não | `900000` / `5` | Janela e limite do rate limit específico de `/auth/login` (proteção contra força bruta) |
 
 O `.env.example` do repositório define `HEALTH_CHECK_INTERVAL_MS=60000` — ou seja, o valor efetivo em desenvolvimento local (60s) é mais conservador que o default embutido no código (30s), que só vale se a variável estiver totalmente ausente. Validação via Zod em `config/env.ts`; se qualquer variável definida for inválida, o processo falha no boot com uma mensagem detalhada (fail-fast, não silencioso).
+
+## Autenticação e autorização
+
+JWT (HS256, `jsonwebtoken`) + hash de senha com `bcryptjs`. Usuários vivem em `src/data/users.json` (mesmo padrão de arquivo JSON do restante da persistência — sem endpoint de criação/gestão de usuário; adicionar um usuário hoje é um passo manual de editar o arquivo e gerar o hash com bcrypt).
+
+- `POST /auth/login` valida e-mail/senha contra `users.json` e devolve `{ token, user }`. Mensagem de erro idêntica para "usuário inexistente" e "senha incorreta" (`401 INVALID_CREDENTIALS`), evitando enumeração de usuários.
+- `middleware/authenticate.ts` exige `Authorization: Bearer <token>` válido; popula `req.user`.
+- `middleware/authorize.ts` (`authorize('ROLE_ADMIN')`) verifica o papel do usuário autenticado (`ROLE_ADMIN`/`ROLE_USER`).
+- Rotas de escrita (`POST`/`PUT`/`DELETE` em `/resources`, promoção de ambiente, `/dashboard/events`) exigem `ROLE_ADMIN`; rotas de leitura autenticadas aceitam qualquer papel.
+
+## Segurança de transporte e abuso
+
+- **Helmet** (`helmet()`) define os headers de segurança HTTP padrão (CSP, `X-Content-Type-Options`, etc.).
+- **CORS restritivo**: `CORS_ORIGIN` define as origens autorizadas; produção recusa subir sem essa variável.
+- **Rate limiting**: limite global por IP (`RATE_LIMIT_*`) e um limite específico, mais restritivo, em `/auth/login` (`AUTH_RATE_LIMIT_*`) contra força bruta de senha.
+- **Compressão** (`compression()`) e limite de payload (`express.json({ limit: '1mb' })`).
+- **`trust proxy`** configurável via `TRUST_PROXY` — necessário para rate limit e `req.ip` corretos atrás de um load balancer.
+
+## Logging
+
+Logger estruturado com **pino** + **pino-http** (`middleware/requestLogger.ts`): gera/propaga um `X-Request-Id` (reaproveita o header recebido ou cria um novo via `randomUUID()`), nível dinâmico por status da resposta (`error` em 5xx ou exceção, `warn` em 4xx, `info` no restante), com serializers customizados para reduzir a verbosidade de `req`/`res` no log. Nível mínimo configurável via `LOG_LEVEL`. Em desenvolvimento, `pino-pretty` formata a saída para leitura humana no terminal.
 
 ## Como executar localmente
 
@@ -695,20 +765,40 @@ npm run typecheck   # tsc --noEmit
 npm run lint         # eslint .
 npm run lint:fix
 npm run format       # prettier --write .
+npm test             # node:test via tsx --test, inclui testes de integração com supertest
 ```
 
-Não há suíte de testes automatizados nesta sprint.
+Hook de pre-commit (Husky + lint-staged) roda `eslint --fix` + `prettier --write` nos arquivos `.ts` staged automaticamente (`npm install` executa `prepare` para instalar o hook).
 
 ## Build e deploy
 
 ```bash
-npm run build   # tsc (compila src/ → dist/) + copy-data.mjs (copia resources.json)
+npm run build   # tsc (compila src/ → dist/) + copy-data.mjs (copia os JSONs de src/data/)
 npm run start    # node dist/server.js
 ```
 
-`scripts/copy-data.mjs` é necessário porque `tsc` só compila arquivos `.ts` — sem essa etapa, `dist/data/resources.json` não existiria e o `ResourceRepository` falharia ao subir em produção.
+`scripts/copy-data.mjs` é necessário porque `tsc` só compila arquivos `.ts` — sem essa etapa, `dist/data/resources.json` não existiria e o `ResourceRepository` falharia ao subir em produção. O script ignora explicitamente arquivos de backup (`*.bak*`) para não inflar a imagem de produção.
 
-Não há pipeline de CI/CD, Dockerfile ou script de deploy versionado neste repositório. O artefato de build (`dist/`) é um processo Node.js comum, executável em qualquer ambiente com Node instalado (`node dist/server.js`), atrás de um `PORT` configurável — compatível com plataformas como Render, Railway ou um container próprio, mas a configuração específica da hospedagem está fora deste repositório.
+### Persistência de dados — restrição válida em qualquer plataforma
+
+A camada de dados desta API é um conjunto de arquivos JSON (`resources.json`, `history.json`, `events.json`, `users.json`) lidos/gravados em disco, protegidos contra escrita concorrente por um lock de arquivo (`utils/fileLock.ts`, baseado em `mkdir` atômico, cross-process). Isso é uma decisão de arquitetura deliberada, não uma pendência — mas implica duas restrições que valem para **qualquer** plataforma de deploy:
+
+1. **Volume persistente obrigatório**: sem um volume/disco montado em `dist/data`, os dados voltam ao estado embutido na imagem a cada redeploy/restart (a maioria das plataformas de container usa filesystem efêmero por padrão).
+2. **Instância única**: múltiplos processos escrevendo no mesmo arquivo, mesmo com o lock, não substituem um catálogo compartilhado de verdade — o lock evita corrupção/"lost update", mas a app deve rodar com 1 réplica.
+
+| Plataforma | Como persistir | Arquivo de referência |
+|---|---|---|
+| Docker Compose (VPS/servidor Linux) | Volume nomeado montado em `/app/dist/data` | [`docker-compose.prod.yml`](docker-compose.prod.yml) |
+| Render | Render Disk montado em `/app/dist/data`, plano ≥ Starter, 1 instância | [`render.yaml`](render.yaml) |
+| Railway | Railway Volume (configurado no dashboard) montado em `/app/dist/data`, `numReplicas: 1` | [`railway.toml`](railway.toml) |
+| Kubernetes | `PersistentVolumeClaim` `ReadWriteOnce`, `Deployment` com `replicas: 1` e `strategy: Recreate` | [`deploy/k8s/`](deploy/k8s/) |
+| AWS (ECS/Fargate) | Volume EFS montado no task definition | [`deploy/aws/ecs-task-definition.json`](deploy/aws/ecs-task-definition.json) |
+| Azure Container Apps | Azure Files montado como volume no Container App (persistente, `ReadWriteMany` mas com a mesma restrição de instância única para escrita seria necessária no app) | Configuração equivalente ao ECS acima, via Azure CLI/Portal |
+| Google Cloud Run | **Não recomendado** sem adaptação — Cloud Run não oferece disco persistente nativo entre revisões; usar Compute Engine/GKE com volume, seguindo o padrão do Kubernetes acima |
+
+### CI/CD
+
+Pipeline em [`.github/workflows/ci.yml`](.github/workflows/ci.yml): a cada push/PR, roda `npm ci`, `lint`, `typecheck`, `build`, `test` e `npm audit --audit-level=high` no Node 22.
 
 ## Padrões arquiteturais e boas práticas
 
@@ -722,21 +812,18 @@ Não há pipeline de CI/CD, Dockerfile ou script de deploy versionado neste repo
 
 ## Fluxo de desenvolvimento
 
-1. Alterações de schema de dados começam em `models/resource.model.ts` — e precisam ser replicadas manualmente em `ingestion/src/types.ts`, `web/src/features/catalog/types.ts` e `dashboard/src/types/index.ts`.
+1. Alterações de schema de dados começam em `models/resource.model.ts` — e precisam ser replicadas manualmente em `web/src/features/catalog/types.ts` e `dashboard/src/types/index.ts`.
 2. Nova regra de negócio → `services/`; nova validação de entrada → `validators/` + `middleware/validateBody.ts`.
-3. `npm run typecheck && npm run lint` antes de qualquer commit.
-4. Não há testes automatizados — validação manual via `npm run dev` + requisições HTTP (curl/Postman) é o processo atual.
+3. `npm run typecheck && npm run lint && npm test` antes de qualquer commit (o hook de pre-commit já roda lint/format nos arquivos staged; typecheck/test/build rodam no CI a cada push/PR).
 
 ## Roadmap / melhorias futuras
 
 > Itens listados aqui **não estão implementados** — documentados para transparência sobre a direção do projeto, não como funcionalidade existente.
 
-- **Persistência em banco de dados** — a arquitetura em camadas (Repository Pattern) já isola o suficiente para essa migração não exigir mudanças em service/controller.
-- **Autenticação e autorização** — hoje todos os endpoints são públicos.
-- **Testes automatizados** (unitários para services/utils, integração para rotas).
+- **Persistência em banco de dados** — fora de escopo por decisão deliberada de arquitetura (ver [Persistência de dados](#persistência-de-dados--restrição-válida-em-qualquer-plataforma)); a arquitetura em camadas (Repository Pattern) já isola o suficiente para uma futura migração não exigir mudanças em service/controller, caso um dia deixe de ser uma restrição do projeto.
+- **Endpoint de gestão de usuários** (criação, troca de senha, desativação) — hoje `users.json` só é editável manualmente.
+- **Cobertura de testes mais ampla** — a suíte atual cobre utilitários puros e smoke tests de integração (autenticação, health, 404, validação); falta cobertura de `services/` (regras de negócio) e dos demais controllers.
 - **Uso efetivo dos `code`s `RESOURCE_CONFLICT` e `BUSINESS_RULE_ERROR`** em novas regras de negócio.
-- **Automatizar a cópia do catálogo gerado por `ingestion/`** para `src/data/resources.json` (hoje é um passo manual, ver README de `ingestion/`).
-- **Pipeline de CI/CD** (build, typecheck, lint, deploy automatizados).
 
 Melhorias específicas do monitoramento (Health Check / Painel Operacional) estão priorizadas em [`docs/dashboard-operacional.md`](docs/dashboard-operacional.md#melhorias-futuras), não repetidas aqui.
 

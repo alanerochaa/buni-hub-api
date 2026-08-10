@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: buni-api-data
+spec:
+  # ReadWriteOnce é obrigatório: os repositórios fazem readFileSync/writeFileSync
+  # direto no arquivo local, sem coordenação entre nós. ReadWriteMany permitiria
+  # múltiplos pods montarem o volume, mas não impediria dois processos
+  # sobrescreverem o mesmo resources.json/history.json/events.json de forma
+  # inconsistente — por isso o Deployment associado usa replicas: 1.
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi

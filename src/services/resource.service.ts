@@ -1,4 +1,5 @@
 import type { ResourceRepository } from '../repositories/resource.repository.js'
+import type { ResourceUsageRepository } from '../models/resourceUsage.model.js'
 import type { Resource, ResourceEnvironment, ResourceType } from '../models/resource.model.js'
 import type { ResourceSummary } from '../types/resourceSummary.type.js'
 import type { CreateResourceInput, UpdateResourceInput } from '../validators/resource.schema.js'
@@ -19,7 +20,10 @@ export interface ResourceQuery {
   search?: string
 }
 export class ResourceService {
-  constructor(private readonly repository: ResourceRepository) {}
+  constructor(
+    private readonly repository: ResourceRepository,
+    private readonly usageRepository: ResourceUsageRepository,
+  ) {}
 
   listResources(query: ResourceQuery = {}): Resource[] {
     const resources = this.repository
@@ -144,6 +148,18 @@ export class ResourceService {
   deleteResource(id: string): void {
     this.getResourceById(id)
     this.repository.remove(id)
+  }
+
+  /**
+   * Registra um consumo real para o recurso (dia corrente). Não tem nenhum
+   * consumidor hoje — ver comentário em `resourceUsage.model.ts`. Existe só para uma
+   * futura integração (gateway/proxy) ter onde reportar, sem exigir mudança de
+   * arquitetura quando essa fonte existir.
+   */
+  recordUsage(id: string): void {
+    this.getResourceById(id)
+    const today = new Date().toISOString().slice(0, 10)
+    this.usageRepository.increment(id, today)
   }
 
   private assertNoDuplicate(

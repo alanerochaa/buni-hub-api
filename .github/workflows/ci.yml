@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: api/package-lock.json
+
+      - name: Install dependencies
+        working-directory: api
+        run: npm ci
+
+      - name: Lint
+        working-directory: api
+        run: npm run lint
+
+      - name: Typecheck
+        working-directory: api
+        run: npm run typecheck
+
+      - name: Build
+        working-directory: api
+        run: npm run build
+
+      - name: Test
+        working-directory: api
+        run: npm test
+        env:
+          JWT_SECRET: ci-test-secret-32-characters-min
+
+      - name: Audit (vulnerabilidades conhecidas)
+        working-directory: api
+        run: npm audit --audit-level=high

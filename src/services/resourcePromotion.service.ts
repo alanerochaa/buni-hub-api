@@ -7,7 +7,7 @@ import { generateResourceId, slugify } from '../utils/slugify.js'
 import { substituteResourceDomain } from '../utils/substituteResourceDomain.js'
 import { normalizeSearchTerm } from '../utils/normalizeSearchTerm.js'
 
-const ENVIRONMENT_LABEL_TOKENS = new Set(['homologacao', 'producao', 'desenvolvimento', 'unknown', 'desconhecido'])
+const ENVIRONMENT_LABEL_TOKENS = new Set(['homologacao', 'producao', 'unknown', 'desconhecido'])
 
 export type PromotionItemStatus = 'created' | 'skipped' | 'error' | 'rolled-back'
 
@@ -72,6 +72,7 @@ export class ResourcePromotionService {
         if (item.status === 'created' && item.targetId && createdIds.includes(item.targetId)) {
           item.status = 'rolled-back'
           item.reason = 'Revertido: a operação em lote foi abortada por um erro em outro recurso.'
+          this.repository.update(item.sourceId, { pairedResourceId: undefined })
         }
       }
 
@@ -100,7 +101,6 @@ export class ResourcePromotionService {
     }
   }
 
-
   private promoteOne(source: Resource): PromotionReportItem {
     if (!source.url) {
       throw new Error(
@@ -125,7 +125,11 @@ export class ResourcePromotionService {
       env.resourceDomains.producao,
     )
     const docUrl = source.docUrl
-      ? substituteResourceDomain(source.docUrl, env.resourceDomains.homologacao, env.resourceDomains.producao)
+      ? substituteResourceDomain(
+          source.docUrl,
+          env.resourceDomains.homologacao,
+          env.resourceDomains.producao,
+        )
       : source.docUrl
 
     const input: CreateResourceInput = {
@@ -149,10 +153,11 @@ export class ResourcePromotionService {
 
     const created = this.resourceService.createResource(input)
 
-    if (source.displayName) {
-  
-      this.repository.update(created.id, { displayName: source.displayName })
-    }
+    this.repository.update(created.id, {
+      ...(source.displayName ? { displayName: source.displayName } : {}),
+      pairedResourceId: source.id,
+    })
+    this.repository.update(source.id, { pairedResourceId: created.id })
 
     return { sourceId: source.id, name: source.name, status: 'created', targetId: created.id }
   }

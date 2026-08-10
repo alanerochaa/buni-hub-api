@@ -10,7 +10,6 @@ const TYPE_LABELS: Record<ResourceType, string> = {
 const ENVIRONMENT_LABELS: Record<ResourceEnvironment, string> = {
   producao: 'Produção',
   homologacao: 'Homologação',
-  desenvolvimento: 'Desenvolvimento',
   unknown: 'Desconhecido',
 }
 

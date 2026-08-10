@@ -3,12 +3,7 @@ import type { ResourceService } from '../services/resource.service.js'
 import type { ResourceEnvironment, ResourceType } from '../models/resource.model.js'
 
 const RESOURCE_TYPES: ResourceType[] = ['api', 'web-service', 'site']
-const RESOURCE_ENVIRONMENTS: ResourceEnvironment[] = [
-  'homologacao',
-  'producao',
-  'desenvolvimento',
-  'unknown',
-]
+const RESOURCE_ENVIRONMENTS: ResourceEnvironment[] = ['homologacao', 'producao', 'unknown']
 
 function parseType(value: unknown): ResourceType | undefined {
   return RESOURCE_TYPES.includes(value as ResourceType) ? (value as ResourceType) : undefined
@@ -74,6 +69,15 @@ export class ResourceController {
   remove = (req: Request<{ id: string }>, res: Response, next: NextFunction): void => {
     try {
       this.service.deleteResource(req.params.id)
+      res.status(204).send()
+    } catch (error) {
+      next(error)
+    }
+  }
+
+  recordUsage = (req: Request<{ id: string }>, res: Response, next: NextFunction): void => {
+    try {
+      this.service.recordUsage(req.params.id)
       res.status(204).send()
     } catch (error) {
       next(error)

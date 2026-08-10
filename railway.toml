@@ -1,0 +1,18 @@
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+startCommand = "node dist/server.js"
+healthcheckPath = "/health/ready"
+healthcheckTimeout = 10
+restartPolicyType = "ON_FAILURE"
+numReplicas = 1
+# numReplicas DEVE permanecer 1: os dados vivem em arquivos JSON num volume anexado
+# a esta instância. Mais de uma réplica gravando no mesmo (ou em volumes diferentes)
+# causa divergência de dados entre instâncias — ver README, seção "Persistência de dados".
+
+# Railway Volumes não são configuráveis via este arquivo — precisam ser criados
+# no dashboard do serviço (Settings → Volumes) com mount path "/app/dist/data".
+# Variáveis de ambiente (NODE_ENV, JWT_SECRET, CORS_ORIGIN, TRUST_PROXY=1, etc.)
+# também são definidas no dashboard, na aba Variables.

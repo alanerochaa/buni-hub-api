@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 const RESOURCE_TYPES = ['api', 'web-service', 'site'] as const
-const RESOURCE_ENVIRONMENTS = ['homologacao', 'producao', 'desenvolvimento', 'unknown'] as const
+const RESOURCE_ENVIRONMENTS = ['homologacao', 'producao', 'unknown'] as const
 
 export const createResourceSchema = z.object({
   name: z.string().trim().min(1, 'Nome é obrigatório.'),

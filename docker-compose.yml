@@ -1,0 +1,14 @@
+services:
+  api:
+    build:
+      context: .
+      target: dev
+    ports:
+      - "${PORT:-3333}:${PORT:-3333}"
+    volumes:
+      - ./src:/app/src
+      - ./scripts:/app/scripts
+      - ./tsconfig.json:/app/tsconfig.json
+      - ./package.json:/app/package.json
+      - ./.env:/app/.env:ro
+    restart: unless-stopped
