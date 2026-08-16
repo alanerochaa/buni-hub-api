@@ -13,6 +13,10 @@ const corsOptions: cors.CorsOptions = {
   // Fora de produção, sem CORS_ORIGIN configurado, libera qualquer origem (conveniência
   // de desenvolvimento local). Em produção o boot falha em config/env.ts se estiver vazio.
   origin: env.cors.origins.length > 0 ? env.cors.origins : true,
+  // Sem isso, o JS do navegador não consegue ler este header em respostas cross-origin
+  // (ex.: filename sugerido em GET /resources/export) — o header ainda chega, só fica
+  // invisível para `response.headers` por padrão do CORS.
+  exposedHeaders: ['Content-Disposition'],
 }
 
 const globalRateLimit = rateLimit({

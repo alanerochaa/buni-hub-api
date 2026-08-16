@@ -1,4 +1,7 @@
-import type { ResourceRepository } from '../repositories/resource.repository.js'
+import type {
+  ResourceFieldUpdate,
+  ResourceRepository,
+} from '../repositories/resource.repository.js'
 import type { ResourceUsageRepository } from '../models/resourceUsage.model.js'
 import type { Resource, ResourceEnvironment, ResourceType } from '../models/resource.model.js'
 import type { ResourceSummary } from '../types/resourceSummary.type.js'
@@ -107,7 +110,10 @@ export class ResourceService {
     const name = input.name ?? existing.name
     const description = input.description ?? existing.description
     const keywordsInput = input.keywords ?? existing.keywords
-    const technicalName = input.name ? slugify(input.name) : existing.technicalName
+    // `technicalName` só é derivado de `name` na criação — depois disso fica estável,
+    // no mesmo regime do `id` (que também nunca é regerado numa edição). Editar o
+    // nome de exibição não deve mexer no identificador técnico do recurso.
+    const technicalName = existing.technicalName
     const type = input.type ?? existing.type
     const environment = input.environment ?? existing.environment
     const code = input.code ?? existing.code
@@ -118,11 +124,12 @@ export class ResourceService {
     this.assertEnvironmentMatchesUrl(environment, url)
 
     const keywords = generateKeywords({ name, description, keywords: keywordsInput })
+    const nameChanged = input.name !== undefined && input.name !== existing.name
+    const now = new Date().toISOString()
 
     const patch: Partial<Resource> = {
       ...input,
       docUrl: input.docUrl === '' ? undefined : (input.docUrl ?? existing.docUrl),
-      technicalName,
       keywords,
       searchIndex: generateSearchIndex({
         name,
@@ -135,10 +142,30 @@ export class ResourceService {
         type,
         environment,
       }),
-      updatedAt: new Date().toISOString(),
+      updatedAt: now,
     }
 
-    const updated = this.repository.update(id, patch)
+    const updates: ResourceFieldUpdate[] = [
+      { id, patch, removeFields: nameChanged ? ['displayName'] : undefined },
+    ]
+
+    // Recurso lógico HML/PROD: um rename efetivo de `name` propaga só o `name` (e a
+    // remoção do `displayName` legado, que deixaria a interface presa ao nome antigo)
+    // para o par — nunca URL, status, responsável ou qualquer outro campo específico
+    // de ambiente. Par inexistente/pendurado é ignorado silenciosamente, sem bloquear
+    // a edição do recurso original.
+    if (nameChanged && existing.pairedResourceId) {
+      const paired = this.repository.findById(existing.pairedResourceId)
+      if (paired) {
+        updates.push({
+          id: paired.id,
+          patch: { name, updatedAt: now },
+          removeFields: ['displayName'],
+        })
+      }
+    }
+
+    const [updated] = this.repository.updateMany(updates)
     if (!updated) {
       throw ApiError.notFound(`Recurso não encontrado: ${id}`, 'RESOURCE_NOT_FOUND')
     }

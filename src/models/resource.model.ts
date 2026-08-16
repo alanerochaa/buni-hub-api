@@ -12,7 +12,6 @@ export interface Resource {
   url?: string
 
   environment: ResourceEnvironment
-  /** id do registro do mesmo recurso lógico no outro ambiente (HML<->PROD), preenchido na promoção */
   pairedResourceId?: string
   category?: string
   deprecated: boolean

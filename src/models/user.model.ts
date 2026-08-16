@@ -7,6 +7,9 @@ export interface User {
   passwordHash: string
   role: Role
   ativo: boolean
+  createdAt: string
+  updatedAt: string
+  lastLoginAt?: string
 }
 
 export type PublicUser = Omit<User, 'passwordHash'>

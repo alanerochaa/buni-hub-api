@@ -3,6 +3,21 @@ import path from 'node:path'
 import type { Resource } from '../models/resource.model.js'
 import { withFileLock } from '../utils/fileLock.js'
 
+/** Campos que podem ser explicitamente removidos (não só setados como `undefined`) de um `Resource` persistido. */
+export type RemovableResourceField = 'displayName'
+
+export interface ResourceFieldUpdate {
+  id: string
+  patch: Partial<Resource>
+  /**
+   * Remove a chave do objeto antes de persistir — diferente de setar o campo como
+   * `undefined` no patch, que só funciona porque `JSON.stringify` descarta chaves
+   * `undefined` implicitamente. Aqui a remoção é explícita (`delete`), independente
+   * desse comportamento.
+   */
+  removeFields?: RemovableResourceField[]
+}
+
 export class ResourceRepository {
   private cache: Resource[] | null = null
 
@@ -54,6 +69,35 @@ export class ResourceRepository {
 
       const updated = { ...resources[index], ...patch, id: resources[index].id }
       resources[index] = updated
+      this.persist(resources)
+      return updated
+    })
+  }
+
+  /**
+   * Aplica um ou mais patches sob um único lock e uma única escrita em disco — usado
+   * quando uma edição precisa atualizar mais de um registro de forma atômica (ex.:
+   * propagar `name` para o par HML/PROD do mesmo recurso lógico). IDs inexistentes
+   * são ignorados silenciosamente, mesmo padrão de `update()`.
+   */
+  updateMany(updates: ResourceFieldUpdate[]): Resource[] {
+    return withFileLock(this.dataFilePath, () => {
+      const resources = this.readFromDisk()
+      const updated: Resource[] = []
+
+      for (const { id, patch, removeFields } of updates) {
+        const index = resources.findIndex((resource) => resource.id === id)
+        if (index === -1) continue
+
+        const merged: Resource = { ...resources[index], ...patch, id: resources[index].id }
+        for (const field of removeFields ?? []) {
+          delete merged[field]
+        }
+
+        resources[index] = merged
+        updated.push(merged)
+      }
+
       this.persist(resources)
       return updated
     })
