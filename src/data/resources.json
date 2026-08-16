@@ -2,15 +2,15 @@
   {
     "id": "api-homologacao-fiapitabconsultaragencias",
     "type": "api",
-    "displayName": "WebApi - Consultar Agências",
     "name": "WebApi - Consultar Agências",
-    "technicalName": "FIApiTabConsultarAgencias",
+    "technicalName": "webapi-consultar-agencias",
     "code": "APIAUTCONSAGE",
     "url": "https://buncghml.funcao.digital/API/FIApiTabConsultarAgencias",
     "environment": "homologacao",
     "deprecated": false,
     "active": true,
     "keywords": [
+      "webapi",
       "consultar",
       "agencias",
       "tab",
@@ -21,16 +21,18 @@
     "tags": [],
     "searchIndex": [
       "webapi - consultar agencias",
-      "fiapitabconsultaragencias",
+      "webapi-consultar-agencias",
       "apiautconsage",
       "https://buncghml.funcao.digital/api/fiapitabconsultaragencias",
+      "webapi",
       "consultar",
       "agencias",
       "tab",
       "api",
       "homologacao"
     ],
-    "pairedResourceId": "api-producao-webapi-consultar-agencias"
+    "pairedResourceId": "api-producao-webapi-consultar-agencias",
+    "updatedAt": "2026-08-11T15:02:42.783Z"
   },
   {
     "id": "api-homologacao-fiapitabconsorigem3",
@@ -415,7 +417,6 @@
   {
     "id": "api-homologacao-web-api-para-inclusao-de-proposta-consig",
     "type": "api",
-    "displayName": "Web Api de Inclusão de Propostas CP",
     "name": "Web Api para Inclusão de Proposta Consig",
     "technicalName": "web-api-para-inclusao-de-proposta-consig",
     "code": "APICPINCPROPOSTA",
@@ -459,8 +460,7 @@
   {
     "id": "api-homologacao-fiapiautsimularproposta",
     "type": "api",
-    "displayName": "Web Api de Simulação de Propostas CP",
-    "name": "Web Api de Simulação de Propostas CP",
+    "name": "Web Api Restful para Simulação de Proposta",
     "technicalName": "FIApiAutSimularProposta",
     "code": "APICPSIMPROPOSTA",
     "url": "https://buncghml.funcao.digital/API/FIApiAutSimularProposta",
@@ -468,30 +468,37 @@
     "deprecated": false,
     "active": true,
     "keywords": [
+      "web",
+      "api",
+      "restful",
+      "para",
       "simulacao",
+      "proposta",
       "propostas",
       "aut",
       "simular",
-      "proposta",
       "apicpsimproposta",
-      "api",
       "homologacao"
     ],
     "tags": [],
     "searchIndex": [
-      "web api de simulacao de propostas cp",
+      "web api restful para simulacao de proposta",
       "fiapiautsimularproposta",
       "apicpsimproposta",
       "https://buncghml.funcao.digital/api/fiapiautsimularproposta",
+      "web",
+      "api",
+      "restful",
+      "para",
       "simulacao",
+      "proposta",
       "propostas",
       "aut",
       "simular",
-      "proposta",
-      "api",
       "homologacao"
     ],
-    "pairedResourceId": "api-producao-web-api-de-simulacao-de-propostas-cp"
+    "pairedResourceId": "api-producao-web-api-de-simulacao-de-propostas-cp",
+    "updatedAt": "2026-08-12T13:08:14.110Z"
   },
   {
     "id": "api-homologacao-fiapiautorizadortabelasfinanciamentocp",
@@ -605,8 +612,7 @@
   {
     "id": "api-homologacao-fiapiautorizadorsimulacaodepropostascp",
     "type": "api",
-    "displayName": "Web Api Restful para Simulação de Proposta",
-    "name": "Web Api Restful para Simulação de Proposta",
+    "name": "Web Api: Simulação de Propostas CP",
     "technicalName": "FIApiAutorizadorSimulacaoDePropostasCP",
     "code": "APISIMULPROP",
     "url": "https://buncghml.funcao.digital/API/FIApiAutorizadorSimulacaoDePropostasCP",
@@ -614,32 +620,37 @@
     "deprecated": false,
     "active": true,
     "keywords": [
+      "web",
+      "api:",
+      "simulacao",
+      "propostas",
       "restful",
       "para",
-      "simulacao",
       "proposta",
       "autorizador",
-      "propostas",
       "apisimulprop",
       "api",
       "homologacao"
     ],
     "tags": [],
     "searchIndex": [
-      "web api restful para simulacao de proposta",
+      "web api: simulacao de propostas cp",
       "fiapiautorizadorsimulacaodepropostascp",
       "apisimulprop",
       "https://buncghml.funcao.digital/api/fiapiautorizadorsimulacaodepropostascp",
+      "web",
+      "api:",
+      "simulacao",
+      "propostas",
       "restful",
       "para",
-      "simulacao",
       "proposta",
       "autorizador",
-      "propostas",
       "api",
       "homologacao"
     ],
-    "pairedResourceId": "api-producao-web-api-restful-para-simulacao-de-proposta"
+    "pairedResourceId": "api-producao-web-api-restful-para-simulacao-de-proposta",
+    "updatedAt": "2026-08-12T13:12:59.947Z"
   },
   {
     "id": "api-homologacao-fiapiautemiplanproparrayby",
@@ -2170,14 +2181,14 @@
   {
     "id": "api-homologacao-fiapiautorizadorpropostascp",
     "type": "api",
-    "displayName": "Web API: Inclusão de Propostas CP",
-    "name": "FIApiAutorizadorPropostasCP",
+    "name": "Web Api: Inclusão de Propostas CP",
     "technicalName": "FIApiAutorizadorPropostasCP",
     "url": "https://buncghml.funcao.digital/API/FIApiAutorizadorPropostasCP",
     "environment": "homologacao",
     "deprecated": false,
     "active": true,
     "keywords": [
+      "web",
       "api:",
       "inclusao",
       "propostas",
@@ -2190,6 +2201,7 @@
       "web api: inclusao de propostas cp",
       "fiapiautorizadorpropostascp",
       "https://buncghml.funcao.digital/api/fiapiautorizadorpropostascp",
+      "web",
       "api:",
       "inclusao",
       "propostas",
@@ -2197,7 +2209,8 @@
       "api",
       "homologacao"
     ],
-    "pairedResourceId": "api-producao-fiapiautorizadorpropostascp"
+    "pairedResourceId": "api-producao-fiapiautorizadorpropostascp",
+    "updatedAt": "2026-08-12T13:08:14.138Z"
   },
   {
     "id": "api-homologacao-fiapiautprodutos",
@@ -2921,12 +2934,13 @@
     "id": "api-homologacao-fiapiempractwsautorizador",
     "type": "api",
     "name": "FIAPIEmprActWSAutorizador",
-    "technicalName": "FIAPIEmprActWSAutorizador",
+    "technicalName": "fiapiempractwsautorizador",
     "url": "https://buncghml.funcao.digital/API/FIAPIEmprActWSAutorizador",
     "environment": "homologacao",
     "deprecated": false,
     "active": true,
     "keywords": [
+      "fiapiempractwsautorizador",
       "empr",
       "act",
       "autorizador",
@@ -2943,7 +2957,8 @@
       "api",
       "homologacao"
     ],
-    "pairedResourceId": "api-producao-fiapiempractwsautorizador"
+    "pairedResourceId": "api-producao-fiapiempractwsautorizador",
+    "updatedAt": "2026-08-11T12:47:55.464Z"
   },
   {
     "id": "api-homologacao-fiapiemprcadastrofunc",
@@ -5492,8 +5507,7 @@
       "producao"
     ],
     "createdAt": "2026-07-16T17:37:26.786Z",
-    "updatedAt": "2026-07-16T17:37:26.786Z",
-    "displayName": "WebApi - Consultar Agências",
+    "updatedAt": "2026-08-11T15:02:42.783Z",
     "pairedResourceId": "api-homologacao-fiapitabconsultaragencias"
   },
   {
@@ -5946,14 +5960,13 @@
       "producao"
     ],
     "createdAt": "2026-07-16T17:37:26.875Z",
-    "updatedAt": "2026-08-04T12:28:08.229Z",
-    "displayName": "Web Api de Inclusão de Propostas CP",
+    "updatedAt": "2026-08-12T12:24:13.325Z",
     "pairedResourceId": "api-homologacao-web-api-para-inclusao-de-proposta-consig"
   },
   {
     "id": "api-producao-web-api-de-simulacao-de-propostas-cp",
     "type": "api",
-    "name": "Web Api de Simulação de Propostas CP",
+    "name": "Web Api Restful para Simulação de Proposta",
     "technicalName": "web-api-de-simulacao-de-propostas-cp",
     "code": "APICPSIMPROPOSTA",
     "url": "https://credito.buni.digital/API/FIApiAutSimularProposta",
@@ -5986,8 +5999,7 @@
       "producao"
     ],
     "createdAt": "2026-07-16T17:37:26.882Z",
-    "updatedAt": "2026-07-16T17:37:26.882Z",
-    "displayName": "Web Api de Simulação de Propostas CP",
+    "updatedAt": "2026-08-12T13:08:14.110Z",
     "pairedResourceId": "api-homologacao-fiapiautsimularproposta"
   },
   {
@@ -6111,7 +6123,7 @@
   {
     "id": "api-producao-web-api-restful-para-simulacao-de-proposta",
     "type": "api",
-    "name": "Web Api Restful para Simulação de Proposta",
+    "name": "Web Api: Simulação de Propostas CP",
     "technicalName": "web-api-restful-para-simulacao-de-proposta",
     "code": "APISIMULPROP",
     "url": "https://credito.buni.digital/API/FIApiAutorizadorSimulacaoDePropostasCP",
@@ -6120,34 +6132,35 @@
     "active": true,
     "keywords": [
       "web",
+      "api:",
+      "simulacao",
+      "propostas",
       "api",
       "restful",
       "para",
-      "simulacao",
       "proposta",
       "autorizador",
-      "propostas",
       "apisimulprop"
     ],
     "tags": [],
     "searchIndex": [
-      "web api restful para simulacao de proposta",
+      "web api: simulacao de propostas cp",
       "web-api-restful-para-simulacao-de-proposta",
       "apisimulprop",
       "https://credito.buni.digital/api/fiapiautorizadorsimulacaodepropostascp",
       "web",
+      "api:",
+      "simulacao",
+      "propostas",
       "api",
       "restful",
       "para",
-      "simulacao",
       "proposta",
       "autorizador",
-      "propostas",
       "producao"
     ],
     "createdAt": "2026-07-16T17:37:26.910Z",
-    "updatedAt": "2026-07-16T17:37:26.910Z",
-    "displayName": "Web Api Restful para Simulação de Proposta",
+    "updatedAt": "2026-08-12T13:12:59.947Z",
     "pairedResourceId": "api-homologacao-fiapiautorizadorsimulacaodepropostascp"
   },
   {
@@ -7767,7 +7780,7 @@
   {
     "id": "api-producao-fiapiautorizadorpropostascp",
     "type": "api",
-    "name": "FIApiAutorizadorPropostasCP",
+    "name": "Web Api: Inclusão de Propostas CP",
     "technicalName": "fiapiautorizadorpropostascp",
     "url": "https://credito.buni.digital/API/FIApiAutorizadorPropostasCP",
     "environment": "producao",
@@ -7793,8 +7806,7 @@
       "producao"
     ],
     "createdAt": "2026-07-16T17:37:27.234Z",
-    "updatedAt": "2026-07-16T17:37:27.234Z",
-    "displayName": "Web API: Inclusão de Propostas CP",
+    "updatedAt": "2026-08-12T13:08:14.138Z",
     "pairedResourceId": "api-homologacao-fiapiautorizadorpropostascp"
   },
   {

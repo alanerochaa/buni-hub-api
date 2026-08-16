@@ -3,9 +3,12 @@
     "id": "user-admin",
     "nome": "Administrador",
     "email": "admin@catarse.co",
-    "passwordHash": "$2b$10$m9qotjXT21Cm8EwvLkBSIuXPE3TTwpGfUE5DvgoyFCglcb5HvQgGO",
+    "passwordHash": "$2b$10$TsUWpjKmovtoMcLIthtDx.StLdoJuJXndQBoXB2nf11OtpRHaTGoe",
     "role": "ROLE_ADMIN",
-    "ativo": true
+    "ativo": true,
+    "createdAt": "2026-07-01T00:00:00.000Z",
+    "updatedAt": "2026-08-14T20:37:10.700Z",
+    "lastLoginAt": "2026-08-14T20:38:51.851Z"
   },
   {
     "id": "user-usuario",
@@ -13,6 +16,19 @@
     "email": "usuario@catarse.co",
     "passwordHash": "$2b$10$LhoZeIUEv98zhOS4.5JaYuayrs3Al3hxF.//RE4aMN6sCBIircdf.",
     "role": "ROLE_USER",
-    "ativo": true
+    "ativo": true,
+    "createdAt": "2026-07-01T00:00:00.000Z",
+    "updatedAt": "2026-08-12T15:14:13.509Z"
+  },
+  {
+    "id": "user-d45a5207-81d8-4845-b050-1b2bf363f8fd",
+    "nome": "Alane Rocha",
+    "email": "alane@catarse.co",
+    "passwordHash": "$2b$10$xHojBIYIV9lzLTFhdnEfheZjFiD7bbC9hCMMfRRmkYlpIRZf13yVq",
+    "role": "ROLE_USER",
+    "ativo": true,
+    "createdAt": "2026-08-12T15:30:17.696Z",
+    "updatedAt": "2026-08-12T15:30:17.696Z",
+    "lastLoginAt": "2026-08-12T15:30:28.618Z"
   }
 ]
