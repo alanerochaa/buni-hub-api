@@ -31,7 +31,7 @@ export interface Resource {
   updatedAt?: string
 }
 
-export type ResourceStatus = 'online' | 'slow' | 'offline' | 'unknown'
+export type ResourceStatus = 'online' | 'slow' | 'unavailable' | 'offline' | 'unknown'
 
 export interface ResourceHealth {
   resourceId: string

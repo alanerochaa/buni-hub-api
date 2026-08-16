@@ -9,7 +9,10 @@ export function resolveResourceStatus(
 
   const status = health?.status ?? 'unknown'
   if (status === 'online' || status === 'slow') return 'online'
-  if (status === 'offline') return 'offline'
+  // 'unavailable' (4xx, ex.: 404) é uma falha confirmada do endpoint tanto quanto uma
+  // falha de rede — o Painel Operacional não distingue os dois motivos, só se está
+  // disponível ou não.
+  if (status === 'offline' || status === 'unavailable') return 'offline'
   return 'unknown'
 }
 
